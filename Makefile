@@ -49,7 +49,7 @@ debug-clang:
 	@./scripts/solution-controller.sh both "Build" native debug clang
 
 # Testing
-test:
+test: debug
 	@./scripts/solution-controller.sh both "Run Tests" native debug
 
 test-verbose:
