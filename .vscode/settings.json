@@ -1,0 +1,24 @@
+{
+  // Disable Microsoft C++ IntelliSense to use clangd instead
+  "C_Cpp.intelliSenseEngine": "disabled",
+  
+  // Clangd configuration
+  "clangd.path": "clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--completion-style=detailed",
+    "--compile-commands-dir=${workspaceFolder}"
+  ],
+  
+  // Fallback for C_Cpp extension if needed
+  "C_Cpp.default.compileCommands": "/home/shared/dev/cpp/current/NixonCpp/build/builddir-debug/compile_commands.json",
+  "C_Cpp.default.cppStandard": "c++20",
+  "C_Cpp.default.cStandard": "c11",
+  "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",
+  
+  // Meson extension configuration
+  "mesonbuild.buildFolder": "build/builddir-debug",
+  "mesonbuild.configureOnOpen": false
+}

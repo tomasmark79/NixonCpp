@@ -1,0 +1,5 @@
+option('build_tests',
+  type: 'feature',
+  value: 'auto',
+  description: 'Enable unit tests (native only)'
+)

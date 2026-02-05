@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  native-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
+
+      - name: Build
+        run: nix develop ./nix --command make build
+
+      - name: Test
+        run: nix develop ./nix --command make test
+
+  cross-builds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
+
+      - name: Cross build (aarch64)
+        run: nix develop ./nix#aarch64 --command make cross-aarch64
+
+      - name: Cross build (windows)
+        run: nix develop ./nix#windows --command make cross-windows
+
+      - name: Cross build (wasm)
+        run: nix develop ./nix#wasm --command make cross-wasm

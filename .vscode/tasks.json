@@ -1,0 +1,307 @@
+{
+    /* MIT License Copyright (c) 2024-2026 Tomáš Mark */
+    "version": "2.0.0",
+    "inputs": [
+        {
+            "id": "taskName",
+            "type": "pickString",
+            "description": "Select NixonCpp Meson Tasks",
+            "options": [
+                "Zero to Build",
+                "Zero to Hero",
+                "Clean Build",
+                "Build",
+                "Configure",
+                "Run Tests",
+                "Install built components",
+                "Create Package",
+                "clang-tidy linting",
+                "Format Code",
+                "Generate Documentation",
+                "Launch Emscripten Server"
+            ],
+            "default": "Build"
+        },
+        {
+            "id": "buildArch",
+            "type": "pickString",
+            "description": "Select target architecture",
+            "options": [
+                "native",
+                "aarch64",
+                "windows",
+                "wasm"
+            ],
+            "default": "native"
+        },
+        {
+            "id": "buildType",
+            "type": "pickString",
+            "description": "Select Meson build type",
+            "options": [
+                "debug",
+                "release",
+                "debugoptimized",
+                "minsize"
+            ],
+            "default": "debug"
+        },
+        
+    ],
+    "tasks": [
+        {
+            "label": "NixonCpp Build Tasks",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "${input:taskName}",
+                "${input:buildArch}",
+                "${input:buildType}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "NixonCpp Meson/Nix build and utility tasks",
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "dependsOn": [
+                "clear terminal"
+            ]
+        },
+        {
+            "label": "clang-tidy",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "clang-tidy linting",
+                "native",
+                "debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "clang-tidy (native build directory)",
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "label": "clang-format",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "Format Code",
+                "native",
+                "debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "clang-format on sources",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "label": "Launch Application (native)",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/builddir-debug/NixonCpp",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/build/builddir-debug"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Launch native debug application",
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "dependsOn": []
+        },
+        {
+            "label": "Launch Application (native release)",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/builddir-release/NixonCpp",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/build/builddir-release"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Launch native release application",
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "dependsOn": []
+        },
+        {
+            "label": "Launch Emscripten Server",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "Launch Emscripten Server",
+                "wasm",
+                "debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Launch emrun/python server for wasm output",
+            "problemMatcher": [],
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "dependsOn": [
+                "clear terminal"
+            ]
+        },
+        {
+            "label": "Launch Emscripten Server (release)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "Launch Emscripten Server",
+                "wasm",
+                "release"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Launch emrun/python server for wasm output (release)",
+            "problemMatcher": [],
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "dependsOn": [
+                "clear terminal"
+            ]
+        },
+        {
+            "label": "Direct Build (native debug)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "Build",
+                "native",
+                "debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Direct native debug build",
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        },
+        {
+            "label": "Direct Build (windows debug)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "Build",
+                "windows",
+                "debug"
+            ],
+            "group": "build",
+            "detail": "Direct Windows debug build",
+            "problemMatcher": ["$gcc"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        },
+        {
+            "label": "clear terminal",
+            "type": "shell",
+            "command": "clear",
+            "group": "none",
+            "detail": "Clear terminal output",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        }
+    ]
+}

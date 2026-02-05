@@ -1,0 +1,28 @@
+# Configuration file for clangd IntelliSense LSP server
+# Att: User .clangd configuration is prioritized over workspace
+Diagnostics:
+  ClangTidy:
+    Add: [performance-*, readability-*, modernize-*]
+    Remove: [modernize-use-trailing-return-type]
+    CheckOptions:
+      readability-identifier-length.MinimumVariableNameLength: 1
+      readability-identifier-length.MinimumParameterNameLength: 1
+      readability-identifier-length.MinimumLoopCounterNameLength: 1
+      readability-identifier-length.IgnoredVariableNames: "^[a-z]$"
+      readability-identifier-length.IgnoredParameterNames: "^[a-z]$"
+  UnusedIncludes: Strict
+
+InlayHints:
+  Enabled: Yes
+  BlockEnd: No
+  Designators: No
+  ParameterNames: No
+  DeducedTypes: No
+  TypeNameLimit: 0
+
+CompileFlags:
+  Add: [-Wall, -Wextra, -std=c++20]
+  Remove: [-W*]
+
+Completion:
+  AllScopes: true

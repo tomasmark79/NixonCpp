@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Application (Meson)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/builddir-debug/NixonCpp",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build/builddir-debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Direct Build (native debug)"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+[
+    /* The content below is intended for `~/.config/Code/User/keybindings.json` */
+    
+    /* === BUILD TASKS === */
+    {
+        "key": "f7",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Direct Build (native debug)"
+    },
+    {
+        "key": "shift+f7", 
+        "command": "workbench.action.tasks.runTask",
+        "args": "NixonCpp Build Tasks"
+    },
+
+    /* === LAUNCH TASKS === */
+    {
+        "key": "ctrl+alt+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Launch Application (native)"
+    },
+    {
+        "key": "ctrl+alt+shift+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Launch Application (native release)"
+    },
+    {
+        "key": "ctrl+alt+e",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Launch Emscripten Server"
+    },
+    {
+        "key": "ctrl+alt+shift+e",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Launch Emscripten Server"
+    },
+
+    /* === FORMATTING & LINTING === */
+    {
+        "key": "ctrl+alt+f",
+        "command": "workbench.action.tasks.runTask",
+        "args": "clang-format"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "workbench.action.tasks.runTask",
+        "args": "clang-tidy"
+    }
+]

@@ -1,0 +1,19 @@
+{
+    "strings": [
+        {
+            "id": "Author",
+            "data": {
+                "en": "Tomas Mark",
+                "cs": "Tomáš Mark"
+            }
+        },
+        {
+            "id": "GitHub",
+            "data": {
+                "en": "GitHub Repository",
+                "cs": "GitHub Repozitář",
+                "url": "https://github.com/tomasmark79"
+            }
+        }
+    ]
+}

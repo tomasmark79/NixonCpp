@@ -1,0 +1,52 @@
+# Build directories
+build/
+
+# Nix/direnv cache
+.direnv/
+
+# Compiled binaries
+*.exe
+*.dll
+*.so
+*.a
+*.dylib
+*.wasm
+*.js.mem
+
+# Meson files
+compile_commands.json
+.cache/
+
+# Meson wrap downloads
+subprojects/*/
+!subprojects/*.wrap
+!subprojects/packagefiles/
+!subprojects/packagefiles/**
+
+# Python virtual environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# IDE and editor files
+# .vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Nix
+result
+result-*
+
+# Test outputs
+*.log
+*.junit.xml
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
