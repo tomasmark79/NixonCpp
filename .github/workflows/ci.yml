@@ -15,7 +15,7 @@ jobs:
         uses: cachix/install-nix-action@v30
 
       - name: Nix cache
-        uses: DeterminateSystems/magic-nix-cache@v8
+        uses: DeterminateSystems/magic-nix-cache@v6
 
       - name: Build
         run: nix develop ./nix --command make build
@@ -33,7 +33,7 @@ jobs:
         uses: cachix/install-nix-action@v30
 
       - name: Nix cache
-        uses: DeterminateSystems/magic-nix-cache@v8
+        uses: DeterminateSystems/magic-nix-cache@v6
 
       - name: Cross build (aarch64)
         run: nix develop ./nix#aarch64 --command make cross-aarch64
