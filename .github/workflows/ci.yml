@@ -14,8 +14,13 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v30
 
-      - name: Nix cache
-        uses: DeterminateSystems/magic-nix-cache@main
+      - name: Cache Nix downloads
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/nix
+          key: nix-${{ runner.os }}-${{ hashFiles('nix/flake.lock') }}
+          restore-keys: |
+            nix-${{ runner.os }}-
 
       - name: Build
         run: nix develop ./nix --command make build
@@ -32,8 +37,13 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v30
 
-      - name: Nix cache
-        uses: DeterminateSystems/magic-nix-cache@main
+      - name: Cache Nix downloads
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/nix
+          key: nix-${{ runner.os }}-${{ hashFiles('nix/flake.lock') }}
+          restore-keys: |
+            nix-${{ runner.os }}-
 
       - name: Cross build (aarch64)
         run: nix develop ./nix#aarch64 --command make cross-aarch64
