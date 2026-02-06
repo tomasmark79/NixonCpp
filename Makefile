@@ -1,10 +1,15 @@
 # Makefile for NixonCpp
 # Provides convenient shortcuts for common tasks
 
+ARCHS := native aarch64 windows wasm
+BUILD_TYPES := debug release debugoptimized minsize
+
 .PHONY: help build debug build-clang debug-clang all everything test test-verbose clean clean-packages dev format check doxygen \
 	cross-aarch64 cross-windows cross-wasm cross-all \
 	install package-native package-aarch64 package-windows package-wasm package-all packages \
-	quick rebuild
+	build-all-buildtypes build-all-arch-buildtypes package-all-buildtypes package-all-arch-buildtypes \
+	quick rebuild $(addprefix build-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES)))) \
+	$(addprefix package-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES))))
 
 # Default target
 help:
@@ -28,6 +33,12 @@ help:
 	@echo "  make cross-windows  - Build for Windows"
 	@echo "  make cross-wasm     - Build for WebAssembly"
 	@echo "  make cross-all      - Build for all cross-compilation targets"
+	@echo ""
+	@echo "All buildtype combos:"
+	@echo "  make build-all-buildtypes        - Build all arch x buildtype"
+	@echo "  make package-all-buildtypes      - Package all arch x buildtype"
+	@echo "  make build-<arch>-<type>         - Build specific combo"
+	@echo "  make package-<arch>-<type>       - Package specific combo"
 	@echo ""
 	@echo "Development:"
 	@echo "  make dev            - Enter development shell"
@@ -94,6 +105,18 @@ cross-wasm:
 cross-all: cross-aarch64 cross-windows cross-wasm
 	@echo "✓ All cross-compilation targets built"
 
+define MAKE_BUILD_RULE
+build-$(1)-$(2):
+	@./scripts/solution-controller.sh both "Build" $(1) $(2)
+endef
+
+$(foreach a,$(ARCHS),$(foreach b,$(BUILD_TYPES),$(eval $(call MAKE_BUILD_RULE,$(a),$(b)))))
+
+build-all-buildtypes: $(addprefix build-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES))))
+	@echo "✓ All arch/buildtype combinations built"
+
+build-all-arch-buildtypes: build-all-buildtypes
+
 # Build everything (native + all cross-compilation targets)
 all: build cross-all
 	@echo ""
@@ -119,7 +142,13 @@ everything: build debug build-clang debug-clang cross-all
 install:
 	@./scripts/solution-controller.sh both "Install built components" native release
 
-# Packaging targets
+define MAKE_PACKAGE_RULE
+package-$(1)-$(2):
+	@./scripts/solution-controller.sh both "Create Package" $(1) $(2)
+endef
+
+$(foreach a,$(ARCHS),$(foreach b,$(BUILD_TYPES),$(eval $(call MAKE_PACKAGE_RULE,$(a),$(b)))))
+
 package-native:
 	@./scripts/solution-controller.sh both "Create Package" native release
 
@@ -135,6 +164,12 @@ package-wasm:
 package-all: package-native package-aarch64 package-windows package-wasm
 	@echo ""
 	@echo "✓ All packages created!"
+
+package-all-buildtypes: $(addprefix package-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES))))
+	@echo ""
+	@echo "✓ All arch/buildtype packages created!"
+
+package-all-arch-buildtypes: package-all-buildtypes
 
 packages: package-all
 
