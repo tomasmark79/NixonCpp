@@ -5,17 +5,12 @@ PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 usage() {
   echo "Usage: $(basename "$0") <NewName> [NewLibName] [NewNamespace]"
-  echo "       $(basename "$0") --chain Name1,Name2[,Name3...]"
-  echo "       $(basename "$0") --chain Name1 Name2 Name3 ..."
-  echo "       $(basename "$0") --chain-file <file>"
   echo "Options:"
   echo "  --old-name <name>   Override current project name (auto-detected by default)"
   echo "  --old-lib <name>    Override current library name (auto-detected by default)"
   echo "  --old-ns <name>     Override current namespace (auto-detected by default)"
   echo "Examples:"
   echo "  $(basename "$0") MyApp MyAppLib myapp"
-  echo "  $(basename "$0") --chain Alpha,Beta,Gamma"
-  echo "  $(basename "$0") --chain-file scripts/rename-list.txt"
 }
 
 get_current_project_name() {
@@ -30,11 +25,7 @@ get_current_project_name() {
 
 get_current_lib_name() {
   local name
-  name=$(grep -m1 -E "(shared_library|static_library)\(['\"][^'\"]+['\"]" "$PROJECT_ROOT/meson.build" 2>/dev/null \
-    | sed -E "s/.*\(['\"]([^'\"]+)['\"].*/\1/")
-  if [[ -z "$name" ]]; then
-    name="$(get_current_project_name)Lib"
-  fi
+  name="$(get_current_project_name)Lib"
   echo "$name"
 }
 
@@ -47,8 +38,6 @@ get_current_namespace() {
 OLD_NAME_OVERRIDE=""
 OLD_LIB_OVERRIDE=""
 OLD_NS_OVERRIDE=""
-CHAIN_MODE=""
-CHAIN_FILE=""
 
 parse_args() {
   local args=()
@@ -66,18 +55,6 @@ parse_args() {
         OLD_NS_OVERRIDE="$2"
         shift 2
         ;;
-      --chain)
-        CHAIN_MODE="1"
-        shift
-        while [[ $# -gt 0 && "$1" != --* ]]; do
-          args+=("$1")
-          shift
-        done
-        ;;
-      --chain-file)
-        CHAIN_FILE="$2"
-        shift 2
-        ;;
       -h|--help)
         usage
         exit 0
@@ -89,22 +66,7 @@ parse_args() {
     esac
   done
 
-  if [[ -n "$CHAIN_FILE" ]]; then
-    CHAIN_MODE="1"
-    if [[ ! -f "$CHAIN_FILE" ]]; then
-      echo "❌ Chain file not found: $CHAIN_FILE" >&2
-      exit 1
-    fi
-    mapfile -t CHAIN_LIST < <(grep -v '^#' "$CHAIN_FILE" | awk 'NF')
-  elif [[ -n "$CHAIN_MODE" ]]; then
-    if [[ ${#args[@]} -eq 1 && "${args[0]}" == *","* ]]; then
-      IFS=',' read -r -a CHAIN_LIST <<< "${args[0]}"
-    else
-      CHAIN_LIST=("${args[@]}")
-    fi
-  else
-    CHAIN_LIST=("${args[@]}")
-  fi
+  CHAIN_LIST=("${args[@]}")
 }
 
 FILES=(
@@ -113,18 +75,8 @@ FILES=(
   "Makefile"
   "README.md"
   "Doxyfile"
-  "scripts/build.sh"
-  "scripts/solution-controller.sh"
-  "scripts/package.sh"
-  ".vscode/tasks.json"
   ".vscode/launch.json"
   ".vscode/launch-windows.json"
-  ".vscode/settings.json"
-  "nix/flake.nix"
-  "nix/shell.nix"
-  "nix/cross-shell-wasm.nix"
-  "nix/cross-shell-aarch64.nix"
-  "nix/cross-shell-windows.nix"
   "assets/ems-mini.html"
   "tests/meson.build"
 )
@@ -228,6 +180,7 @@ rename_once() {
   echo "  Project:   $NEW_NAME"
   echo "  Library:   $NEW_LIB"
   echo "  Namespace: $NEW_NS"
+
 }
 
 parse_args "$@"
@@ -237,21 +190,4 @@ if [[ ${#CHAIN_LIST[@]} -eq 0 ]]; then
   exit 1
 fi
 
-if [[ -n "$CHAIN_MODE" || -n "$CHAIN_FILE" ]]; then
-  for item in "${CHAIN_LIST[@]}"; do
-    if [[ -z "$item" ]]; then
-      continue
-    fi
-    name=""
-    lib=""
-    ns=""
-    if [[ "$item" == *","* ]]; then
-      IFS=',' read -r name lib ns <<< "$item"
-    else
-      read -r name lib ns <<< "$item"
-    fi
-    rename_once "$name" "$lib" "$ns"
-  done
-else
-  rename_once "${CHAIN_LIST[0]}" "${CHAIN_LIST[1]:-}" "${CHAIN_LIST[2]:-}"
-fi
+rename_once "${CHAIN_LIST[0]}" "${CHAIN_LIST[1]:-}" "${CHAIN_LIST[2]:-}"

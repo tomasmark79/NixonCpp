@@ -119,6 +119,26 @@ run_install() {
     meson install -C "$BUILD_DIR"
 }
 
+launch_application() {
+    local app_name
+    local exe_path
+
+    app_name="$(resolve_project_name)"
+    if [[ "$BUILD_ARCH" == "windows" || "$BUILD_ARCH" == "win64" ]]; then
+        exe_path="$BUILD_DIR/${app_name}.exe"
+    else
+        exe_path="$BUILD_DIR/${app_name}"
+    fi
+
+    if [[ ! -f "$exe_path" ]]; then
+        echo "Executable not found: $exe_path" >&2
+        echo "Build first (or check build type/arch)." >&2
+        exit 1
+    fi
+
+    (cd "$BUILD_DIR" && "$exe_path")
+}
+
 run_package() {
     "$PROJECT_ROOT/scripts/package.sh" "$BUILD_ARCH" "${BUILD_TYPE}"
 }
@@ -287,6 +307,9 @@ case "$TASK_NAME" in
         ;;
     "Install built components")
         run_install
+        ;;
+    "Launch Application")
+        launch_application
         ;;
     "Create Package")
         run_package

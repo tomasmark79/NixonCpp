@@ -36,7 +36,7 @@ pkgs.mkShell {
   
   shellHook = ''
     app_name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PWD/meson.build" 2>/dev/null | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
-    if [ -z "$app_name" ]; then app_name="NixonCpp"; fi
+    if [ -z "$app_name" ]; then app_name="Project"; fi
 
     echo "🔨 $app_name Windows (MinGW) Cross-Compilation Environment"
     echo ""

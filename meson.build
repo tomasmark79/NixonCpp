@@ -11,6 +11,9 @@ project('NixonCpp', 'cpp',
   ]
 )
 
+project_name = meson.project_name()
+lib_name = project_name + 'Lib'
+
 # Build/target flags
 is_wasm = meson.get_external_property('system', host_machine.system()) == 'emscripten'
 is_windows = host_machine.system() == 'windows'
@@ -62,7 +65,7 @@ src_inc_dirs = include_directories('src/lib')
 
 # Collect all library sources
 lib_sources = [
-  'src/lib/NixonCppLib.cpp',
+  'src/lib/' + lib_name + '.cpp',
   'src/lib/Utils/UtilsFactory.cpp',
   'src/lib/Utils/Assets/AssetManager.cpp',
   'src/lib/Utils/Filesystem/DirectoryManager.cpp',
@@ -97,10 +100,6 @@ endif
 
 # Sanitizers (native only)
 if is_native
-  if asan_opt
-    lib_cpp_args += ['-fsanitize=address']
-    add_project_link_arguments('-fsanitize=address', language: 'cpp')
-  endif
   if ubsan_opt
     lib_cpp_args += ['-fsanitize=undefined']
     add_project_link_arguments('-fsanitize=undefined', language: 'cpp')
@@ -108,6 +107,10 @@ if is_native
   if tsan_opt
     lib_cpp_args += ['-fsanitize=thread']
     add_project_link_arguments('-fsanitize=thread', language: 'cpp')
+  endif
+  if asan_opt
+    lib_cpp_args += ['-fsanitize=address']
+    add_project_link_arguments('-fsanitize=address', language: 'cpp')
   endif
 endif
 
@@ -124,7 +127,7 @@ endif
 # Build the library
 # WebAssembly doesn't support shared libraries, use static only
 if not is_wasm
-  nixoncpplib_shared = shared_library('NixonCppLib',
+  lib_shared = shared_library(lib_name,
     lib_sources,
     include_directories: common_inc,
     dependencies: lib_deps,
@@ -133,7 +136,7 @@ if not is_wasm
   )
 endif
 
-nixoncpplib_static = static_library('NixonCppLib',
+lib_static = static_library(lib_name,
   lib_sources,
   include_directories: common_inc,
   dependencies: lib_deps,
@@ -142,12 +145,12 @@ nixoncpplib_static = static_library('NixonCppLib',
 )
 
 if is_wasm or is_windows
-  link_lib = nixoncpplib_static
+  link_lib = lib_static
 else
-  link_lib = nixoncpplib_shared
+  link_lib = lib_shared
 endif
 
-nixoncpplib_dep = declare_dependency(
+lib_dep = declare_dependency(
   link_with: link_lib,
   include_directories: inc_dirs,
   dependencies: lib_deps,
@@ -155,7 +158,7 @@ nixoncpplib_dep = declare_dependency(
 )
 
 # Install headers
-install_subdir('include/NixonCppLib',
+install_subdir('include/' + lib_name,
   install_dir: get_option('includedir')
 )
 
@@ -165,10 +168,10 @@ app_sources = [
 ]
 
 # WebAssembly needs special handling - embed assets into the binary
-app_deps = is_native or is_wasm ? [nixoncpplib_dep, cxxopts_dep] : [nixoncpplib_dep]
+app_deps = is_native or is_wasm ? [lib_dep, cxxopts_dep] : [lib_dep]
 
 if is_wasm
-  executable('NixonCpp',
+  executable(project_name,
     app_sources,
     include_directories: [inc_dirs, src_inc_dirs],
     dependencies: app_deps,
@@ -177,14 +180,14 @@ if is_wasm
       '--shell-file', meson.project_source_root() / 'assets' / 'ems-mini.html',
       '-sUSE_PTHREADS=0',
       '-sPTHREAD_POOL_SIZE=0',
-      '--embed-file', meson.project_source_root() / 'assets@/share/NixonCpp/assets',
+      '--embed-file', meson.project_source_root() / ('assets@/share/' + project_name + '/assets'),
     ],
     install: true,
   )
 elif is_windows
   # Windows with static linking
   # cxxopts is header-only, we don't need its pkg-config deps (which include ICU)
-  executable('NixonCpp',
+  executable(project_name,
     app_sources,
     include_directories: [inc_dirs, src_inc_dirs],
     dependencies: app_deps,
@@ -193,7 +196,7 @@ elif is_windows
   )
 else
   # Native and cross (non-Windows) build
-  executable('NixonCpp',
+  executable(project_name,
     app_sources,
     include_directories: [inc_dirs, src_inc_dirs],
     dependencies: app_deps,
@@ -210,7 +213,7 @@ endif
 
 # Install assets for production deployment
 install_subdir('assets',
-  install_dir: get_option('datadir') / 'NixonCpp'
+  install_dir: get_option('datadir') / project_name
 )
 
 # Tests (native only)

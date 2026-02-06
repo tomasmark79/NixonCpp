@@ -133,11 +133,14 @@
         {
             "label": "Launch Application (native)",
             "type": "shell",
-            "command": "${workspaceFolder}/build/builddir-debug/NixonCpp",
-            "args": [],
-            "options": {
-                "cwd": "${workspaceFolder}/build/builddir-debug"
-            },
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "Launch Application",
+                "native",
+                "debug"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": false
@@ -157,11 +160,14 @@
         {
             "label": "Launch Application (native release)",
             "type": "shell",
-            "command": "${workspaceFolder}/build/builddir-release/NixonCpp",
-            "args": [],
-            "options": {
-                "cwd": "${workspaceFolder}/build/builddir-release"
-            },
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/scripts/solution-controller.sh",
+                "both",
+                "Launch Application",
+                "native",
+                "release"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": false

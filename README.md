@@ -31,12 +31,10 @@ make build
 
 Template rename
 ---------------
-Run once after cloning:
 ```bash
 - Usage: scripts/rename.sh <NewName> [NewLibName] [NewNamespace]  
 Example: rename.sh MyApp MyAppLib myapp
 ```
-Note: For repeated renames, edit OLD_NAME/OLD_LIB/OLD_NS in scripts/rename.sh manually.
 
 Build and test
 --------------

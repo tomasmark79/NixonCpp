@@ -24,13 +24,9 @@ get_project_name() {
 }
 
 get_lib_name() {
-    local name
-    name=$(grep -m1 -E "(shared_library|static_library)\(['\"][^'\"]+['\"]" "$PROJECT_ROOT/meson.build" 2>/dev/null \
-        | sed -E "s/.*\(['\"]([^'\"]+)['\"].*/\1/")
-    if [[ -z "${name}" ]]; then
-        name="${APP_NAME}Lib"
-    fi
-    echo "$name"
+    local project_name
+    project_name="$(get_project_name)"
+    echo "${project_name}Lib"
 }
 
 APP_NAME="${NIXONCPP_APP_NAME:-$(get_project_name)}"
@@ -164,6 +160,7 @@ case "$ARCH" in
             cp "$BUILD_DIR/lib${LIB_NAME}.a" "$PACKAGE_DIR/lib/"
             echo "   ✓ Static library: lib${LIB_NAME}.a"
         fi
+
         ;;
 esac
 
@@ -392,7 +389,7 @@ Fedora/RHEL/Rocky:
   sudo dnf install icu
 
 Arch Linux:
-  sudo pacman -S icu
+    sudo pacman -S icu
 
 Note: libstdc++, libgcc_s, and glibc are pre-installed on all Linux systems.
 Note: libfmt is compiled as header-only and included in the binary (no external dependency).

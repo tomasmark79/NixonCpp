@@ -4,7 +4,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-  name = "nixoncpp-legacy-shell";
+  name = "project-legacy-shell";
 
   buildInputs = [ ];
 

@@ -1,5 +1,5 @@
 {
-  description = "NixonCpp development shells (flake wrapper)";
+  description = "Project development shells (flake wrapper)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -14,9 +14,10 @@
           inherit system;
           crossSystem = { config = "aarch64-unknown-linux-gnu"; };
         };
+
       in {
         devShells.default = pkgs.mkShell {
-          name = "nixoncpp-dev";
+          name = "project-dev";
 
           buildInputs = with pkgs; [
             meson
@@ -42,7 +43,7 @@
           ];
 
           shellHook = ''
-            echo "🚀 NixonCpp Development Environment"
+            echo "🚀 Project Development Environment"
             echo "   Meson version: $(meson --version)"
             echo "   GCC version: $(gcc --version | head -n1)"
             echo ""

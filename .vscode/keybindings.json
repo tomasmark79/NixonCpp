@@ -10,7 +10,7 @@
     {
         "key": "shift+f7", 
         "command": "workbench.action.tasks.runTask",
-        "args": "NixonCpp Build Tasks"
+        "args": "Project Build Tasks"
     },
 
     /* === LAUNCH TASKS === */
