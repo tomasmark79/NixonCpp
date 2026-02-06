@@ -12,15 +12,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v30
+        uses: DeterminateSystems/nix-installer-action@v21
 
-      - name: Cache Nix downloads
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/nix
-          key: nix-${{ runner.os }}-${{ hashFiles('nix/flake.lock') }}
-          restore-keys: |
-            nix-${{ runner.os }}-
+      - name: Enable magic Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
 
       - name: Build
         run: nix develop ./nix --command make build
@@ -30,26 +25,19 @@ jobs:
 
   cross-builds:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [aarch64, windows, wasm]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v30
+        uses: DeterminateSystems/nix-installer-action@v21
 
-      - name: Cache Nix downloads
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/nix
-          key: nix-${{ runner.os }}-${{ hashFiles('nix/flake.lock') }}
-          restore-keys: |
-            nix-${{ runner.os }}-
+      - name: Enable magic Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
 
-      - name: Cross build (aarch64)
-        run: nix develop ./nix#aarch64 --command make cross-aarch64
-
-      - name: Cross build (windows)
-        run: nix develop ./nix#windows --command make cross-windows
-
-      - name: Cross build (wasm)
-        run: nix develop ./nix#wasm --command make cross-wasm
+      - name: Cross build (${{ matrix.arch }})
+        run: nix develop ./nix#${{ matrix.arch }} --command make cross-${{ matrix.arch }}
