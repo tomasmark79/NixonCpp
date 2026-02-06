@@ -95,8 +95,8 @@ clean_build() {
 
 run_tests() {
     if [[ ! -d "$BUILD_DIR" ]]; then
-        echo "Build directory not found. Run build first." >&2
-        exit 1
+        echo "Build directory not found. Building first..."
+        run_build
     fi
     meson test -C "$BUILD_DIR"
 }
