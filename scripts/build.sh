@@ -118,11 +118,59 @@ if [ ! -d "$BUILD_DIR" ]; then
         meson setup "$BUILD_DIR" --buildtype="$BUILD_TYPE" $CROSS_FILE
     fi
 else
-    echo "📋 Reconfiguring build..."
-    if [[ "$ARCH" == "native" || "$ARCH" == "x86_64" ]]; then
-        CC="$CC_CMD" CXX="$CXX_CMD" meson setup --reconfigure "$BUILD_DIR" --buildtype="$BUILD_TYPE" $CROSS_FILE
+    needs_reconfigure=0
+    coredata="$BUILD_DIR/meson-private/coredata.dat"
+
+    if [[ "${NIXONCPP_RECONFIGURE:-}" == "1" ]]; then
+        needs_reconfigure=1
+    elif [[ ! -f "$coredata" ]]; then
+        needs_reconfigure=1
     else
-        meson setup --reconfigure "$BUILD_DIR" --buildtype="$BUILD_TYPE" $CROSS_FILE
+        # Reconfigure only when Meson build definition changes were detected.
+        # This makes the check universal: any meson.build under the project (except build/)
+        # will trigger reconfigure if it's newer than coredata.dat.
+        while IFS= read -r f; do
+            if [[ -f "$f" && "$f" -nt "$coredata" ]]; then
+                needs_reconfigure=1
+                break
+            fi
+        done < <(
+            find "$PROJECT_ROOT" -path "$PROJECT_ROOT/build" -prune -o \
+                -name meson.build -print
+        )
+
+        # meson_options.txt is not a meson.build, so check it explicitly.
+        if [[ "$needs_reconfigure" == "0" ]]; then
+            if [[ -f "$PROJECT_ROOT/meson_options.txt" && "$PROJECT_ROOT/meson_options.txt" -nt "$coredata" ]]; then
+                needs_reconfigure=1
+            fi
+        fi
+
+        if [[ -n "$CROSS_FILE" ]]; then
+            cross_path="${CROSS_FILE#--cross-file }"
+            if [[ -f "$PROJECT_ROOT/$cross_path" && "$PROJECT_ROOT/$cross_path" -nt "$coredata" ]]; then
+                needs_reconfigure=1
+            fi
+        fi
+
+        if [[ -d "$PROJECT_ROOT/subprojects" ]]; then
+            for f in "$PROJECT_ROOT"/subprojects/*.wrap; do
+                if [[ -f "$f" && "$f" -nt "$coredata" ]]; then
+                    needs_reconfigure=1
+                fi
+            done
+        fi
+    fi
+
+    if [[ "$needs_reconfigure" == "1" ]]; then
+        echo "📋 Reconfiguring build..."
+        if [[ "$ARCH" == "native" || "$ARCH" == "x86_64" ]]; then
+            CC="$CC_CMD" CXX="$CXX_CMD" meson setup --reconfigure "$BUILD_DIR" --buildtype="$BUILD_TYPE" $CROSS_FILE
+        else
+            meson setup --reconfigure "$BUILD_DIR" --buildtype="$BUILD_TYPE" $CROSS_FILE
+        fi
+    else
+        echo "📋 Skipping reconfigure (no build config changes detected)"
     fi
 fi
 
