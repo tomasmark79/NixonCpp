@@ -5,7 +5,7 @@
         {
             "id": "taskName",
             "type": "pickString",
-            "description": "Select NixonCpp Meson Tasks",
+            "description": "Select Meson Tasks",
             "options": [
                 "Zero to Build",
                 "Zero to Hero",
@@ -50,7 +50,7 @@
     ],
     "tasks": [
         {
-            "label": "NixonCpp Build Tasks",
+            "label": "Project Build Tasks",
             "type": "shell",
             "command": "bash",
             "args": [
@@ -64,7 +64,7 @@
                 "kind": "build",
                 "isDefault": false
             },
-            "detail": "NixonCpp Meson/Nix build and utility tasks",
+            "detail": "Meson/Nix build and utility tasks",
             "problemMatcher": ["$gcc"],
             "presentation": {
                 "echo": true,
