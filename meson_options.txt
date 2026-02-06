@@ -3,3 +3,21 @@ option('build_tests',
   value: 'auto',
   description: 'Enable unit tests (native only)'
 )
+
+option('sanitize_address',
+  type: 'boolean',
+  value: false,
+  description: 'Enable AddressSanitizer (native debug/dev only)'
+)
+
+option('sanitize_undefined',
+  type: 'boolean',
+  value: false,
+  description: 'Enable UndefinedBehaviorSanitizer (native debug/dev only)'
+)
+
+option('sanitize_thread',
+  type: 'boolean',
+  value: false,
+  description: 'Enable ThreadSanitizer (native debug/dev only)'
+)

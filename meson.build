@@ -11,20 +11,18 @@ project('NixonCpp', 'cpp',
   ]
 )
 
-# Use light optimization for debug to satisfy _FORTIFY_SOURCE requirements
-# if get_option('buildtype') == 'debug'
-#   add_project_arguments('-Og', language: 'c')
-#   add_project_arguments('-Og', language: 'cpp')
-# endif
-
-# Check if we're cross-compiling or targeting specific platforms
+# Build/target flags
 is_wasm = meson.get_external_property('system', host_machine.system()) == 'emscripten'
 is_windows = host_machine.system() == 'windows'
+is_linux = host_machine.system() == 'linux'
+is_darwin = host_machine.system() == 'darwin'
 is_cross = meson.is_cross_build()
-is_windows_cross = is_cross and is_windows
 is_native = not is_cross and not is_wasm and not is_windows
 fmt_header_only = is_wasm or is_windows or is_cross
 tests_opt = get_option('build_tests')
+asan_opt = get_option('sanitize_address')
+ubsan_opt = get_option('sanitize_undefined')
+tsan_opt = get_option('sanitize_thread')
 
 # Required dependencies (optional for cross builds)
 fmt_dep = dependency('fmt', required: false)
@@ -86,9 +84,9 @@ platform_args = []
 
 if is_windows
   platform_args += ['-DWIN32', '-D_WIN32']
-elif host_machine.system() == 'linux'
+elif is_linux
   platform_args += ['-D__linux__']
-elif host_machine.system() == 'darwin'
+elif is_darwin
   platform_args += ['-D__APPLE__']
 endif
 
@@ -97,10 +95,27 @@ if fmt_header_only
   lib_cpp_args += ['-DFMT_HEADER_ONLY']
 endif
 
+# Sanitizers (native only)
+if is_native
+  if asan_opt
+    lib_cpp_args += ['-fsanitize=address']
+    add_project_link_arguments('-fsanitize=address', language: 'cpp')
+  endif
+  if ubsan_opt
+    lib_cpp_args += ['-fsanitize=undefined']
+    add_project_link_arguments('-fsanitize=undefined', language: 'cpp')
+  endif
+  if tsan_opt
+    lib_cpp_args += ['-fsanitize=thread']
+    add_project_link_arguments('-fsanitize=thread', language: 'cpp')
+  endif
+endif
+
 common_inc = [inc_dirs, src_inc_dirs]
 
+# Determine library dependencies based on platform
 if is_native or is_wasm
-  lib_deps = [fmt_dep, json_dep, threads_dep]
+  lib_deps = [threads_dep, fmt_dep, json_dep]
 else
   # Cross-compilation (including Windows) - avoid linking fmt/json
   lib_deps = [threads_dep]
@@ -150,10 +165,7 @@ app_sources = [
 ]
 
 # WebAssembly needs special handling - embed assets into the binary
-app_deps = [nixoncpplib_dep]
-if is_native or is_wasm
-  app_deps += [cxxopts_dep]
-endif
+app_deps = is_native or is_wasm ? [nixoncpplib_dep, cxxopts_dep] : [nixoncpplib_dep]
 
 if is_wasm
   executable('NixonCpp',
