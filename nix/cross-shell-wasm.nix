@@ -4,7 +4,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-  name = "nixoncpp-wasm-cross";
+  name = "project-wasm-cross";
   
   buildInputs = with pkgs; [
     # Build tools
@@ -27,7 +27,10 @@ pkgs.mkShell {
   ];
   
   shellHook = ''
-    echo "🔨 NixonCpp WebAssembly (Emscripten) Cross-Compilation Environment"
+    app_name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PWD/meson.build" 2>/dev/null | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
+    if [ -z "$app_name" ]; then app_name="NixonCpp"; fi
+
+    echo "🔨 $app_name WebAssembly (Emscripten) Cross-Compilation Environment"
     echo ""
     echo "   Target: wasm32"
     echo "   Emscripten version: $(emcc --version | head -1)"
@@ -42,7 +45,7 @@ pkgs.mkShell {
     echo "   make cross-wasm"
     echo ""
     echo "Run WASM binary:"
-    echo "   node ./build/builddir-wasm-release/NixonCpp.js"
+    echo "   node ./build/builddir-wasm-release/$app_name.js"
     echo ""
   '';
 }

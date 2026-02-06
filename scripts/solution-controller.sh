@@ -9,6 +9,16 @@ CONTROLLER_VERSION="v20260205"
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_DIR_BASE="$PROJECT_ROOT/build"
 
+resolve_project_name() {
+    local name
+    name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PROJECT_ROOT/meson.build" 2>/dev/null \
+        | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
+    if [[ -z "${name}" ]]; then
+        name="NixonCpp"
+    fi
+    echo "$name"
+}
+
 BUILD_PRODUCT="${1:-both}"
 TASK_NAME="${2:-}"
 BUILD_ARCH="${3:-native}"
@@ -193,7 +203,7 @@ run_doxygen() {
 launch_emscripten_server() {
     local port="6931"
     local base_dir="$PROJECT_ROOT"
-    local app_name="NixonCpp"
+    local app_name="$(resolve_project_name)"
     local html_rel="build/builddir-wasm-${BUILD_TYPE}/${app_name}.html"
     local html_path="$PROJECT_ROOT/$html_rel"
 

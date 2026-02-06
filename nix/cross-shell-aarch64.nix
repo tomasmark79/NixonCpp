@@ -9,7 +9,7 @@
 }:
 
 pkgs.mkShell {
-  name = "nixoncpp-aarch64-cross";
+  name = "project-aarch64-cross";
   QEMU_LD_PREFIX = "${pkgs.glibc}";
   
   nativeBuildInputs = with pkgs.pkgsBuildHost; [
@@ -28,7 +28,10 @@ pkgs.mkShell {
   ];
   
   shellHook = ''
-    echo "🔨 NixonCpp aarch64 Cross-Compilation Environment"
+    app_name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PWD/meson.build" 2>/dev/null | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
+    if [ -z "$app_name" ]; then app_name="NixonCpp"; fi
+
+    echo "🔨 $app_name aarch64 Cross-Compilation Environment"
     echo "   Target: aarch64-unknown-linux-gnu"
     echo "   Meson version: $(${pkgs.pkgsBuildHost.meson}/bin/meson --version)"
     echo ""
@@ -36,7 +39,7 @@ pkgs.mkShell {
     echo "  make cross-aarch64"
     echo ""
     echo "Run (x86_64 via QEMU):"
-    echo "  qemu-aarch64 -L $QEMU_LD_PREFIX ./build/builddir-aarch64-release/NixonCpp"
+    echo "  qemu-aarch64 -L $QEMU_LD_PREFIX ./build/builddir-aarch64-release/$app_name"
     echo ""
   '';
 }

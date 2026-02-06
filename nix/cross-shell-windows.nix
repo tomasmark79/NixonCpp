@@ -8,7 +8,7 @@ let
 in
 
 pkgs.mkShell {
-  name = "nixoncpp-windows-cross";
+  name = "project-windows-cross";
   
   buildInputs = with pkgs; [
     # Build tools (native)
@@ -35,7 +35,10 @@ pkgs.mkShell {
   ]);
   
   shellHook = ''
-    echo "🔨 NixonCpp Windows (MinGW) Cross-Compilation Environment"
+    app_name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PWD/meson.build" 2>/dev/null | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
+    if [ -z "$app_name" ]; then app_name="NixonCpp"; fi
+
+    echo "🔨 $app_name Windows (MinGW) Cross-Compilation Environment"
     echo ""
     echo "   Target: x86_64-w64-mingw32"
     echo "   Compiler: x86_64-w64-mingw32-g++"
@@ -48,7 +51,7 @@ pkgs.mkShell {
     echo "   make cross-windows"
     echo ""
     echo "Test Windows binary:"
-    echo "   wine64 ./build/builddir-windows-release/NixonCpp.exe"
+    echo "   wine64 ./build/builddir-windows-release/$app_name.exe"
     echo ""
   '';
 }
