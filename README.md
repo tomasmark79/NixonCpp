@@ -1,9 +1,11 @@
 NixonCpp
 ========
+[![CI](https://github.com/tomasmark79/NixonCpp/actions/workflows/ci.yml/badge.svg)](https://github.com/tomasmark79/NixonCpp/actions/workflows/ci.yml)
 
 <p align="center">
 	<img src="assets/NixonCppLogo.svg" alt="NixonCpp Logo" width="40%">
 </p>
+
 
 Overview
 --------
