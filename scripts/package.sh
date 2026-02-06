@@ -124,14 +124,23 @@ esac
 
 # Copy headers (optional, for development)
 if [ "$ARCH" != "wasm" ] && [ "$ARCH" != "emscripten" ]; then
-    cp -r Lib/include/NixonCppLib/* "$PACKAGE_DIR/include/NixonCppLib/"
-    echo "   ✓ Headers: NixonCppLib/*.hpp"
+    if [ -d "$PROJECT_ROOT/include/NixonCppLib" ]; then
+        mkdir -p "$PACKAGE_DIR/include/NixonCppLib"
+        cp -r "$PROJECT_ROOT/include/NixonCppLib/"* "$PACKAGE_DIR/include/NixonCppLib/"
+        echo "   ✓ Headers: NixonCppLib/*.hpp"
+    else
+        echo "   ⚠️  Headers directory not found: $PROJECT_ROOT/include/NixonCppLib"
+    fi
 fi
 
 # Copy assets (except for WebAssembly which has them embedded)
 if [ "$ARCH" != "wasm" ] && [ "$ARCH" != "emscripten" ]; then
-    cp -r assets "$PACKAGE_DIR/share/NixonCpp/"
-    echo "   ✓ Assets: customstrings.json, etc."
+    if [ -d "$PROJECT_ROOT/assets" ]; then
+        cp -r "$PROJECT_ROOT/assets" "$PACKAGE_DIR/share/NixonCpp/"
+        echo "   ✓ Assets: customstrings.json, etc."
+    else
+        echo "   ⚠️  Assets directory not found: $PROJECT_ROOT/assets"
+    fi
 fi
 
 # Create installation script for Unix-like systems
