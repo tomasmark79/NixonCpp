@@ -6,6 +6,12 @@ NixonCpp
 	<img src="assets/NixonCppLogo.svg" alt="NixonCpp Logo" width="40%">
 </p>
 
+<p align="center">
+	<video src="docs/HelloNewcomer.webm" controls muted playsinline width="80%">
+		Your browser does not support the video tag.
+	</video>
+</p>
+
 Overview
 --------
 Project template for a C++ application and library, set up with Meson/Nix tooling, tests, documentation, and packaging. (modular layout, CI-ready, cross-build targets).
@@ -23,6 +29,40 @@ Requirements
 ------------
 - Nix (recommended) or a C++20 toolchain + Meson + Ninja
 - Optional: doxygen + graphviz for docs
+
+Clone helper (bash)
+-------------------
+```bash
+clonenixoncpp() {
+	local PN="${1:-NixonCppClone}"
+	shift || true
+	local REPO="git@github.com:tomasmark79/NixonCpp.git"
+
+	command -v git >/dev/null || { echo "git not found"; return 1; }
+	git clone --depth=1 "$REPO" "$PN" || return 1
+	rm -rf "$PN/.git"
+	cd "$PN" || return 1
+	if [[ $# -gt 0 ]]; then
+		./scripts/rename.sh "$@" || return 1
+	elif [[ "$PN" != "NixonCppClone" ]]; then
+		./scripts/rename.sh "$PN" || return 1
+	else
+		echo "Tip: use rename like this: clonenixoncpp <FolderName> [NewName] [NewLibName] [NewNamespace]"
+	fi
+
+	if command -v direnv >/dev/null; then
+		direnv allow .
+	fi
+
+	if command -v code >/dev/null; then
+		code .
+	fi
+}
+```
+Usage:
+- clonenixoncpp
+- clonenixoncpp MyProject
+- clonenixoncpp MyProject NewName NewLibName NewNamespace
 
 Quick start (Nix)
 -----------------
