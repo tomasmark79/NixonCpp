@@ -6,7 +6,6 @@ NixonCpp
 	<img src="assets/NixonCppLogo.svg" alt="NixonCpp Logo" width="40%">
 </p>
 
-
 Overview
 --------
 Project template for a C++ application and library, set up with Meson/Nix tooling, tests, documentation, and packaging. (modular layout, CI-ready, cross-build targets).
@@ -58,7 +57,7 @@ Packaging
 - make package-windows
 - make package-wasm
 
-Documentation
+[Documentation C++](https://tomasmark79.github.io/NixonCpp/html/index.html)
 -------------
 make doxygen
 Output: docs/html/index.html
