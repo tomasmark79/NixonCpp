@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-CONTROLLER_VERSION="v20260205"
+CONTROLLER_VERSION="v20260207"
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_DIR_BASE="$PROJECT_ROOT/build"
@@ -211,10 +211,13 @@ run_doxygen() {
     (cd "$PROJECT_ROOT" && doxygen "$doxygen_config")
     echo "Doxygen documentation generated."
 
-    local index_file="$PROJECT_ROOT/docs/html/index.html"
+    local doc_dir="$PROJECT_ROOT/docs/html"
+    local index_file="$doc_dir/index.html"
     if [[ -f "$index_file" ]]; then
         local index_url="file://${index_file}"
+        local http_url="http://localhost:6931/docs/html/index.html"
         echo "Documentation: ${index_url}"
+        echo "Documentation (HTTP, requires Emscripten server): ${http_url}"
     else
         echo "Documentation index file not found at $index_file"
     fi
