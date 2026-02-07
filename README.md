@@ -9,8 +9,7 @@ NixonCpp
 
 Overview
 --------
-Small C++ application + library with Meson/Nix tooling, tests, and packaging.  
->Evolved from a [DotNameCpp](https://github.com/tomasmark79/DotNameCpp) template originally built with CMake.
+Project template for a C++ application and library, set up with Meson/Nix tooling, tests, documentation, and packaging. (modular layout, CI-ready, cross-build targets).
 
 Repository layout
 -----------------

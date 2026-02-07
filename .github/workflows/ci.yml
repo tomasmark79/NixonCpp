@@ -2,7 +2,33 @@ name: CI
 
 on:
   push:
+    paths:
+      - ".github/workflows/ci.yml"
+      - "src/**"
+      - "include/**"
+      - "tests/**"
+      - "assets/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "Makefile"
+      - "compile_commands.json"
+      - "nix/**"
+      - "scripts/**"
+      - "Doxyfile"
   pull_request:
+    paths:
+      - ".github/workflows/ci.yml"
+      - "src/**"
+      - "include/**"
+      - "tests/**"
+      - "assets/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "Makefile"
+      - "compile_commands.json"
+      - "nix/**"
+      - "scripts/**"
+      - "Doxyfile"
 
 jobs:
   native-build:
