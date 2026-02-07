@@ -123,6 +123,8 @@ This repo is Codespaces-ready via a devcontainer using Nix.
 	- `make debug`
 	- `make test`
 
+![alt text](./assets/screen-codespace.png)
+
 Notes:
 - WebAssembly dev server uses port `6931` (auto-forwarded by the devcontainer).
 - Native builds can work without Nix if you install Meson/Ninja + a C++20 toolchain, but cross builds require Nix.
