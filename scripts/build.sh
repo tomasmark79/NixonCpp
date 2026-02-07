@@ -30,6 +30,18 @@ esac
 
 # Check if we need to enter a different dev shell
 if [ -z "${NIXONCPP_NIX_SHELL:-}" ] || [ "$NIXONCPP_NIX_SHELL" != "$REQUIRED_SHELL" ]; then
+    if ! command -v nix >/dev/null 2>&1; then
+        if [ "$REQUIRED_SHELL" != "default" ]; then
+            echo "❌ Nix is required for cross builds ($REQUIRED_SHELL), but 'nix' was not found." >&2
+            echo "   Options:" >&2
+            echo "   - Install Nix (recommended), then re-run" >&2
+            echo "   - Use GitHub Codespaces with the provided devcontainer" >&2
+            exit 1
+        fi
+        echo "⚠️  Nix not found; continuing with system toolchain (native build only)."
+        export NIXONCPP_NIX_SHELL="default"
+    fi
+
     if [ -z "${NIXONCPP_NIX_SHELL:-}" ]; then
         echo "⚠️  Entering nix develop ($REQUIRED_SHELL)..."
     else

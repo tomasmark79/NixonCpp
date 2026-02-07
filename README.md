@@ -113,6 +113,20 @@ Optional keybindings:
 - A suggested keybinding setup is provided in [.vscode/keybindings.json](.vscode/keybindings.json).
 - Copy it into your user keybindings file (Linux default: `~/.config/Code/User/keybindings.json`).
 
+GitHub Codespaces
+-----------------
+This repo is Codespaces-ready via a devcontainer using Nix.
+
+- Ensure the devcontainer is used: [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
+- After the container is created, the post-create step prefetches the Nix dev shell.
+- Build + test as usual:
+	- `make debug`
+	- `make test`
+
+Notes:
+- WebAssembly dev server uses port `6931` (auto-forwarded by the devcontainer).
+- Native builds can work without Nix if you install Meson/Ninja + a C++20 toolchain, but cross builds require Nix.
+
 Configure Meson options
 -----------------------
 Example (debug builddir):
