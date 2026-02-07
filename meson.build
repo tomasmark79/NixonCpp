@@ -26,6 +26,8 @@ tests_opt = get_option('build_tests')
 asan_opt = get_option('sanitize_address')
 ubsan_opt = get_option('sanitize_undefined')
 tsan_opt = get_option('sanitize_thread')
+build_type = get_option('buildtype')
+is_debug_build = build_type == 'debug' or build_type == 'debugoptimized'
 
 # Required dependencies (optional for cross builds)
 fmt_dep = dependency('fmt', required: false)
@@ -96,6 +98,26 @@ endif
 lib_cpp_args = platform_args
 if fmt_header_only
   lib_cpp_args += ['-DFMT_HEADER_ONLY']
+endif
+
+# Emscripten debug: generate source maps so DevTools can show .cpp files
+# NOTE: We intentionally avoid -fdebug-prefix-map here. The source-map
+# generator (wasm-sourcemap.py) converts absolute DWARF paths to paths
+# relative to the .wasm file, which then resolve correctly against the
+# source-map-base URL.  Using -fdebug-prefix-map would mix relative
+# styles and break resolution for some files.
+if is_wasm and is_debug_build
+  wasm_debug_cpp_args = [
+    '-g3',
+  ]
+  lib_cpp_args += wasm_debug_cpp_args
+
+  wasm_debug_link_args = [
+    '-g3',
+    '-gsource-map',
+    '--source-map-base', 'http://localhost:6931/build/builddir-wasm-' + build_type + '/',
+  ]
+  add_project_link_arguments(wasm_debug_link_args, language: 'cpp')
 endif
 
 # Sanitizers (native only)

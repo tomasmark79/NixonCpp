@@ -45,6 +45,8 @@ int main(int argc, char **argv) {
       return EXIT_FAILURE;
     }
 
+    library->performLibraryTask();
+
     // ---
     ctx.logger->infoStream() << appName << " ... shutting down";
     return EXIT_SUCCESS;

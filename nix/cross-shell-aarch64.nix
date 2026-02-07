@@ -10,13 +10,10 @@
 
 pkgs.mkShell {
   name = "project-aarch64-cross";
-  QEMU_LD_PREFIX = "${pkgs.glibc}";
-  
   nativeBuildInputs = with pkgs.pkgsBuildHost; [
     meson
     ninja
     pkg-config
-    qemu
   ];
   
   buildInputs = with pkgs; [
@@ -37,9 +34,6 @@ pkgs.mkShell {
     echo ""
     echo "Build command:"
     echo "  make cross-aarch64"
-    echo ""
-    echo "Run (x86_64 via QEMU):"
-    echo "  qemu-aarch64 -L $QEMU_LD_PREFIX ./build/builddir-aarch64-release/$app_name"
     echo ""
   '';
 }

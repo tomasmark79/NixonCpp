@@ -200,7 +200,7 @@ case "$ARCH" in
     aarch64|arm64)
         echo ""
         echo "To run on x86_64 (via QEMU):"
-        echo "  nix develop ./nix#aarch64 --command qemu-aarch64 -L \$QEMU_LD_PREFIX ./$BUILD_DIR/NixonCpp"
+        echo "  nix develop ./nix#aarch64 --command bash -c 'qemu-aarch64 -L \"\$QEMU_LD_PREFIX\" ./$BUILD_DIR/NixonCpp'"
         ;;
     windows|win64)
         echo ""

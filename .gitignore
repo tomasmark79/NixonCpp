@@ -50,3 +50,4 @@ result-*
 *.bak
 *.orig
 
+.emscripten_cache/

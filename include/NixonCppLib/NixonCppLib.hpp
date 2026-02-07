@@ -19,6 +19,7 @@ namespace nixoncpp::v1 {
     [[nodiscard]] bool isInitialized() const noexcept;
     [[nodiscard]]
     const std::shared_ptr<nixoncpp::assets::IAssetManager> &getAssetManager() const noexcept;
+    void performLibraryTask();
 
   private:
     bool isInitialized_{false};

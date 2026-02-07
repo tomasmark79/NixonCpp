@@ -14,7 +14,7 @@ pkgs.mkShell {
     
     # Emscripten SDK
     emscripten
-    
+
     # Node.js for running WASM binaries
     nodejs
     
@@ -29,6 +29,12 @@ pkgs.mkShell {
   shellHook = ''
     app_name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PWD/meson.build" 2>/dev/null | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
     if [ -z "$app_name" ]; then app_name="Project"; fi
+
+    # Emscripten's cache lives inside the Nix store (read-only).
+    # Redirect it to a writable location so the linker can create
+    # lock files and symbol caches.
+    export EM_CACHE="$PWD/.emscripten_cache"
+    mkdir -p "$EM_CACHE"
 
     echo "🔨 $app_name WebAssembly (Emscripten) Cross-Compilation Environment"
     echo ""
