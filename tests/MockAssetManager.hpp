@@ -40,6 +40,6 @@ public:
 
 private:
   std::filesystem::path mockPath_;
-  bool mockExists_;
-  bool mockValid_;
+  bool mockExists_{};
+  bool mockValid_{};
 };
