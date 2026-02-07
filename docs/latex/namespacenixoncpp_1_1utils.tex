@@ -1,0 +1,236 @@
+\doxysection{nixoncpp\+::utils Namespace Reference}
+\hypertarget{namespacenixoncpp_1_1utils}{}\label{namespacenixoncpp_1_1utils}\index{nixoncpp::utils@{nixoncpp::utils}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager}{Directory\+Manager}}
+\begin{DoxyCompactList}\small\item\em Standard implementation of \doxylink{classnixoncpp_1_1utils_1_1IDirectoryManager}{IDirectory\+Manager} interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader}{File\+Reader}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter}{File\+Writer}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager}{IDirectory\+Manager}}
+\begin{DoxyCompactList}\small\item\em Interface for directory operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader}{IFile\+Reader}}
+\begin{DoxyCompactList}\small\item\em Interface for reading file content. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter}{IFile\+Writer}}
+\begin{DoxyCompactList}\small\item\em Interface for writing file content. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver}{IPath\+Resolver}}
+\begin{DoxyCompactList}\small\item\em Interface for path resolution and manipulation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver}{Path\+Resolver}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader}{Custom\+Strings\+Loader}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader}{ICustom\+Strings\+Loader}}
+\begin{DoxyCompactList}\small\item\em Interface for loading custom strings from JSON. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer}{IJson\+Serializer}}
+\begin{DoxyCompactList}\small\item\em Interface for JSON serialization and parsing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1JsonSerializer}{Json\+Serializer}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo}{Emscripten\+Platform\+Info}}
+\begin{DoxyCompactList}\small\item\em Emscripten-\/specific platform information implementation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{IPlatform\+Info}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PlatformInfoFactory}{Platform\+Info\+Factory}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo}{Unix\+Platform\+Info}}
+\begin{DoxyCompactList}\small\item\em Unix-\/like platform information implementation (Linux/mac\+OS). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo}{Windows\+Platform\+Info}}
+\begin{DoxyCompactList}\small\item\em Windows-\/specific platform information implementation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IStringFormatter}{IString\+Formatter}}
+\begin{DoxyCompactList}\small\item\em Interface for string formatting operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter}{String\+Formatter}}
+\item 
+struct \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}}
+\item 
+struct \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_3_01void_00_01E_01_4}{Result$<$ void, E $>$}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory}{Utils\+Factory}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IAssetManager}{IAsset\+Manager}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ILogger}{ILogger}}
+\item 
+struct \mbox{\hyperlink{structnixoncpp_1_1utils_1_1LoggerConfig}{Logger\+Config}}
+\begin{DoxyCompactList}\small\item\em Configuration options for creating a logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8aaea23489ce3aa9b6406ebb28e0cda430}{Windows}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8aedc9f0a5a5d57797bf68e37364743831}{Linux}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a8b06df0295926efcdcc1f9e13c49848e}{mac\+OS}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a680890ec84706d822adabcc4f3ea2376}{Emscripten}}
+, \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfe}{File\+Error\+Code}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea38c300f4fc9ce8a77aad4a30de05cad8}{Not\+Found}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeacbcc0759909213e7cdba1f0cbf253126}{Access\+Denied}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea89b69484680b18e9179e826c6e023805}{Already\+Exists}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeadf9be6f7af7c3f7196c5c3e731de0a87}{Read\+Error}}
+, \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea4a02ea49d454392fd1e3426e53f14b58}{Write\+Error}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea5d0744802b24f44a161d350c25d76c7b}{Invalid\+Path}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea55d41376c299624c303339e53b1cbf7a}{Is\+Directory}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeab1edaf59d696118673d4203caf0caf96}{Not\+Directory}}
+, \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447d}{Json\+Error\+Code}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447dae41199faa7290c167f70f314c5e6c165}{Parse\+Error}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447daf114a61fd6e7b65e472a6d65afe39974}{Invalid\+Structure}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da2767828026039e8ba7b38973cbb701f2}{File\+Not\+Found}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447dac85f85f7c13ed006eed130ec183aa810}{Invalid\+Type}}
+, \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da6f82777fb581d741d2b7a707a3e93190}{Missing\+Key}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_adae95702ec99309a7b7168f721d36331}{Logger\+Type}} 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} \mbox{\hyperlink{namespacenixoncpp_1_1utils_aec2e4217d954d5b75e6ed20cf01e5f48}{make\+File\+Error}} (\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfe}{File\+Error\+Code}} code, const std\+::string \&message, const std\+::string \&path="{}"{})
+\item 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} \mbox{\hyperlink{namespacenixoncpp_1_1utils_a6cdfe65d326d2d0b883cf5d626a6b7ea}{make\+Json\+Error}} (\mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447d}{Json\+Error\+Code}} code, const std\+::string \&message, const std\+::string \&details="{}"{})
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{namespacenixoncpp_1_1utils_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfe}\index{nixoncpp::utils@{nixoncpp::utils}!FileErrorCode@{FileErrorCode}}
+\index{FileErrorCode@{FileErrorCode}!nixoncpp::utils@{nixoncpp::utils}}
+\doxysubsubsection{\texorpdfstring{FileErrorCode}{FileErrorCode}}
+{\footnotesize\ttfamily \label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfe} 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfe}{nixoncpp\+::utils\+::\+File\+Error\+Code}} \+: std\+::uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotFound@{NotFound}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!NotFound@{NotFound}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea38c300f4fc9ce8a77aad4a30de05cad8}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea38c300f4fc9ce8a77aad4a30de05cad8} 
+Not\+Found&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AccessDenied@{AccessDenied}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!AccessDenied@{AccessDenied}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeacbcc0759909213e7cdba1f0cbf253126}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeacbcc0759909213e7cdba1f0cbf253126} 
+Access\+Denied&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AlreadyExists@{AlreadyExists}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!AlreadyExists@{AlreadyExists}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea89b69484680b18e9179e826c6e023805}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea89b69484680b18e9179e826c6e023805} 
+Already\+Exists&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReadError@{ReadError}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!ReadError@{ReadError}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeadf9be6f7af7c3f7196c5c3e731de0a87}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeadf9be6f7af7c3f7196c5c3e731de0a87} 
+Read\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WriteError@{WriteError}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!WriteError@{WriteError}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea4a02ea49d454392fd1e3426e53f14b58}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea4a02ea49d454392fd1e3426e53f14b58} 
+Write\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidPath@{InvalidPath}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!InvalidPath@{InvalidPath}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea5d0744802b24f44a161d350c25d76c7b}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea5d0744802b24f44a161d350c25d76c7b} 
+Invalid\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsDirectory@{IsDirectory}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!IsDirectory@{IsDirectory}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea55d41376c299624c303339e53b1cbf7a}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea55d41376c299624c303339e53b1cbf7a} 
+Is\+Directory&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotDirectory@{NotDirectory}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!NotDirectory@{NotDirectory}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeab1edaf59d696118673d4203caf0caf96}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeab1edaf59d696118673d4203caf0caf96} 
+Not\+Directory&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!Unknown@{Unknown}}}\Hypertarget{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea88183b946cc5f0e8c96b2e66e1c74a7e}\label{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea88183b946cc5f0e8c96b2e66e1c74a7e} 
+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447d}\index{nixoncpp::utils@{nixoncpp::utils}!JsonErrorCode@{JsonErrorCode}}
+\index{JsonErrorCode@{JsonErrorCode}!nixoncpp::utils@{nixoncpp::utils}}
+\doxysubsubsection{\texorpdfstring{JsonErrorCode}{JsonErrorCode}}
+{\footnotesize\ttfamily \label{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447d} 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447d}{nixoncpp\+::utils\+::\+Json\+Error\+Code}} \+: std\+::uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParseError@{ParseError}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!ParseError@{ParseError}}}\Hypertarget{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447dae41199faa7290c167f70f314c5e6c165}\label{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447dae41199faa7290c167f70f314c5e6c165} 
+Parse\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidStructure@{InvalidStructure}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!InvalidStructure@{InvalidStructure}}}\Hypertarget{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447daf114a61fd6e7b65e472a6d65afe39974}\label{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447daf114a61fd6e7b65e472a6d65afe39974} 
+Invalid\+Structure&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileNotFound@{FileNotFound}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!FileNotFound@{FileNotFound}}}\Hypertarget{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da2767828026039e8ba7b38973cbb701f2}\label{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da2767828026039e8ba7b38973cbb701f2} 
+File\+Not\+Found&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidType@{InvalidType}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!InvalidType@{InvalidType}}}\Hypertarget{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447dac85f85f7c13ed006eed130ec183aa810}\label{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447dac85f85f7c13ed006eed130ec183aa810} 
+Invalid\+Type&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MissingKey@{MissingKey}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!MissingKey@{MissingKey}}}\Hypertarget{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da6f82777fb581d741d2b7a707a3e93190}\label{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da6f82777fb581d741d2b7a707a3e93190} 
+Missing\+Key&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!Unknown@{Unknown}}}\Hypertarget{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da88183b946cc5f0e8c96b2e66e1c74a7e}\label{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da88183b946cc5f0e8c96b2e66e1c74a7e} 
+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacenixoncpp_1_1utils_adae95702ec99309a7b7168f721d36331}\index{nixoncpp::utils@{nixoncpp::utils}!LoggerType@{LoggerType}}
+\index{LoggerType@{LoggerType}!nixoncpp::utils@{nixoncpp::utils}}
+\doxysubsubsection{\texorpdfstring{LoggerType}{LoggerType}}
+{\footnotesize\ttfamily \label{namespacenixoncpp_1_1utils_adae95702ec99309a7b7168f721d36331} 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{nixoncpp\+::logging\+::\+Logger\+Type}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\Hypertarget{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}\index{nixoncpp::utils@{nixoncpp::utils}!Platform@{Platform}}
+\index{Platform@{Platform}!nixoncpp::utils@{nixoncpp::utils}}
+\doxysubsubsection{\texorpdfstring{Platform}{Platform}}
+{\footnotesize\ttfamily \label{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8} 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{nixoncpp\+::utils\+::\+Platform}} \+: std\+::uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Windows@{Windows}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!Windows@{Windows}}}\Hypertarget{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8aaea23489ce3aa9b6406ebb28e0cda430}\label{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8aaea23489ce3aa9b6406ebb28e0cda430} 
+Windows&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Linux@{Linux}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!Linux@{Linux}}}\Hypertarget{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8aedc9f0a5a5d57797bf68e37364743831}\label{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8aedc9f0a5a5d57797bf68e37364743831} 
+Linux&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{macOS@{macOS}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!macOS@{macOS}}}\Hypertarget{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a8b06df0295926efcdcc1f9e13c49848e}\label{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a8b06df0295926efcdcc1f9e13c49848e} 
+mac\+OS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Emscripten@{Emscripten}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!Emscripten@{Emscripten}}}\Hypertarget{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a680890ec84706d822adabcc4f3ea2376}\label{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a680890ec84706d822adabcc4f3ea2376} 
+Emscripten&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!nixoncpp::utils@{nixoncpp::utils}}\index{nixoncpp::utils@{nixoncpp::utils}!Unknown@{Unknown}}}\Hypertarget{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a88183b946cc5f0e8c96b2e66e1c74a7e}\label{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a88183b946cc5f0e8c96b2e66e1c74a7e} 
+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{namespacenixoncpp_1_1utils_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacenixoncpp_1_1utils_aec2e4217d954d5b75e6ed20cf01e5f48}\index{nixoncpp::utils@{nixoncpp::utils}!makeFileError@{makeFileError}}
+\index{makeFileError@{makeFileError}!nixoncpp::utils@{nixoncpp::utils}}
+\doxysubsubsection{\texorpdfstring{makeFileError()}{makeFileError()}}
+{\footnotesize\ttfamily \label{namespacenixoncpp_1_1utils_aec2e4217d954d5b75e6ed20cf01e5f48} 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} nixoncpp\+::utils\+::make\+File\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfe}{File\+Error\+Code}}}]{code}{, }\item[{const std\+::string \&}]{message}{, }\item[{const std\+::string \&}]{path}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacenixoncpp_1_1utils_a6cdfe65d326d2d0b883cf5d626a6b7ea}\index{nixoncpp::utils@{nixoncpp::utils}!makeJsonError@{makeJsonError}}
+\index{makeJsonError@{makeJsonError}!nixoncpp::utils@{nixoncpp::utils}}
+\doxysubsubsection{\texorpdfstring{makeJsonError()}{makeJsonError()}}
+{\footnotesize\ttfamily \label{namespacenixoncpp_1_1utils_a6cdfe65d326d2d0b883cf5d626a6b7ea} 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} nixoncpp\+::utils\+::make\+Json\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447d}{Json\+Error\+Code}}}]{code}{, }\item[{const std\+::string \&}]{message}{, }\item[{const std\+::string \&}]{details}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

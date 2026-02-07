@@ -1,0 +1,19 @@
+<map id="ConsoleLogger::setConsoleColor" name="ConsoleLogger::setConsoleColor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="540,128,738,172"/>
+<area shape="rect" id="Node000002" href="$classConsoleLogger.html#a31696856245b018e9645c614683ba037" title="Logs a message with a specified level to the console and optionally to a file." alt="" coords="347,109,492,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="525,139,492,135,493,129,525,133"/>
+<area shape="rect" id="Node000009" href="$ConsoleLoggerTest_8cpp.html#a1a488e15957fde4f49e4a0dfc8ee25cc" title=" " alt="" coords="386,161,454,189"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="525,166,455,174,454,169,525,160"/>
+<area shape="rect" id="Node000003" href="$classConsoleLogger.html#adfe7ec1d32cf22b8280363401bc2f331" title="Log a critical message." alt="" coords="126,5,295,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,102,345,75,298,48,266,36,268,31,300,43,348,70,390,98"/>
+<area shape="rect" id="Node000004" href="$classConsoleLogger.html#a872f1edb1c3f27151aea7893257e84f9" title="Log a debug message." alt="" coords="128,57,293,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="345,108,269,88,270,83,347,102"/>
+<area shape="rect" id="Node000005" href="$classConsoleLogger.html#a8973d67f0a94cf2af0c5c5df4f303ffe" title="Log an error message." alt="" coords="132,109,288,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="331,126,289,126,289,120,331,120"/>
+<area shape="rect" id="Node000006" href="$classConsoleLogger.html#ab610c1dfc5564e00841dfeae547f836f" title="Log an info message." alt="" coords="135,161,286,189"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="347,144,270,163,269,158,345,139"/>
+<area shape="rect" id="Node000008" href="$classConsoleLogger.html#a7c16af28ba75ff33649181778e73c070" title="Log a warning message." alt="" coords="122,213,299,241"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="358,146,349,152,334,164,325,177,316,190,300,203,275,215,272,210,298,198,312,186,321,174,330,161,345,148,356,142"/>
+<area shape="rect" id="Node000007" href="$ConsoleLoggerTest_8cpp.html#ab35834df4087e6a0d58b5dbefb02da96" title=" " alt="" coords="5,161,74,189"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="120,178,74,178,74,172,120,172"/>
+</map>

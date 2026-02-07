@@ -1,0 +1,5 @@
+<map id="nixoncpp::logging::ILogger::debug" name="nixoncpp::logging::ILogger::debug">
+<area shape="rect" id="Node000001" title="Log a debug message." alt="" coords="197,5,340,50"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1logging_1_1ILogger.html#a4604f36dc136954967c11355f1a1ab75" title="Create a formatted debug message." alt="" coords="5,5,149,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,30,149,30,149,25,181,25"/>
+</map>

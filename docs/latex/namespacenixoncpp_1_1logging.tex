@@ -1,0 +1,89 @@
+\doxysection{nixoncpp\+::logging Namespace Reference}
+\hypertarget{namespacenixoncpp_1_1logging}{}\label{namespacenixoncpp_1_1logging}\index{nixoncpp::logging@{nixoncpp::logging}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}}
+\begin{DoxyCompactList}\small\item\em Helper class for streaming log messages. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}}
+\item 
+struct \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}}
+\begin{DoxyCompactList}\small\item\em Configuration options for creating a logger. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory}{Logger\+Factory}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger}{Null\+Logger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198aeded50d942c7c2d37d09ba8241ff017f}{LOG\+\_\+\+DEBUG}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a41abf3cca8cee8cdae01749df7a991c6}{LOG\+\_\+\+INFO}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198ad0cb3df3102ca9270c5785af9a8c137f}{LOG\+\_\+\+WARNING}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a4490aa3d29644e716440fada68f54032}{LOG\+\_\+\+ERROR}}
+, \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a16dc01b67173b4eeeed989a563f81fd0}{LOG\+\_\+\+CRITICAL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Logging levels. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{Logger\+Type}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abccaa4aa80831b76c11240a16447975f}{Console}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331a0b27918290ff5323bea1e3b78a9cf04e}{File}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abbb93ef26e3c101ff11cdd21cab08a94}{Null}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{namespacenixoncpp_1_1logging_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}\index{nixoncpp::logging@{nixoncpp::logging}!Level@{Level}}
+\index{Level@{Level}!nixoncpp::logging@{nixoncpp::logging}}
+\doxysubsubsection{\texorpdfstring{Level}{Level}}
+{\footnotesize\ttfamily \label{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198} 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{nixoncpp\+::logging\+::\+Level}} \+: std\+::uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Logging levels. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_DEBUG@{LOG\_DEBUG}!nixoncpp::logging@{nixoncpp::logging}}\index{nixoncpp::logging@{nixoncpp::logging}!LOG\_DEBUG@{LOG\_DEBUG}}}\Hypertarget{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198aeded50d942c7c2d37d09ba8241ff017f}\label{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198aeded50d942c7c2d37d09ba8241ff017f} 
+LOG\+\_\+\+DEBUG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_INFO@{LOG\_INFO}!nixoncpp::logging@{nixoncpp::logging}}\index{nixoncpp::logging@{nixoncpp::logging}!LOG\_INFO@{LOG\_INFO}}}\Hypertarget{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a41abf3cca8cee8cdae01749df7a991c6}\label{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a41abf3cca8cee8cdae01749df7a991c6} 
+LOG\+\_\+\+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_WARNING@{LOG\_WARNING}!nixoncpp::logging@{nixoncpp::logging}}\index{nixoncpp::logging@{nixoncpp::logging}!LOG\_WARNING@{LOG\_WARNING}}}\Hypertarget{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198ad0cb3df3102ca9270c5785af9a8c137f}\label{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198ad0cb3df3102ca9270c5785af9a8c137f} 
+LOG\+\_\+\+WARNING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_ERROR@{LOG\_ERROR}!nixoncpp::logging@{nixoncpp::logging}}\index{nixoncpp::logging@{nixoncpp::logging}!LOG\_ERROR@{LOG\_ERROR}}}\Hypertarget{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a4490aa3d29644e716440fada68f54032}\label{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a4490aa3d29644e716440fada68f54032} 
+LOG\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_CRITICAL@{LOG\_CRITICAL}!nixoncpp::logging@{nixoncpp::logging}}\index{nixoncpp::logging@{nixoncpp::logging}!LOG\_CRITICAL@{LOG\_CRITICAL}}}\Hypertarget{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a16dc01b67173b4eeeed989a563f81fd0}\label{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a16dc01b67173b4eeeed989a563f81fd0} 
+LOG\+\_\+\+CRITICAL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}\index{nixoncpp::logging@{nixoncpp::logging}!LoggerType@{LoggerType}}
+\index{LoggerType@{LoggerType}!nixoncpp::logging@{nixoncpp::logging}}
+\doxysubsubsection{\texorpdfstring{LoggerType}{LoggerType}}
+{\footnotesize\ttfamily \label{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331} 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{nixoncpp\+::logging\+::\+Logger\+Type}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Console@{Console}!nixoncpp::logging@{nixoncpp::logging}}\index{nixoncpp::logging@{nixoncpp::logging}!Console@{Console}}}\Hypertarget{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abccaa4aa80831b76c11240a16447975f}\label{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abccaa4aa80831b76c11240a16447975f} 
+Console&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{File@{File}!nixoncpp::logging@{nixoncpp::logging}}\index{nixoncpp::logging@{nixoncpp::logging}!File@{File}}}\Hypertarget{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331a0b27918290ff5323bea1e3b78a9cf04e}\label{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331a0b27918290ff5323bea1e3b78a9cf04e} 
+File&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Null@{Null}!nixoncpp::logging@{nixoncpp::logging}}\index{nixoncpp::logging@{nixoncpp::logging}!Null@{Null}}}\Hypertarget{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abbb93ef26e3c101ff11cdd21cab08a94}\label{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abbb93ef26e3c101ff11cdd21cab08a94} 
+Null&\\
+\hline
+
+\end{DoxyEnumFields}

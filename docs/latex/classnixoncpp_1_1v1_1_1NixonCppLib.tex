@@ -1,0 +1,177 @@
+\doxysection{nixoncpp\+::v1\+::Nixon\+Cpp\+Lib Class Reference}
+\hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib}{}\label{classnixoncpp_1_1v1_1_1NixonCppLib}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+
+
+{\ttfamily \#include $<$Nixon\+Cpp\+Lib.\+hpp$>$}
+
+
+
+Collaboration diagram for nixoncpp\+::v1\+::Nixon\+Cpp\+Lib\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classnixoncpp_1_1v1_1_1NixonCppLib__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} (const \mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Utils\+Factory\+::\+Application\+Context}} \&context)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classnixoncpp_1_1v1_1_1NixonCppLib}{Nixon\+Cpp\+Lib} instance from the given application context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_ab16207d8250e9c775bb8a63c8cc093de}{\texorpdfstring{$\sim$}{\string~}\+Nixon\+Cpp\+Lib}} ()
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a533b089989820af733a5fdbdcca3230e}{Nixon\+Cpp\+Lib}} (const Nixon\+Cpp\+Lib \&other)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} \& \mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a94ab9c8916fca45793aeaf6e6acc2ef1}{operator=}} (const \mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} \&other)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a5be83257e01f28fd0e55260c9bb47f8e}{Nixon\+Cpp\+Lib}} (Nixon\+Cpp\+Lib \&\&other)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} \& \mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a2a049759359a02d23fab930cc6f00926}{operator=}} (\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} \&\&other)=delete
+\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_af41daa402ab19d3b231629e3d0beaef2}{is\+Initialized}} () const noexcept
+\item 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{nixoncpp\+::assets\+::\+IAsset\+Manager}} $>$ \& \mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68909a7a01b77106d3071b5889c49d3b}{get\+Asset\+Manager}} () const noexcept
+\item 
+void \mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a6b7d0f05ae315740bfc1f94834df435a}{perform\+Library\+Task}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!NixonCppLib@{NixonCppLib}}
+\index{NixonCppLib@{NixonCppLib}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{NixonCppLib()}{NixonCppLib()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1} 
+nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::\+Nixon\+Cpp\+Lib (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Utils\+Factory\+::\+Application\+Context}} \&}]{context}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classnixoncpp_1_1v1_1_1NixonCppLib}{Nixon\+Cpp\+Lib} instance from the given application context. 
+
+Initializes the library by setting up the logger and asset manager from the provided application context. If no logger is supplied in the context, a Null\+Logger is used as a fallback. The constructor validates the asset manager and sets the initialization flag accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The application context containing the logger and asset manager dependencies required for library initialization.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the asset manager is null or fails validation, an error is logged and the library remains uninitialized (is\+Initialized\+\_\+ will be false). 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_ab16207d8250e9c775bb8a63c8cc093de}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!````~NixonCppLib@{\texorpdfstring{$\sim$}{\string~}NixonCppLib}}
+\index{````~NixonCppLib@{\texorpdfstring{$\sim$}{\string~}NixonCppLib}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NixonCppLib()}{\string~NixonCppLib()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_ab16207d8250e9c775bb8a63c8cc093de} 
+nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::\texorpdfstring{$\sim$}{\string~}\+Nixon\+Cpp\+Lib (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_a533b089989820af733a5fdbdcca3230e}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!NixonCppLib@{NixonCppLib}}
+\index{NixonCppLib@{NixonCppLib}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{NixonCppLib()}{NixonCppLib()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_a533b089989820af733a5fdbdcca3230e} 
+nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::\+Nixon\+Cpp\+Lib (\begin{DoxyParamCaption}\item[{const Nixon\+Cpp\+Lib \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1v1_1_1NixonCppLib_a533b089989820af733a5fdbdcca3230e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_a5be83257e01f28fd0e55260c9bb47f8e}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!NixonCppLib@{NixonCppLib}}
+\index{NixonCppLib@{NixonCppLib}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{NixonCppLib()}{NixonCppLib()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_a5be83257e01f28fd0e55260c9bb47f8e} 
+nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::\+Nixon\+Cpp\+Lib (\begin{DoxyParamCaption}\item[{Nixon\+Cpp\+Lib \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1v1_1_1NixonCppLib_a5be83257e01f28fd0e55260c9bb47f8e_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_a68909a7a01b77106d3071b5889c49d3b}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!getAssetManager@{getAssetManager}}
+\index{getAssetManager@{getAssetManager}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{getAssetManager()}{getAssetManager()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_a68909a7a01b77106d3071b5889c49d3b} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{nixoncpp\+::assets\+::\+IAsset\+Manager}} $>$ \& nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::get\+Asset\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1v1_1_1NixonCppLib_a68909a7a01b77106d3071b5889c49d3b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_af41daa402ab19d3b231629e3d0beaef2}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!isInitialized@{isInitialized}}
+\index{isInitialized@{isInitialized}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{isInitialized()}{isInitialized()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_af41daa402ab19d3b231629e3d0beaef2} 
+bool nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::is\+Initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_a94ab9c8916fca45793aeaf6e6acc2ef1}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_a94ab9c8916fca45793aeaf6e6acc2ef1} 
+\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} \& nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1v1_1_1NixonCppLib_a94ab9c8916fca45793aeaf6e6acc2ef1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_a2a049759359a02d23fab930cc6f00926}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_a2a049759359a02d23fab930cc6f00926} 
+\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} \& nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnixoncpp_1_1v1_1_1NixonCppLib_a68a9e989c6d490c824d249a4aff4d1a1}{Nixon\+Cpp\+Lib}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1v1_1_1NixonCppLib_a2a049759359a02d23fab930cc6f00926_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1v1_1_1NixonCppLib_a6b7d0f05ae315740bfc1f94834df435a}\index{nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}!performLibraryTask@{performLibraryTask}}
+\index{performLibraryTask@{performLibraryTask}!nixoncpp::v1::NixonCppLib@{nixoncpp::v1::NixonCppLib}}
+\doxysubsubsection{\texorpdfstring{performLibraryTask()}{performLibraryTask()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1v1_1_1NixonCppLib_a6b7d0f05ae315740bfc1f94834df435a} 
+void nixoncpp\+::v1\+::\+Nixon\+Cpp\+Lib\+::perform\+Library\+Task (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1v1_1_1NixonCppLib_a6b7d0f05ae315740bfc1f94834df435a_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Nixon\+Cpp\+Lib/\mbox{\hyperlink{NixonCppLib_8hpp}{Nixon\+Cpp\+Lib.\+hpp}}\item 
+src/lib/\mbox{\hyperlink{NixonCppLib_8cpp}{Nixon\+Cpp\+Lib.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,322 @@
+\doxysection{nixoncpp\+::utils\+::Emscripten\+Platform\+Info Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo}{}\label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+
+
+Emscripten-\/specific platform information implementation.  
+
+
+
+
+{\ttfamily \#include $<$Emscripten\+Platform\+Info.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::Emscripten\+Platform\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::Emscripten\+Platform\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} ()=default
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adb135c41d274419fb611de6877983b97}{Emscripten\+Platform\+Info}} (const Emscripten\+Platform\+Info \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aaa729b4c1765a664c6ac3b51fe982b13}{operator=}} (const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a0aab7eb9a45cfcf7ec9cfa60dfee79cb}{Emscripten\+Platform\+Info}} (Emscripten\+Platform\+Info \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a9a956f91d4f33c2bd718ba9937ac5d1a}{operator=}} (\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adbd8276a2f0179f7117773d0ca8e0d6e}{\texorpdfstring{$\sim$}{\string~}\+Emscripten\+Platform\+Info}} () override=default
+\item 
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ab7b0d6f17ab1c860306b284aef3bbb27}{get\+Platform}} () const override
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ac8fdde9be990dc7d4628d960b6af4359}{get\+Platform\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} Name object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ace6489a6362b17488e302f7ea4f02446}{get\+Executable\+Path}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Executable Path object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aed5d0506bb8310e7cae8000f421ed33c}{get\+Executable\+Directory}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Executable Directory object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a58922b4317485995bf91bbf2eb5d91a6}{is\+Windows}} () const override
+\begin{DoxyCompactList}\small\item\em Check if the platform is Windows. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_acf3f6165de3ca58bd6393dba6a379e99}{is\+Linux}} () const override
+\begin{DoxyCompactList}\small\item\em Check if the platform is Linux. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a614d7128f0c782af366d8bac8a6ea04f}{is\+Mac\+OS}} () const override
+\begin{DoxyCompactList}\small\item\em Check if the platform is mac\+OS. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a5ff3aa9632b3f0eb9285a56241d49e9c}{is\+Emscripten}} () const override
+\begin{DoxyCompactList}\small\item\em Check if the platform is Emscripten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{nixoncpp\+::utils\+::\+IPlatform\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_aaf86a25917a5325035e624cde3958a4a}{\texorpdfstring{$\sim$}{\string~}\+IPlatform\+Info}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Emscripten-\/specific platform information implementation. 
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!EmscriptenPlatformInfo@{EmscriptenPlatformInfo}}
+\index{EmscriptenPlatformInfo@{EmscriptenPlatformInfo}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{EmscriptenPlatformInfo()}{EmscriptenPlatformInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8} 
+nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::\+Emscripten\+Platform\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adb135c41d274419fb611de6877983b97}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!EmscriptenPlatformInfo@{EmscriptenPlatformInfo}}
+\index{EmscriptenPlatformInfo@{EmscriptenPlatformInfo}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{EmscriptenPlatformInfo()}{EmscriptenPlatformInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adb135c41d274419fb611de6877983b97} 
+nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::\+Emscripten\+Platform\+Info (\begin{DoxyParamCaption}\item[{const Emscripten\+Platform\+Info \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adb135c41d274419fb611de6877983b97_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a0aab7eb9a45cfcf7ec9cfa60dfee79cb}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!EmscriptenPlatformInfo@{EmscriptenPlatformInfo}}
+\index{EmscriptenPlatformInfo@{EmscriptenPlatformInfo}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{EmscriptenPlatformInfo()}{EmscriptenPlatformInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a0aab7eb9a45cfcf7ec9cfa60dfee79cb} 
+nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::\+Emscripten\+Platform\+Info (\begin{DoxyParamCaption}\item[{Emscripten\+Platform\+Info \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a0aab7eb9a45cfcf7ec9cfa60dfee79cb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adbd8276a2f0179f7117773d0ca8e0d6e}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!````~EmscriptenPlatformInfo@{\texorpdfstring{$\sim$}{\string~}EmscriptenPlatformInfo}}
+\index{````~EmscriptenPlatformInfo@{\texorpdfstring{$\sim$}{\string~}EmscriptenPlatformInfo}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EmscriptenPlatformInfo()}{\string~EmscriptenPlatformInfo()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adbd8276a2f0179f7117773d0ca8e0d6e} 
+nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::\texorpdfstring{$\sim$}{\string~}\+Emscripten\+Platform\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aed5d0506bb8310e7cae8000f421ed33c}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!getExecutableDirectory@{getExecutableDirectory}}
+\index{getExecutableDirectory@{getExecutableDirectory}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{getExecutableDirectory()}{getExecutableDirectory()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aed5d0506bb8310e7cae8000f421ed33c} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::get\+Executable\+Directory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Executable Directory object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad0405a0af31153f3d9b2a9b5b410a2d8}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aed5d0506bb8310e7cae8000f421ed33c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ace6489a6362b17488e302f7ea4f02446}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!getExecutablePath@{getExecutablePath}}
+\index{getExecutablePath@{getExecutablePath}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{getExecutablePath()}{getExecutablePath()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ace6489a6362b17488e302f7ea4f02446} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::get\+Executable\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Executable Path object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a97455790ddf05927861fca96f512894b}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ace6489a6362b17488e302f7ea4f02446_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ab7b0d6f17ab1c860306b284aef3bbb27}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!getPlatform@{getPlatform}}
+\index{getPlatform@{getPlatform}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{getPlatform()}{getPlatform()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ab7b0d6f17ab1c860306b284aef3bbb27} 
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}} nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::get\+Platform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ab1ad374f6667c49ba4bacc8a26617fb5}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ac8fdde9be990dc7d4628d960b6af4359}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!getPlatformName@{getPlatformName}}
+\index{getPlatformName@{getPlatformName}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{getPlatformName()}{getPlatformName()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ac8fdde9be990dc7d4628d960b6af4359} 
+std\+::string nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::get\+Platform\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} Name object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad1d61f58cc044796b779544c24821753}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a5ff3aa9632b3f0eb9285a56241d49e9c}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!isEmscripten@{isEmscripten}}
+\index{isEmscripten@{isEmscripten}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{isEmscripten()}{isEmscripten()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a5ff3aa9632b3f0eb9285a56241d49e9c} 
+bool nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::is\+Emscripten (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the platform is Emscripten. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad9edcae53a624d17c432fb0c0025f06f}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_acf3f6165de3ca58bd6393dba6a379e99}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!isLinux@{isLinux}}
+\index{isLinux@{isLinux}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{isLinux()}{isLinux()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_acf3f6165de3ca58bd6393dba6a379e99} 
+bool nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::is\+Linux (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the platform is Linux. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a84055dcf94e1c17ba4f6f3a85f4e1ef2}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a614d7128f0c782af366d8bac8a6ea04f}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!isMacOS@{isMacOS}}
+\index{isMacOS@{isMacOS}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{isMacOS()}{isMacOS()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a614d7128f0c782af366d8bac8a6ea04f} 
+bool nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::is\+Mac\+OS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the platform is mac\+OS. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a080fb817ccc9777db0644556f6215928}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a58922b4317485995bf91bbf2eb5d91a6}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!isWindows@{isWindows}}
+\index{isWindows@{isWindows}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{isWindows()}{isWindows()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a58922b4317485995bf91bbf2eb5d91a6} 
+bool nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::is\+Windows (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the platform is Windows. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a786519ed039b90d154e34c2f0a6acefc}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aaa729b4c1765a664c6ac3b51fe982b13}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aaa729b4c1765a664c6ac3b51fe982b13} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} \& nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aaa729b4c1765a664c6ac3b51fe982b13_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a9a956f91d4f33c2bd718ba9937ac5d1a}\index{nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::EmscriptenPlatformInfo@{nixoncpp::utils::EmscriptenPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a9a956f91d4f33c2bd718ba9937ac5d1a} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} \& nixoncpp\+::utils\+::\+Emscripten\+Platform\+Info\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{Emscripten\+Platform\+Info}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a9a956f91d4f33c2bd718ba9937ac5d1a_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Platform/\mbox{\hyperlink{EmscriptenPlatformInfo_8hpp}{Emscripten\+Platform\+Info.\+hpp}}\item 
+src/lib/\+Utils/\+Platform/\mbox{\hyperlink{EmscriptenPlatformInfo_8cpp}{Emscripten\+Platform\+Info.\+cpp}}\end{DoxyCompactItemize}

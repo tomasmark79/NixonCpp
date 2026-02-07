@@ -1,0 +1,5 @@
+<map id="nixoncpp::assets::AssetManager::assetExists" name="nixoncpp::assets::AssetManager::assetExists">
+<area shape="rect" id="Node000001" title="Check if an asset exists given its relative path." alt="" coords="5,5,236,50"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1assets_1_1AssetManager.html#aa6fa39655aeb5ace81b66c0c3ea7a7c0" title="Resolve the full path of an asset given its relative path." alt="" coords="284,5,514,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,25,268,25,268,30,236,30"/>
+</map>

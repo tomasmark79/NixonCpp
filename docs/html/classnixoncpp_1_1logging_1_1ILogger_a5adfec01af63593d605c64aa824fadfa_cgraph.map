@@ -1,0 +1,5 @@
+<map id="nixoncpp::logging::ILogger::errorStream" name="nixoncpp::logging::ILogger::errorStream">
+<area shape="rect" id="Node000001" title="Create a LogStream for streaming error messages." alt="" coords="5,5,161,50"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1logging_1_1ILogger.html#a8013c95238814c256f4eceab2d069610" title="Create a LogStream for streaming log messages." alt="" coords="209,5,352,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,25,193,25,193,30,161,30"/>
+</map>

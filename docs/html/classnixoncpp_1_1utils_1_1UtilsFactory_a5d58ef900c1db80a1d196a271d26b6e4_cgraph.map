@@ -1,0 +1,15 @@
+<map id="nixoncpp::utils::UtilsFactory::createCustomStringsLoader" name="nixoncpp::utils::UtilsFactory::createCustomStringsLoader">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,40,215,85"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a6e7781b6db8c887f84c08609c72cee9b" title=" " alt="" coords="263,5,463,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,45,247,41,248,46,216,51"/>
+<area shape="rect" id="Node000005" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#ac89ae32784dcc62839c88a8e99c50f7c" title=" " alt="" coords="263,75,463,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="216,74,248,79,247,84,215,79"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1assets_1_1AssetManagerFactory.html#a534dac197c8ab46bca337cbc7162371b" title="Create a Default object." alt="" coords="511,5,741,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="463,25,495,25,495,30,463,30"/>
+<area shape="rect" id="Node000004" href="$classnixoncpp_1_1assets_1_1AssetManager.html#a9778c797417b17b62b8f1135ca613cd3" title="Create a new Asset Manager instance." alt="" coords="789,5,1020,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="742,25,774,25,774,30,742,30"/>
+<area shape="rect" id="Node000006" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a898645cce10d377a7586d12c3fdb6e93" title=" " alt="" coords="526,75,726,119"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="463,94,510,94,510,100,463,100"/>
+<area shape="rect" id="Node000007" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a1315826b061bc911c58a3bca701ef5f0" title=" " alt="" coords="526,144,726,189"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="451,117,524,137,523,142,450,123"/>
+</map>

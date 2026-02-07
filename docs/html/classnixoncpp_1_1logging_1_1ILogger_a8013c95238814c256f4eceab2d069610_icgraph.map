@@ -1,0 +1,13 @@
+<map id="nixoncpp::logging::ILogger::stream" name="nixoncpp::logging::ILogger::stream">
+<area shape="rect" id="Node000001" title="Create a LogStream for streaming log messages." alt="" coords="230,144,373,189"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1logging_1_1ILogger.html#a7355e63eabb150ade6f995d0fa83b2f5" title="Create a LogStream for streaming critical messages." alt="" coords="9,5,178,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,135,227,99,180,65,158,53,161,48,183,60,230,95,270,131"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1logging_1_1ILogger.html#a3614089d7f4af7f70c27cf9d0012826f" title="Create a LogStream for streaming debug messages." alt="" coords="11,75,176,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,141,162,123,164,117,219,136"/>
+<area shape="rect" id="Node000004" href="$classnixoncpp_1_1logging_1_1ILogger.html#a5adfec01af63593d605c64aa824fadfa" title="Create a LogStream for streaming error messages." alt="" coords="16,144,171,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,169,172,169,172,164,214,164"/>
+<area shape="rect" id="Node000005" href="$classnixoncpp_1_1logging_1_1ILogger.html#a9f737750a8311e36eabdf036d74c6150" title="Create a LogStream for streaming info messages." alt="" coords="19,213,168,258"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="219,197,164,215,162,210,217,192"/>
+<area shape="rect" id="Node000006" href="$classnixoncpp_1_1logging_1_1ILogger.html#a5c4236fc23131d4798505c26bcea8737" title="Create a LogStream for streaming warning messages." alt="" coords="5,283,182,327"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="270,201,230,238,183,273,161,284,158,280,180,268,227,234,267,198"/>
+</map>

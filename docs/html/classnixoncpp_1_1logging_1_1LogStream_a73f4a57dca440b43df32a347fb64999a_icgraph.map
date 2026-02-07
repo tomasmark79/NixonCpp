@@ -1,0 +1,7 @@
+<map id="nixoncpp::logging::LogStream::LogStream" name="nixoncpp::logging::LogStream::LogStream">
+<area shape="rect" id="Node000001" title=" " alt="" coords="230,40,399,85"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1logging_1_1LogStream.html#a6934a6e0838050251679439d64719591" title="Stream a value into the log message." alt="" coords="5,5,182,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,49,182,44,183,39,215,44"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1logging_1_1LogStream.html#a278f2bfc27f945d787728ec76a81a9fc" title="Stream a manipulator into the log message (e.g., std::endl)." alt="" coords="5,75,182,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,81,183,86,182,80,214,75"/>
+</map>

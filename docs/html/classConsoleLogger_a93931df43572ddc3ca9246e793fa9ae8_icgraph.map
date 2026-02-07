@@ -1,0 +1,8 @@
+<map id="ConsoleLogger::showHeaderLevel" name="ConsoleLogger::showHeaderLevel">
+<area shape="rect" id="Node000001" title="Show or hide the header level in the log output." alt="" coords="276,48,482,92"/>
+<area shape="rect" id="Node000002" href="$classConsoleLogger.html#a777c72f8f45463233b5e29231b2cd659" title="Show or hide all headers in the log output." alt="" coords="22,29,211,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,60,211,55,211,50,261,55"/>
+<area shape="rect" id="Node000003" href="$classConsoleLogger.html#ae56e4044605f57c9253807c7e10db745" title="Show or hide specific headers in the log output." alt="" coords="5,81,228,109"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="261,84,228,87,228,82,260,79"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="162,17,146,10,116,8,89,10,74,15,70,20,76,27,72,30,65,20,70,11,88,5,117,3,147,5,164,12"/>
+</map>

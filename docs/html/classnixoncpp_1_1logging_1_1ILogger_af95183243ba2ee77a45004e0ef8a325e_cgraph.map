@@ -1,0 +1,5 @@
+<map id="nixoncpp::logging::ILogger::criticalFmt" name="nixoncpp::logging::ILogger::criticalFmt">
+<area shape="rect" id="Node000001" title="Create a formatted critical message." alt="" coords="5,5,153,50"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1logging_1_1ILogger.html#adc131d03529b976452457dd4f2bbc627" title="Log a critical message." alt="" coords="201,5,344,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,25,185,25,185,30,153,30"/>
+</map>

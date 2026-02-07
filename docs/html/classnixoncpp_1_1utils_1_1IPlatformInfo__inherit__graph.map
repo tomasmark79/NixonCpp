@@ -1,0 +1,9 @@
+<map id="nixoncpp::utils::IPlatformInfo" name="nixoncpp::utils::IPlatformInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="265,5,521,477"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo.html" title="Emscripten&#45;specific platform information implementation." alt="" coords="5,525,250,1245"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="279,492,265,526,253,556,248,554,260,524,275,490"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1utils_1_1UnixPlatformInfo.html" title="Unix&#45;like platform information implementation (Linux/macOS)." alt="" coords="275,551,512,1220"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="396,492,396,551,390,551,390,492"/>
+<area shape="rect" id="Node000004" href="$classnixoncpp_1_1utils_1_1WindowsPlatformInfo.html" title="Windows&#45;specific platform information implementation." alt="" coords="536,525,773,1245"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="512,490,526,524,539,555,534,557,521,526,507,492"/>
+</map>

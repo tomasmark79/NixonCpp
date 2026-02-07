@@ -1,0 +1,41 @@
+\doxysection{Emscripten\+Platform\+Info.\+hpp}
+\hypertarget{EmscriptenPlatformInfo_8hpp_source}{}\label{EmscriptenPlatformInfo_8hpp_source}\index{src/lib/Utils/Platform/EmscriptenPlatformInfo.hpp@{src/lib/Utils/Platform/EmscriptenPlatformInfo.hpp}}
+\mbox{\hyperlink{EmscriptenPlatformInfo_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{IPlatformInfo_8hpp}{Utils/Platform/IPlatformInfo.hpp}}>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{EmscriptenPlatformInfo}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{IPlatformInfo}}\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{EmscriptenPlatformInfo}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adb135c41d274419fb611de6877983b97}{EmscriptenPlatformInfo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{EmscriptenPlatformInfo}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{EmscriptenPlatformInfo}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aaa729b4c1765a664c6ac3b51fe982b13}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{EmscriptenPlatformInfo}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a0aab7eb9a45cfcf7ec9cfa60dfee79cb}{EmscriptenPlatformInfo}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{EmscriptenPlatformInfo}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{EmscriptenPlatformInfo}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a9a956f91d4f33c2bd718ba9937ac5d1a}{operator=}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a78314dee40d800ae966a50592fe8afe8}{EmscriptenPlatformInfo}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_adbd8276a2f0179f7117773d0ca8e0d6e}{\string~EmscriptenPlatformInfo}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ab7b0d6f17ab1c860306b284aef3bbb27}{getPlatform}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ac8fdde9be990dc7d4628d960b6af4359}{getPlatformName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00025\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_ace6489a6362b17488e302f7ea4f02446}{getExecutablePath}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_aed5d0506bb8310e7cae8000f421ed33c}{getExecutableDirectory}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a58922b4317485995bf91bbf2eb5d91a6}{isWindows}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_acf3f6165de3ca58bd6393dba6a379e99}{isLinux}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a614d7128f0c782af366d8bac8a6ea04f}{isMacOS}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo_a5ff3aa9632b3f0eb9285a56241d49e9c}{isEmscripten}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

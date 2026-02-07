@@ -1,0 +1,246 @@
+\doxysection{nixoncpp\+::utils\+::File\+Writer Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1FileWriter}{}\label{classnixoncpp_1_1utils_1_1FileWriter}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+
+
+{\ttfamily \#include $<$File\+Writer.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::File\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1FileWriter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::File\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1FileWriter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} ()=default
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_a20b2681106bdbbf4e0495c79ace4a360}{File\+Writer}} (const File\+Writer \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_a17bf31c0a9303fd19cd7d8017738cb58}{operator=}} (const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_a4a659dd18dd048af3b183674453ed45c}{File\+Writer}} (File\+Writer \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_ac508fab4dbea08efa7bfa018a8101891}{operator=}} (\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_addfb8dd0c6cc09c27c127d83a624d762}{\texorpdfstring{$\sim$}{\string~}\+File\+Writer}} () override=default
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aac8517db1aab66227e9ede91b7f5ef30}{write}} (const std\+::filesystem\+::path \&file\+Path, const std\+::string \&content, bool append=false) const override
+\begin{DoxyCompactList}\small\item\em Write string content to file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_accd4b73cfa459694a8ea66e53521f501}{write\+Bytes}} (const std\+::filesystem\+::path \&file\+Path, const std\+::vector$<$ uint8\+\_\+t $>$ \&data, bool append=false) const override
+\begin{DoxyCompactList}\small\item\em Write binary data to file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_abff42a78c45ccb77ef1fb5e207cf3034}{write\+Lines}} (const std\+::filesystem\+::path \&file\+Path, const std\+::vector$<$ std\+::string $>$ \&lines, bool append=false) const override
+\begin{DoxyCompactList}\small\item\em Write lines to file (each string becomes one line). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_ac93faf8d8902aa69345118e411772606}{touch}} (const std\+::filesystem\+::path \&file\+Path) const override
+\begin{DoxyCompactList}\small\item\em Create empty file or update timestamp of existing file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter}{nixoncpp\+::utils\+::\+IFile\+Writer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_ad61045061104d189d0199705905587b1}{\texorpdfstring{$\sim$}{\string~}\+IFile\+Writer}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!FileWriter@{FileWriter}}
+\index{FileWriter@{FileWriter}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{FileWriter()}{FileWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d} 
+nixoncpp\+::utils\+::\+File\+Writer\+::\+File\+Writer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_a20b2681106bdbbf4e0495c79ace4a360}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!FileWriter@{FileWriter}}
+\index{FileWriter@{FileWriter}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{FileWriter()}{FileWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_a20b2681106bdbbf4e0495c79ace4a360} 
+nixoncpp\+::utils\+::\+File\+Writer\+::\+File\+Writer (\begin{DoxyParamCaption}\item[{const File\+Writer \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileWriter_a20b2681106bdbbf4e0495c79ace4a360_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_a4a659dd18dd048af3b183674453ed45c}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!FileWriter@{FileWriter}}
+\index{FileWriter@{FileWriter}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{FileWriter()}{FileWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_a4a659dd18dd048af3b183674453ed45c} 
+nixoncpp\+::utils\+::\+File\+Writer\+::\+File\+Writer (\begin{DoxyParamCaption}\item[{File\+Writer \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileWriter_a4a659dd18dd048af3b183674453ed45c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_addfb8dd0c6cc09c27c127d83a624d762}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!````~FileWriter@{\texorpdfstring{$\sim$}{\string~}FileWriter}}
+\index{````~FileWriter@{\texorpdfstring{$\sim$}{\string~}FileWriter}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FileWriter()}{\string~FileWriter()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_addfb8dd0c6cc09c27c127d83a624d762} 
+nixoncpp\+::utils\+::\+File\+Writer\+::\texorpdfstring{$\sim$}{\string~}\+File\+Writer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_a17bf31c0a9303fd19cd7d8017738cb58}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_a17bf31c0a9303fd19cd7d8017738cb58} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} \& nixoncpp\+::utils\+::\+File\+Writer\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileWriter_a17bf31c0a9303fd19cd7d8017738cb58_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_ac508fab4dbea08efa7bfa018a8101891}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_ac508fab4dbea08efa7bfa018a8101891} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} \& nixoncpp\+::utils\+::\+File\+Writer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileWriter_aafe6e714a53d1025ded4b1e1f16c883d}{File\+Writer}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileWriter_ac508fab4dbea08efa7bfa018a8101891_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_ac93faf8d8902aa69345118e411772606}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!touch@{touch}}
+\index{touch@{touch}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{touch()}{touch()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_ac93faf8d8902aa69345118e411772606} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+File\+Writer\+::touch (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Create empty file or update timestamp of existing file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$void, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_a3fe6fdf6c7f3864fbf1c613ce54a0718}{nixoncpp\+::utils\+::\+IFile\+Writer}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_aac8517db1aab66227e9ede91b7f5ef30}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!write@{write}}
+\index{write@{write}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_aac8517db1aab66227e9ede91b7f5ef30} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+File\+Writer\+::write (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{, }\item[{const std\+::string \&}]{content}{, }\item[{bool}]{append}{ = {\ttfamily false}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Write string content to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em content} & \\
+\hline
+{\em append} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$void, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_a251ea4828171d974ef8fefba124b5e07}{nixoncpp\+::utils\+::\+IFile\+Writer}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_accd4b73cfa459694a8ea66e53521f501}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!writeBytes@{writeBytes}}
+\index{writeBytes@{writeBytes}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{writeBytes()}{writeBytes()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_accd4b73cfa459694a8ea66e53521f501} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+File\+Writer\+::write\+Bytes (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{, }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data}{, }\item[{bool}]{append}{ = {\ttfamily false}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Write binary data to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em data} & \\
+\hline
+{\em append} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$void, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_a0a13a7d25d1fd998cc6dc93932a7c6a9}{nixoncpp\+::utils\+::\+IFile\+Writer}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1FileWriter_abff42a78c45ccb77ef1fb5e207cf3034}\index{nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}!writeLines@{writeLines}}
+\index{writeLines@{writeLines}!nixoncpp::utils::FileWriter@{nixoncpp::utils::FileWriter}}
+\doxysubsubsection{\texorpdfstring{writeLines()}{writeLines()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileWriter_abff42a78c45ccb77ef1fb5e207cf3034} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+File\+Writer\+::write\+Lines (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{lines}{, }\item[{bool}]{append}{ = {\ttfamily false}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Write lines to file (each string becomes one line). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em lines} & \\
+\hline
+{\em append} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$void, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_a34133cd3eaa6ad9a8ed29ed1413c506d}{nixoncpp\+::utils\+::\+IFile\+Writer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Filesystem/\mbox{\hyperlink{FileWriter_8hpp}{File\+Writer.\+hpp}}\item 
+src/lib/\+Utils/\+Filesystem/\mbox{\hyperlink{FileWriter_8cpp}{File\+Writer.\+cpp}}\end{DoxyCompactItemize}

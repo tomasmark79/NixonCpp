@@ -1,0 +1,40 @@
+\doxysection{IFile\+Writer.\+hpp}
+\hypertarget{IFileWriter_8hpp_source}{}\label{IFileWriter_8hpp_source}\index{src/lib/Utils/Filesystem/IFileWriter.hpp@{src/lib/Utils/Filesystem/IFileWriter.hpp}}
+\mbox{\hyperlink{IFileWriter_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{UtilsError_8hpp}{Utils/UtilsError.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter}{IFileWriter}}\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_ad61045061104d189d0199705905587b1}{\string~IFileWriter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00029\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<void,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_a251ea4828171d974ef8fefba124b5e07}{write}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&content,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ append\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00042\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<void,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_a0a13a7d25d1fd998cc6dc93932a7c6a9}{writeBytes}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\ \&data,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ append\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00055\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<void,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_a34133cd3eaa6ad9a8ed29ed1413c506d}{writeLines}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&lines,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ append\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<void,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter_a3fe6fdf6c7f3864fbf1c613ce54a0718}{touch}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

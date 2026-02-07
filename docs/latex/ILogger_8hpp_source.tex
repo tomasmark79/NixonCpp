@@ -1,0 +1,209 @@
+\doxysection{ILogger.\+hpp}
+\hypertarget{ILogger_8hpp_source}{}\label{ILogger_8hpp_source}\index{src/lib/Utils/Logger/ILogger.hpp@{src/lib/Utils/Logger/ILogger.hpp}}
+\mbox{\hyperlink{ILogger_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ILOGGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ILOGGER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}fmt/core.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Include\ source\_location\ for\ C++20\ and\ later}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ >=\ 202002L}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <source\_location>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1logging}{nixoncpp::logging}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}\ :\ std::uint8\_t\ \{\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198aeded50d942c7c2d37d09ba8241ff017f}{LOG\_DEBUG}},\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a41abf3cca8cee8cdae01749df7a991c6}{LOG\_INFO}},\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198ad0cb3df3102ca9270c5785af9a8c137f}{LOG\_WARNING}},\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a4490aa3d29644e716440fada68f54032}{LOG\_ERROR}},\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a16dc01b67173b4eeeed989a563f81fd0}{LOG\_CRITICAL}}\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{class\ }ILogger;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{LogStream}}\ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{LogStream}}(std::shared\_ptr<ILogger>\ logger,\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}\ level,\ std::string\ caller)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ :\ logger\_(std::move(logger)),\ level\_(level),\ caller\_(std::move(caller))\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_afadc97c172eed01e14bc3fa589848ec9}{\string~LogStream}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{LogStream}}\ \&\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a6934a6e0838050251679439d64719591}{operator<<}}(\textcolor{keyword}{const}\ T\ \&value)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ oss\_\ <<\ value;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{LogStream}}\ \&\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a278f2bfc27f945d787728ec76a81a9fc}{operator<<}}(std::ostream\ \&(*manip)(std::ostream\ \&))\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ oss\_\ <<\ manip;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ std::shared\_ptr<ILogger>\ logger\_;}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}\ level\_;}
+\DoxyCodeLine{00065\ \ \ \ \ std::string\ caller\_;}
+\DoxyCodeLine{00066\ \ \ \ \ std::ostringstream\ oss\_;}
+\DoxyCodeLine{00067\ \ \ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a03d479a332bebe58462a008598de60cc}{ILogger}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<ILogger>\ \{}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a03d479a332bebe58462a008598de60cc}{ILogger}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a877107fbe57cf16e99d0f67683928cc5}{\string~ILogger}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a0f805edc22c985509adfc45131ca22fe}{debug}}(\textcolor{keyword}{const}\ std::string\ \&message,\ \textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ =\ 0;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_ad80823b3d09b4d1710a673107052b4d8}{info}}(\textcolor{keyword}{const}\ std::string\ \&message,\ \textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ =\ 0;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a343daf050d9dca5dcb20aba1444ab76f}{warning}}(\textcolor{keyword}{const}\ std::string\ \&message,\ \textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ =\ 0;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a43c4c1a7991df4380af77818b941a8c1}{error}}(\textcolor{keyword}{const}\ std::string\ \&message,\ \textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ =\ 0;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_adc131d03529b976452457dd4f2bbc627}{critical}}(\textcolor{keyword}{const}\ std::string\ \&message,\ \textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ =\ 0;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_ae52001a09769aeded4956f6a52be2307}{setLevel}}(\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}\ level)\ =\ 0;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00126\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a4b18e45d68fa54c9aca2b044633c5779}{getLevel}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8bdbfff019bf37731ef03fbef785bb88}{setAppPrefix}}(\textcolor{keyword}{const}\ std::string\ \&prefix)\ =\ 0;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_ad7e35c5ab68bb3ae29313ce3e51bba97}{getAppPrefix}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a488da6a7d6959f64ebc1e145186f3183}{enableFileLogging}}(\textcolor{keyword}{const}\ std::string\ \&filename)\ =\ 0;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a83a77bb36b56900e4d193405aacf5557}{disableFileLogging}}()\ =\ 0;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{LogStream}}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8013c95238814c256f4eceab2d069610}{stream}}(\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}\ level,\ \textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{LogStream}}\{shared\_from\_this(),\ level,\ caller\};}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ Convenience\ methods\ for\ each\ log\ level}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{LogStream}}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a3614089d7f4af7f70c27cf9d0012826f}{debugStream}}(\textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8013c95238814c256f4eceab2d069610}{stream}}(\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198aeded50d942c7c2d37d09ba8241ff017f}{Level::LOG\_DEBUG}},\ caller);}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{LogStream}}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a9f737750a8311e36eabdf036d74c6150}{infoStream}}(\textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8013c95238814c256f4eceab2d069610}{stream}}(\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a41abf3cca8cee8cdae01749df7a991c6}{Level::LOG\_INFO}},\ caller);\ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{LogStream}}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5c4236fc23131d4798505c26bcea8737}{warningStream}}(\textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8013c95238814c256f4eceab2d069610}{stream}}(\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198ad0cb3df3102ca9270c5785af9a8c137f}{Level::LOG\_WARNING}},\ caller);}
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{LogStream}}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5adfec01af63593d605c64aa824fadfa}{errorStream}}(\textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8013c95238814c256f4eceab2d069610}{stream}}(\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a4490aa3d29644e716440fada68f54032}{Level::LOG\_ERROR}},\ caller);}
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{LogStream}}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a7355e63eabb150ade6f995d0fa83b2f5}{criticalStream}}(\textcolor{keyword}{const}\ std::string\ \&caller\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8013c95238814c256f4eceab2d069610}{stream}}(\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a16dc01b67173b4eeeed989a563f81fd0}{Level::LOG\_CRITICAL}},\ caller);}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{comment}{//\ Fmt\ convenience\ methods\ (non-\/virtual\ templates)}}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a4604f36dc136954967c11355f1a1ab75}{debugFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a1da9ef29af3242b7b26b9521e4397f69}{infoFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5efa513b6e1638aad4873915067bcf85}{warningFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args);}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a788ca27fdb52e88bcf4fb8d46773afde}{errorFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_af95183243ba2ee77a45004e0ef8a325e}{criticalFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args);}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ >=\ 202002L}}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{comment}{//\ C++20\ source\_location\ support}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{void}\ debugWithLocation(\textcolor{keyword}{const}\ std::string\ \&message,}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\ \&location\ =\ std::source\_location::current())\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a3614089d7f4af7f70c27cf9d0012826f}{debugStream}}()\ <<\ \textcolor{stringliteral}{"{}Log:\ "{}}\ <<\ message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}File:\ "{}}\ <<\ location.file\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Function:\ "{}}\ <<\ location.function\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Line:\ "{}}\ <<\ location.line()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00285\ \ \ \ \ \}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{void}\ infoWithLocation(\textcolor{keyword}{const}\ std::string\ \&message,}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\ \&location\ =\ std::source\_location::current())\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a9f737750a8311e36eabdf036d74c6150}{infoStream}}()\ <<\ \textcolor{stringliteral}{"{}Log:\ "{}}\ <<\ message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}File:\ "{}}\ <<\ location.file\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Function:\ "{}}\ <<\ location.function\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Line:\ "{}}\ <<\ location.line()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{void}\ warningWithLocation(\textcolor{keyword}{const}\ std::string\ \&message,\ \textcolor{keyword}{const}\ std::source\_location\ \&location\ =}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::source\_location::current())\ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5c4236fc23131d4798505c26bcea8737}{warningStream}}()\ <<\ \textcolor{stringliteral}{"{}Log:\ "{}}\ <<\ message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}File:\ "{}}\ <<\ location.file\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Function:\ "{}}\ <<\ location.function\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Line:\ "{}}\ <<\ location.line()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00313\ \ \ \ \ \}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{void}\ errorWithLocation(\textcolor{keyword}{const}\ std::string\ \&message,}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::source\_location\ \&location\ =\ std::source\_location::current())\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5adfec01af63593d605c64aa824fadfa}{errorStream}}()\ <<\ \textcolor{stringliteral}{"{}Log:\ "{}}\ <<\ message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}File:\ "{}}\ <<\ location.file\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Function:\ "{}}\ <<\ location.function\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Line:\ "{}}\ <<\ location.line()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00327\ \ \ \ \ \}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{void}\ criticalWithLocation(\textcolor{keyword}{const}\ std::string\ \&message,\ \textcolor{keyword}{const}\ std::source\_location\ \&location\ =}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::source\_location::current())\ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a7355e63eabb150ade6f995d0fa83b2f5}{criticalStream}}()\ <<\ \textcolor{stringliteral}{"{}Log:\ "{}}\ <<\ message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}File:\ "{}}\ <<\ location.file\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Function:\ "{}}\ <<\ location.function\_name()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Line:\ "{}}\ <<\ location.line()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00343\ \ \ \};}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00349\ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_afadc97c172eed01e14bc3fa589848ec9}{LogStream::\string~LogStream}}()\ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ message\ =\ oss\_.str();}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordflow}{switch}\ (level\_)\ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198aeded50d942c7c2d37d09ba8241ff017f}{Level::LOG\_DEBUG}}:\ logger\_-\/>debug(message,\ caller\_);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a41abf3cca8cee8cdae01749df7a991c6}{Level::LOG\_INFO}}:\ logger\_-\/>info(message,\ caller\_);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198ad0cb3df3102ca9270c5785af9a8c137f}{Level::LOG\_WARNING}}:\ logger\_-\/>warning(message,\ caller\_);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a4490aa3d29644e716440fada68f54032}{Level::LOG\_ERROR}}:\ logger\_-\/>error(message,\ caller\_);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a16dc01b67173b4eeeed989a563f81fd0}{Level::LOG\_CRITICAL}}:\ logger\_-\/>critical(message,\ caller\_);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
+\DoxyCodeLine{00358\ \ \ \}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \textcolor{comment}{//\ Implementations\ of\ the\ fmt\ convenience\ methods}}
+\DoxyCodeLine{00361\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00362\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a4604f36dc136954967c11355f1a1ab75}{ILogger::debugFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args)\ \{}
+\DoxyCodeLine{00363\ \ \ \ \ std::string\ message\ =\ fmt::vformat(format,\ fmt::make\_format\_args(args...));}
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a0f805edc22c985509adfc45131ca22fe}{debug}}(message,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00365\ \ \ \}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00368\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a1da9ef29af3242b7b26b9521e4397f69}{ILogger::infoFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args)\ \{}
+\DoxyCodeLine{00369\ \ \ \ \ std::string\ message\ =\ fmt::vformat(format,\ fmt::make\_format\_args(args...));}
+\DoxyCodeLine{00370\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_ad80823b3d09b4d1710a673107052b4d8}{info}}(message,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00371\ \ \ \}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00374\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5efa513b6e1638aad4873915067bcf85}{ILogger::warningFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args)\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ std::string\ message\ =\ fmt::vformat(format,\ fmt::make\_format\_args(args...));}
+\DoxyCodeLine{00376\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a343daf050d9dca5dcb20aba1444ab76f}{warning}}(message,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00377\ \ \ \}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00380\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a788ca27fdb52e88bcf4fb8d46773afde}{ILogger::errorFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args)\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ std::string\ message\ =\ fmt::vformat(format,\ fmt::make\_format\_args(args...));}
+\DoxyCodeLine{00382\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a43c4c1a7991df4380af77818b941a8c1}{error}}(message,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00383\ \ \ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00386\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_af95183243ba2ee77a45004e0ef8a325e}{ILogger::criticalFmt}}(\textcolor{keyword}{const}\ std::string\ \&format,\ Args\ \&\&...args)\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ std::string\ message\ =\ fmt::vformat(format,\ fmt::make\_format\_args(args...));}
+\DoxyCodeLine{00388\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_adc131d03529b976452457dd4f2bbc627}{critical}}(message,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00389\ \ \ \}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::logging}}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

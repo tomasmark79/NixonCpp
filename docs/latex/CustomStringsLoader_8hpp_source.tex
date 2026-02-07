@@ -1,0 +1,55 @@
+\doxysection{Custom\+Strings\+Loader.\+hpp}
+\hypertarget{CustomStringsLoader_8hpp_source}{}\label{CustomStringsLoader_8hpp_source}\index{src/lib/Utils/Json/CustomStringsLoader.hpp@{src/lib/Utils/Json/CustomStringsLoader.hpp}}
+\mbox{\hyperlink{CustomStringsLoader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{IAssetManager_8hpp}{Utils/Assets/IAssetManager.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{ICustomStringsLoader_8hpp}{Utils/Json/ICustomStringsLoader.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{IJsonSerializer_8hpp}{Utils/Json/IJsonSerializer.hpp}}>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{using\ }nixoncpp::assets::IAssetManager;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{CustomStringsLoader}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader}{ICustomStringsLoader}}\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{CustomStringsLoader}}(std::shared\_ptr<IAssetManager>\ assetManager,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<IJsonSerializer>\ jsonSerializer,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ filename\ =\ \textcolor{stringliteral}{"{}customstrings.json"{}});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a1f372fffd199b65dbfff9a9c6eb19408}{CustomStringsLoader}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{CustomStringsLoader}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{CustomStringsLoader}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_adb7bd52a3cb4c52b397f479ba617b9c0}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{CustomStringsLoader}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_afcde7a38e68646f9466b020b7a9458b8}{CustomStringsLoader}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{CustomStringsLoader}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{CustomStringsLoader}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a9b3c0aa0cb9d7a2985ffd32d06dad2ad}{operator=}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{CustomStringsLoader}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a3ee865749b592652cff71ee683551082}{\string~CustomStringsLoader}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<nlohmann::json,\ JsonError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_ab4402fc545b25293e9eaedfe8711f5db}{load}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ [[nodiscard]]\ std::optional<std::string>\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_ad1ff9e748d534c974f1d96a746405838}{getPath}}(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00030\ \ \ \ \ std::optional<std::string>\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a7114e4101bc7c36b4deef500fb15fc40}{getCustomKey}}(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00033\ \ \ \ \ std::optional<std::string>\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a7fcc98d62614529eac57a3f67ce47571}{getLocalizedString}}(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&locale\ =\ \textcolor{stringliteral}{"{}en"{}})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<nlohmann::json,\ JsonError>}}\ ensureLoaded()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ [[nodiscard]]\ std::optional<nlohmann::json>\ findById(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ std::shared\_ptr<IAssetManager>\ assetManager\_;}
+\DoxyCodeLine{00041\ \ \ \ \ std::shared\_ptr<IJsonSerializer>\ jsonSerializer\_;}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ filename\_;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Cached\ data}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ cacheMutex\_;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{mutable}\ std::optional<nlohmann::json>\ cachedData\_;}
+\DoxyCodeLine{00047\ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

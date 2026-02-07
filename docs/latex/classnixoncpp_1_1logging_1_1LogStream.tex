@@ -1,0 +1,132 @@
+\doxysection{nixoncpp\+::logging\+::Log\+Stream Class Reference}
+\hypertarget{classnixoncpp_1_1logging_1_1LogStream}{}\label{classnixoncpp_1_1logging_1_1LogStream}\index{nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}}
+
+
+Helper class for streaming log messages.  
+
+
+
+
+{\ttfamily \#include $<$ILogger.\+hpp$>$}
+
+
+
+Collaboration diagram for nixoncpp\+::logging\+::Log\+Stream\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classnixoncpp_1_1logging_1_1LogStream__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{Log\+Stream}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ logger, \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}} level, std\+::string caller)
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_afadc97c172eed01e14bc3fa589848ec9}{\texorpdfstring{$\sim$}{\string~}\+Log\+Stream}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Log Stream\+:\+: Log Stream object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{Log\+Stream}} \& \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a6934a6e0838050251679439d64719591}{operator$<$$<$}} (const T \&value)
+\begin{DoxyCompactList}\small\item\em Stream a value into the log message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{Log\+Stream}} \& \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a278f2bfc27f945d787728ec76a81a9fc}{operator$<$$<$}} (std\+::ostream \&(\texorpdfstring{$\ast$}{*}manip)(std\+::ostream \&))
+\begin{DoxyCompactList}\small\item\em Stream a manipulator into the log message (e.\+g., std\+::endl). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class for streaming log messages. 
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1logging_1_1LogStream_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}\index{nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}!LogStream@{LogStream}}
+\index{LogStream@{LogStream}!nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}}
+\doxysubsubsection{\texorpdfstring{LogStream()}{LogStream()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a} 
+nixoncpp\+::logging\+::\+Log\+Stream\+::\+Log\+Stream (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$}]{logger}{, }\item[{\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}}]{level}{, }\item[{std\+::string}]{caller}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1logging_1_1LogStream_afadc97c172eed01e14bc3fa589848ec9}\index{nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}!````~LogStream@{\texorpdfstring{$\sim$}{\string~}LogStream}}
+\index{````~LogStream@{\texorpdfstring{$\sim$}{\string~}LogStream}!nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LogStream()}{\string~LogStream()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1LogStream_afadc97c172eed01e14bc3fa589848ec9} 
+nixoncpp\+::logging\+::\+Log\+Stream\+::\texorpdfstring{$\sim$}{\string~}\+Log\+Stream (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the Log Stream\+:\+: Log Stream object. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1logging_1_1LogStream_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1logging_1_1LogStream_a6934a6e0838050251679439d64719591}\index{nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1LogStream_a6934a6e0838050251679439d64719591} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{Log\+Stream}} \& nixoncpp\+::logging\+::\+Log\+Stream\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stream a value into the log message. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}\& 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1logging_1_1LogStream_a6934a6e0838050251679439d64719591_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1logging_1_1LogStream_a278f2bfc27f945d787728ec76a81a9fc}\index{nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!nixoncpp::logging::LogStream@{nixoncpp::logging::LogStream}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1LogStream_a278f2bfc27f945d787728ec76a81a9fc} 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream_a73f4a57dca440b43df32a347fb64999a}{Log\+Stream}} \& nixoncpp\+::logging\+::\+Log\+Stream\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&(\texorpdfstring{$\ast$}{*}}]{manip~}{)(std\+::ostream \&)}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stream a manipulator into the log message (e.\+g., std\+::endl). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manip} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}\& 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1logging_1_1LogStream_a278f2bfc27f945d787728ec76a81a9fc_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Logger/\mbox{\hyperlink{ILogger_8hpp}{ILogger.\+hpp}}\end{DoxyCompactItemize}

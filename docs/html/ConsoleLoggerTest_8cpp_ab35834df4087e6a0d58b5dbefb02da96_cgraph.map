@@ -1,0 +1,18 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,83,74,110"/>
+<area shape="rect" id="Node000002" href="$classConsoleLogger.html#ab610c1dfc5564e00841dfeae547f836f" title="Log an info message." alt="" coords="162,56,312,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,89,146,79,147,85,74,95"/>
+<area shape="rect" id="Node000008" href="$classConsoleLogger.html#add4cfcb48e31fc7223fefc343ce324b1" title="Set the Header Name object." alt="" coords="122,108,353,136"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="74,98,110,103,109,108,74,103"/>
+<area shape="rect" id="Node000003" href="$classConsoleLogger.html#a31696856245b018e9645c614683ba037" title="Logs a message with a specified level to the console and optionally to a file." alt="" coords="401,56,546,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="313,67,385,67,385,72,313,72"/>
+<area shape="rect" id="Node000004" href="$classConsoleLogger.html#a5d533abe0114989d4997b6dabfe4687c" title="Convert a logging level to its string representation." alt="" coords="594,5,804,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="538,53,619,34,620,40,539,58"/>
+<area shape="rect" id="Node000005" href="$classConsoleLogger.html#a787b42f6e197b60908113326b9a048fa" title="Reset the console color to default." alt="" coords="1097,78,1307,123"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="547,70,1082,93,1081,98,546,76"/>
+<area shape="rect" id="Node000006" href="$classConsoleLogger.html#a034b07dd5f02314f42f248eda08fe2b9" title=" " alt="" coords="600,108,798,152"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="529,82,599,100,597,106,528,87"/>
+<area shape="rect" id="Node000007" href="$classConsoleLogger.html#addb2587c7a7fe4e6c213f22f7db385c6" title=" " alt="" coords="852,108,1049,152"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="798,127,836,127,836,132,798,132"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="1049,116,1081,112,1082,117,1050,121"/>
+</map>

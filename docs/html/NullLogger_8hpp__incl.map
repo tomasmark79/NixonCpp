@@ -1,0 +1,15 @@
+<map id="src/lib/Utils/Logger/NullLogger.hpp" name="src/lib/Utils/Logger/NullLogger.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="174,5,317,50"/>
+<area shape="rect" id="Node000002" href="$ILogger_8hpp.html" title=" " alt="" coords="197,98,294,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,50,248,82,243,82,243,50"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,174,94,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="211,129,99,170,97,165,210,124"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="118,174,184,201"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="230,128,181,166,178,162,227,124"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="207,174,284,201"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="248,126,248,158,243,158,243,126"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="308,174,383,201"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="265,124,317,162,314,167,262,128"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="407,174,465,201"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="281,124,393,167,392,172,279,129"/>
+</map>

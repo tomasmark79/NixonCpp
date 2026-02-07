@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classnixoncpp_1_1assets_1_1IAssetManager.html" title=" " alt="" coords="27,5,204,50"/>
+<area shape="rect" id="Node000001" href="$classMockAssetManager.html" title="Mock implementation of IAssetManager for testing." alt="" coords="314,16,464,44"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="220,26,314,27,314,32,220,31"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1assets_1_1AssetManager.html" title=" " alt="" coords="274,70,504,98"/>
+<area shape="poly" id="edge2_Node000000_Node000003" title=" " alt="" coords="220,46,318,67,317,72,219,52"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1utils_1_1IAssetManager.html" title=" " alt="" coords="5,74,226,102"/>
+<area shape="poly" id="edge3_Node000002_Node000001" title=" " alt="" coords="199,67,319,42,320,47,201,73"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="241,83,273,83,273,88,241,88"/>
+</map>

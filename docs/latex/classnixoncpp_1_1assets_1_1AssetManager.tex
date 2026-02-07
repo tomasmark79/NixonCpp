@@ -1,0 +1,230 @@
+\doxysection{nixoncpp\+::assets\+::Asset\+Manager Class Reference}
+\hypertarget{classnixoncpp_1_1assets_1_1AssetManager}{}\label{classnixoncpp_1_1assets_1_1AssetManager}\index{nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}}
+
+
+{\ttfamily \#include $<$Asset\+Manager.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::assets\+::Asset\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1assets_1_1AssetManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::assets\+::Asset\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1assets_1_1AssetManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManager_a582f623a4f3df2a99ef9ace73b0e1dfc}{Asset\+Manager}} (std\+::filesystem\+::path assets\+Path)
+\begin{DoxyCompactList}\small\item\em Construct a new Asset Manager object. \end{DoxyCompactList}\item 
+const std\+::filesystem\+::path \& \mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManager_afbfcf699cc056fad2226fad3fede5506}{get\+Assets\+Path}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Assets Path object. \end{DoxyCompactList}\item 
+std\+::filesystem\+::path \mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManager_aa6fa39655aeb5ace81b66c0c3ea7a7c0}{resolve\+Asset}} (const std\+::filesystem\+::path \&relative\+Path) const override
+\begin{DoxyCompactList}\small\item\em Resolve the full path of an asset given its relative path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManager_a1ee9bb6ce66bf784da142f87560997d6}{asset\+Exists}} (const std\+::filesystem\+::path \&relative\+Path) const override
+\begin{DoxyCompactList}\small\item\em Check if an asset exists given its relative path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManager_af18a592c6f3d8052301a7d23ce2e8dfc}{validate}} () const override
+\begin{DoxyCompactList}\small\item\em Validate the asset manager configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{nixoncpp\+::assets\+::\+IAsset\+Manager}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_a7693b11ba434c41ddba4f17732d97574}{\texorpdfstring{$\sim$}{\string~}\+IAsset\+Manager}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{IAsset\+Manager}} $>$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManager_a9778c797417b17b62b8f1135ca613cd3}{create}} (const std\+::filesystem\+::path \&executable\+Path, const std\+::string \&\mbox{\hyperlink{Application_8cpp_a3c9f34bd2e11a5d854fc61609b3edb3b}{app\+Name}})
+\begin{DoxyCompactList}\small\item\em Create a new Asset Manager instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1assets_1_1AssetManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1assets_1_1AssetManager_a582f623a4f3df2a99ef9ace73b0e1dfc}\index{nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}!AssetManager@{AssetManager}}
+\index{AssetManager@{AssetManager}!nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}}
+\doxysubsubsection{\texorpdfstring{AssetManager()}{AssetManager()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1assets_1_1AssetManager_a582f623a4f3df2a99ef9ace73b0e1dfc} 
+nixoncpp\+::assets\+::\+Asset\+Manager\+::\+Asset\+Manager (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{assets\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new Asset Manager object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assets\+Path} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1assets_1_1AssetManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1assets_1_1AssetManager_a1ee9bb6ce66bf784da142f87560997d6}\index{nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}!assetExists@{assetExists}}
+\index{assetExists@{assetExists}!nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}}
+\doxysubsubsection{\texorpdfstring{assetExists()}{assetExists()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1assets_1_1AssetManager_a1ee9bb6ce66bf784da142f87560997d6} 
+bool nixoncpp\+::assets\+::\+Asset\+Manager\+::asset\+Exists (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{relative\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if an asset exists given its relative path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_a79264542d6f28cad888513ba6f80b6c4}{nixoncpp\+::assets\+::\+IAsset\+Manager}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1assets_1_1AssetManager_a1ee9bb6ce66bf784da142f87560997d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classnixoncpp_1_1assets_1_1AssetManager_a1ee9bb6ce66bf784da142f87560997d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1assets_1_1AssetManager_a9778c797417b17b62b8f1135ca613cd3}\index{nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}!create@{create}}
+\index{create@{create}!nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1assets_1_1AssetManager_a9778c797417b17b62b8f1135ca613cd3} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{IAsset\+Manager}} $>$ nixoncpp\+::assets\+::\+Asset\+Manager\+::create (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{executable\+Path}{, }\item[{const std\+::string \&}]{app\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a new Asset Manager instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em executable\+Path} & \\
+\hline
+{\em app\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+IAsset\+Manager$>$ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1assets_1_1AssetManager_a9778c797417b17b62b8f1135ca613cd3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1assets_1_1AssetManager_afbfcf699cc056fad2226fad3fede5506}\index{nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}!getAssetsPath@{getAssetsPath}}
+\index{getAssetsPath@{getAssetsPath}!nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}}
+\doxysubsubsection{\texorpdfstring{getAssetsPath()}{getAssetsPath()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1assets_1_1AssetManager_afbfcf699cc056fad2226fad3fede5506} 
+const std\+::filesystem\+::path \& nixoncpp\+::assets\+::\+Asset\+Manager\+::get\+Assets\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Assets Path object. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::filesystem\+::path\& 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_ae2287e1d0a38d2bca8ddb1025dadf57d}{nixoncpp\+::assets\+::\+IAsset\+Manager}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classnixoncpp_1_1assets_1_1AssetManager_afbfcf699cc056fad2226fad3fede5506_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1assets_1_1AssetManager_aa6fa39655aeb5ace81b66c0c3ea7a7c0}\index{nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}!resolveAsset@{resolveAsset}}
+\index{resolveAsset@{resolveAsset}!nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}}
+\doxysubsubsection{\texorpdfstring{resolveAsset()}{resolveAsset()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1assets_1_1AssetManager_aa6fa39655aeb5ace81b66c0c3ea7a7c0} 
+std\+::filesystem\+::path nixoncpp\+::assets\+::\+Asset\+Manager\+::resolve\+Asset (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{relative\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Resolve the full path of an asset given its relative path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::filesystem\+::path 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_adf47914c04058434ba6549f1051f688b}{nixoncpp\+::assets\+::\+IAsset\+Manager}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1assets_1_1AssetManager_aa6fa39655aeb5ace81b66c0c3ea7a7c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1assets_1_1AssetManager_af18a592c6f3d8052301a7d23ce2e8dfc}\index{nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}!validate@{validate}}
+\index{validate@{validate}!nixoncpp::assets::AssetManager@{nixoncpp::assets::AssetManager}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1assets_1_1AssetManager_af18a592c6f3d8052301a7d23ce2e8dfc} 
+bool nixoncpp\+::assets\+::\+Asset\+Manager\+::validate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Validate the asset manager configuration. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_a0f6c2bb12ac75c54ae13d2c1dec4a91b}{nixoncpp\+::assets\+::\+IAsset\+Manager}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classnixoncpp_1_1assets_1_1AssetManager_af18a592c6f3d8052301a7d23ce2e8dfc_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Assets/\mbox{\hyperlink{AssetManager_8hpp}{Asset\+Manager.\+hpp}}\item 
+src/lib/\+Utils/\+Assets/\mbox{\hyperlink{AssetManager_8cpp}{Asset\+Manager.\+cpp}}\end{DoxyCompactItemize}

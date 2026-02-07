@@ -1,0 +1,14 @@
+<map id="nixoncpp::utils::UtilsFactory::createJsonSerializer" name="nixoncpp::utils::UtilsFactory::createJsonSerializer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="613,109,814,154"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#aab74a1a2491ea457c170d20781cf6897" title="Create basic utilities context with default logger." alt="" coords="360,5,561,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="652,104,564,65,533,53,535,48,566,60,654,100"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a7584ff01912c5d2a8450715debefed80" title="Create minimal context without app&#45;specific components." alt="" coords="360,75,561,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="598,118,561,113,561,108,598,113"/>
+<area shape="rect" id="Node000004" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a5d58ef900c1db80a1d196a271d26b6e4" title=" " alt="" coords="356,144,565,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="598,150,566,155,565,149,597,145"/>
+<area shape="rect" id="Node000005" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a4f4379374cac4b57e87332373ecdb3c2" title="Create full application context with all components." alt="" coords="108,175,308,219"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="664,164,617,187,566,204,500,214,432,218,308,213,308,208,432,213,499,209,565,198,615,182,661,159"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="341,184,309,187,308,182,340,178"/>
+<area shape="rect" id="Node000006" href="$Application_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,183,60,211"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="92,200,60,200,60,194,92,194"/>
+</map>

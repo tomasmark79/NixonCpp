@@ -1,0 +1,39 @@
+<map id="nixoncpp::utils::UtilsFactory::createFullContext" name="nixoncpp::utils::UtilsFactory::createFullContext">
+<area shape="rect" id="Node000001" title="Create full application context with all components." alt="" coords="5,254,206,298"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a6e7781b6db8c887f84c08609c72cee9b" title=" " alt="" coords="544,42,744,86"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,252,126,204,154,143,173,112,196,82,222,56,252,35,291,18,332,8,375,3,418,4,499,15,570,34,568,39,498,20,417,9,375,9,333,13,293,23,255,40,226,60,200,86,178,115,159,145,131,206,115,254"/>
+<area shape="rect" id="Node000005" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a5d58ef900c1db80a1d196a271d26b6e4" title=" " alt="" coords="254,50,463,94"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="120,251,174,183,211,145,252,111,272,99,275,104,255,115,214,149,178,187,124,255"/>
+<area shape="rect" id="Node000006" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#ac89ae32784dcc62839c88a8e99c50f7c" title=" " alt="" coords="544,166,744,210"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="164,251,253,224,395,201,528,190,528,195,396,207,254,229,166,256"/>
+<area shape="rect" id="Node000007" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a898645cce10d377a7586d12c3fdb6e93" title=" " alt="" coords="839,122,1040,166"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="138,251,190,219,253,191,327,169,404,152,481,141,559,133,703,129,824,132,824,137,703,134,559,139,482,146,405,158,328,174,255,196,193,224,140,256"/>
+<area shape="rect" id="Node000008" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a1315826b061bc911c58a3bca701ef5f0" title=" " alt="" coords="839,214,1040,258"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="206,268,824,239,824,244,206,274"/>
+<area shape="rect" id="Node000009" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#ad6f07ec37707abf581796c46ee56211d" title=" " alt="" coords="258,283,458,328"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="206,285,243,289,243,295,206,290"/>
+<area shape="rect" id="Node000010" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a25d60ab1ffddf4e84f9bfcf18d6cda5e" title=" " alt="" coords="258,352,458,397"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="157,296,255,337,273,344,271,349,253,342,155,301"/>
+<area shape="rect" id="Node000014" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#af57873fd9fa5b5a4b39925fc05966698" title=" " alt="" coords="258,422,458,466"/>
+<area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="128,297,182,352,217,381,255,407,265,412,263,417,252,412,214,385,179,356,125,301"/>
+<area shape="rect" id="Node000015" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#af9d36cfe688b1460dec5453b5d5c0f3e" title=" " alt="" coords="258,491,458,536"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="120,297,140,336,170,384,209,434,255,477,262,481,259,485,252,481,205,437,166,387,135,338,115,300"/>
+<area shape="rect" id="Node000017" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a99c58e956babbfc262186c1c0d3fd29e" title=" " alt="" coords="258,560,458,605"/>
+<area shape="poly" id="edge20_Node000001_Node000017" title=" " alt="" coords="115,298,132,349,160,415,201,485,227,518,255,546,260,550,257,554,252,550,223,521,197,488,155,418,127,351,110,299"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1assets_1_1AssetManagerFactory.html#a534dac197c8ab46bca337cbc7162371b" title="Create a Default object." alt="" coords="824,42,1055,86"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="744,61,809,61,809,67,744,67"/>
+<area shape="rect" id="Node000004" href="$classnixoncpp_1_1assets_1_1AssetManager.html#a9778c797417b17b62b8f1135ca613cd3" title="Create a new Asset Manager instance." alt="" coords="1103,42,1333,86"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1055,61,1087,61,1087,67,1055,67"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="463,66,528,65,528,70,463,72"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="417,92,574,157,572,162,415,97"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="744,170,824,158,825,164,745,176"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="745,202,825,215,824,220,744,207"/>
+<area shape="rect" id="Node000011" href="$classnixoncpp_1_1logging_1_1LoggerFactory.html#a9a38b177b191b1ab4182363e93dd222b" title="Create a logger instance based on the specified type and configuration." alt="" coords="564,352,724,397"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="459,372,548,372,548,377,459,377"/>
+<area shape="rect" id="Node000012" href="$classnixoncpp_1_1logging_1_1LoggerFactory.html#a26cfce0d7f5386a37884a93178910b85" title="Create a Console object logger." alt="" coords="833,387,1046,432"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="725,381,818,392,818,398,724,387"/>
+<area shape="rect" id="Node000013" href="$classnixoncpp_1_1logging_1_1LoggerFactory.html#a155dca9a6066e9729f9237e7d02c2d4e" title="Create a Null object logger." alt="" coords="846,318,1033,362"/>
+<area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="724,363,831,350,831,355,725,368"/>
+<area shape="rect" id="Node000016" href="$classnixoncpp_1_1utils_1_1PlatformInfoFactory.html#a0195da5938b4019fd41096c4e57a3c6a" title=" " alt="" coords="511,491,776,536"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="459,511,495,511,495,516,459,516"/>
+</map>

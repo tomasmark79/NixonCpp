@@ -1,0 +1,9 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,57,59,85"/>
+<area shape="rect" id="Node000002" href="$classMockAssetManager.html#af7bd4703685f7e58e055bed20dab6931" title="Check if an asset exists given its relative path." alt="" coords="116,5,347,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,59,106,43,141,34,142,39,107,48,60,64"/>
+<area shape="rect" id="Node000003" href="$classMockAssetManager.html#a57ab69fcbe5dc9353276ecc1ce7b37e8" title="Get the Assets Path object." alt="" coords="107,57,356,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="59,68,91,68,91,74,59,74"/>
+<area shape="rect" id="Node000004" href="$classMockAssetManager.html#a8f82bea196f675915de9ff257300d6a8" title="Validate the asset manager configuration." alt="" coords="126,109,336,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="60,78,107,94,142,103,141,108,106,99,58,83"/>
+</map>

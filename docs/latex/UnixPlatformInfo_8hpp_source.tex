@@ -1,0 +1,41 @@
+\doxysection{Unix\+Platform\+Info.\+hpp}
+\hypertarget{UnixPlatformInfo_8hpp_source}{}\label{UnixPlatformInfo_8hpp_source}\index{src/lib/Utils/Platform/UnixPlatformInfo.hpp@{src/lib/Utils/Platform/UnixPlatformInfo.hpp}}
+\mbox{\hyperlink{UnixPlatformInfo_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{IPlatformInfo_8hpp}{Utils/Platform/IPlatformInfo.hpp}}>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a00ff5bab694cf382f02e86df2a4cd997}{UnixPlatformInfo}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{IPlatformInfo}}\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a00ff5bab694cf382f02e86df2a4cd997}{UnixPlatformInfo}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a08a0b4a719dbad72d4a36292d00f4af0}{UnixPlatformInfo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a00ff5bab694cf382f02e86df2a4cd997}{UnixPlatformInfo}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a00ff5bab694cf382f02e86df2a4cd997}{UnixPlatformInfo}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_aca3164ca869512cc7fbc855239cf1217}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a00ff5bab694cf382f02e86df2a4cd997}{UnixPlatformInfo}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a3084da0ad3eaaeeceb2776979be95be9}{UnixPlatformInfo}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a00ff5bab694cf382f02e86df2a4cd997}{UnixPlatformInfo}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a00ff5bab694cf382f02e86df2a4cd997}{UnixPlatformInfo}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a090c1b16c8df97f45aa7bb7d01cbbc7b}{operator=}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a00ff5bab694cf382f02e86df2a4cd997}{UnixPlatformInfo}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_aa06cdc1f7a278324d08a986d4e88da42}{\string~UnixPlatformInfo}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_aef1ff0a7c04c6d3725c1020952e15f96}{getPlatform}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_aece3d6aceab13fd1c0cf36f775adefe2}{getPlatformName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00025\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a334a47bfecd86cefe901972b251e5488}{getExecutablePath}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a6f638072b4123bfcbb0b7400e250698a}{getExecutableDirectory}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a3c167869ff8399a1415927921150045b}{isWindows}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_aba53513d2008c564aedab84efb31e66a}{isLinux}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_ae6cacce74ee007dbc5c10d2d493fbf38}{isMacOS}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UnixPlatformInfo_a555c1026d933395e8c7660002ade2551}{isEmscripten}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

@@ -1,0 +1,110 @@
+\doxysection{nixoncpp\+::utils\+::IString\+Formatter Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1IStringFormatter}{}\label{classnixoncpp_1_1utils_1_1IStringFormatter}\index{nixoncpp::utils::IStringFormatter@{nixoncpp::utils::IStringFormatter}}
+
+
+Interface for string formatting operations.  
+
+
+
+
+{\ttfamily \#include $<$IString\+Formatter.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::IString\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1IStringFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::IString\+Formatter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classnixoncpp_1_1utils_1_1IStringFormatter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IStringFormatter_aafb294fa8ee4d6d6bd760c7de5e34f77}{\texorpdfstring{$\sim$}{\string~}\+IString\+Formatter}} ()=default
+\item 
+virtual std\+::string \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IStringFormatter_a0df757041295067423d07f8dcec05b7d}{add\+Dots}} (const std\+::string \&str) const =0
+\begin{DoxyCompactList}\small\item\em Add thousand separators (dots) to numeric string. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IStringFormatter_a9e952fb560b8e757c1b03ace80f00d4f}{remove\+Dots}} (const std\+::string \&str) const =0
+\begin{DoxyCompactList}\small\item\em Remove thousand separators (dots) from numeric string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for string formatting operations. 
+
+Provides utilities for string manipulation and formatting. 
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1IStringFormatter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IStringFormatter_aafb294fa8ee4d6d6bd760c7de5e34f77}\index{nixoncpp::utils::IStringFormatter@{nixoncpp::utils::IStringFormatter}!````~IStringFormatter@{\texorpdfstring{$\sim$}{\string~}IStringFormatter}}
+\index{````~IStringFormatter@{\texorpdfstring{$\sim$}{\string~}IStringFormatter}!nixoncpp::utils::IStringFormatter@{nixoncpp::utils::IStringFormatter}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IStringFormatter()}{\string~IStringFormatter()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IStringFormatter_aafb294fa8ee4d6d6bd760c7de5e34f77} 
+virtual nixoncpp\+::utils\+::\+IString\+Formatter\+::\texorpdfstring{$\sim$}{\string~}\+IString\+Formatter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1IStringFormatter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IStringFormatter_a0df757041295067423d07f8dcec05b7d}\index{nixoncpp::utils::IStringFormatter@{nixoncpp::utils::IStringFormatter}!addDots@{addDots}}
+\index{addDots@{addDots}!nixoncpp::utils::IStringFormatter@{nixoncpp::utils::IStringFormatter}}
+\doxysubsubsection{\texorpdfstring{addDots()}{addDots()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IStringFormatter_a0df757041295067423d07f8dcec05b7d} 
+virtual std\+::string nixoncpp\+::utils\+::\+IString\+Formatter\+::add\+Dots (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Add thousand separators (dots) to numeric string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_a6434a80f6a0c9582b0838115fe663811}{nixoncpp\+::utils\+::\+String\+Formatter}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IStringFormatter_a9e952fb560b8e757c1b03ace80f00d4f}\index{nixoncpp::utils::IStringFormatter@{nixoncpp::utils::IStringFormatter}!removeDots@{removeDots}}
+\index{removeDots@{removeDots}!nixoncpp::utils::IStringFormatter@{nixoncpp::utils::IStringFormatter}}
+\doxysubsubsection{\texorpdfstring{removeDots()}{removeDots()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IStringFormatter_a9e952fb560b8e757c1b03ace80f00d4f} 
+virtual std\+::string nixoncpp\+::utils\+::\+IString\+Formatter\+::remove\+Dots (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Remove thousand separators (dots) from numeric string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_a0ddfedcf8f52d9e5eed4cfbfd29f6a0f}{nixoncpp\+::utils\+::\+String\+Formatter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+String/\mbox{\hyperlink{IStringFormatter_8hpp}{IString\+Formatter.\+hpp}}\end{DoxyCompactItemize}

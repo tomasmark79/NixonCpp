@@ -1,0 +1,308 @@
+\doxysection{nixoncpp\+::utils\+::IPath\+Resolver Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1IPathResolver}{}\label{classnixoncpp_1_1utils_1_1IPathResolver}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+
+
+Interface for path resolution and manipulation.  
+
+
+
+
+{\ttfamily \#include $<$IPath\+Resolver.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::IPath\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1IPathResolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::IPath\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1IPathResolver__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a7051f23b40f2bd5221270f498cb2cfca}{\texorpdfstring{$\sim$}{\string~}\+IPath\+Resolver}} ()=default
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a408df99e3c26b062e915248d1e88cde0}{get\+Absolute\+Path}} (const std\+::filesystem\+::path \&path) const =0
+\begin{DoxyCompactList}\small\item\em Get the Absolute Path object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a636da5094a3ddace6446926e15ea05c1}{get\+Canonical\+Path}} (const std\+::filesystem\+::path \&path) const =0
+\begin{DoxyCompactList}\small\item\em Get the Canonical Path object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a00484e84fab83a378b565f0e8a08f475}{get\+Relative\+Path}} (const std\+::filesystem\+::path \&target, const std\+::filesystem\+::path \&base=std\+::filesystem\+::current\+\_\+path()) const =0
+\begin{DoxyCompactList}\small\item\em Get the Relative Path object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a5716b2a0bb77e85f74784430406f990e}{is\+Absolute}} (const std\+::filesystem\+::path \&path) const =0
+\begin{DoxyCompactList}\small\item\em Check if path is absolute. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a429b0082fc5e8dd61e9541d0bf20d06e}{is\+Relative}} (const std\+::filesystem\+::path \&path) const =0
+\begin{DoxyCompactList}\small\item\em Check if path is relative. \end{DoxyCompactList}\item 
+virtual std\+::filesystem\+::path \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a275e1b30cebe3ee0565810087dac6cb6}{get\+Parent}} (const std\+::filesystem\+::path \&path) const =0
+\begin{DoxyCompactList}\small\item\em Get the Parent object. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a0d8badded5f252732e0082752b66ca3d}{get\+Filename}} (const std\+::filesystem\+::path \&path) const =0
+\begin{DoxyCompactList}\small\item\em Get the Filename object. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_af61aafda97305aed8e285239742c3b1e}{get\+Extension}} (const std\+::filesystem\+::path \&path) const =0
+\begin{DoxyCompactList}\small\item\em Get the Extension object. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_a91bcfbdb404c65fababac5e21070f74d}{get\+Stem}} (const std\+::filesystem\+::path \&path) const =0
+\begin{DoxyCompactList}\small\item\em Get the Stem object. \end{DoxyCompactList}\item 
+virtual std\+::filesystem\+::path \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver_aef0a291092e5173e8dba6ba03448103c}{join}} (const std\+::vector$<$ std\+::string $>$ \&parts) const =0
+\begin{DoxyCompactList}\small\item\em Join multiple path components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for path resolution and manipulation. 
+
+Provides abstraction for filesystem path operations. 
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a7051f23b40f2bd5221270f498cb2cfca}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!````~IPathResolver@{\texorpdfstring{$\sim$}{\string~}IPathResolver}}
+\index{````~IPathResolver@{\texorpdfstring{$\sim$}{\string~}IPathResolver}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IPathResolver()}{\string~IPathResolver()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a7051f23b40f2bd5221270f498cb2cfca} 
+virtual nixoncpp\+::utils\+::\+IPath\+Resolver\+::\texorpdfstring{$\sim$}{\string~}\+IPath\+Resolver (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a408df99e3c26b062e915248d1e88cde0}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!getAbsolutePath@{getAbsolutePath}}
+\index{getAbsolutePath@{getAbsolutePath}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{getAbsolutePath()}{getAbsolutePath()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a408df99e3c26b062e915248d1e88cde0} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IPath\+Resolver\+::get\+Absolute\+Path (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Absolute Path object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a4221c94027785c491a3cadd7eb0fa3d8}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a636da5094a3ddace6446926e15ea05c1}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!getCanonicalPath@{getCanonicalPath}}
+\index{getCanonicalPath@{getCanonicalPath}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{getCanonicalPath()}{getCanonicalPath()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a636da5094a3ddace6446926e15ea05c1} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IPath\+Resolver\+::get\+Canonical\+Path (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Canonical Path object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a1ed653766e604fa0941c7fbea4f1d246}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_af61aafda97305aed8e285239742c3b1e}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!getExtension@{getExtension}}
+\index{getExtension@{getExtension}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{getExtension()}{getExtension()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_af61aafda97305aed8e285239742c3b1e} 
+virtual std\+::string nixoncpp\+::utils\+::\+IPath\+Resolver\+::get\+Extension (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Extension object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a1bf978807f7cf68858e37a84c76e5e20}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a0d8badded5f252732e0082752b66ca3d}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!getFilename@{getFilename}}
+\index{getFilename@{getFilename}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{getFilename()}{getFilename()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a0d8badded5f252732e0082752b66ca3d} 
+virtual std\+::string nixoncpp\+::utils\+::\+IPath\+Resolver\+::get\+Filename (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Filename object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_aca066e8a53de68545012a1303e2954a1}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a275e1b30cebe3ee0565810087dac6cb6}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!getParent@{getParent}}
+\index{getParent@{getParent}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a275e1b30cebe3ee0565810087dac6cb6} 
+virtual std\+::filesystem\+::path nixoncpp\+::utils\+::\+IPath\+Resolver\+::get\+Parent (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Parent object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::filesystem\+::path 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_afe510e89f53e6bd85b082959ae26b239}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a00484e84fab83a378b565f0e8a08f475}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!getRelativePath@{getRelativePath}}
+\index{getRelativePath@{getRelativePath}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{getRelativePath()}{getRelativePath()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a00484e84fab83a378b565f0e8a08f475} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IPath\+Resolver\+::get\+Relative\+Path (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{target}{, }\item[{const std\+::filesystem\+::path \&}]{base}{ = {\ttfamily std\+:\+:filesystem\+:\+:current\+\_\+path()}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Relative Path object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & \\
+\hline
+{\em base} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a41c316c8bb2793da083648496add54ab}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a91bcfbdb404c65fababac5e21070f74d}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!getStem@{getStem}}
+\index{getStem@{getStem}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{getStem()}{getStem()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a91bcfbdb404c65fababac5e21070f74d} 
+virtual std\+::string nixoncpp\+::utils\+::\+IPath\+Resolver\+::get\+Stem (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Stem object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a31927da80b352132a68639283d943ea8}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a5716b2a0bb77e85f74784430406f990e}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!isAbsolute@{isAbsolute}}
+\index{isAbsolute@{isAbsolute}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{isAbsolute()}{isAbsolute()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a5716b2a0bb77e85f74784430406f990e} 
+virtual bool nixoncpp\+::utils\+::\+IPath\+Resolver\+::is\+Absolute (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Check if path is absolute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a5c46ec0bfc43e74e0f7330602d7b924f}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_a429b0082fc5e8dd61e9541d0bf20d06e}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!isRelative@{isRelative}}
+\index{isRelative@{isRelative}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{isRelative()}{isRelative()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_a429b0082fc5e8dd61e9541d0bf20d06e} 
+virtual bool nixoncpp\+::utils\+::\+IPath\+Resolver\+::is\+Relative (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Check if path is relative. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a3f8b539ad7ac93e507e4222555c5b6a6}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IPathResolver_aef0a291092e5173e8dba6ba03448103c}\index{nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}!join@{join}}
+\index{join@{join}!nixoncpp::utils::IPathResolver@{nixoncpp::utils::IPathResolver}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IPathResolver_aef0a291092e5173e8dba6ba03448103c} 
+virtual std\+::filesystem\+::path nixoncpp\+::utils\+::\+IPath\+Resolver\+::join (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{parts}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Join multiple path components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parts} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::filesystem\+::path 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a6abe76d5733e3989f73261f643a69341}{nixoncpp\+::utils\+::\+Path\+Resolver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Filesystem/\mbox{\hyperlink{IPathResolver_8hpp}{IPath\+Resolver.\+hpp}}\end{DoxyCompactItemize}

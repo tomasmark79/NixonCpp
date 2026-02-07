@@ -1,0 +1,7 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,44,59,72"/>
+<area shape="rect" id="Node000002" href="$classMockAssetManager.html#a67f93b4a0f11a87eb463062d689df854" title=" " alt="" coords="107,5,319,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,51,91,46,92,51,60,57"/>
+<area shape="rect" id="Node000003" href="$classMockAssetManager.html#a8f82bea196f675915de9ff257300d6a8" title="Validate the asset manager configuration." alt="" coords="108,74,318,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="60,60,109,68,108,73,59,65"/>
+</map>

@@ -1,0 +1,47 @@
+\doxysection{IPlatform\+Info.\+hpp}
+\hypertarget{IPlatformInfo_8hpp_source}{}\label{IPlatformInfo_8hpp_source}\index{src/lib/Utils/Platform/IPlatformInfo.hpp@{src/lib/Utils/Platform/IPlatformInfo.hpp}}
+\mbox{\hyperlink{IPlatformInfo_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{UtilsError_8hpp}{Utils/UtilsError.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}}\ :\ std::uint8\_t\ \{\ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8aaea23489ce3aa9b6406ebb28e0cda430}{Windows}},\ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8aedc9f0a5a5d57797bf68e37364743831}{Linux}},\ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a8b06df0295926efcdcc1f9e13c49848e}{macOS}},\ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a680890ec84706d822adabcc4f3ea2376}{Emscripten}},\ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8a88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}\ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{IPlatformInfo}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_aaf86a25917a5325035e624cde3958a4a}{\string~IPlatformInfo}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ab1ad374f6667c49ba4bacc8a26617fb5}{getPlatform}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad1d61f58cc044796b779544c24821753}{getPlatformName}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a97455790ddf05927861fca96f512894b}{getExecutablePath}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad0405a0af31153f3d9b2a9b5b410a2d8}{getExecutableDirectory}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a786519ed039b90d154e34c2f0a6acefc}{isWindows}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00063\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a84055dcf94e1c17ba4f6f3a85f4e1ef2}{isLinux}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a080fb817ccc9777db0644556f6215928}{isMacOS}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad9edcae53a624d17c432fb0c0025f06f}{isEmscripten}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00083\ \ \ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

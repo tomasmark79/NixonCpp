@@ -1,0 +1,270 @@
+\doxysection{nixoncpp\+::utils\+::IDirectory\+Manager Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager}{}\label{classnixoncpp_1_1utils_1_1IDirectoryManager}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+
+
+Interface for directory operations.  
+
+
+
+
+{\ttfamily \#include $<$IDirectory\+Manager.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::IDirectory\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1IDirectoryManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::IDirectory\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1IDirectoryManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_ab6fd3b59f39e96bf4b20c2b3ff780b76}{\texorpdfstring{$\sim$}{\string~}\+IDirectory\+Manager}} ()=default
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_acf408e4fd8f3a701afa84b40461187eb}{create\+Directory}} (const std\+::filesystem\+::path \&dir\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Create a Directory object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_ad08fc3aec0a00b509af1316a3d1e51a1}{remove\+Directory}} (const std\+::filesystem\+::path \&dir\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Remove a Directory object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::uintmax\+\_\+t, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a77993b311483fb0d7c2dc3534b03e89e}{remove\+Directory\+Recursive}} (const std\+::filesystem\+::path \&dir\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Remove a Directory object recursively. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a3837a9835eaad918ca1648ff8a82faaf}{exists}} (const std\+::filesystem\+::path \&dir\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Check if a directory exists. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ bool, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a33fc84405edab817e5638c9e9071981e}{is\+Empty}} (const std\+::filesystem\+::path \&dir\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Check if a directory is empty. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ std\+::filesystem\+::path $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a5a8f9c0b0a8894cbf811c26e11176284}{list\+Entries}} (const std\+::filesystem\+::path \&dir\+Path) const =0
+\begin{DoxyCompactList}\small\item\em List entries in a directory. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ std\+::filesystem\+::path $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a3bcf5a633f5a525357435e19b8d5b989}{list\+Entries\+Recursive}} (const std\+::filesystem\+::path \&dir\+Path) const =0
+\begin{DoxyCompactList}\small\item\em List entries in a directory recursively. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a4f58987cc3625b3264e1fcc9d5f280dd}{get\+Current\+Directory}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the Current Directory object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a55b105a95ad7531cf94faeb65f1ad3a3}{get\+Temp\+Directory}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the Temp Directory object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for directory operations. 
+
+Provides abstraction for directory creation, removal, and listing. 
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_ab6fd3b59f39e96bf4b20c2b3ff780b76}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!````~IDirectoryManager@{\texorpdfstring{$\sim$}{\string~}IDirectoryManager}}
+\index{````~IDirectoryManager@{\texorpdfstring{$\sim$}{\string~}IDirectoryManager}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IDirectoryManager()}{\string~IDirectoryManager()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_ab6fd3b59f39e96bf4b20c2b3ff780b76} 
+virtual nixoncpp\+::utils\+::\+IDirectory\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+IDirectory\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_acf408e4fd8f3a701afa84b40461187eb}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!createDirectory@{createDirectory}}
+\index{createDirectory@{createDirectory}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{createDirectory()}{createDirectory()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_acf408e4fd8f3a701afa84b40461187eb} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IDirectory\+Manager\+::create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{dir\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Create a Directory object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$void, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_a557031a5859aac48c966be3e922e4abd}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_a3837a9835eaad918ca1648ff8a82faaf}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!exists@{exists}}
+\index{exists@{exists}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_a3837a9835eaad918ca1648ff8a82faaf} 
+virtual bool nixoncpp\+::utils\+::\+IDirectory\+Manager\+::exists (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{dir\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Check if a directory exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_ac52b67b4314dd13ff6a436f8c7190394}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_a4f58987cc3625b3264e1fcc9d5f280dd}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!getCurrentDirectory@{getCurrentDirectory}}
+\index{getCurrentDirectory@{getCurrentDirectory}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentDirectory()}{getCurrentDirectory()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_a4f58987cc3625b3264e1fcc9d5f280dd} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IDirectory\+Manager\+::get\+Current\+Directory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Current Directory object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_a96ea7ea34cd6792f982bb09f7294a6b3}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_a55b105a95ad7531cf94faeb65f1ad3a3}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!getTempDirectory@{getTempDirectory}}
+\index{getTempDirectory@{getTempDirectory}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{getTempDirectory()}{getTempDirectory()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_a55b105a95ad7531cf94faeb65f1ad3a3} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IDirectory\+Manager\+::get\+Temp\+Directory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Temp Directory object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_a5a5dc5088574fbad22d09fbe247c879c}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_a33fc84405edab817e5638c9e9071981e}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_a33fc84405edab817e5638c9e9071981e} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ bool, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IDirectory\+Manager\+::is\+Empty (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{dir\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Check if a directory is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$bool, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_a023012f213a9294c2ef3cde48fbe6319}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_a5a8f9c0b0a8894cbf811c26e11176284}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!listEntries@{listEntries}}
+\index{listEntries@{listEntries}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{listEntries()}{listEntries()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_a5a8f9c0b0a8894cbf811c26e11176284} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ std\+::filesystem\+::path $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IDirectory\+Manager\+::list\+Entries (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{dir\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+List entries in a directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result}\texorpdfstring{$<$}{<}std\+::vector$<$std\+::filesystem\+::path$>$, \doxylink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_ab7aac1d6732c6df549d4af8a9febc555}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_a3bcf5a633f5a525357435e19b8d5b989}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!listEntriesRecursive@{listEntriesRecursive}}
+\index{listEntriesRecursive@{listEntriesRecursive}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{listEntriesRecursive()}{listEntriesRecursive()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_a3bcf5a633f5a525357435e19b8d5b989} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ std\+::filesystem\+::path $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IDirectory\+Manager\+::list\+Entries\+Recursive (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{dir\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+List entries in a directory recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result}\texorpdfstring{$<$}{<}std\+::vector$<$std\+::filesystem\+::path$>$, \doxylink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_a19c27e65c9aa63705710460d15d5f720}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_ad08fc3aec0a00b509af1316a3d1e51a1}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!removeDirectory@{removeDirectory}}
+\index{removeDirectory@{removeDirectory}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{removeDirectory()}{removeDirectory()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_ad08fc3aec0a00b509af1316a3d1e51a1} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IDirectory\+Manager\+::remove\+Directory (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{dir\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Remove a Directory object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$void, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_afdd06b814797fec8995ef82b909dbbfc}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IDirectoryManager_a77993b311483fb0d7c2dc3534b03e89e}\index{nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}!removeDirectoryRecursive@{removeDirectoryRecursive}}
+\index{removeDirectoryRecursive@{removeDirectoryRecursive}!nixoncpp::utils::IDirectoryManager@{nixoncpp::utils::IDirectoryManager}}
+\doxysubsubsection{\texorpdfstring{removeDirectoryRecursive()}{removeDirectoryRecursive()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IDirectoryManager_a77993b311483fb0d7c2dc3534b03e89e} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::uintmax\+\_\+t, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IDirectory\+Manager\+::remove\+Directory\+Recursive (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{dir\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Remove a Directory object recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::uintmax\+\_\+t, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1DirectoryManager_a95761ce6434176b4d4d173085fa2001a}{nixoncpp\+::utils\+::\+Directory\+Manager}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Filesystem/\mbox{\hyperlink{IDirectoryManager_8hpp}{IDirectory\+Manager.\+hpp}}\end{DoxyCompactItemize}

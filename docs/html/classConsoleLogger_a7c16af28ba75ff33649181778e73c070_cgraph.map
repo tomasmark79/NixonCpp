@@ -1,0 +1,14 @@
+<map id="ConsoleLogger::warning" name="ConsoleLogger::warning">
+<area shape="rect" id="Node000001" title="Log a warning message." alt="" coords="5,56,183,84"/>
+<area shape="rect" id="Node000002" href="$classConsoleLogger.html#a31696856245b018e9645c614683ba037" title="Logs a message with a specified level to the console and optionally to a file." alt="" coords="231,56,376,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,67,215,67,215,72,183,72"/>
+<area shape="rect" id="Node000003" href="$classConsoleLogger.html#a5d533abe0114989d4997b6dabfe4687c" title="Convert a logging level to its string representation." alt="" coords="424,5,633,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,53,449,34,450,40,368,58"/>
+<area shape="rect" id="Node000004" href="$classConsoleLogger.html#a787b42f6e197b60908113326b9a048fa" title="Reset the console color to default." alt="" coords="927,78,1137,123"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="376,70,911,93,911,98,376,76"/>
+<area shape="rect" id="Node000005" href="$classConsoleLogger.html#a034b07dd5f02314f42f248eda08fe2b9" title=" " alt="" coords="430,108,627,152"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="359,82,428,100,427,106,357,87"/>
+<area shape="rect" id="Node000006" href="$classConsoleLogger.html#addb2587c7a7fe4e6c213f22f7db385c6" title=" " alt="" coords="681,108,879,152"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="628,127,666,127,666,132,628,132"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="879,116,911,112,911,117,879,121"/>
+</map>

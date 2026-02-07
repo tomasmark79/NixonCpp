@@ -1,0 +1,7 @@
+<map id="nixoncpp::assets::AssetManagerFactory::create" name="nixoncpp::assets::AssetManagerFactory::create">
+<area shape="rect" id="Node000001" title="Create an Asset Manager object with a specified assets path." alt="" coords="122,24,352,68"/>
+<area shape="rect" id="Node000002" href="$AssetManagerTest_8cpp.html#ac253b7e3f2ed7be4c8d97c4dfac98440" title=" " alt="" coords="5,5,74,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,31,74,26,75,21,107,25"/>
+<area shape="rect" id="Node000003" href="$AssetManagerTest_8cpp.html#a250e4f887c3e513f207005b77d41225b" title=" " alt="" coords="5,57,74,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,65,75,69,74,64,106,60"/>
+</map>

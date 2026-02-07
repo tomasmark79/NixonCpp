@@ -1,0 +1,305 @@
+\doxysection{nixoncpp\+::utils\+::Result\texorpdfstring{$<$}{<} T, E \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1Result}{}\label{classnixoncpp_1_1utils_1_1Result}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+
+
+{\ttfamily \#include $<$Utils\+Error.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::Result\texorpdfstring{$<$}{<} T, E \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1Result__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::Result\texorpdfstring{$<$}{<} T, E \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classnixoncpp_1_1utils_1_1Result__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a595b0f75bef31c62bca8eb22e3ea6e06}{Result}} (const T \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a4634e5653ace476c525ec684f2acd9af}{value}})
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a21072af54b0e591502dc813d6cd9cb23}{Result}} (T \&\&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a4634e5653ace476c525ec684f2acd9af}{value}})
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_afdc83c53f3d65b4abe1d589cd0b9bacc}{Result}} (const E \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_ae3bccd2f7c0608f7809eab52b8117d22}{error}})
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a18aff55a5bbd718eb4c601e95e4a06ed}{Result}} (E \&\&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_ae3bccd2f7c0608f7809eab52b8117d22}{error}})
+\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a2f4932002b1251d49cb18e66d5cd583e}{has\+Value}} () const noexcept
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a99f362cf43f9588f4d86473b01ae280e}{operator bool}} () const noexcept
+\item 
+T \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a4634e5653ace476c525ec684f2acd9af}{value}} () \&
+\item 
+const T \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_ae2ad337da72e30a2264ad84e1dc9e193}{value}} () const \&
+\item 
+T \&\& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_ae820926357bcff9e2ff8e6535af880fa}{value}} () \&\&
+\item 
+E \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_ae3bccd2f7c0608f7809eab52b8117d22}{error}} () \&
+\item 
+const E \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a867ce4004e60e342a90af0f252247abf}{error}} () const \&
+\item 
+E \&\& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_ae4089fd8f2e913e0f76cf6e945ddc8f0}{error}} () \&\&
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_aef8d5e5eb7b3715cbc7e57f49cebbbeb}{operator-\/$>$}} ()
+\item 
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a9d55939c3f3e0e700a063e16a998385b}{operator-\/$>$}} () const
+\item 
+T \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a4b9113570924afe8b2ef3e53886aba35}{operator\texorpdfstring{$\ast$}{*}}} () \&
+\item 
+const T \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_abd3ac223109f8b2e992da26f766dfeb7}{operator\texorpdfstring{$\ast$}{*}}} () const \&
+\item 
+T \&\& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a980da16664deea8cc15af6205638e27c}{operator\texorpdfstring{$\ast$}{*}}} () \&\&
+\item 
+{\footnotesize template$<$typename U$>$ }\\T \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a0a6ab91eee817ae532aeba7e671c83f1}{value\+Or}} (U \&\&default\+Value) const \&
+\item 
+{\footnotesize template$<$typename U$>$ }\\T \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_a474f7bfd64409fe045e9aaaf8b2d7b87}{value\+Or}} (U \&\&default\+Value) \&\&
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a595b0f75bef31c62bca8eb22e3ea6e06}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!Result@{Result}}
+\index{Result@{Result}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{Result()}{Result()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a595b0f75bef31c62bca8eb22e3ea6e06} 
+template$<$typename T, typename E$>$ \\
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::\+Result (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_a595b0f75bef31c62bca8eb22e3ea6e06_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a21072af54b0e591502dc813d6cd9cb23}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!Result@{Result}}
+\index{Result@{Result}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{Result()}{Result()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a21072af54b0e591502dc813d6cd9cb23} 
+template$<$typename T, typename E$>$ \\
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::\+Result (\begin{DoxyParamCaption}\item[{T \&\&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_a21072af54b0e591502dc813d6cd9cb23_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_afdc83c53f3d65b4abe1d589cd0b9bacc}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!Result@{Result}}
+\index{Result@{Result}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{Result()}{Result()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_afdc83c53f3d65b4abe1d589cd0b9bacc} 
+template$<$typename T, typename E$>$ \\
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::\+Result (\begin{DoxyParamCaption}\item[{const E \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_afdc83c53f3d65b4abe1d589cd0b9bacc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a18aff55a5bbd718eb4c601e95e4a06ed}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!Result@{Result}}
+\index{Result@{Result}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{Result()}{Result()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a18aff55a5bbd718eb4c601e95e4a06ed} 
+template$<$typename T, typename E$>$ \\
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::\+Result (\begin{DoxyParamCaption}\item[{E \&\&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_a18aff55a5bbd718eb4c601e95e4a06ed_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_ae3bccd2f7c0608f7809eab52b8117d22}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!error@{error}}
+\index{error@{error}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_ae3bccd2f7c0608f7809eab52b8117d22} 
+template$<$typename T, typename E$>$ \\
+E \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_ae3bccd2f7c0608f7809eab52b8117d22_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_ae4089fd8f2e913e0f76cf6e945ddc8f0}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!error@{error}}
+\index{error@{error}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_ae4089fd8f2e913e0f76cf6e945ddc8f0} 
+template$<$typename T, typename E$>$ \\
+E \&\& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a867ce4004e60e342a90af0f252247abf}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!error@{error}}
+\index{error@{error}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a867ce4004e60e342a90af0f252247abf} 
+template$<$typename T, typename E$>$ \\
+const E \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a2f4932002b1251d49cb18e66d5cd583e}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!hasValue@{hasValue}}
+\index{hasValue@{hasValue}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{hasValue()}{hasValue()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a2f4932002b1251d49cb18e66d5cd583e} 
+template$<$typename T, typename E$>$ \\
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::has\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a99f362cf43f9588f4d86473b01ae280e}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a99f362cf43f9588f4d86473b01ae280e} 
+template$<$typename T, typename E$>$ \\
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::operator bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a4b9113570924afe8b2ef3e53886aba35}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a4b9113570924afe8b2ef3e53886aba35} 
+template$<$typename T, typename E$>$ \\
+T \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_a4b9113570924afe8b2ef3e53886aba35_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a980da16664deea8cc15af6205638e27c}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a980da16664deea8cc15af6205638e27c} 
+template$<$typename T, typename E$>$ \\
+T \&\& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_a980da16664deea8cc15af6205638e27c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_abd3ac223109f8b2e992da26f766dfeb7}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_abd3ac223109f8b2e992da26f766dfeb7} 
+template$<$typename T, typename E$>$ \\
+const T \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_abd3ac223109f8b2e992da26f766dfeb7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_aef8d5e5eb7b3715cbc7e57f49cebbbeb}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_aef8d5e5eb7b3715cbc7e57f49cebbbeb} 
+template$<$typename T, typename E$>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_aef8d5e5eb7b3715cbc7e57f49cebbbeb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a9d55939c3f3e0e700a063e16a998385b}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a9d55939c3f3e0e700a063e16a998385b} 
+template$<$typename T, typename E$>$ \\
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_a9d55939c3f3e0e700a063e16a998385b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a4634e5653ace476c525ec684f2acd9af}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!value@{value}}
+\index{value@{value}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a4634e5653ace476c525ec684f2acd9af} 
+template$<$typename T, typename E$>$ \\
+T \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1Result_a4634e5653ace476c525ec684f2acd9af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_ae820926357bcff9e2ff8e6535af880fa}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!value@{value}}
+\index{value@{value}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_ae820926357bcff9e2ff8e6535af880fa} 
+template$<$typename T, typename E$>$ \\
+T \&\& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_ae2ad337da72e30a2264ad84e1dc9e193}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!value@{value}}
+\index{value@{value}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_ae2ad337da72e30a2264ad84e1dc9e193} 
+template$<$typename T, typename E$>$ \\
+const T \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a474f7bfd64409fe045e9aaaf8b2d7b87}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!valueOr@{valueOr}}
+\index{valueOr@{valueOr}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{valueOr()}{valueOr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a474f7bfd64409fe045e9aaaf8b2d7b87} 
+template$<$typename T, typename E$>$ \\
+template$<$typename U$>$ \\
+T \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::value\+Or (\begin{DoxyParamCaption}\item[{U \&\&}]{default\+Value}{}\end{DoxyParamCaption}) \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classnixoncpp_1_1utils_1_1Result_a0a6ab91eee817ae532aeba7e671c83f1}\index{nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}!valueOr@{valueOr}}
+\index{valueOr@{valueOr}!nixoncpp::utils::Result$<$ T, E $>$@{nixoncpp::utils::Result$<$ T, E $>$}}
+\doxysubsubsection{\texorpdfstring{valueOr()}{valueOr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1Result_a0a6ab91eee817ae532aeba7e671c83f1} 
+template$<$typename T, typename E$>$ \\
+template$<$typename U$>$ \\
+T \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result}}$<$ T, E $>$\+::value\+Or (\begin{DoxyParamCaption}\item[{U \&\&}]{default\+Value}{}\end{DoxyParamCaption}) const \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\mbox{\hyperlink{UtilsError_8hpp}{Utils\+Error.\+hpp}}\end{DoxyCompactItemize}

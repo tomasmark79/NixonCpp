@@ -1,0 +1,57 @@
+\doxysection{Path\+Resolver.\+hpp}
+\hypertarget{PathResolver_8hpp_source}{}\label{PathResolver_8hpp_source}\index{src/lib/Utils/Filesystem/PathResolver.hpp@{src/lib/Utils/Filesystem/PathResolver.hpp}}
+\mbox{\hyperlink{PathResolver_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{IPathResolver_8hpp}{Utils/Filesystem/IPathResolver.hpp}}>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_adb58cd9f11ef936c1d02919a3ed3d830}{PathResolver}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver}{IPathResolver}}\ \{}
+\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_adb58cd9f11ef936c1d02919a3ed3d830}{PathResolver}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_af8663b35aa233403652ae8e723d0da7f}{PathResolver}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_adb58cd9f11ef936c1d02919a3ed3d830}{PathResolver}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_adb58cd9f11ef936c1d02919a3ed3d830}{PathResolver}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_ad1b7c43fca8367a5319fdc6fdf949711}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_adb58cd9f11ef936c1d02919a3ed3d830}{PathResolver}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a3687c2063d4f404db0ba8de2e3ca4465}{PathResolver}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_adb58cd9f11ef936c1d02919a3ed3d830}{PathResolver}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_adb58cd9f11ef936c1d02919a3ed3d830}{PathResolver}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a26f2f40d5126c1abe78040a788afe657}{operator=}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_adb58cd9f11ef936c1d02919a3ed3d830}{PathResolver}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a145371d418e2c0a849f4a78d0d4fc6bc}{\string~PathResolver}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a4221c94027785c491a3cadd7eb0fa3d8}{getAbsolutePath}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&path)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a1ed653766e604fa0941c7fbea4f1d246}{getCanonicalPath}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&path)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a41c316c8bb2793da083648496add54ab}{getRelativePath}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&target,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ \&base)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a5c46ec0bfc43e74e0f7330602d7b924f}{isAbsolute}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&path)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a3f8b539ad7ac93e507e4222555c5b6a6}{isRelative}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&path)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00036\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_afe510e89f53e6bd85b082959ae26b239}{getParent}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&path)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_aca066e8a53de68545012a1303e2954a1}{getFilename}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&path)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a1bf978807f7cf68858e37a84c76e5e20}{getExtension}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&path)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a31927da80b352132a68639283d943ea8}{getStem}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&path)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00048\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PathResolver_a6abe76d5733e3989f73261f643a69341}{join}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&parts)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

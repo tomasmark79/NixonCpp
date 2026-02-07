@@ -1,0 +1,5 @@
+<map id="nixoncpp::logging::ILogger::criticalStream" name="nixoncpp::logging::ILogger::criticalStream">
+<area shape="rect" id="Node000001" title="Create a LogStream for streaming critical messages." alt="" coords="5,5,174,50"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1logging_1_1ILogger.html#a8013c95238814c256f4eceab2d069610" title="Create a LogStream for streaming log messages." alt="" coords="222,5,365,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,25,206,25,206,30,174,30"/>
+</map>

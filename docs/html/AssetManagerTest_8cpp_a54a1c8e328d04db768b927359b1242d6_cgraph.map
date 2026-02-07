@@ -1,0 +1,7 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,48,74,76"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1assets_1_1AssetManager.html#afbfcf699cc056fad2226fad3fede5506" title="Get the Assets Path object." alt="" coords="122,5,352,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,54,106,48,107,53,75,59"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1assets_1_1AssetManager.html#af18a592c6f3d8052301a7d23ce2e8dfc" title="Validate the asset manager configuration." alt="" coords="122,75,352,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="75,66,107,71,106,77,74,71"/>
+</map>

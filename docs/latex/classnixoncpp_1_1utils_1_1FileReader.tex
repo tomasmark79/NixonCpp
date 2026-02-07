@@ -1,0 +1,308 @@
+\doxysection{nixoncpp\+::utils\+::File\+Reader Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1FileReader}{}\label{classnixoncpp_1_1utils_1_1FileReader}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+
+
+{\ttfamily \#include $<$File\+Reader.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::File\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1FileReader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::File\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1FileReader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} ()=default
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a3a0972fcb9d4876ce2d00ad43ddbb2e2}{File\+Reader}} (const File\+Reader \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a70a7bb6b6fb15ec9ba01ab7769c639f8}{operator=}} (const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a8f37658f842c6d0394a26948d6c5f848}{File\+Reader}} (File\+Reader \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a58c008bc9044c9e02b2ae2c66badda47}{operator=}} (\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aba4ee31f35d48ff159e71443514f691b}{\texorpdfstring{$\sim$}{\string~}\+File\+Reader}} () override=default
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::string, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_ab8f7ab65242712aa19e722ae15f63ebe}{read}} (const std\+::filesystem\+::path \&file\+Path) const override
+\begin{DoxyCompactList}\small\item\em Read the entire content of a file as a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ uint8\+\_\+t $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a2435da74c1532afda168a1f44d20ca36}{read\+Bytes}} (const std\+::filesystem\+::path \&file\+Path) const override
+\begin{DoxyCompactList}\small\item\em Read the entire content of a file as a vector of bytes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ std\+::string $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a7be0e459ee95c0298d1051f85be632b0}{read\+Lines}} (const std\+::filesystem\+::path \&file\+Path) const override
+\begin{DoxyCompactList}\small\item\em Read the content of a file as a vector of lines. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a9a91f73f73896a15555169d1ccdefcd3}{exists}} (const std\+::filesystem\+::path \&file\+Path) const override
+\begin{DoxyCompactList}\small\item\em Check if a file exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::uintmax\+\_\+t, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a120079d61decfe92a921bbe1cd340da7}{get\+Size}} (const std\+::filesystem\+::path \&file\+Path) const override
+\begin{DoxyCompactList}\small\item\em Get the Size object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader}{nixoncpp\+::utils\+::\+IFile\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a244184ad8701b07d9e79698687af7eda}{\texorpdfstring{$\sim$}{\string~}\+IFile\+Reader}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!FileReader@{FileReader}}
+\index{FileReader@{FileReader}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{FileReader()}{FileReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26} 
+nixoncpp\+::utils\+::\+File\+Reader\+::\+File\+Reader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_a3a0972fcb9d4876ce2d00ad43ddbb2e2}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!FileReader@{FileReader}}
+\index{FileReader@{FileReader}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{FileReader()}{FileReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_a3a0972fcb9d4876ce2d00ad43ddbb2e2} 
+nixoncpp\+::utils\+::\+File\+Reader\+::\+File\+Reader (\begin{DoxyParamCaption}\item[{const File\+Reader \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileReader_a3a0972fcb9d4876ce2d00ad43ddbb2e2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_a8f37658f842c6d0394a26948d6c5f848}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!FileReader@{FileReader}}
+\index{FileReader@{FileReader}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{FileReader()}{FileReader()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_a8f37658f842c6d0394a26948d6c5f848} 
+nixoncpp\+::utils\+::\+File\+Reader\+::\+File\+Reader (\begin{DoxyParamCaption}\item[{File\+Reader \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileReader_a8f37658f842c6d0394a26948d6c5f848_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_aba4ee31f35d48ff159e71443514f691b}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!````~FileReader@{\texorpdfstring{$\sim$}{\string~}FileReader}}
+\index{````~FileReader@{\texorpdfstring{$\sim$}{\string~}FileReader}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FileReader()}{\string~FileReader()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_aba4ee31f35d48ff159e71443514f691b} 
+nixoncpp\+::utils\+::\+File\+Reader\+::\texorpdfstring{$\sim$}{\string~}\+File\+Reader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_a9a91f73f73896a15555169d1ccdefcd3}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!exists@{exists}}
+\index{exists@{exists}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_a9a91f73f73896a15555169d1ccdefcd3} 
+bool nixoncpp\+::utils\+::\+File\+Reader\+::exists (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if a file exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_abe6064fbf3aef889862d1dccb15c4dca}{nixoncpp\+::utils\+::\+IFile\+Reader}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classnixoncpp_1_1utils_1_1FileReader_a9a91f73f73896a15555169d1ccdefcd3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_a120079d61decfe92a921bbe1cd340da7}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!getSize@{getSize}}
+\index{getSize@{getSize}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_a120079d61decfe92a921bbe1cd340da7} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::uintmax\+\_\+t, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+File\+Reader\+::get\+Size (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Size object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::uintmax\+\_\+t, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a78b701a195f02c60de44669e985c6227}{nixoncpp\+::utils\+::\+IFile\+Reader}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileReader_a120079d61decfe92a921bbe1cd340da7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_a70a7bb6b6fb15ec9ba01ab7769c639f8}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_a70a7bb6b6fb15ec9ba01ab7769c639f8} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} \& nixoncpp\+::utils\+::\+File\+Reader\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileReader_a70a7bb6b6fb15ec9ba01ab7769c639f8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_a58c008bc9044c9e02b2ae2c66badda47}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_a58c008bc9044c9e02b2ae2c66badda47} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} \& nixoncpp\+::utils\+::\+File\+Reader\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_aa02312f953bb113ff204bcb30cc4fd26}{File\+Reader}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileReader_a58c008bc9044c9e02b2ae2c66badda47_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_ab8f7ab65242712aa19e722ae15f63ebe}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!read@{read}}
+\index{read@{read}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_ab8f7ab65242712aa19e722ae15f63ebe} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::string, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+File\+Reader\+::read (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Read the entire content of a file as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::string, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_ab4af2d8e1aa5f0341a899d2119c6d59b}{nixoncpp\+::utils\+::\+IFile\+Reader}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classnixoncpp_1_1utils_1_1FileReader_ab8f7ab65242712aa19e722ae15f63ebe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_a2435da74c1532afda168a1f44d20ca36}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!readBytes@{readBytes}}
+\index{readBytes@{readBytes}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{readBytes()}{readBytes()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_a2435da74c1532afda168a1f44d20ca36} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ uint8\+\_\+t $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+File\+Reader\+::read\+Bytes (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Read the entire content of a file as a vector of bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result}\texorpdfstring{$<$}{<}std\+::vector$<$uint8\+\_\+t$>$, \doxylink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_ac679987e23fa1e4a6fc6033f2957999e}{nixoncpp\+::utils\+::\+IFile\+Reader}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1FileReader_a2435da74c1532afda168a1f44d20ca36_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classnixoncpp_1_1utils_1_1FileReader_a2435da74c1532afda168a1f44d20ca36_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1FileReader_a7be0e459ee95c0298d1051f85be632b0}\index{nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}!readLines@{readLines}}
+\index{readLines@{readLines}!nixoncpp::utils::FileReader@{nixoncpp::utils::FileReader}}
+\doxysubsubsection{\texorpdfstring{readLines()}{readLines()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1FileReader_a7be0e459ee95c0298d1051f85be632b0} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ std\+::string $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+File\+Reader\+::read\+Lines (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Read the content of a file as a vector of lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result}\texorpdfstring{$<$}{<}std\+::vector$<$std\+::string$>$, \doxylink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a8486ded3266421891ff7a2e66ee278db}{nixoncpp\+::utils\+::\+IFile\+Reader}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classnixoncpp_1_1utils_1_1FileReader_a7be0e459ee95c0298d1051f85be632b0_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Filesystem/\mbox{\hyperlink{FileReader_8hpp}{File\+Reader.\+hpp}}\item 
+src/lib/\+Utils/\+Filesystem/\mbox{\hyperlink{FileReader_8cpp}{File\+Reader.\+cpp}}\end{DoxyCompactItemize}

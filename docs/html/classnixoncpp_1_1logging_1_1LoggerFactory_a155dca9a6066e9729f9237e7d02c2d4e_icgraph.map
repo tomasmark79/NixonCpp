@@ -1,0 +1,17 @@
+<map id="nixoncpp::logging::LoggerFactory::createNull" name="nixoncpp::logging::LoggerFactory::createNull">
+<area shape="rect" id="Node000001" title="Create a Null object logger." alt="" coords="959,75,1145,119"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1logging_1_1LoggerFactory.html#a9a38b177b191b1ab4182363e93dd222b" title="Create a logger instance based on the specified type and configuration." alt="" coords="750,75,911,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="943,100,911,100,911,94,943,94"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a25d60ab1ffddf4e84f9bfcf18d6cda5e" title=" " alt="" coords="502,75,702,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="735,100,703,100,703,94,735,94"/>
+<area shape="rect" id="Node000004" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a7584ff01912c5d2a8450715debefed80" title="Create minimal context without app&#45;specific components." alt="" coords="254,5,454,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="504,72,436,53,437,48,505,67"/>
+<area shape="rect" id="Node000005" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a701a98b9e13fac471f5b9a35dfa1058e" title=" " alt="" coords="254,75,454,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="487,100,454,100,454,94,487,94"/>
+<area shape="rect" id="Node000007" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#a4f4379374cac4b57e87332373ecdb3c2" title="Create full application context with all components." alt="" coords="254,144,454,189"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="505,127,437,146,436,141,504,122"/>
+<area shape="rect" id="Node000006" href="$classnixoncpp_1_1utils_1_1UtilsFactory.html#aab74a1a2491ea457c170d20781cf6897" title="Create basic utilities context with default logger." alt="" coords="5,75,206,119"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="238,100,206,100,206,94,238,94"/>
+<area shape="rect" id="Node000008" href="$Application_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="78,152,133,180"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="238,169,133,169,133,164,238,164"/>
+</map>

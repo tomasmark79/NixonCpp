@@ -1,0 +1,16 @@
+<map id="src/lib/Utils/Logger/NullLogger.hpp" name="src/lib/Utils/Logger/NullLogger.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="103,5,245,50"/>
+<area shape="rect" id="Node000002" href="$LoggerFactory_8cpp.html" title=" " alt="" coords="5,98,148,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,63,102,99,98,96,138,59"/>
+<area shape="rect" id="Node000003" href="$UtilsFactory_8hpp.html" title=" " alt="" coords="172,106,373,134"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,59,260,104,256,108,207,63"/>
+<area shape="rect" id="Node000004" href="$NixonCppLib_8hpp.html" title=" " alt="" coords="196,191,349,235"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="275,149,275,190,270,190,270,149"/>
+<area shape="rect" id="Node000005" href="$Application_8cpp.html" title=" " alt="" coords="72,283,244,311"/>
+<area shape="poly" id="edge6_Node000003_Node000005" title=" " alt="" coords="237,145,210,166,187,192,175,216,167,241,161,284,156,283,162,239,170,214,182,189,206,162,233,141"/>
+<area shape="rect" id="Node000007" href="$UtilsFactory_8cpp.html" title=" " alt="" coords="374,199,574,227"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="317,139,446,196,443,201,315,143"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="232,247,178,285,175,281,228,242"/>
+<area shape="rect" id="Node000006" href="$NixonCppLib_8cpp.html" title=" " alt="" coords="268,283,440,311"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="306,245,343,281,339,285,303,248"/>
+</map>

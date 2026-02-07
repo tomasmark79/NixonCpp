@@ -1,0 +1,233 @@
+\doxysection{nixoncpp\+::utils\+::Custom\+Strings\+Loader Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader}{}\label{classnixoncpp_1_1utils_1_1CustomStringsLoader}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+
+
+{\ttfamily \#include $<$Custom\+Strings\+Loader.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::Custom\+Strings\+Loader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1CustomStringsLoader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::Custom\+Strings\+Loader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1CustomStringsLoader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{IAsset\+Manager}} $>$ asset\+Manager, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer}{IJson\+Serializer}} $>$ json\+Serializer, std\+::string filename="{}customstrings.\+json"{})
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a1f372fffd199b65dbfff9a9c6eb19408}{Custom\+Strings\+Loader}} (const Custom\+Strings\+Loader \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_adb7bd52a3cb4c52b397f479ba617b9c0}{operator=}} (const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_afcde7a38e68646f9466b020b7a9458b8}{Custom\+Strings\+Loader}} (Custom\+Strings\+Loader \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a9b3c0aa0cb9d7a2985ffd32d06dad2ad}{operator=}} (\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a3ee865749b592652cff71ee683551082}{\texorpdfstring{$\sim$}{\string~}\+Custom\+Strings\+Loader}} () override=default
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ nlohmann\+::json, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_ab4402fc545b25293e9eaedfe8711f5db}{load}} () const override
+\begin{DoxyCompactList}\small\item\em Load the custom strings JSON data. \end{DoxyCompactList}\item 
+std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_ad1ff9e748d534c974f1d96a746405838}{get\+Path}} (const std\+::string \&id) const override
+\begin{DoxyCompactList}\small\item\em Get the Path object. \end{DoxyCompactList}\item 
+std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a7114e4101bc7c36b4deef500fb15fc40}{get\+Custom\+Key}} (const std\+::string \&id, const std\+::string \&key) const override
+\begin{DoxyCompactList}\small\item\em Get the Custom Key object. \end{DoxyCompactList}\item 
+std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a7fcc98d62614529eac57a3f67ce47571}{get\+Localized\+String}} (const std\+::string \&id, const std\+::string \&locale="{}en"{}) const override
+\begin{DoxyCompactList}\small\item\em Get the Localized String object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader}{nixoncpp\+::utils\+::\+ICustom\+Strings\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_aa175eec1c0e88edee4b3921e9c0f6276}{\texorpdfstring{$\sim$}{\string~}\+ICustom\+Strings\+Loader}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!CustomStringsLoader@{CustomStringsLoader}}
+\index{CustomStringsLoader@{CustomStringsLoader}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{CustomStringsLoader()}{CustomStringsLoader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe} 
+nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::\+Custom\+Strings\+Loader (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{IAsset\+Manager}} $>$}]{asset\+Manager}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer}{IJson\+Serializer}} $>$}]{json\+Serializer}{, }\item[{std\+::string}]{filename}{ = {\ttfamily "{}customstrings.json"{}}}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_a1f372fffd199b65dbfff9a9c6eb19408}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!CustomStringsLoader@{CustomStringsLoader}}
+\index{CustomStringsLoader@{CustomStringsLoader}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{CustomStringsLoader()}{CustomStringsLoader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_a1f372fffd199b65dbfff9a9c6eb19408} 
+nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::\+Custom\+Strings\+Loader (\begin{DoxyParamCaption}\item[{const Custom\+Strings\+Loader \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1CustomStringsLoader_a1f372fffd199b65dbfff9a9c6eb19408_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_afcde7a38e68646f9466b020b7a9458b8}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!CustomStringsLoader@{CustomStringsLoader}}
+\index{CustomStringsLoader@{CustomStringsLoader}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{CustomStringsLoader()}{CustomStringsLoader()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_afcde7a38e68646f9466b020b7a9458b8} 
+nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::\+Custom\+Strings\+Loader (\begin{DoxyParamCaption}\item[{Custom\+Strings\+Loader \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1CustomStringsLoader_afcde7a38e68646f9466b020b7a9458b8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_a3ee865749b592652cff71ee683551082}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!````~CustomStringsLoader@{\texorpdfstring{$\sim$}{\string~}CustomStringsLoader}}
+\index{````~CustomStringsLoader@{\texorpdfstring{$\sim$}{\string~}CustomStringsLoader}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CustomStringsLoader()}{\string~CustomStringsLoader()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_a3ee865749b592652cff71ee683551082} 
+nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::\texorpdfstring{$\sim$}{\string~}\+Custom\+Strings\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_a7114e4101bc7c36b4deef500fb15fc40}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!getCustomKey@{getCustomKey}}
+\index{getCustomKey@{getCustomKey}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{getCustomKey()}{getCustomKey()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_a7114e4101bc7c36b4deef500fb15fc40} 
+std\+::optional$<$ std\+::string $>$ nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::get\+Custom\+Key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{, }\item[{const std\+::string \&}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Custom Key object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_a74ba96faf53dc65e53a9d73128683538}{nixoncpp\+::utils\+::\+ICustom\+Strings\+Loader}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_a7fcc98d62614529eac57a3f67ce47571}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!getLocalizedString@{getLocalizedString}}
+\index{getLocalizedString@{getLocalizedString}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{getLocalizedString()}{getLocalizedString()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_a7fcc98d62614529eac57a3f67ce47571} 
+std\+::optional$<$ std\+::string $>$ nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::get\+Localized\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{, }\item[{const std\+::string \&}]{locale}{ = {\ttfamily "{}en"{}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Localized String object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em locale} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_aa75493eadb21e983aae9d5bae2a82e72}{nixoncpp\+::utils\+::\+ICustom\+Strings\+Loader}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_ad1ff9e748d534c974f1d96a746405838}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!getPath@{getPath}}
+\index{getPath@{getPath}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_ad1ff9e748d534c974f1d96a746405838} 
+std\+::optional$<$ std\+::string $>$ nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::get\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Path object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_a729e13c956c4eaaf31b03475f5f9b3e4}{nixoncpp\+::utils\+::\+ICustom\+Strings\+Loader}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_ab4402fc545b25293e9eaedfe8711f5db}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!load@{load}}
+\index{load@{load}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_ab4402fc545b25293e9eaedfe8711f5db} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ nlohmann\+::json, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load the custom strings JSON data. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$nlohmann\+::json, Json\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_a14774948c94fb5b0ee08cc6a72ba48d6}{nixoncpp\+::utils\+::\+ICustom\+Strings\+Loader}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_adb7bd52a3cb4c52b397f479ba617b9c0}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_adb7bd52a3cb4c52b397f479ba617b9c0} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} \& nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1CustomStringsLoader_adb7bd52a3cb4c52b397f479ba617b9c0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1CustomStringsLoader_a9b3c0aa0cb9d7a2985ffd32d06dad2ad}\index{nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::CustomStringsLoader@{nixoncpp::utils::CustomStringsLoader}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1CustomStringsLoader_a9b3c0aa0cb9d7a2985ffd32d06dad2ad} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} \& nixoncpp\+::utils\+::\+Custom\+Strings\+Loader\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnixoncpp_1_1utils_1_1CustomStringsLoader_a91385326a02906383367fb1a4f6b6ffe}{Custom\+Strings\+Loader}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1CustomStringsLoader_a9b3c0aa0cb9d7a2985ffd32d06dad2ad_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Json/\mbox{\hyperlink{CustomStringsLoader_8hpp}{Custom\+Strings\+Loader.\+hpp}}\item 
+src/lib/\+Utils/\+Json/\mbox{\hyperlink{CustomStringsLoader_8cpp}{Custom\+Strings\+Loader.\+cpp}}\end{DoxyCompactItemize}

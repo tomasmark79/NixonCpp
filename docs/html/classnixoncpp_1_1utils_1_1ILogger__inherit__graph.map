@@ -1,0 +1,9 @@
+<map id="nixoncpp::utils::ILogger" name="nixoncpp::utils::ILogger">
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,143,355,676"/>
+<area shape="rect" id="Node000003" href="$classConsoleLogger.html" title=" " alt="" coords="5,724,235,1517"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,692,189,725,184,724,189,691"/>
+<area shape="rect" id="Node000004" href="$classnixoncpp_1_1logging_1_1NullLogger.html" title=" " alt="" coords="260,820,456,1422"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="289,691,310,820,305,821,283,692"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="160,5,318,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,110,242,143,236,143,236,110"/>
+</map>

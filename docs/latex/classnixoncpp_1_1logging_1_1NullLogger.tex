@@ -1,0 +1,305 @@
+\doxysection{nixoncpp\+::logging\+::Null\+Logger Class Reference}
+\hypertarget{classnixoncpp_1_1logging_1_1NullLogger}{}\label{classnixoncpp_1_1logging_1_1NullLogger}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+
+
+{\ttfamily \#include $<$Null\+Logger.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::logging\+::Null\+Logger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1logging_1_1NullLogger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::logging\+::Null\+Logger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1logging_1_1NullLogger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_a7188b17c6113b58d1c0da456f8275d9f}{debug}} (const std\+::string \&, const std\+::string \&="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Log a debug message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_a8f43e721d7b307d131d47af3cf61a2ae}{info}} (const std\+::string \&, const std\+::string \&="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Log an info message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_ab66534f3a3597fabc77b1fda944b60aa}{warning}} (const std\+::string \&, const std\+::string \&="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Log a warning message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_a74820df478cc1c091133e9f39b84f966}{error}} (const std\+::string \&, const std\+::string \&="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Log an error message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_ab9f9128a474ac7f9302396e72b3f7245}{critical}} (const std\+::string \&, const std\+::string \&="{}"{}) override
+\begin{DoxyCompactList}\small\item\em Log a critical message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_a99f11b0c68d58ec2a8eddf4d9eec488c}{set\+Level}} (\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}) override
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}} \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_a8026b7171cc0468599dd333c213f0b5b}{get\+Level}} () const override
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_a8ee71e19b194a42d871862626983f288}{set\+App\+Prefix}} (const std\+::string \&) override
+\begin{DoxyCompactList}\small\item\em Set the application prefix for log messages. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_a92eddb5761f2e820d444dd0c8c58b296}{get\+App\+Prefix}} () const override
+\begin{DoxyCompactList}\small\item\em Get the App Prefix object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_aed5957bf26ab67779d72ef5f823d04d4}{enable\+File\+Logging}} (const std\+::string \&) override
+\begin{DoxyCompactList}\small\item\em Enable logging to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1NullLogger_a063a761c886a7b75481d34d18005f027}{disable\+File\+Logging}} () override
+\begin{DoxyCompactList}\small\item\em Disable logging to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{nixoncpp\+::logging\+::\+ILogger}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a03d479a332bebe58462a008598de60cc}{ILogger}} ()=default
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a877107fbe57cf16e99d0f67683928cc5}{\texorpdfstring{$\sim$}{\string~}\+ILogger}} ()=default
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}} \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8013c95238814c256f4eceab2d069610}{stream}} (\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}} level, const std\+::string \&caller="{}"{})
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream} for streaming log messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}} \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a3614089d7f4af7f70c27cf9d0012826f}{debug\+Stream}} (const std\+::string \&caller="{}"{})
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream} for streaming debug messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}} \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a9f737750a8311e36eabdf036d74c6150}{info\+Stream}} (const std\+::string \&caller="{}"{})
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream} for streaming info messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}} \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5c4236fc23131d4798505c26bcea8737}{warning\+Stream}} (const std\+::string \&caller="{}"{})
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream} for streaming warning messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}} \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5adfec01af63593d605c64aa824fadfa}{error\+Stream}} (const std\+::string \&caller="{}"{})
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream} for streaming error messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream}} \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a7355e63eabb150ade6f995d0fa83b2f5}{critical\+Stream}} (const std\+::string \&caller="{}"{})
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classnixoncpp_1_1logging_1_1LogStream}{Log\+Stream} for streaming critical messages. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a4604f36dc136954967c11355f1a1ab75}{debug\+Fmt}} (const std\+::string \&format, Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Create a formatted debug message. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a1da9ef29af3242b7b26b9521e4397f69}{info\+Fmt}} (const std\+::string \&format, Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Create a formatted info message. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a5efa513b6e1638aad4873915067bcf85}{warning\+Fmt}} (const std\+::string \&format, Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Create a formatted warning message. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a788ca27fdb52e88bcf4fb8d46773afde}{error\+Fmt}} (const std\+::string \&format, Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Create a formatted error message. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_af95183243ba2ee77a45004e0ef8a325e}{critical\+Fmt}} (const std\+::string \&format, Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Create a formatted critical message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_ab9f9128a474ac7f9302396e72b3f7245}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!critical@{critical}}
+\index{critical@{critical}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{critical()}{critical()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_ab9f9128a474ac7f9302396e72b3f7245} 
+void nixoncpp\+::logging\+::\+Null\+Logger\+::critical (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{const std\+::string \&}]{caller}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Log a critical message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+{\em caller} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_adc131d03529b976452457dd4f2bbc627}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_a7188b17c6113b58d1c0da456f8275d9f}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!debug@{debug}}
+\index{debug@{debug}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_a7188b17c6113b58d1c0da456f8275d9f} 
+void nixoncpp\+::logging\+::\+Null\+Logger\+::debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{const std\+::string \&}]{caller}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Log a debug message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+{\em caller} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a0f805edc22c985509adfc45131ca22fe}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_a063a761c886a7b75481d34d18005f027}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!disableFileLogging@{disableFileLogging}}
+\index{disableFileLogging@{disableFileLogging}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{disableFileLogging()}{disableFileLogging()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_a063a761c886a7b75481d34d18005f027} 
+void nixoncpp\+::logging\+::\+Null\+Logger\+::disable\+File\+Logging (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Disable logging to a file. 
+
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a83a77bb36b56900e4d193405aacf5557}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_aed5957bf26ab67779d72ef5f823d04d4}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!enableFileLogging@{enableFileLogging}}
+\index{enableFileLogging@{enableFileLogging}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{enableFileLogging()}{enableFileLogging()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_aed5957bf26ab67779d72ef5f823d04d4} 
+bool nixoncpp\+::logging\+::\+Null\+Logger\+::enable\+File\+Logging (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Enable logging to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a488da6a7d6959f64ebc1e145186f3183}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_a74820df478cc1c091133e9f39b84f966}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!error@{error}}
+\index{error@{error}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_a74820df478cc1c091133e9f39b84f966} 
+void nixoncpp\+::logging\+::\+Null\+Logger\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{const std\+::string \&}]{caller}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Log an error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+{\em caller} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a43c4c1a7991df4380af77818b941a8c1}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_a92eddb5761f2e820d444dd0c8c58b296}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!getAppPrefix@{getAppPrefix}}
+\index{getAppPrefix@{getAppPrefix}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{getAppPrefix()}{getAppPrefix()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_a92eddb5761f2e820d444dd0c8c58b296} 
+std\+::string nixoncpp\+::logging\+::\+Null\+Logger\+::get\+App\+Prefix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the App Prefix object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_ad7e35c5ab68bb3ae29313ce3e51bba97}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_a8026b7171cc0468599dd333c213f0b5b}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_a8026b7171cc0468599dd333c213f0b5b} 
+\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}} nixoncpp\+::logging\+::\+Null\+Logger\+::get\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level} object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a4b18e45d68fa54c9aca2b044633c5779}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_a8f43e721d7b307d131d47af3cf61a2ae}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!info@{info}}
+\index{info@{info}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_a8f43e721d7b307d131d47af3cf61a2ae} 
+void nixoncpp\+::logging\+::\+Null\+Logger\+::info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{const std\+::string \&}]{caller}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Log an info message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+{\em caller} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_ad80823b3d09b4d1710a673107052b4d8}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_a8ee71e19b194a42d871862626983f288}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!setAppPrefix@{setAppPrefix}}
+\index{setAppPrefix@{setAppPrefix}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{setAppPrefix()}{setAppPrefix()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_a8ee71e19b194a42d871862626983f288} 
+void nixoncpp\+::logging\+::\+Null\+Logger\+::set\+App\+Prefix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefix}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the application prefix for log messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a8bdbfff019bf37731ef03fbef785bb88}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_a99f11b0c68d58ec2a8eddf4d9eec488c}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{setLevel()}{setLevel()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_a99f11b0c68d58ec2a8eddf4d9eec488c} 
+void nixoncpp\+::logging\+::\+Null\+Logger\+::set\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}}]{level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the \doxylink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_ae52001a09769aeded4956f6a52be2307}{nixoncpp\+::logging\+::\+ILogger}}.
+
+\Hypertarget{classnixoncpp_1_1logging_1_1NullLogger_ab66534f3a3597fabc77b1fda944b60aa}\index{nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}!warning@{warning}}
+\index{warning@{warning}!nixoncpp::logging::NullLogger@{nixoncpp::logging::NullLogger}}
+\doxysubsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1NullLogger_ab66534f3a3597fabc77b1fda944b60aa} 
+void nixoncpp\+::logging\+::\+Null\+Logger\+::warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{const std\+::string \&}]{caller}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Log a warning message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+{\em caller} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger_a343daf050d9dca5dcb20aba1444ab76f}{nixoncpp\+::logging\+::\+ILogger}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Logger/\mbox{\hyperlink{NullLogger_8hpp}{Null\+Logger.\+hpp}}\end{DoxyCompactItemize}

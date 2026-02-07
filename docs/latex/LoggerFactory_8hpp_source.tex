@@ -1,0 +1,36 @@
+\doxysection{Logger\+Factory.\+hpp}
+\hypertarget{LoggerFactory_8hpp_source}{}\label{LoggerFactory_8hpp_source}\index{src/lib/Utils/Logger/LoggerFactory.hpp@{src/lib/Utils/Logger/LoggerFactory.hpp}}
+\mbox{\hyperlink{LoggerFactory_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ILogger_8hpp}{Utils/Logger/ILogger.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1logging}{nixoncpp::logging}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{LoggerType}}\ :\ uint8\_t\ \{\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abccaa4aa80831b76c11240a16447975f}{Console}},\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331a0b27918290ff5323bea1e3b78a9cf04e}{File}},\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abbb93ef26e3c101ff11cdd21cab08a94}{Null}}\ \};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{LoggerConfig}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198}{Level}}\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig_a7cba3f1e6c9ebaad5ff97200163c5608}{level}}\ =\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adeafb31d6b5e43ae9c8d3a5a1b95a198a41abf3cca8cee8cdae01749df7a991c6}{Level::LOG\_INFO}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig_a66abeed39f08120b0c553747ea4c6c0e}{enableFileLogging}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig_afcfff215fafb5c1bfd4e3a61d1a78a08}{logFilePath}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig_a40d8e5d65fe0864826fb461470e49f92}{colorOutput}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig_a7283269184108d1f6fe3c68a776cc826}{appPrefix}};}
+\DoxyCodeLine{00019\ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory}{LoggerFactory}}\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<ILogger>\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory_a9a38b177b191b1ab4182363e93dd222b}{create}}(\mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{LoggerType}}\ type\ =\ \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abccaa4aa80831b76c11240a16447975f}{LoggerType::Console}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{LoggerConfig}}\ \&config\ =\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{LoggerConfig}}\{\});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<ILogger>\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory_a26cfce0d7f5386a37884a93178910b85}{createConsole}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{LoggerConfig}}\ \&config\ =\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{LoggerConfig}}\{\});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<ILogger>\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory_a12502094daceaabbec69bfa32bbaff9d}{createFile}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{LoggerConfig}}\ \&config\ =\ \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{LoggerConfig}}\{\});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<ILogger>\ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory_a155dca9a6066e9729f9237e7d02c2d4e}{createNull}}();}
+\DoxyCodeLine{00055\ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::logging}}
+
+\end{DoxyCode}

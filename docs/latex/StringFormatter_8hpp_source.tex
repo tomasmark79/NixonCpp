@@ -1,0 +1,29 @@
+\doxysection{String\+Formatter.\+hpp}
+\hypertarget{StringFormatter_8hpp_source}{}\label{StringFormatter_8hpp_source}\index{src/lib/Utils/String/StringFormatter.hpp@{src/lib/Utils/String/StringFormatter.hpp}}
+\mbox{\hyperlink{StringFormatter_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{IStringFormatter_8hpp}{Utils/String/IStringFormatter.hpp}}>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_ae3fec0310ef3615cd0085b4309c290e9}{StringFormatter}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IStringFormatter}{IStringFormatter}}\ \{}
+\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_ae3fec0310ef3615cd0085b4309c290e9}{StringFormatter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_a280ecc26ff8e22312057939b572b6781}{\string~StringFormatter}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_a7857dad449456b7f97cd782afaa06d2e}{StringFormatter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_ae3fec0310ef3615cd0085b4309c290e9}{StringFormatter}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_ae3fec0310ef3615cd0085b4309c290e9}{StringFormatter}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_a7b63364e30bfb02f8d654eb8f8bcb3d2}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_ae3fec0310ef3615cd0085b4309c290e9}{StringFormatter}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_add8a7125d34c98f68a792c6a3f34f6d9}{StringFormatter}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_ae3fec0310ef3615cd0085b4309c290e9}{StringFormatter}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_ae3fec0310ef3615cd0085b4309c290e9}{StringFormatter}}\ \&\mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_aa8ad2e310b7916079612ced7d756a286}{operator=}}(\mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_ae3fec0310ef3615cd0085b4309c290e9}{StringFormatter}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_a6434a80f6a0c9582b0838115fe663811}{addDots}}(\textcolor{keyword}{const}\ std::string\ \&str)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00019\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1StringFormatter_a0ddfedcf8f52d9e5eed4cfbfd29f6a0f}{removeDots}}(\textcolor{keyword}{const}\ std::string\ \&str)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

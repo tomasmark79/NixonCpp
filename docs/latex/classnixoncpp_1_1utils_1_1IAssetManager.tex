@@ -1,0 +1,126 @@
+\doxysection{nixoncpp\+::utils\+::IAsset\+Manager Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1IAssetManager}{}\label{classnixoncpp_1_1utils_1_1IAssetManager}\index{nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}}
+
+
+{\ttfamily \#include $<$IAsset\+Manager.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::IAsset\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1IAssetManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::IAsset\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{classnixoncpp_1_1utils_1_1IAssetManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IAssetManager_a7693b11ba434c41ddba4f17732d97574}{\texorpdfstring{$\sim$}{\string~}\+IAsset\+Manager}} ()=default
+\item 
+virtual const std\+::filesystem\+::path \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IAssetManager_a6cdeed5e27989cb1efd1db338fe38408}{get\+Assets\+Path}} () const=0
+\begin{DoxyCompactList}\small\item\em Get the Assets Path object. \end{DoxyCompactList}\item 
+virtual std\+::filesystem\+::path \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IAssetManager_a3b92bf372e6380ef6e004d56a9bc9706}{resolve\+Asset}} (const std\+::filesystem\+::path \&relative\+Path) const=0
+\begin{DoxyCompactList}\small\item\em Resolve the full path of an asset given its relative path. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IAssetManager_aa1f21956409d54f7df5aa825d228a67b}{asset\+Exists}} (const std\+::filesystem\+::path \&relative\+Path) const=0
+\begin{DoxyCompactList}\small\item\em Check if an asset exists given its relative path. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IAssetManager_a5e394c7e58b234c0d33f5cf27c005d9e}{validate}} () const=0
+\begin{DoxyCompactList}\small\item\em Validate the asset manager configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1IAssetManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IAssetManager_a7693b11ba434c41ddba4f17732d97574}\index{nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}!````~IAssetManager@{\texorpdfstring{$\sim$}{\string~}IAssetManager}}
+\index{````~IAssetManager@{\texorpdfstring{$\sim$}{\string~}IAssetManager}!nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IAssetManager()}{\string~IAssetManager()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IAssetManager_a7693b11ba434c41ddba4f17732d97574} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_a7693b11ba434c41ddba4f17732d97574}{nixoncpp\+::assets\+::\+IAsset\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+IAsset\+Manager}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1IAssetManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IAssetManager_aa1f21956409d54f7df5aa825d228a67b}\index{nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}!assetExists@{assetExists}}
+\index{assetExists@{assetExists}!nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}}
+\doxysubsubsection{\texorpdfstring{assetExists()}{assetExists()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IAssetManager_aa1f21956409d54f7df5aa825d228a67b} 
+virtual bool \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_a79264542d6f28cad888513ba6f80b6c4}{nixoncpp\+::assets\+::\+IAsset\+Manager\+::asset\+Exists}} (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{relative\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Check if an asset exists given its relative path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{classnixoncpp_1_1utils_1_1IAssetManager_a6cdeed5e27989cb1efd1db338fe38408}\index{nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}!getAssetsPath@{getAssetsPath}}
+\index{getAssetsPath@{getAssetsPath}!nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}}
+\doxysubsubsection{\texorpdfstring{getAssetsPath()}{getAssetsPath()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IAssetManager_a6cdeed5e27989cb1efd1db338fe38408} 
+virtual const std\+::filesystem\+::path \& \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_ae2287e1d0a38d2bca8ddb1025dadf57d}{nixoncpp\+::assets\+::\+IAsset\+Manager\+::get\+Assets\+Path}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Assets Path object. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::filesystem\+::path\& 
+\end{DoxyReturn}
+\Hypertarget{classnixoncpp_1_1utils_1_1IAssetManager_a3b92bf372e6380ef6e004d56a9bc9706}\index{nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}!resolveAsset@{resolveAsset}}
+\index{resolveAsset@{resolveAsset}!nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}}
+\doxysubsubsection{\texorpdfstring{resolveAsset()}{resolveAsset()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IAssetManager_a3b92bf372e6380ef6e004d56a9bc9706} 
+virtual std\+::filesystem\+::path \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_adf47914c04058434ba6549f1051f688b}{nixoncpp\+::assets\+::\+IAsset\+Manager\+::resolve\+Asset}} (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{relative\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Resolve the full path of an asset given its relative path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::filesystem\+::path 
+\end{DoxyReturn}
+\Hypertarget{classnixoncpp_1_1utils_1_1IAssetManager_a5e394c7e58b234c0d33f5cf27c005d9e}\index{nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}!validate@{validate}}
+\index{validate@{validate}!nixoncpp::utils::IAssetManager@{nixoncpp::utils::IAssetManager}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IAssetManager_a5e394c7e58b234c0d33f5cf27c005d9e} 
+virtual bool \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager_a0f6c2bb12ac75c54ae13d2c1dec4a91b}{nixoncpp\+::assets\+::\+IAsset\+Manager\+::validate}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Validate the asset manager configuration. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Assets/\mbox{\hyperlink{IAssetManager_8hpp}{IAsset\+Manager.\+hpp}}\end{DoxyCompactItemize}

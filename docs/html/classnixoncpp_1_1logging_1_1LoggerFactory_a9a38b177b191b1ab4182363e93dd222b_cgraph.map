@@ -1,0 +1,7 @@
+<map id="nixoncpp::logging::LoggerFactory::create" name="nixoncpp::logging::LoggerFactory::create">
+<area shape="rect" id="Node000001" title="Create a logger instance based on the specified type and configuration." alt="" coords="5,40,166,85"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1logging_1_1LoggerFactory.html#a26cfce0d7f5386a37884a93178910b85" title="Create a Console object logger." alt="" coords="214,5,426,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,48,198,43,199,48,166,53"/>
+<area shape="rect" id="Node000003" href="$classnixoncpp_1_1logging_1_1LoggerFactory.html#a155dca9a6066e9729f9237e7d02c2d4e" title="Create a Null object logger." alt="" coords="227,75,413,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,72,211,78,211,84,166,77"/>
+</map>

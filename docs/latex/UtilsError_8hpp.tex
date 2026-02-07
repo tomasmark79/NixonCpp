@@ -1,0 +1,75 @@
+\doxysection{src/lib/\+Utils/\+Utils\+Error.hpp File Reference}
+\hypertarget{UtilsError_8hpp}{}\label{UtilsError_8hpp}\index{src/lib/Utils/UtilsError.hpp@{src/lib/Utils/UtilsError.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+Include dependency graph for Utils\+Error.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{UtilsError_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{UtilsError_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{nixoncpp\+::utils\+::\+File\+Error}}
+\item 
+struct \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{nixoncpp\+::utils\+::\+Json\+Error}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{nixoncpp\+::utils\+::\+Result$<$ T, E $>$}}
+\item 
+class \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result_3_01void_00_01E_01_4}{nixoncpp\+::utils\+::\+Result$<$ void, E $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacenixoncpp}{nixoncpp}}
+\item 
+namespace \mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp\+::utils}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfe}{nixoncpp\+::utils\+::\+File\+Error\+Code}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea38c300f4fc9ce8a77aad4a30de05cad8}{nixoncpp\+::utils\+::\+Not\+Found}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeacbcc0759909213e7cdba1f0cbf253126}{nixoncpp\+::utils\+::\+Access\+Denied}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea89b69484680b18e9179e826c6e023805}{nixoncpp\+::utils\+::\+Already\+Exists}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeadf9be6f7af7c3f7196c5c3e731de0a87}{nixoncpp\+::utils\+::\+Read\+Error}}
+, \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea4a02ea49d454392fd1e3426e53f14b58}{nixoncpp\+::utils\+::\+Write\+Error}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea5d0744802b24f44a161d350c25d76c7b}{nixoncpp\+::utils\+::\+Invalid\+Path}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea55d41376c299624c303339e53b1cbf7a}{nixoncpp\+::utils\+::\+Is\+Directory}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfeab1edaf59d696118673d4203caf0caf96}{nixoncpp\+::utils\+::\+Not\+Directory}}
+, \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfea88183b946cc5f0e8c96b2e66e1c74a7e}{nixoncpp\+::utils\+::\+Unknown}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447d}{nixoncpp\+::utils\+::\+Json\+Error\+Code}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447dae41199faa7290c167f70f314c5e6c165}{nixoncpp\+::utils\+::\+Parse\+Error}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447daf114a61fd6e7b65e472a6d65afe39974}{nixoncpp\+::utils\+::\+Invalid\+Structure}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da2767828026039e8ba7b38973cbb701f2}{nixoncpp\+::utils\+::\+File\+Not\+Found}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447dac85f85f7c13ed006eed130ec183aa810}{nixoncpp\+::utils\+::\+Invalid\+Type}}
+, \newline
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da6f82777fb581d741d2b7a707a3e93190}{nixoncpp\+::utils\+::\+Missing\+Key}}
+, \mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447da88183b946cc5f0e8c96b2e66e1c74a7e}{nixoncpp\+::utils\+::\+Unknown}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} \mbox{\hyperlink{namespacenixoncpp_1_1utils_aec2e4217d954d5b75e6ed20cf01e5f48}{nixoncpp\+::utils\+::make\+File\+Error}} (\mbox{\hyperlink{namespacenixoncpp_1_1utils_a8c955b8c1522c3b84fce2933853e3bfe}{File\+Error\+Code}} code, const std\+::string \&message, const std\+::string \&path="{}"{})
+\item 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} \mbox{\hyperlink{namespacenixoncpp_1_1utils_a6cdfe65d326d2d0b883cf5d626a6b7ea}{nixoncpp\+::utils\+::make\+Json\+Error}} (\mbox{\hyperlink{namespacenixoncpp_1_1utils_a10206830ae6ba23fa7c5c2c044b1447d}{Json\+Error\+Code}} code, const std\+::string \&message, const std\+::string \&details="{}"{})
+\end{DoxyCompactItemize}

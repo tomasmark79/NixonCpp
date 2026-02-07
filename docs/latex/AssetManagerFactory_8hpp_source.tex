@@ -1,0 +1,28 @@
+\doxysection{Asset\+Manager\+Factory.\+hpp}
+\hypertarget{AssetManagerFactory_8hpp_source}{}\label{AssetManagerFactory_8hpp_source}\index{src/lib/Utils/Assets/AssetManagerFactory.hpp@{src/lib/Utils/Assets/AssetManagerFactory.hpp}}
+\mbox{\hyperlink{AssetManagerFactory_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{AssetManager_8hpp}{Utils/Assets/AssetManager.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{IAssetManager_8hpp}{Utils/Assets/IAssetManager.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1assets}{nixoncpp::assets}}\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManagerFactory}{AssetManagerFactory}}\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<IAssetManager>\ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManagerFactory_a534dac197c8ab46bca337cbc7162371b}{createDefault}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&executablePath,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{Application_8cpp_a3c9f34bd2e11a5d854fc61609b3edb3b}{appName}})\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManager_a9778c797417b17b62b8f1135ca613cd3}{AssetManager::create}}(executablePath,\ \mbox{\hyperlink{Application_8cpp_a3c9f34bd2e11a5d854fc61609b3edb3b}{appName}});}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<IAssetManager>\ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1AssetManagerFactory_aa07513dd8c8eb6d349b1482d00d4f465}{create}}(std::filesystem::path\ assetsPath)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_shared<AssetManager>(std::move(assetsPath));}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::assets}}
+
+\end{DoxyCode}

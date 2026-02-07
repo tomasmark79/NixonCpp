@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['_7econsolelogger_0',['~ConsoleLogger',['../classConsoleLogger.html#a242e88aa9495249d5a7fbdfc4f8886ee',1,'ConsoleLogger']]],
+  ['_7ecustomstringsloader_1',['~CustomStringsLoader',['../classnixoncpp_1_1utils_1_1CustomStringsLoader.html#a3ee865749b592652cff71ee683551082',1,'nixoncpp::utils::CustomStringsLoader']]],
+  ['_7edirectorymanager_2',['~DirectoryManager',['../classnixoncpp_1_1utils_1_1DirectoryManager.html#ad5f09ef97dbba763b15d25da817250e0',1,'nixoncpp::utils::DirectoryManager']]],
+  ['_7eemscriptenplatforminfo_3',['~EmscriptenPlatformInfo',['../classnixoncpp_1_1utils_1_1EmscriptenPlatformInfo.html#adbd8276a2f0179f7117773d0ca8e0d6e',1,'nixoncpp::utils::EmscriptenPlatformInfo']]],
+  ['_7efilereader_4',['~FileReader',['../classnixoncpp_1_1utils_1_1FileReader.html#aba4ee31f35d48ff159e71443514f691b',1,'nixoncpp::utils::FileReader']]],
+  ['_7efilewriter_5',['~FileWriter',['../classnixoncpp_1_1utils_1_1FileWriter.html#addfb8dd0c6cc09c27c127d83a624d762',1,'nixoncpp::utils::FileWriter']]],
+  ['_7eiassetmanager_6',['~IAssetManager',['../classnixoncpp_1_1assets_1_1IAssetManager.html#a7693b11ba434c41ddba4f17732d97574',1,'nixoncpp::assets::IAssetManager::~IAssetManager()'],['../classnixoncpp_1_1utils_1_1IAssetManager.html#a7693b11ba434c41ddba4f17732d97574',1,'nixoncpp::utils::IAssetManager::~IAssetManager()']]],
+  ['_7eicustomstringsloader_7',['~ICustomStringsLoader',['../classnixoncpp_1_1utils_1_1ICustomStringsLoader.html#aa175eec1c0e88edee4b3921e9c0f6276',1,'nixoncpp::utils::ICustomStringsLoader']]],
+  ['_7eidirectorymanager_8',['~IDirectoryManager',['../classnixoncpp_1_1utils_1_1IDirectoryManager.html#ab6fd3b59f39e96bf4b20c2b3ff780b76',1,'nixoncpp::utils::IDirectoryManager']]],
+  ['_7eifilereader_9',['~IFileReader',['../classnixoncpp_1_1utils_1_1IFileReader.html#a244184ad8701b07d9e79698687af7eda',1,'nixoncpp::utils::IFileReader']]],
+  ['_7eifilewriter_10',['~IFileWriter',['../classnixoncpp_1_1utils_1_1IFileWriter.html#ad61045061104d189d0199705905587b1',1,'nixoncpp::utils::IFileWriter']]],
+  ['_7eijsonserializer_11',['~IJsonSerializer',['../classnixoncpp_1_1utils_1_1IJsonSerializer.html#a6c551a8ebbef9542edaf48bc9159e406',1,'nixoncpp::utils::IJsonSerializer']]],
+  ['_7eilogger_12',['~ILogger',['../classnixoncpp_1_1logging_1_1ILogger.html#a877107fbe57cf16e99d0f67683928cc5',1,'nixoncpp::logging::ILogger::~ILogger()'],['../classnixoncpp_1_1utils_1_1ILogger.html#a877107fbe57cf16e99d0f67683928cc5',1,'nixoncpp::utils::ILogger::~ILogger()']]],
+  ['_7eipathresolver_13',['~IPathResolver',['../classnixoncpp_1_1utils_1_1IPathResolver.html#a7051f23b40f2bd5221270f498cb2cfca',1,'nixoncpp::utils::IPathResolver']]],
+  ['_7eiplatforminfo_14',['~IPlatformInfo',['../classnixoncpp_1_1utils_1_1IPlatformInfo.html#aaf86a25917a5325035e624cde3958a4a',1,'nixoncpp::utils::IPlatformInfo']]],
+  ['_7eistringformatter_15',['~IStringFormatter',['../classnixoncpp_1_1utils_1_1IStringFormatter.html#aafb294fa8ee4d6d6bd760c7de5e34f77',1,'nixoncpp::utils::IStringFormatter']]],
+  ['_7ejsonserializer_16',['~JsonSerializer',['../classnixoncpp_1_1utils_1_1JsonSerializer.html#aabc247c127090a3c9ef1ddbccfa3ee4a',1,'nixoncpp::utils::JsonSerializer']]],
+  ['_7elogstream_17',['~LogStream',['../classnixoncpp_1_1logging_1_1LogStream.html#afadc97c172eed01e14bc3fa589848ec9',1,'nixoncpp::logging::LogStream']]],
+  ['_7enixoncpplib_18',['~NixonCppLib',['../classnixoncpp_1_1v1_1_1NixonCppLib.html#ab16207d8250e9c775bb8a63c8cc093de',1,'nixoncpp::v1::NixonCppLib']]],
+  ['_7epathresolver_19',['~PathResolver',['../classnixoncpp_1_1utils_1_1PathResolver.html#a145371d418e2c0a849f4a78d0d4fc6bc',1,'nixoncpp::utils::PathResolver']]],
+  ['_7estringformatter_20',['~StringFormatter',['../classnixoncpp_1_1utils_1_1StringFormatter.html#a280ecc26ff8e22312057939b572b6781',1,'nixoncpp::utils::StringFormatter']]],
+  ['_7eunixplatforminfo_21',['~UnixPlatformInfo',['../classnixoncpp_1_1utils_1_1UnixPlatformInfo.html#aa06cdc1f7a278324d08a986d4e88da42',1,'nixoncpp::utils::UnixPlatformInfo']]],
+  ['_7ewindowsplatforminfo_22',['~WindowsPlatformInfo',['../classnixoncpp_1_1utils_1_1WindowsPlatformInfo.html#a7ee017f91a59ea321cd2a2b7ac236f3a',1,'nixoncpp::utils::WindowsPlatformInfo']]]
+];

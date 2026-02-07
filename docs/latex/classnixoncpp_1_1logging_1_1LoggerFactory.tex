@@ -1,0 +1,139 @@
+\doxysection{nixoncpp\+::logging\+::Logger\+Factory Class Reference}
+\hypertarget{classnixoncpp_1_1logging_1_1LoggerFactory}{}\label{classnixoncpp_1_1logging_1_1LoggerFactory}\index{nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}}
+
+
+{\ttfamily \#include $<$Logger\+Factory.\+hpp$>$}
+
+
+
+Collaboration diagram for nixoncpp\+::logging\+::Logger\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classnixoncpp_1_1logging_1_1LoggerFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory_a9a38b177b191b1ab4182363e93dd222b}{create}} (\mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{Logger\+Type}} type=\mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abccaa4aa80831b76c11240a16447975f}{Logger\+Type\+::\+Console}}, const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&config=\mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}}\{\})
+\begin{DoxyCompactList}\small\item\em Create a logger instance based on the specified type and configuration. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory_a26cfce0d7f5386a37884a93178910b85}{create\+Console}} (const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&config=\mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}}\{\})
+\begin{DoxyCompactList}\small\item\em Create a Console object logger. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory_a12502094daceaabbec69bfa32bbaff9d}{create\+File}} (const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&config=\mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}}\{\})
+\begin{DoxyCompactList}\small\item\em Create a File object logger. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1LoggerFactory_a155dca9a6066e9729f9237e7d02c2d4e}{create\+Null}} ()
+\begin{DoxyCompactList}\small\item\em Create a Null object logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1logging_1_1LoggerFactory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1logging_1_1LoggerFactory_a9a38b177b191b1ab4182363e93dd222b}\index{nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}!create@{create}}
+\index{create@{create}!nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1LoggerFactory_a9a38b177b191b1ab4182363e93dd222b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ nixoncpp\+::logging\+::\+Logger\+Factory\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{Logger\+Type}}}]{type}{ = {\ttfamily \mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331abccaa4aa80831b76c11240a16447975f}{Logger\+Type\+::\+Console}}}, }\item[{const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&}]{config}{ = {\ttfamily \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}}\{\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a logger instance based on the specified type and configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of logger to create (Console, File, Null) \\
+\hline
+{\em config} & Configuration options for the logger \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+ILogger$>$ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1logging_1_1LoggerFactory_a9a38b177b191b1ab4182363e93dd222b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1logging_1_1LoggerFactory_a9a38b177b191b1ab4182363e93dd222b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1logging_1_1LoggerFactory_a26cfce0d7f5386a37884a93178910b85}\index{nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}!createConsole@{createConsole}}
+\index{createConsole@{createConsole}!nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}}
+\doxysubsubsection{\texorpdfstring{createConsole()}{createConsole()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1LoggerFactory_a26cfce0d7f5386a37884a93178910b85} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ nixoncpp\+::logging\+::\+Logger\+Factory\+::create\+Console (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&}]{config}{ = {\ttfamily \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}}\{\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a Console object logger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+ILogger$>$ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1logging_1_1LoggerFactory_a26cfce0d7f5386a37884a93178910b85_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1logging_1_1LoggerFactory_a12502094daceaabbec69bfa32bbaff9d}\index{nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}!createFile@{createFile}}
+\index{createFile@{createFile}!nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}}
+\doxysubsubsection{\texorpdfstring{createFile()}{createFile()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1LoggerFactory_a12502094daceaabbec69bfa32bbaff9d} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ nixoncpp\+::logging\+::\+Logger\+Factory\+::create\+File (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&}]{config}{ = {\ttfamily \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}}\{\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a File object logger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+ILogger$>$ 
+\end{DoxyReturn}
+\Hypertarget{classnixoncpp_1_1logging_1_1LoggerFactory_a155dca9a6066e9729f9237e7d02c2d4e}\index{nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}!createNull@{createNull}}
+\index{createNull@{createNull}!nixoncpp::logging::LoggerFactory@{nixoncpp::logging::LoggerFactory}}
+\doxysubsubsection{\texorpdfstring{createNull()}{createNull()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1logging_1_1LoggerFactory_a155dca9a6066e9729f9237e7d02c2d4e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ nixoncpp\+::logging\+::\+Logger\+Factory\+::create\+Null (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a Null object logger. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+ILogger$>$ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1logging_1_1LoggerFactory_a155dca9a6066e9729f9237e7d02c2d4e_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Logger/\mbox{\hyperlink{LoggerFactory_8hpp}{Logger\+Factory.\+hpp}}\item 
+src/lib/\+Utils/\+Logger/\mbox{\hyperlink{LoggerFactory_8cpp}{Logger\+Factory.\+cpp}}\end{DoxyCompactItemize}

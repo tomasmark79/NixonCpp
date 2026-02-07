@@ -1,0 +1,27 @@
+var classnixoncpp_1_1utils_1_1ILogger =
+[
+    [ "ILogger", "classnixoncpp_1_1utils_1_1ILogger.html#a03d479a332bebe58462a008598de60cc", null ],
+    [ "~ILogger", "classnixoncpp_1_1utils_1_1ILogger.html#a877107fbe57cf16e99d0f67683928cc5", null ],
+    [ "critical", "classnixoncpp_1_1utils_1_1ILogger.html#adc131d03529b976452457dd4f2bbc627", null ],
+    [ "criticalFmt", "classnixoncpp_1_1utils_1_1ILogger.html#af95183243ba2ee77a45004e0ef8a325e", null ],
+    [ "criticalStream", "classnixoncpp_1_1utils_1_1ILogger.html#a7355e63eabb150ade6f995d0fa83b2f5", null ],
+    [ "debug", "classnixoncpp_1_1utils_1_1ILogger.html#a0f805edc22c985509adfc45131ca22fe", null ],
+    [ "debugFmt", "classnixoncpp_1_1utils_1_1ILogger.html#a4604f36dc136954967c11355f1a1ab75", null ],
+    [ "debugStream", "classnixoncpp_1_1utils_1_1ILogger.html#a3614089d7f4af7f70c27cf9d0012826f", null ],
+    [ "disableFileLogging", "classnixoncpp_1_1utils_1_1ILogger.html#a83a77bb36b56900e4d193405aacf5557", null ],
+    [ "enableFileLogging", "classnixoncpp_1_1utils_1_1ILogger.html#a488da6a7d6959f64ebc1e145186f3183", null ],
+    [ "error", "classnixoncpp_1_1utils_1_1ILogger.html#a43c4c1a7991df4380af77818b941a8c1", null ],
+    [ "errorFmt", "classnixoncpp_1_1utils_1_1ILogger.html#a788ca27fdb52e88bcf4fb8d46773afde", null ],
+    [ "errorStream", "classnixoncpp_1_1utils_1_1ILogger.html#a5adfec01af63593d605c64aa824fadfa", null ],
+    [ "getAppPrefix", "classnixoncpp_1_1utils_1_1ILogger.html#a24ff8d1df8c33244f6a976f7edad0bc5", null ],
+    [ "getLevel", "classnixoncpp_1_1utils_1_1ILogger.html#adef8647fa14682ce1ea9cefc10027157", null ],
+    [ "info", "classnixoncpp_1_1utils_1_1ILogger.html#ad80823b3d09b4d1710a673107052b4d8", null ],
+    [ "infoFmt", "classnixoncpp_1_1utils_1_1ILogger.html#a1da9ef29af3242b7b26b9521e4397f69", null ],
+    [ "infoStream", "classnixoncpp_1_1utils_1_1ILogger.html#a9f737750a8311e36eabdf036d74c6150", null ],
+    [ "setAppPrefix", "classnixoncpp_1_1utils_1_1ILogger.html#a8bdbfff019bf37731ef03fbef785bb88", null ],
+    [ "setLevel", "classnixoncpp_1_1utils_1_1ILogger.html#ae52001a09769aeded4956f6a52be2307", null ],
+    [ "stream", "classnixoncpp_1_1utils_1_1ILogger.html#a8013c95238814c256f4eceab2d069610", null ],
+    [ "warning", "classnixoncpp_1_1utils_1_1ILogger.html#a343daf050d9dca5dcb20aba1444ab76f", null ],
+    [ "warningFmt", "classnixoncpp_1_1utils_1_1ILogger.html#a5efa513b6e1638aad4873915067bcf85", null ],
+    [ "warningStream", "classnixoncpp_1_1utils_1_1ILogger.html#a5c4236fc23131d4798505c26bcea8737", null ]
+];

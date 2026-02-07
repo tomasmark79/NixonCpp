@@ -1,0 +1,17 @@
+<map id="nixoncpp::assets::AssetManager::resolveAsset" name="nixoncpp::assets::AssetManager::resolveAsset">
+<area shape="rect" id="Node000001" title="Resolve the full path of an asset given its relative path." alt="" coords="400,136,630,180"/>
+<area shape="rect" id="Node000002" href="$classnixoncpp_1_1assets_1_1AssetManager.html#a1ee9bb6ce66bf784da142f87560997d6" title="Check if an asset exists given its relative path." alt="" coords="122,49,352,94"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="428,133,351,108,313,97,315,92,353,103,430,128"/>
+<area shape="rect" id="Node000006" href="$AssetManagerTest_8cpp.html#afb120c396aab6c89a8f4d65454b3056b" title=" " alt="" coords="203,117,271,145"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="385,148,271,137,271,132,385,143"/>
+<area shape="rect" id="Node000007" href="$AssetManagerTest_8cpp.html#a5d60a42a81908ce29588078c1ecb96c2" title=" " alt="" coords="203,169,271,197"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="385,172,271,183,271,177,385,167"/>
+<area shape="rect" id="Node000008" href="$AssetManagerTest_8cpp.html#a72e7299bcf134bbe700f73ac083b9994" title=" " alt="" coords="203,221,271,249"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="431,188,353,211,272,231,271,226,351,206,429,183"/>
+<area shape="rect" id="Node000003" href="$AssetManagerTest_8cpp.html#a68afa704c1ff22c9610fae4172d24bc4" title=" " alt="" coords="5,5,74,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="134,47,74,31,75,26,136,42"/>
+<area shape="rect" id="Node000004" href="$AssetManagerTest_8cpp.html#a08f42620f8e54d3a2e0804f9f064bd94" title=" " alt="" coords="5,57,74,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="106,74,74,74,74,68,106,68"/>
+<area shape="rect" id="Node000005" href="$AssetManagerTest_8cpp.html#a4a19ea38d9becf48d8a59679ba370fbb" title=" " alt="" coords="5,109,74,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="136,101,75,117,74,112,134,95"/>
+</map>

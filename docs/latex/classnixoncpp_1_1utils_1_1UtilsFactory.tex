@@ -1,0 +1,364 @@
+\doxysection{nixoncpp\+::utils\+::Utils\+Factory Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory}{}\label{classnixoncpp_1_1utils_1_1UtilsFactory}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+
+
+{\ttfamily \#include $<$Utils\+Factory.\+hpp$>$}
+
+
+
+Collaboration diagram for nixoncpp\+::utils\+::Utils\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1UtilsFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Application\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader}{IFile\+Reader}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a898645cce10d377a7586d12c3fdb6e93}{create\+File\+Reader}} ()
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter}{IFile\+Writer}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a1315826b061bc911c58a3bca701ef5f0}{create\+File\+Writer}} ()
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver}{IPath\+Resolver}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_af57873fd9fa5b5a4b39925fc05966698}{create\+Path\+Resolver}} ()
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager}{IDirectory\+Manager}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_ad6f07ec37707abf581796c46ee56211d}{create\+Directory\+Manager}} ()
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{IPlatform\+Info}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_af9d36cfe688b1460dec5453b5d5c0f3e}{create\+Platform\+Info}} ()
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{IPlatform\+Info}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a358fe12ead3a74666ec78777367295e6}{create\+Platform\+Info}} (\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}} platform)
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{IAsset\+Manager}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a6e7781b6db8c887f84c08609c72cee9b}{create\+Asset\+Manager}} (const std\+::filesystem\+::path \&executable\+Path, const std\+::string \&\mbox{\hyperlink{Application_8cpp_a3c9f34bd2e11a5d854fc61609b3edb3b}{app\+Name}})
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer}{IJson\+Serializer}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_ac89ae32784dcc62839c88a8e99c50f7c}{create\+Json\+Serializer}} ()
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader}{ICustom\+Strings\+Loader}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a5d58ef900c1db80a1d196a271d26b6e4}{create\+Custom\+Strings\+Loader}} (const std\+::filesystem\+::path \&executable\+Path, const std\+::string \&\mbox{\hyperlink{Application_8cpp_a3c9f34bd2e11a5d854fc61609b3edb3b}{app\+Name}})
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IStringFormatter}{IString\+Formatter}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a99c58e956babbfc262186c1c0d3fd29e}{create\+String\+Formatter}} ()
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a25d60ab1ffddf4e84f9bfcf18d6cda5e}{create\+Logger}} (\mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{Logger\+Type}} type, const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&config)
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a701a98b9e13fac471f5b9a35dfa1058e}{create\+Default\+Logger}} ()
+\item 
+static \mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Application\+Context}} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a4f4379374cac4b57e87332373ecdb3c2}{create\+Full\+Context}} (const std\+::string \&\mbox{\hyperlink{Application_8cpp_a3c9f34bd2e11a5d854fc61609b3edb3b}{app\+Name}}, const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&logger\+Config)
+\begin{DoxyCompactList}\small\item\em Create full application context with all components. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Application\+Context}} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_a7584ff01912c5d2a8450715debefed80}{create\+Core\+Context}} (const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&logger\+Config)
+\begin{DoxyCompactList}\small\item\em Create minimal context without app-\/specific components. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Application\+Context}} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1UtilsFactory_aab74a1a2491ea457c170d20781cf6897}{create\+Basic\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Create basic utilities context with default logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a6e7781b6db8c887f84c08609c72cee9b}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createAssetManager@{createAssetManager}}
+\index{createAssetManager@{createAssetManager}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createAssetManager()}{createAssetManager()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a6e7781b6db8c887f84c08609c72cee9b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1assets_1_1IAssetManager}{IAsset\+Manager}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Asset\+Manager (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{executable\+Path}{, }\item[{const std\+::string \&}]{app\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a6e7781b6db8c887f84c08609c72cee9b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a6e7781b6db8c887f84c08609c72cee9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_aab74a1a2491ea457c170d20781cf6897}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createBasicContext@{createBasicContext}}
+\index{createBasicContext@{createBasicContext}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createBasicContext()}{createBasicContext()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_aab74a1a2491ea457c170d20781cf6897} 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Utils\+Factory\+::\+Application\+Context}} nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Basic\+Context (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+
+
+Create basic utilities context with default logger. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Application\+Context} with basic utilities and default logger 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_aab74a1a2491ea457c170d20781cf6897_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a7584ff01912c5d2a8450715debefed80}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createCoreContext@{createCoreContext}}
+\index{createCoreContext@{createCoreContext}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createCoreContext()}{createCoreContext()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a7584ff01912c5d2a8450715debefed80} 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Utils\+Factory\+::\+Application\+Context}} nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Core\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&}]{logger\+Config}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+
+
+Create minimal context without app-\/specific components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger\+Config} & Logger configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Application\+Context} with core utilities only (no asset\+Manager/custom\+Strings\+Loader) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a7584ff01912c5d2a8450715debefed80_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a5d58ef900c1db80a1d196a271d26b6e4}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createCustomStringsLoader@{createCustomStringsLoader}}
+\index{createCustomStringsLoader@{createCustomStringsLoader}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createCustomStringsLoader()}{createCustomStringsLoader()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a5d58ef900c1db80a1d196a271d26b6e4} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader}{ICustom\+Strings\+Loader}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Custom\+Strings\+Loader (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{executable\+Path}{, }\item[{const std\+::string \&}]{app\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a5d58ef900c1db80a1d196a271d26b6e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a5d58ef900c1db80a1d196a271d26b6e4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a701a98b9e13fac471f5b9a35dfa1058e}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createDefaultLogger@{createDefaultLogger}}
+\index{createDefaultLogger@{createDefaultLogger}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createDefaultLogger()}{createDefaultLogger()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a701a98b9e13fac471f5b9a35dfa1058e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Default\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a701a98b9e13fac471f5b9a35dfa1058e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a701a98b9e13fac471f5b9a35dfa1058e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_ad6f07ec37707abf581796c46ee56211d}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createDirectoryManager@{createDirectoryManager}}
+\index{createDirectoryManager@{createDirectoryManager}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createDirectoryManager()}{createDirectoryManager()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_ad6f07ec37707abf581796c46ee56211d} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager}{IDirectory\+Manager}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Directory\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_ad6f07ec37707abf581796c46ee56211d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a898645cce10d377a7586d12c3fdb6e93}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createFileReader@{createFileReader}}
+\index{createFileReader@{createFileReader}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createFileReader()}{createFileReader()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a898645cce10d377a7586d12c3fdb6e93} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader}{IFile\+Reader}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+File\+Reader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a898645cce10d377a7586d12c3fdb6e93_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a1315826b061bc911c58a3bca701ef5f0}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createFileWriter@{createFileWriter}}
+\index{createFileWriter@{createFileWriter}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createFileWriter()}{createFileWriter()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a1315826b061bc911c58a3bca701ef5f0} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileWriter}{IFile\+Writer}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+File\+Writer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a1315826b061bc911c58a3bca701ef5f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a4f4379374cac4b57e87332373ecdb3c2}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createFullContext@{createFullContext}}
+\index{createFullContext@{createFullContext}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createFullContext()}{createFullContext()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a4f4379374cac4b57e87332373ecdb3c2} 
+\mbox{\hyperlink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Utils\+Factory\+::\+Application\+Context}} nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Full\+Context (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{app\+Name}{, }\item[{const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&}]{logger\+Config}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+
+
+Create full application context with all components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+Name} & Application name for asset resolution \\
+\hline
+{\em logger\+Config} & Logger configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complete \doxylink{structnixoncpp_1_1utils_1_1UtilsFactory_1_1ApplicationContext}{Application\+Context} with all utilities initialized 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a4f4379374cac4b57e87332373ecdb3c2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a4f4379374cac4b57e87332373ecdb3c2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_ac89ae32784dcc62839c88a8e99c50f7c}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createJsonSerializer@{createJsonSerializer}}
+\index{createJsonSerializer@{createJsonSerializer}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createJsonSerializer()}{createJsonSerializer()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_ac89ae32784dcc62839c88a8e99c50f7c} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer}{IJson\+Serializer}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Json\+Serializer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_ac89ae32784dcc62839c88a8e99c50f7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_ac89ae32784dcc62839c88a8e99c50f7c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a25d60ab1ffddf4e84f9bfcf18d6cda5e}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createLogger@{createLogger}}
+\index{createLogger@{createLogger}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createLogger()}{createLogger()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a25d60ab1ffddf4e84f9bfcf18d6cda5e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1logging_1_1ILogger}{ILogger}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenixoncpp_1_1logging_adae95702ec99309a7b7168f721d36331}{Logger\+Type}}}]{type}{, }\item[{const \mbox{\hyperlink{structnixoncpp_1_1logging_1_1LoggerConfig}{Logger\+Config}} \&}]{config}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a25d60ab1ffddf4e84f9bfcf18d6cda5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a25d60ab1ffddf4e84f9bfcf18d6cda5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_af57873fd9fa5b5a4b39925fc05966698}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createPathResolver@{createPathResolver}}
+\index{createPathResolver@{createPathResolver}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createPathResolver()}{createPathResolver()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_af57873fd9fa5b5a4b39925fc05966698} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPathResolver}{IPath\+Resolver}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Path\+Resolver (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_af57873fd9fa5b5a4b39925fc05966698_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_af9d36cfe688b1460dec5453b5d5c0f3e}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createPlatformInfo@{createPlatformInfo}}
+\index{createPlatformInfo@{createPlatformInfo}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createPlatformInfo()}{createPlatformInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_af9d36cfe688b1460dec5453b5d5c0f3e} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{IPlatform\+Info}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Platform\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_af9d36cfe688b1460dec5453b5d5c0f3e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_af9d36cfe688b1460dec5453b5d5c0f3e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a358fe12ead3a74666ec78777367295e6}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createPlatformInfo@{createPlatformInfo}}
+\index{createPlatformInfo@{createPlatformInfo}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createPlatformInfo()}{createPlatformInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a358fe12ead3a74666ec78777367295e6} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{IPlatform\+Info}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+Platform\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}}}]{platform}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a358fe12ead3a74666ec78777367295e6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1UtilsFactory_a99c58e956babbfc262186c1c0d3fd29e}\index{nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}!createStringFormatter@{createStringFormatter}}
+\index{createStringFormatter@{createStringFormatter}!nixoncpp::utils::UtilsFactory@{nixoncpp::utils::UtilsFactory}}
+\doxysubsubsection{\texorpdfstring{createStringFormatter()}{createStringFormatter()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1UtilsFactory_a99c58e956babbfc262186c1c0d3fd29e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IStringFormatter}{IString\+Formatter}} $>$ nixoncpp\+::utils\+::\+Utils\+Factory\+::create\+String\+Formatter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1UtilsFactory_a99c58e956babbfc262186c1c0d3fd29e_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\mbox{\hyperlink{UtilsFactory_8hpp}{Utils\+Factory.\+hpp}}\item 
+src/lib/\+Utils/\mbox{\hyperlink{UtilsFactory_8cpp}{Utils\+Factory.\+cpp}}\end{DoxyCompactItemize}

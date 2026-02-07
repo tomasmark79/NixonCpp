@@ -1,0 +1,33 @@
+\doxysection{ICustom\+Strings\+Loader.\+hpp}
+\hypertarget{ICustomStringsLoader_8hpp_source}{}\label{ICustomStringsLoader_8hpp_source}\index{src/lib/Utils/Json/ICustomStringsLoader.hpp@{src/lib/Utils/Json/ICustomStringsLoader.hpp}}
+\mbox{\hyperlink{ICustomStringsLoader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{UtilsError_8hpp}{Utils/UtilsError.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader}{ICustomStringsLoader}}\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_aa175eec1c0e88edee4b3921e9c0f6276}{\string~ICustomStringsLoader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00023\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<nlohmann::json,\ JsonError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_a14774948c94fb5b0ee08cc6a72ba48d6}{load}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ std::optional<std::string>\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_a729e13c956c4eaaf31b03475f5f9b3e4}{getPath}}(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id})\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00042\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ std::optional<std::string>\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_a74ba96faf53dc65e53a9d73128683538}{getCustomKey}}(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ std::optional<std::string>}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1ICustomStringsLoader_aa75493eadb21e983aae9d5bae2a82e72}{getLocalizedString}}(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\ \&locale\ =\ \textcolor{stringliteral}{"{}en"{}})\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \};}
+\DoxyCodeLine{00056\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

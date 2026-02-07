@@ -1,0 +1,322 @@
+\doxysection{nixoncpp\+::utils\+::Windows\+Platform\+Info Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo}{}\label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+
+
+Windows-\/specific platform information implementation.  
+
+
+
+
+{\ttfamily \#include $<$Windows\+Platform\+Info.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::Windows\+Platform\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::Windows\+Platform\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} ()=default
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a8e2d922c24c3be76060b51820e862356}{Windows\+Platform\+Info}} (const Windows\+Platform\+Info \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ac5da57b8625b1c1db12b8d5e7fea04a8}{operator=}} (const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} \&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a9b2eb7a6af2eef56136e5c5b3e6d061f}{Windows\+Platform\+Info}} (Windows\+Platform\+Info \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} \& \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a362a93a28ede146c17f475cdfdf5e673}{operator=}} (\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a7ee017f91a59ea321cd2a2b7ac236f3a}{\texorpdfstring{$\sim$}{\string~}\+Windows\+Platform\+Info}} () override=default
+\item 
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}} \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a2641c53b4e4a5df5ad4d3068affd1b6a}{get\+Platform}} () const override
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_aee16d49f20f6c70676650c530b90a168}{get\+Platform\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} Name object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a862a62ef2436f55c620ffa6222808033}{get\+Executable\+Path}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Executable Path object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a85d1d870e6e62a5bf4b9fb03cbd5f53f}{get\+Executable\+Directory}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Executable Directory object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a679ba0ce0ce2c103da88eeb5948e674f}{is\+Windows}} () const override
+\begin{DoxyCompactList}\small\item\em Check if the platform is Windows. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a1f16e1ae38fc281eb6f85296896f751c}{is\+Linux}} () const override
+\begin{DoxyCompactList}\small\item\em Check if the platform is Linux. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ad8984a731fdc6557df393358519f859f}{is\+Mac\+OS}} () const override
+\begin{DoxyCompactList}\small\item\em Check if the platform is mac\+OS. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ae74983a3c6b29beaf90a8547aa2b34d8}{is\+Emscripten}} () const override
+\begin{DoxyCompactList}\small\item\em Check if the platform is Emscripten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo}{nixoncpp\+::utils\+::\+IPlatform\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_aaf86a25917a5325035e624cde3958a4a}{\texorpdfstring{$\sim$}{\string~}\+IPlatform\+Info}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Windows-\/specific platform information implementation. 
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!WindowsPlatformInfo@{WindowsPlatformInfo}}
+\index{WindowsPlatformInfo@{WindowsPlatformInfo}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{WindowsPlatformInfo()}{WindowsPlatformInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f} 
+nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::\+Windows\+Platform\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a8e2d922c24c3be76060b51820e862356}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!WindowsPlatformInfo@{WindowsPlatformInfo}}
+\index{WindowsPlatformInfo@{WindowsPlatformInfo}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{WindowsPlatformInfo()}{WindowsPlatformInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a8e2d922c24c3be76060b51820e862356} 
+nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::\+Windows\+Platform\+Info (\begin{DoxyParamCaption}\item[{const Windows\+Platform\+Info \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a8e2d922c24c3be76060b51820e862356_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a9b2eb7a6af2eef56136e5c5b3e6d061f}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!WindowsPlatformInfo@{WindowsPlatformInfo}}
+\index{WindowsPlatformInfo@{WindowsPlatformInfo}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{WindowsPlatformInfo()}{WindowsPlatformInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a9b2eb7a6af2eef56136e5c5b3e6d061f} 
+nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::\+Windows\+Platform\+Info (\begin{DoxyParamCaption}\item[{Windows\+Platform\+Info \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a9b2eb7a6af2eef56136e5c5b3e6d061f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a7ee017f91a59ea321cd2a2b7ac236f3a}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!````~WindowsPlatformInfo@{\texorpdfstring{$\sim$}{\string~}WindowsPlatformInfo}}
+\index{````~WindowsPlatformInfo@{\texorpdfstring{$\sim$}{\string~}WindowsPlatformInfo}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}WindowsPlatformInfo()}{\string~WindowsPlatformInfo()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a7ee017f91a59ea321cd2a2b7ac236f3a} 
+nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::\texorpdfstring{$\sim$}{\string~}\+Windows\+Platform\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a85d1d870e6e62a5bf4b9fb03cbd5f53f}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!getExecutableDirectory@{getExecutableDirectory}}
+\index{getExecutableDirectory@{getExecutableDirectory}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{getExecutableDirectory()}{getExecutableDirectory()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a85d1d870e6e62a5bf4b9fb03cbd5f53f} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::get\+Executable\+Directory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Executable Directory object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad0405a0af31153f3d9b2a9b5b410a2d8}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a85d1d870e6e62a5bf4b9fb03cbd5f53f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a862a62ef2436f55c620ffa6222808033}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!getExecutablePath@{getExecutablePath}}
+\index{getExecutablePath@{getExecutablePath}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{getExecutablePath()}{getExecutablePath()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a862a62ef2436f55c620ffa6222808033} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::filesystem\+::path, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::get\+Executable\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Executable Path object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::filesystem\+::path, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a97455790ddf05927861fca96f512894b}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a862a62ef2436f55c620ffa6222808033_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a2641c53b4e4a5df5ad4d3068affd1b6a}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!getPlatform@{getPlatform}}
+\index{getPlatform@{getPlatform}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{getPlatform()}{getPlatform()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a2641c53b4e4a5df5ad4d3068affd1b6a} 
+\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}} nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::get\+Platform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ab1ad374f6667c49ba4bacc8a26617fb5}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_aee16d49f20f6c70676650c530b90a168}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!getPlatformName@{getPlatformName}}
+\index{getPlatformName@{getPlatformName}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{getPlatformName()}{getPlatformName()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_aee16d49f20f6c70676650c530b90a168} 
+std\+::string nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::get\+Platform\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform} Name object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad1d61f58cc044796b779544c24821753}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ae74983a3c6b29beaf90a8547aa2b34d8}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!isEmscripten@{isEmscripten}}
+\index{isEmscripten@{isEmscripten}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{isEmscripten()}{isEmscripten()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ae74983a3c6b29beaf90a8547aa2b34d8} 
+bool nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::is\+Emscripten (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the platform is Emscripten. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_ad9edcae53a624d17c432fb0c0025f06f}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a1f16e1ae38fc281eb6f85296896f751c}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!isLinux@{isLinux}}
+\index{isLinux@{isLinux}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{isLinux()}{isLinux()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a1f16e1ae38fc281eb6f85296896f751c} 
+bool nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::is\+Linux (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the platform is Linux. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a84055dcf94e1c17ba4f6f3a85f4e1ef2}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ad8984a731fdc6557df393358519f859f}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!isMacOS@{isMacOS}}
+\index{isMacOS@{isMacOS}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{isMacOS()}{isMacOS()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ad8984a731fdc6557df393358519f859f} 
+bool nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::is\+Mac\+OS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the platform is mac\+OS. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a080fb817ccc9777db0644556f6215928}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a679ba0ce0ce2c103da88eeb5948e674f}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!isWindows@{isWindows}}
+\index{isWindows@{isWindows}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{isWindows()}{isWindows()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a679ba0ce0ce2c103da88eeb5948e674f} 
+bool nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::is\+Windows (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the platform is Windows. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IPlatformInfo_a786519ed039b90d154e34c2f0a6acefc}{nixoncpp\+::utils\+::\+IPlatform\+Info}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ac5da57b8625b1c1db12b8d5e7fea04a8}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ac5da57b8625b1c1db12b8d5e7fea04a8} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} \& nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_ac5da57b8625b1c1db12b8d5e7fea04a8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a362a93a28ede146c17f475cdfdf5e673}\index{nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}!operator=@{operator=}}
+\index{operator=@{operator=}!nixoncpp::utils::WindowsPlatformInfo@{nixoncpp::utils::WindowsPlatformInfo}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a362a93a28ede146c17f475cdfdf5e673} 
+\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} \& nixoncpp\+::utils\+::\+Windows\+Platform\+Info\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_af91393169242e7dc6d9323053f33c68f}{Windows\+Platform\+Info}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnixoncpp_1_1utils_1_1WindowsPlatformInfo_a362a93a28ede146c17f475cdfdf5e673_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Platform/\mbox{\hyperlink{WindowsPlatformInfo_8hpp}{Windows\+Platform\+Info.\+hpp}}\item 
+src/lib/\+Utils/\+Platform/\mbox{\hyperlink{WindowsPlatformInfo_8cpp}{Windows\+Platform\+Info.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+\doxysection{IFile\+Reader.\+hpp}
+\hypertarget{IFileReader_8hpp_source}{}\label{IFileReader_8hpp_source}\index{src/lib/Utils/Filesystem/IFileReader.hpp@{src/lib/Utils/Filesystem/IFileReader.hpp}}
+\mbox{\hyperlink{IFileReader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{UtilsError_8hpp}{Utils/UtilsError.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader}{IFileReader}}\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a244184ad8701b07d9e79698687af7eda}{\string~IFileReader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::string,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_ab4af2d8e1aa5f0341a899d2119c6d59b}{read}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::vector<uint8\_t>}},\ \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{FileError}}>}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_ac679987e23fa1e4a6fc6033f2957999e}{readBytes}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::vector<std::string>}},\ \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{FileError}}>}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a8486ded3266421891ff7a2e66ee278db}{readLines}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00057\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_abe6064fbf3aef889862d1dccb15c4dca}{exists}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::uintmax\_t,\ FileError>}}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a78b701a195f02c60de44669e985c6227}{getSize}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&filePath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00069\ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

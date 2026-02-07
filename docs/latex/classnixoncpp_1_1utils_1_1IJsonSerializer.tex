@@ -1,0 +1,164 @@
+\doxysection{nixoncpp\+::utils\+::IJson\+Serializer Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1IJsonSerializer}{}\label{classnixoncpp_1_1utils_1_1IJsonSerializer}\index{nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}}
+
+
+Interface for JSON serialization and parsing.  
+
+
+
+
+{\ttfamily \#include $<$IJson\+Serializer.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::IJson\+Serializer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1IJsonSerializer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::IJson\+Serializer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classnixoncpp_1_1utils_1_1IJsonSerializer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer_a6c551a8ebbef9542edaf48bc9159e406}{\texorpdfstring{$\sim$}{\string~}\+IJson\+Serializer}} ()=default
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ nlohmann\+::json, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer_a39326e915c182f87dae3c9fe8d4f904a}{load\+From\+File}} (const std\+::filesystem\+::path \&file\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Load JSON from file. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer_a095e1a27d55c1336a9073f42742fb995}{save\+To\+File}} (const std\+::filesystem\+::path \&file\+Path, const nlohmann\+::json \&json\+Data, int indent=2) const =0
+\begin{DoxyCompactList}\small\item\em Save JSON to file. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ nlohmann\+::json, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer_aa459f05d119fd592a3898d300ad93a10}{parse}} (const std\+::string \&json\+String) const =0
+\begin{DoxyCompactList}\small\item\em Parse JSON from string. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::string, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IJsonSerializer_a7f850d033d6a79db0e1daac9c6ecca66}{to\+String}} (const nlohmann\+::json \&json\+Data, int indent=2) const =0
+\begin{DoxyCompactList}\small\item\em Convert JSON to string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for JSON serialization and parsing. 
+
+Provides safe JSON operations with \doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$\+T,\+E$>$} error handling. 
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1IJsonSerializer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IJsonSerializer_a6c551a8ebbef9542edaf48bc9159e406}\index{nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}!````~IJsonSerializer@{\texorpdfstring{$\sim$}{\string~}IJsonSerializer}}
+\index{````~IJsonSerializer@{\texorpdfstring{$\sim$}{\string~}IJsonSerializer}!nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IJsonSerializer()}{\string~IJsonSerializer()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IJsonSerializer_a6c551a8ebbef9542edaf48bc9159e406} 
+virtual nixoncpp\+::utils\+::\+IJson\+Serializer\+::\texorpdfstring{$\sim$}{\string~}\+IJson\+Serializer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1IJsonSerializer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IJsonSerializer_a39326e915c182f87dae3c9fe8d4f904a}\index{nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IJsonSerializer_a39326e915c182f87dae3c9fe8d4f904a} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ nlohmann\+::json, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ nixoncpp\+::utils\+::\+IJson\+Serializer\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Load JSON from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$nlohmann\+::json, Json\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1JsonSerializer_af918c660efebb9b850a961d92b808272}{nixoncpp\+::utils\+::\+Json\+Serializer}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IJsonSerializer_aa459f05d119fd592a3898d300ad93a10}\index{nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}!parse@{parse}}
+\index{parse@{parse}!nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IJsonSerializer_aa459f05d119fd592a3898d300ad93a10} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ nlohmann\+::json, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ nixoncpp\+::utils\+::\+IJson\+Serializer\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json\+String}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Parse JSON from string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+String} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$nlohmann\+::json, Json\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1JsonSerializer_aadc697efd3cca162b26c59bc41cc4512}{nixoncpp\+::utils\+::\+Json\+Serializer}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IJsonSerializer_a095e1a27d55c1336a9073f42742fb995}\index{nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IJsonSerializer_a095e1a27d55c1336a9073f42742fb995} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ void, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ nixoncpp\+::utils\+::\+IJson\+Serializer\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{, }\item[{const nlohmann\+::json \&}]{json\+Data}{, }\item[{int}]{indent}{ = {\ttfamily 2}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Save JSON to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em json\+Data} & \\
+\hline
+{\em indent} & Indentation level (default\+: 2) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$void, Json\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1JsonSerializer_a72676cb485e8e80aa37369e3df9a64eb}{nixoncpp\+::utils\+::\+Json\+Serializer}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IJsonSerializer_a7f850d033d6a79db0e1daac9c6ecca66}\index{nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}!toString@{toString}}
+\index{toString@{toString}!nixoncpp::utils::IJsonSerializer@{nixoncpp::utils::IJsonSerializer}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IJsonSerializer_a7f850d033d6a79db0e1daac9c6ecca66} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::string, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1JsonError}{Json\+Error}} $>$ nixoncpp\+::utils\+::\+IJson\+Serializer\+::to\+String (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{json\+Data}{, }\item[{int}]{indent}{ = {\ttfamily 2}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Convert JSON to string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Data} & \\
+\hline
+{\em indent} & Indentation level (default\+: 2) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::string, Json\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1JsonSerializer_a956b13a5f7acd3f3c2df68e29f5beb53}{nixoncpp\+::utils\+::\+Json\+Serializer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Json/\mbox{\hyperlink{IJsonSerializer_8hpp}{IJson\+Serializer.\+hpp}}\end{DoxyCompactItemize}

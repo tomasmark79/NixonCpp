@@ -1,0 +1,50 @@
+\doxysection{IDirectory\+Manager.\+hpp}
+\hypertarget{IDirectoryManager_8hpp_source}{}\label{IDirectoryManager_8hpp_source}\index{src/lib/Utils/Filesystem/IDirectoryManager.hpp@{src/lib/Utils/Filesystem/IDirectoryManager.hpp}}
+\mbox{\hyperlink{IDirectoryManager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{UtilsError_8hpp}{Utils/UtilsError.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager}{IDirectoryManager}}\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_ab6fd3b59f39e96bf4b20c2b3ff780b76}{\string~IDirectoryManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<void,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_acf408e4fd8f3a701afa84b40461187eb}{createDirectory}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&dirPath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<void,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_ad08fc3aec0a00b509af1316a3d1e51a1}{removeDirectory}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&dirPath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::uintmax\_t,\ FileError>}}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a77993b311483fb0d7c2dc3534b03e89e}{removeDirectoryRecursive}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&dirPath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a3837a9835eaad918ca1648ff8a82faaf}{exists}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&dirPath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<bool,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a33fc84405edab817e5638c9e9071981e}{isEmpty}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&dirPath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::vector<std::filesystem::path>}},\ \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{FileError}}>}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a5a8f9c0b0a8894cbf811c26e11176284}{listEntries}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&dirPath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::vector<std::filesystem::path>}},\ \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{FileError}}>}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a3bcf5a633f5a525357435e19b8d5b989}{listEntriesRecursive}}(\textcolor{keyword}{const}\ std::filesystem::path\ \&dirPath)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a4f58987cc3625b3264e1fcc9d5f280dd}{getCurrentDirectory}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result<std::filesystem::path,\ FileError>}}\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IDirectoryManager_a55b105a95ad7531cf94faeb65f1ad3a3}{getTempDirectory}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00100\ \ \ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

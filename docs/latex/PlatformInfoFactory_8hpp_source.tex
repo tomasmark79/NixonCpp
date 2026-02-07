@@ -1,0 +1,23 @@
+\doxysection{Platform\+Info\+Factory.\+hpp}
+\hypertarget{PlatformInfoFactory_8hpp_source}{}\label{PlatformInfoFactory_8hpp_source}\index{src/lib/Utils/Platform/PlatformInfoFactory.hpp@{src/lib/Utils/Platform/PlatformInfoFactory.hpp}}
+\mbox{\hyperlink{PlatformInfoFactory_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{IPlatformInfo_8hpp}{Utils/Platform/IPlatformInfo.hpp}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacenixoncpp_1_1utils}{nixoncpp::utils}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classnixoncpp_1_1utils_1_1PlatformInfoFactory}{PlatformInfoFactory}}\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<IPlatformInfo>\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PlatformInfoFactory_a0195da5938b4019fd41096c4e57a3c6a}{createForCurrentPlatform}}();}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ [[nodiscard]]}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<IPlatformInfo>\ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1PlatformInfoFactory_ad320d9b4e91f5d27eae963eda600affd}{create}}(\mbox{\hyperlink{namespacenixoncpp_1_1utils_a91c174b16ad7fa222f5b22dc30f875a8}{Platform}}\ platform);}
+\DoxyCodeLine{00015\ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \}\ \textcolor{comment}{//\ namespace\ nixoncpp::utils}}
+
+\end{DoxyCode}

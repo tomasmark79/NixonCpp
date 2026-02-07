@@ -1,0 +1,184 @@
+\doxysection{nixoncpp\+::utils\+::IFile\+Reader Class Reference}
+\hypertarget{classnixoncpp_1_1utils_1_1IFileReader}{}\label{classnixoncpp_1_1utils_1_1IFileReader}\index{nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}}
+
+
+Interface for reading file content.  
+
+
+
+
+{\ttfamily \#include $<$IFile\+Reader.\+hpp$>$}
+
+
+
+Inheritance diagram for nixoncpp\+::utils\+::IFile\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnixoncpp_1_1utils_1_1IFileReader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nixoncpp\+::utils\+::IFile\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classnixoncpp_1_1utils_1_1IFileReader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a244184ad8701b07d9e79698687af7eda}{\texorpdfstring{$\sim$}{\string~}\+IFile\+Reader}} ()=default
+\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::string, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_ab4af2d8e1aa5f0341a899d2119c6d59b}{read}} (const std\+::filesystem\+::path \&file\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Read the entire content of a file as a string. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ uint8\+\_\+t $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_ac679987e23fa1e4a6fc6033f2957999e}{read\+Bytes}} (const std\+::filesystem\+::path \&file\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Read the entire content of a file as a vector of bytes. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ std\+::string $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a8486ded3266421891ff7a2e66ee278db}{read\+Lines}} (const std\+::filesystem\+::path \&file\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Read the content of a file as a vector of lines. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_abe6064fbf3aef889862d1dccb15c4dca}{exists}} (const std\+::filesystem\+::path \&file\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Check if a file exists. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::uintmax\+\_\+t, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ \mbox{\hyperlink{classnixoncpp_1_1utils_1_1IFileReader_a78b701a195f02c60de44669e985c6227}{get\+Size}} (const std\+::filesystem\+::path \&file\+Path) const =0
+\begin{DoxyCompactList}\small\item\em Get the Size object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for reading file content. 
+
+Provides abstraction for file reading operations with explicit error handling. All methods return \doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$\+T, File\+Error$>$} for safe error handling. 
+
+\label{doc-constructors}
+\Hypertarget{classnixoncpp_1_1utils_1_1IFileReader_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IFileReader_a244184ad8701b07d9e79698687af7eda}\index{nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}!````~IFileReader@{\texorpdfstring{$\sim$}{\string~}IFileReader}}
+\index{````~IFileReader@{\texorpdfstring{$\sim$}{\string~}IFileReader}!nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IFileReader()}{\string~IFileReader()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IFileReader_a244184ad8701b07d9e79698687af7eda} 
+virtual nixoncpp\+::utils\+::\+IFile\+Reader\+::\texorpdfstring{$\sim$}{\string~}\+IFile\+Reader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classnixoncpp_1_1utils_1_1IFileReader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnixoncpp_1_1utils_1_1IFileReader_abe6064fbf3aef889862d1dccb15c4dca}\index{nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}!exists@{exists}}
+\index{exists@{exists}!nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IFileReader_abe6064fbf3aef889862d1dccb15c4dca} 
+virtual bool nixoncpp\+::utils\+::\+IFile\+Reader\+::exists (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Check if a file exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a9a91f73f73896a15555169d1ccdefcd3}{nixoncpp\+::utils\+::\+File\+Reader}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IFileReader_a78b701a195f02c60de44669e985c6227}\index{nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}!getSize@{getSize}}
+\index{getSize@{getSize}!nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IFileReader_a78b701a195f02c60de44669e985c6227} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::uintmax\+\_\+t, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IFile\+Reader\+::get\+Size (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Get the Size object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::uintmax\+\_\+t, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a120079d61decfe92a921bbe1cd340da7}{nixoncpp\+::utils\+::\+File\+Reader}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IFileReader_ab4af2d8e1aa5f0341a899d2119c6d59b}\index{nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}!read@{read}}
+\index{read@{read}!nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IFileReader_ab4af2d8e1aa5f0341a899d2119c6d59b} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::string, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IFile\+Reader\+::read (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Read the entire content of a file as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result$<$std\+::string, File\+Error$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_ab8f7ab65242712aa19e722ae15f63ebe}{nixoncpp\+::utils\+::\+File\+Reader}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IFileReader_ac679987e23fa1e4a6fc6033f2957999e}\index{nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}!readBytes@{readBytes}}
+\index{readBytes@{readBytes}!nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}}
+\doxysubsubsection{\texorpdfstring{readBytes()}{readBytes()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IFileReader_ac679987e23fa1e4a6fc6033f2957999e} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ uint8\+\_\+t $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IFile\+Reader\+::read\+Bytes (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Read the entire content of a file as a vector of bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result}\texorpdfstring{$<$}{<}std\+::vector$<$uint8\+\_\+t$>$, \doxylink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a2435da74c1532afda168a1f44d20ca36}{nixoncpp\+::utils\+::\+File\+Reader}}.
+
+\Hypertarget{classnixoncpp_1_1utils_1_1IFileReader_a8486ded3266421891ff7a2e66ee278db}\index{nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}!readLines@{readLines}}
+\index{readLines@{readLines}!nixoncpp::utils::IFileReader@{nixoncpp::utils::IFileReader}}
+\doxysubsubsection{\texorpdfstring{readLines()}{readLines()}}
+{\footnotesize\ttfamily \label{classnixoncpp_1_1utils_1_1IFileReader_a8486ded3266421891ff7a2e66ee278db} 
+virtual \mbox{\hyperlink{classnixoncpp_1_1utils_1_1Result}{Result}}$<$ std\+::vector$<$ std\+::string $>$, \mbox{\hyperlink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}} $>$ nixoncpp\+::utils\+::\+IFile\+Reader\+::read\+Lines (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+Path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [pure virtual]}}
+
+
+
+Read the content of a file as a vector of lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classnixoncpp_1_1utils_1_1Result}{Result}\texorpdfstring{$<$}{<}std\+::vector$<$std\+::string$>$, \doxylink{structnixoncpp_1_1utils_1_1FileError}{File\+Error}\texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnixoncpp_1_1utils_1_1FileReader_a7be0e459ee95c0298d1051f85be632b0}{nixoncpp\+::utils\+::\+File\+Reader}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\+Utils/\+Filesystem/\mbox{\hyperlink{IFileReader_8hpp}{IFile\+Reader.\+hpp}}\end{DoxyCompactItemize}
