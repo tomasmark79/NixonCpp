@@ -96,6 +96,13 @@ Output: `docs/html/index.html`
 
 VS Code tasks
 -------------
+
+<p align="center">
+	<a href="./assets/screen-desktop.png">
+		<img src="./assets/screen-desktop.png" alt="Desktop screenshot" width="65%">
+	</a>
+</p>
+
 Workspace tasks are defined in [.vscode/tasks.json](.vscode/tasks.json).
 
 How to run:
@@ -115,6 +122,13 @@ Optional keybindings:
 
 GitHub Codespaces
 -----------------
+
+<p align="center">
+	<a href="./assets/screen-codespace.png">
+		<img src="./assets/screen-codespace.png" alt="Codespace screenshot" width="65%">
+	</a>
+</p>
+
 This repo is Codespaces-ready via a devcontainer using Nix.
 
 - Ensure the devcontainer is used: [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
@@ -123,7 +137,6 @@ This repo is Codespaces-ready via a devcontainer using Nix.
 	- `make debug`
 	- `make test`
 
-![alt text](./assets/screen-codespace.png)
 
 Notes:
 - WebAssembly dev server uses port `6931` (auto-forwarded by the devcontainer).
