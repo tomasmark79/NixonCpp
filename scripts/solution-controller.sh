@@ -40,7 +40,7 @@ GREY="\033[1;30m"
 NC="\033[0m"
 
 log_header() {
-    echo -e "${GREEN}NixonCpp Solution Controller - ${CONTROLLER_VERSION}${NC}"
+    echo -e "${GREEN}solution-controller.sh-${CONTROLLER_VERSION}${NC}"
     echo -e "${GREY}Task\t: ${TASK_NAME}${NC}"
     echo -e "${LIGHTBLUE}Arch\t: ${BUILD_ARCH}${NC}"
     echo -e "${LIGHTBLUE}Type\t: ${BUILD_TYPE}${NC}"
