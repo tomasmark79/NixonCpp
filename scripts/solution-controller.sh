@@ -32,12 +32,26 @@ fi
 
 BUILD_TYPE="${BUILD_TYPE_RAW,,}"
 
-GREEN="\033[0;32m"
-YELLOW="\033[0;33m"
-RED="\033[0;31m"
-LIGHTBLUE="\033[1;34m"
-GREY="\033[1;30m"
-NC="\033[0m"
+COLOR_ENABLED=1
+if [[ -n "${NO_COLOR:-}" || "${PROJECT_NO_COLOR:-}" == "1" || "${CLICOLOR:-}" == "0" || "${TERM:-}" == "dumb" ]]; then
+    COLOR_ENABLED=0
+fi
+
+if [[ "$COLOR_ENABLED" == "1" ]]; then
+    GREEN="\033[0;32m"
+    YELLOW="\033[0;33m"
+    RED="\033[0;31m"
+    LIGHTBLUE="\033[1;34m"
+    GREY="\033[1;30m"
+    NC="\033[0m"
+else
+    GREEN=""
+    YELLOW=""
+    RED=""
+    LIGHTBLUE=""
+    GREY=""
+    NC=""
+fi
 
 log_header() {
     echo -e "${GREEN}solution-controller.sh-${CONTROLLER_VERSION}${NC}"
