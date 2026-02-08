@@ -19,6 +19,6 @@
   "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",
   
   // Meson extension configuration
-  "mesonbuild.buildFolder": "build/builddir-debug",
+  "mesonbuild.buildFolder": "${workspaceFolder}/build/builddir-debug",
   "mesonbuild.configureOnOpen": false
 }
