@@ -23,7 +23,7 @@ BUILD_PRODUCT="${1:-both}"
 TASK_NAME="${2:-}"
 BUILD_ARCH="${3:-native}"
 BUILD_TYPE_RAW="${4:-release}"
-BUILD_COMPILER_RAW="${5:-${NIXONCPP_COMPILER:-}}"
+BUILD_COMPILER_RAW="${5:-${PROJECT_COMPILER:-}}"
 
 if [[ -z "$TASK_NAME" ]]; then
     echo "Task name is missing. Exiting." >&2

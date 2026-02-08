@@ -5,7 +5,7 @@ set -euo pipefail
 
 ARCH="${1:-native}"
 BUILD_TYPE="${2:-release}"
-COMPILER_RAW="${3:-${NIXONCPP_COMPILER:-gcc}}"
+COMPILER_RAW="${3:-${PROJECT_COMPILER:-gcc}}"
 COMPILER="${COMPILER_RAW,,}"
 
 # Get script directory and project root
@@ -29,7 +29,7 @@ case "$ARCH" in
 esac
 
 # Check if we need to enter a different dev shell
-if [ -z "${NIXONCPP_NIX_SHELL:-}" ] || [ "$NIXONCPP_NIX_SHELL" != "$REQUIRED_SHELL" ]; then
+if [ -z "${PROJECT_NIX_SHELL:-}" ] || [ "$PROJECT_NIX_SHELL" != "$REQUIRED_SHELL" ]; then
     if ! command -v nix >/dev/null 2>&1; then
         if [ "$REQUIRED_SHELL" != "default" ]; then
             echo "❌ Nix is required for cross builds ($REQUIRED_SHELL), but 'nix' was not found." >&2
@@ -39,18 +39,18 @@ if [ -z "${NIXONCPP_NIX_SHELL:-}" ] || [ "$NIXONCPP_NIX_SHELL" != "$REQUIRED_SHE
             exit 1
         fi
         echo "⚠️  Nix not found; continuing with system toolchain (native build only)."
-        export NIXONCPP_NIX_SHELL="default"
+        export PROJECT_NIX_SHELL="default"
     fi
 
-    if [ -z "${NIXONCPP_NIX_SHELL:-}" ]; then
+    if [ -z "${PROJECT_NIX_SHELL:-}" ]; then
         echo "⚠️  Entering nix develop ($REQUIRED_SHELL)..."
     else
         echo "⚠️  Switching to nix develop ($REQUIRED_SHELL)..."
     fi
     if [ "$REQUIRED_SHELL" = "default" ]; then
-        exec nix develop "$PROJECT_ROOT/nix" --command env NIXONCPP_NIX_SHELL=default "$0" "$@"
+        exec nix develop "$PROJECT_ROOT/nix" --command env PROJECT_NIX_SHELL=default "$0" "$@"
     else
-        exec nix develop "$PROJECT_ROOT/nix#$REQUIRED_SHELL" --command env NIXONCPP_NIX_SHELL=$REQUIRED_SHELL "$0" "$@"
+        exec nix develop "$PROJECT_ROOT/nix#$REQUIRED_SHELL" --command env PROJECT_NIX_SHELL=$REQUIRED_SHELL "$0" "$@"
     fi
 fi
 
