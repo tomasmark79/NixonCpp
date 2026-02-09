@@ -269,7 +269,7 @@ public:
 #ifdef _WIN32
     setConsoleColorWindows(level);
 #elif EMSCRIPTEN
-    // no colors
+    (void)level; // no colors
 #else
     setConsoleColorUnix(level);
 #endif
