@@ -1,7 +1,6 @@
 {
   // Disable Microsoft C++ IntelliSense to use clangd instead
   "C_Cpp.intelliSenseEngine": "disabled",
-  
   // Clangd configuration
   "clangd.path": "clangd",
   "clangd.arguments": [
@@ -11,14 +10,14 @@
     "--completion-style=detailed",
     "--compile-commands-dir=${workspaceFolder}"
   ],
-  
   // Fallback for C_Cpp extension if needed
   "C_Cpp.default.compileCommands": "${workspaceFolder}/build/builddir-debug/compile_commands.json",
   "C_Cpp.default.cppStandard": "c++20",
   "C_Cpp.default.cStandard": "c11",
   "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",
-  
   // Meson extension configuration
   "mesonbuild.buildFolder": "${workspaceFolder}/build/builddir-debug",
-  "mesonbuild.configureOnOpen": false
-}
+  "mesonbuild.configureOnOpen": false,
+  "[ini]": {
+    "editor.wordWrap": "on"
+  }
