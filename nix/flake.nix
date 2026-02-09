@@ -12,17 +12,21 @@
     nixpkgs-wasm.url = "github:NixOS/nixpkgs/1cb1c02a6b1b7cf67e3d7731cbbf327a53da9679";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-wasm, flake-utils }:
-    flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-wasm,
+      flake-utils,
+    }:
+    flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (
+      system:
       let
         pkgs = import nixpkgs { inherit system; };
         pkgsWasm = import nixpkgs-wasm { inherit system; };
-        pkgsAarch64 = import nixpkgs {
-          inherit system;
-          crossSystem = { config = "aarch64-unknown-linux-gnu"; };
-        };
-
-      in {
+        pkgsAarch64 = pkgs.pkgsCross.aarch64-multiplatform;
+      in
+      {
         devShells.default = pkgs.mkShell {
           name = "project-dev";
 
@@ -38,7 +42,6 @@
 
             doxygen
             graphviz
-            
 
             fmt
             nlohmann_json
@@ -73,5 +76,6 @@
         devShells.aarch64 = import ./cross-shell-aarch64.nix { pkgs = pkgsAarch64; };
         devShells.windows = import ./cross-shell-windows.nix { inherit pkgs; };
         devShells.wasm = import ./cross-shell-wasm.nix { pkgs = pkgsWasm; };
-      });
+      }
+    );
 }

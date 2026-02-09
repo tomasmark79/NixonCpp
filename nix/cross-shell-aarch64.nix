@@ -1,12 +1,24 @@
 # Nix cross-compilation shell for aarch64
 # Usage: nix develop ./nix#aarch64
 
-{ pkgs ? import <nixpkgs> {
-    crossSystem = {
-      config = "aarch64-unknown-linux-gnu";
-    };
-  }
+{
+  pkgs ? import <nixpkgs> { },
+  pkgsCross ? pkgs.pkgsCross.aarch64-multiplatform,
 }:
+
+let
+  targetDeps = with pkgsCross; [
+    fmt
+    nlohmann_json
+    cxxopts
+    gtest
+
+    # sdl3
+    # sdl3-image
+    # sdl3-ttf
+    # imgui
+  ];
+in
 
 pkgs.mkShell {
   name = "project-aarch64-cross";
@@ -15,15 +27,13 @@ pkgs.mkShell {
     ninja
     pkg-config
   ];
-  
-  buildInputs = with pkgs; [
-    # These will be aarch64 versions
-    fmt
-    nlohmann_json
-    cxxopts
-    gtest
-  ];
-  
+
+  buildInputs = [
+    # Cross compiler/toolchain
+    pkgsCross.stdenv.cc
+  ]
+  ++ targetDeps;
+
   shellHook = ''
     app_name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PWD/meson.build" 2>/dev/null | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
     if [ -z "$app_name" ]; then app_name="Project"; fi
@@ -34,6 +44,9 @@ pkgs.mkShell {
     echo ""
     echo "Build command:"
     echo "  make cross-aarch64"
+    echo ""
+    echo "Run on host via QEMU:"
+    echo "  nix develop ./nix#aarch64 --command bash -c 'qemu-aarch64 -L \"$QEMU_LD_PREFIX\" ./build/builddir-aarch64-minsize/$app_name'"
     echo ""
   '';
 }
