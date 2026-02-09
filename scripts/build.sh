@@ -11,6 +11,8 @@ COMPILER="${COMPILER_RAW,,}"
 # Get script directory and project root
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+APP_NAME=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PROJECT_ROOT/meson.build" 2>/dev/null | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
+if [[ -z "$APP_NAME" ]]; then APP_NAME="Project"; fi
 
 # Determine which flake dev shell to use based on architecture
 case "$ARCH" in
@@ -212,16 +214,16 @@ case "$ARCH" in
     aarch64|arm64)
         echo ""
         echo "To run on x86_64 (via QEMU):"
-        echo "  nix develop ./nix#aarch64 --command bash -c 'qemu-aarch64 -L \"\$QEMU_LD_PREFIX\" ./$BUILD_DIR/NixonCpp'"
+        echo "  nix develop ./nix#aarch64 --command bash -c 'qemu-aarch64 -L \"\$QEMU_LD_PREFIX\" ./$BUILD_DIR/$APP_NAME'"
         ;;
     windows|win64)
         echo ""
         echo "To run (requires Wine):"
-        echo "  wine64 ./$BUILD_DIR/NixonCpp.exe"
+        echo "  wine64 ./$BUILD_DIR/$APP_NAME.exe"
         ;;
     wasm|emscripten)
         echo ""
         echo "To run:"
-        echo "  node ./$BUILD_DIR/NixonCpp.js"
+        echo "  node ./$BUILD_DIR/$APP_NAME.js"
         ;;
 esac
