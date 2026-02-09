@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
     options.add_options()("w,write2file", "Write output to file",
                           cxxopts::value<bool>()->default_value("false"));
     auto result = options.parse(argc, argv);
-    if (result.count("help") > 0) {
+    if (result.contains("help")) {
       std::cout << options.help() << '\n';
       return EXIT_SUCCESS;
     }
