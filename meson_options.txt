@@ -21,3 +21,10 @@ option('sanitize_thread',
   value: false,
   description: 'Enable ThreadSanitizer (native debug/dev only)'
 )
+
+option('wasm_opt_level',
+  type: 'combo',
+  choices: ['auto', 'O0', 'O1', 'O2', 'O3', 'Os', 'Oz'],
+  value: 'auto',
+  description: 'Override Emscripten optimization level (auto uses buildtype)'
+)

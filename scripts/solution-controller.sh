@@ -276,17 +276,27 @@ launch_emscripten_server() {
         exit 1
     fi
 
+    local url_debug="http://localhost:${port}/build/builddir-wasm-debug/${app_name}.html"
+    local url_release="http://localhost:${port}/build/builddir-wasm-release/${app_name}.html"
+    local url_debugoptimized="http://localhost:${port}/build/builddir-wasm-debugoptimized/${app_name}.html"
+    local url_minsize="http://localhost:${port}/build/builddir-wasm-minsize/${app_name}.html"
     if [[ -f "$html_path" ]]; then
-        local url="http://localhost:${port}/${html_rel}"
-        echo -e "${LIGHTBLUE}Server running at: ${url}${NC}"
+        echo -e "${LIGHTBLUE}WASM debug  : ${url_debug}${NC}"
+        echo -e "${LIGHTBLUE}WASM debugopt: ${url_debugoptimized}${NC}"
+        echo -e "${LIGHTBLUE}WASM release: ${url_release}${NC}"
+        echo -e "${LIGHTBLUE}WASM minsize: ${url_minsize}${NC}"
         if command -v xdg-open >/dev/null 2>&1; then
-            xdg-open "$url" >/dev/null 2>&1 || true
+            xdg-open "$url_debug" >/dev/null 2>&1 || true
         elif command -v open >/dev/null 2>&1; then
-            open "$url" >/dev/null 2>&1 || true
+            open "$url_debug" >/dev/null 2>&1 || true
         fi
     else
         echo -e "${YELLOW}HTML not found: ${html_path}${NC}"
         echo -e "${LIGHTBLUE}Server running at: http://localhost:${port}/${NC}"
+        echo -e "${LIGHTBLUE}WASM debug  : ${url_debug}${NC}"
+        echo -e "${LIGHTBLUE}WASM debugopt: ${url_debugoptimized}${NC}"
+        echo -e "${LIGHTBLUE}WASM release: ${url_release}${NC}"
+        echo -e "${LIGHTBLUE}WASM minsize: ${url_minsize}${NC}"
     fi
 }
 

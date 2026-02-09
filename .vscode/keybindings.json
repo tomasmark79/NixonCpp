@@ -29,11 +29,6 @@
         "command": "workbench.action.tasks.runTask",
         "args": "Launch Emscripten Server"
     },
-    {
-        "key": "ctrl+alt+shift+e",
-        "command": "workbench.action.tasks.runTask",
-        "args": "Launch Emscripten Server (release)"
-    },
 
     /* === FORMATTING & LINTING === */
     {

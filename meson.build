@@ -28,6 +28,7 @@ ubsan_opt = get_option('sanitize_undefined')
 tsan_opt = get_option('sanitize_thread')
 build_type = get_option('buildtype')
 is_debug_build = build_type == 'debug' or build_type == 'debugoptimized'
+wasm_opt_level = get_option('wasm_opt_level')
 
 # Required dependencies (optional for cross builds)
 fmt_dep = dependency('fmt', required: false)
@@ -120,6 +121,12 @@ if is_wasm and is_debug_build
   add_project_link_arguments(wasm_debug_link_args, language: 'cpp')
 endif
 
+if is_wasm and wasm_opt_level != 'auto'
+  wasm_opt_flag = '-' + wasm_opt_level
+  lib_cpp_args += [wasm_opt_flag]
+  add_project_link_arguments(wasm_opt_flag, language: 'cpp')
+endif
+
 # Sanitizers (native only)
 if is_native
   if ubsan_opt
@@ -200,8 +207,6 @@ if is_wasm
     name_suffix: 'html',
     link_args: [
       '--shell-file', meson.project_source_root() / 'assets' / 'ems-mini.html',
-      '-sUSE_PTHREADS=0',
-      '-sPTHREAD_POOL_SIZE=0',
       '--embed-file', meson.project_source_root() / ('assets@/share/' + project_name + '/assets'),
     ],
     install: true,
@@ -272,4 +277,5 @@ summary({
   'C++ Standard': get_option('cpp_std'),
   'Build Type': get_option('buildtype'),
   'Warning Level': get_option('warning_level'),
+  'WASM Opt Level': get_option('wasm_opt_level'),
 }, section: 'Build Options')
