@@ -3,6 +3,10 @@
 #include <cxxopts.hpp>
 #include <iostream>
 
+#if defined(__EMSCRIPTEN__)
+#include <emscripten.h>
+#endif
+
 const std::string appName = "NixonCpp";
 const std::string NA = "[Not Found]";
 
@@ -18,7 +22,12 @@ int main(int argc, char **argv) {
     options.add_options()("w,write2file", "Write output to file",
                           cxxopts::value<bool>()->default_value("false"));
     auto result = options.parse(argc, argv);
+
+#if !defined(__EMSCRIPTEN__)
     if (result.contains("help")) {
+#else
+    if (result.count("help") > 0) {
+#endif
       std::cout << options.help() << '\n';
       return EXIT_SUCCESS;
     }
