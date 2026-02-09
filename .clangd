@@ -22,7 +22,7 @@ InlayHints:
 
 CompileFlags:
   Add: [-Wall, -Wextra, -std=c++20]
-  Remove: [-W*]
+  Remove: [-W*, -sUSE_SDL=3, -sUSE_PTHREADS=1, -sNO_DISABLE_EXCEPTION_CATCHING, -s*]
 
 Completion:
   AllScopes: true
