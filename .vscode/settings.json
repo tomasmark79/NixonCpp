@@ -11,7 +11,7 @@
     "--compile-commands-dir=${workspaceFolder}"
   ],
   // Fallback for C_Cpp extension if needed
-  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/builddir-debug/compile_commands.json",
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json",
   "C_Cpp.default.cppStandard": "c++20",
   "C_Cpp.default.cStandard": "c11",
   "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",
