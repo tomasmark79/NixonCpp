@@ -197,6 +197,14 @@ if [[ "${NIXONCPP_CONFIGURE_ONLY:-}" == "1" ]]; then
 fi
 
 echo "🔧 Compiling..."
+
+# Patch build.ninja: replace relative ../../ paths with absolute paths so that
+# GCC diagnostics (file:line:col) produce clickable links in VS Code terminal.
+# Idempotent — already-patched paths are unaffected.
+if [[ -f "$BUILD_DIR/build.ninja" ]]; then
+    sed -i "s|\.\./\.\./|$PROJECT_ROOT/|g" "$BUILD_DIR/build.ninja"
+fi
+
 meson compile -C "$BUILD_DIR"
 
 # Link compile_commands.json to project root for tooling
