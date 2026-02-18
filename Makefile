@@ -6,7 +6,7 @@ BUILD_TYPES := debug release debugoptimized minsize
 
 .PHONY: help build debug build-clang debug-clang all everything test test-verbose clean clean-packages dev format check doxygen \
 	cross-aarch64 cross-windows cross-wasm cross-all \
-	install nix-build package-native package-aarch64 package-windows package-wasm package-all packages \
+	install nix-build pin-shells package-native package-aarch64 package-windows package-wasm package-all packages \
 	build-all-buildtypes build-all-arch-buildtypes package-all-buildtypes package-all-arch-buildtypes \
 	quick rebuild $(addprefix build-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES)))) \
 	$(addprefix package-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES))))
@@ -43,6 +43,7 @@ help:
 	@echo "Development:"
 	@echo "  make dev            - Enter development shell"
 	@echo "  make nix-build      - Build Nix package (nix build ./nix#NixonCpp)"
+	@echo "  make pin-shells     - Pin all Nix dev shells as GC roots (prevents re-download)"
 	@echo "  make install        - Install to system"
 	@echo "  make packages       - Build all packages"
 	@echo ""
@@ -84,6 +85,26 @@ dev:
 nix-build:
 	@nix build ./nix#NixonCpp
 	@echo "✓ Nix package built → ./result"
+
+# Pin all dev shells as GC roots so nix-collect-garbage never removes them
+# Uses nix print-dev-env to realise each shell into the store and symlinks it
+# as a GC root. Run once after cloning, and again after 'nix flake update'.
+pin-shells:
+	@echo "Pinning Nix dev shells as GC roots..."
+	@mkdir -p build
+	@for shell in default aarch64 windows wasm; do \
+	    echo "  pinning: $$shell ..."; \
+	    drv=$$(nix eval --raw ./nix#devShells.x86_64-linux.$$shell.drvPath 2>/dev/null \
+	          || nix eval --raw ./nix#devShells.aarch64-linux.$$shell.drvPath 2>/dev/null); \
+	    if [ -n "$$drv" ]; then \
+	        nix-store --realise "$$drv" --add-root "$(CURDIR)/build/.gcroot-shell-$$shell" --indirect >/dev/null; \
+	        echo "    ✓ $$shell pinned"; \
+	    else \
+	        echo "    ⚠️  could not resolve $$shell (skipped)"; \
+	    fi; \
+	done
+	@echo "✓ Dev shells pinned → build/.gcroot-shell-*"
+	@echo "  Run 'make pin-shells' again after updating flake inputs."
 
 # Code formatting
 format:

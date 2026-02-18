@@ -115,6 +115,24 @@ result/lib/libNixonCppLib.*
 result/include/NixonCppLib/
 ```
 
+Nix shell GC pinning
+--------------------
+
+By default, `nix-collect-garbage` can remove cross-compilation toolchains
+(aarch64, Windows, WASM) from the Nix store, forcing a full re-download on
+the next build. Pin all dev shells as GC roots to prevent this:
+
+```bash
+make pin-shells       # run once after cloning, and after 'nix flake update'
+```
+
+This creates symlinks `build/.gcroot-shell-{default,aarch64,windows,wasm}`
+that act as GC roots – as long as they exist, the garbage collector will
+never remove the referenced store paths.
+
+> **Note:** The WASM shell uses a pinned nixpkgs commit (for Emscripten
+> compatibility) and may take longer to download on the very first run.
+
 Documentation
 -------------
 
