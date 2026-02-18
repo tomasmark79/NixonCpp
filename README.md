@@ -98,6 +98,23 @@ make package-windows
 make package-wasm
 ```
 
+Nix package
+-----------
+
+Build the project as a proper Nix package (reproducible, isolated, Nix store output):
+
+```bash
+make nix-build        # shortcut for: nix build ./nix#NixonCpp
+```
+
+The result is available as a symlink `./result` pointing into the Nix store:
+
+```
+result/bin/NixonCpp
+result/lib/libNixonCppLib.*
+result/include/NixonCppLib/
+```
+
 Documentation
 -------------
 

@@ -25,8 +25,43 @@
         pkgs = import nixpkgs { inherit system; };
         pkgsWasm = import nixpkgs-wasm { inherit system; };
         pkgsAarch64 = pkgs.pkgsCross.aarch64-multiplatform;
+
+        nixonCpp = pkgs.stdenv.mkDerivation {
+          pname = "NixonCpp";
+          version = "1.0.0";
+
+          src = pkgs.lib.cleanSource ../.;
+
+          nativeBuildInputs = with pkgs; [
+            meson
+            ninja
+            pkg-config
+          ];
+
+          buildInputs = with pkgs; [
+            fmt
+            nlohmann_json
+            cxxopts
+          ];
+
+          mesonFlags = [
+            "-Dbuild_tests=disabled"
+          ];
+
+          meta = with pkgs.lib; {
+            description = "NixonCpp – C++ project template";
+            license = licenses.mit;
+            maintainers = [ maintainers.tomasmark79 ];
+            platforms = platforms.linux;
+          };
+        };
       in
       {
+        # ── Nix package ──────────────────────────────────────────────────────
+        packages.NixonCpp = nixonCpp;
+        packages.default = nixonCpp;
+
+        # ── Dev shells ───────────────────────────────────────────────────────
         devShells.default = pkgs.mkShell {
           name = "project-dev";
 

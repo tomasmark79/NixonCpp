@@ -6,7 +6,7 @@ BUILD_TYPES := debug release debugoptimized minsize
 
 .PHONY: help build debug build-clang debug-clang all everything test test-verbose clean clean-packages dev format check doxygen \
 	cross-aarch64 cross-windows cross-wasm cross-all \
-	install package-native package-aarch64 package-windows package-wasm package-all packages \
+	install nix-build package-native package-aarch64 package-windows package-wasm package-all packages \
 	build-all-buildtypes build-all-arch-buildtypes package-all-buildtypes package-all-arch-buildtypes \
 	quick rebuild $(addprefix build-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES)))) \
 	$(addprefix package-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES))))
@@ -42,6 +42,7 @@ help:
 	@echo ""
 	@echo "Development:"
 	@echo "  make dev            - Enter development shell"
+	@echo "  make nix-build      - Build Nix package (nix build ./nix#NixonCpp)"
 	@echo "  make install        - Install to system"
 	@echo "  make packages       - Build all packages"
 	@echo ""
@@ -79,6 +80,10 @@ clean-packages:
 # Development
 dev:
 	@nix develop ./nix
+
+nix-build:
+	@nix build ./nix#NixonCpp
+	@echo "✓ Nix package built → ./result"
 
 # Code formatting
 format:
