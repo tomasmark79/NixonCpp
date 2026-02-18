@@ -241,8 +241,6 @@ launch_emscripten_server() {
     local port="6931"
     local base_dir="$PROJECT_ROOT"
     local app_name="$(resolve_project_name)"
-    local html_rel="build/builddir-wasm-${BUILD_TYPE}/${app_name}.html"
-    local html_path="$PROJECT_ROOT/$html_rel"
 
     # Kill any existing emrun processes first
     if command -v pkill >/dev/null 2>&1; then
@@ -280,23 +278,31 @@ launch_emscripten_server() {
     local url_release="http://localhost:${port}/build/builddir-wasm-release/${app_name}.html"
     local url_debugoptimized="http://localhost:${port}/build/builddir-wasm-debugoptimized/${app_name}.html"
     local url_minsize="http://localhost:${port}/build/builddir-wasm-minsize/${app_name}.html"
-    if [[ -f "$html_path" ]]; then
-        echo -e "${LIGHTBLUE}WASM debug  : ${url_debug}${NC}"
-        echo -e "${LIGHTBLUE}WASM debugopt: ${url_debugoptimized}${NC}"
-        echo -e "${LIGHTBLUE}WASM release: ${url_release}${NC}"
-        echo -e "${LIGHTBLUE}WASM minsize: ${url_minsize}${NC}"
+    echo -e "${LIGHTBLUE}Server running at: http://localhost:${port}/${NC}"
+    echo -e "${LIGHTBLUE}WASM debug       : ${url_debug}${NC}"
+    echo -e "${LIGHTBLUE}WASM debugopt    : ${url_debugoptimized}${NC}"
+    echo -e "${LIGHTBLUE}WASM release     : ${url_release}${NC}"
+    echo -e "${LIGHTBLUE}WASM minsize     : ${url_minsize}${NC}"
+
+    # Open the first available WASM build in the browser
+    open_url=""
+    for candidate_type in debug debugoptimized release minsize; do
+        candidate_html="$PROJECT_ROOT/build/builddir-wasm-${candidate_type}/${app_name}.html"
+        if [[ -f "$candidate_html" ]]; then
+            open_url="http://localhost:${port}/build/builddir-wasm-${candidate_type}/${app_name}.html"
+            break
+        fi
+    done
+
+    if [[ -n "$open_url" ]]; then
+        echo -e "${GREEN}Opening: ${open_url}${NC}"
         if command -v xdg-open >/dev/null 2>&1; then
-            xdg-open "$url_debug" >/dev/null 2>&1 || true
+            xdg-open "$open_url" >/dev/null 2>&1 || true
         elif command -v open >/dev/null 2>&1; then
-            open "$url_debug" >/dev/null 2>&1 || true
+            open "$open_url" >/dev/null 2>&1 || true
         fi
     else
-        echo -e "${YELLOW}HTML not found: ${html_path}${NC}"
-        echo -e "${LIGHTBLUE}Server running at: http://localhost:${port}/${NC}"
-        echo -e "${LIGHTBLUE}WASM debug  : ${url_debug}${NC}"
-        echo -e "${LIGHTBLUE}WASM debugopt: ${url_debugoptimized}${NC}"
-        echo -e "${LIGHTBLUE}WASM release: ${url_release}${NC}"
-        echo -e "${LIGHTBLUE}WASM minsize: ${url_minsize}${NC}"
+        echo -e "${YELLOW}No WASM HTML build found. Build first with: make cross-wasm${NC}"
     fi
 }
 
