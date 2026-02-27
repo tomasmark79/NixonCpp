@@ -2,7 +2,7 @@
 # MIT License Copyright (c) 2024-2026 Tomáš Mark
 
 project('NixonCpp', 'cpp',
-  version: '1.0.0',
+  version: '0.0.1',
   license: 'MIT',
   default_options: [
     'cpp_std=c++20',

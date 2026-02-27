@@ -23,7 +23,7 @@ namespace nixoncpp::v1 {
 
   private:
     bool isInitialized_{false};
-    static constexpr const char *libName_ = "NixonCppLib v1.0.0";
+    static constexpr const char *libName_ = "NixonCppLib v0.0.1";
 
     std::shared_ptr<nixoncpp::logging::ILogger> logger_;
     std::shared_ptr<nixoncpp::assets::IAssetManager> assetManager_;

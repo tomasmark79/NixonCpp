@@ -28,7 +28,7 @@
 
         nixonCpp = pkgs.stdenv.mkDerivation {
           pname = "NixonCpp";
-          version = "1.0.0";
+          version = "0.0.1";
 
           src = pkgs.lib.cleanSource ../.;
 
