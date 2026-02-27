@@ -385,7 +385,7 @@ $(function(){initNavTree('ConsoleLogger_8hpp_source.html','',''); });
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="preprocessor">#ifdef _WIN32</span></div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    setConsoleColorWindows(level);</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">#elif EMSCRIPTEN</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="comment">// no colors</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    (void)level; <span class="comment">// no colors</span></div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <a class="code hl_function" href="classConsoleLogger.html#addb2587c7a7fe4e6c213f22f7db385c6">setConsoleColorUnix</a>(level);</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="preprocessor">#endif</span></div>

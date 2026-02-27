@@ -252,7 +252,7 @@
 \DoxyCodeLine{00269\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
 \DoxyCodeLine{00270\ \ \ \ \ setConsoleColorWindows(level);}
 \DoxyCodeLine{00271\ \textcolor{preprocessor}{\#elif\ EMSCRIPTEN}}
-\DoxyCodeLine{00272\ \ \ \ \ \textcolor{comment}{//\ no\ colors}}
+\DoxyCodeLine{00272\ \ \ \ \ (void)level;\ \textcolor{comment}{//\ no\ colors}}
 \DoxyCodeLine{00273\ \textcolor{preprocessor}{\#else}}
 \DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{classConsoleLogger_addb2587c7a7fe4e6c213f22f7db385c6}{setConsoleColorUnix}}(level);}
 \DoxyCodeLine{00275\ \textcolor{preprocessor}{\#endif}}
