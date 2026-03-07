@@ -6,7 +6,7 @@ BUILD_TYPES := debug release debugoptimized minsize
 
 .PHONY: help build debug build-clang debug-clang all everything test test-verbose clean clean-packages dev format check doxygen \
 	cross-aarch64 cross-windows cross-wasm cross-all \
-	install nix-build pin-shells package-native package-aarch64 package-windows package-wasm package-all packages \
+	install nix-build pin-shells package-native package-aarch64 package-aarch64-full package-windows package-wasm package-all packages bundle-aarch64-deps \
 	build-all-buildtypes build-all-arch-buildtypes package-all-buildtypes package-all-arch-buildtypes \
 	quick rebuild $(addprefix build-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES)))) \
 	$(addprefix package-,$(foreach a,$(ARCHS),$(addprefix $(a)-,$(BUILD_TYPES))))
@@ -180,6 +180,11 @@ package-native:
 
 package-aarch64:
 	@./scripts/solution-controller.sh both "Create Package" aarch64 release
+
+bundle-aarch64-deps:
+	@nix develop ./nix#aarch64 --command bash scripts/bundle-aarch64-deps.sh release
+
+package-aarch64-full: package-aarch64 bundle-aarch64-deps
 
 package-windows:
 	@./scripts/solution-controller.sh both "Create Package" windows release

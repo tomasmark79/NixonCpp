@@ -61,6 +61,15 @@ pkgs.mkShell {
     # resolves cross packages correctly.
     export PKG_CONFIG_PATH="$PKG_CONFIG_PATH_FOR_TARGET"
 
+    # Export lib dirs for ALL targetDeps (even those without .pc files)
+    # so that bundle-aarch64-deps.sh can locate their .so files.
+    export AARCH64_LIB_DIRS=""
+    for pkg in ${pkgsCross.fmt} ${pkgsCross.nlohmann_json} ${pkgsCross.cxxopts} \
+                ${pkgsCross.gtest}; do
+      [ -d "$pkg/lib" ] && AARCH64_LIB_DIRS="$AARCH64_LIB_DIRS:$pkg/lib"
+    done
+    export AARCH64_LIB_DIRS="''${AARCH64_LIB_DIRS#:}"
+
     echo "🔨 $app_name aarch64 Cross-Compilation Environment"
     echo "   Target: aarch64-unknown-linux-gnu"
     echo "   Meson version: $(${pkgs.pkgsBuildHost.meson}/bin/meson --version)"
