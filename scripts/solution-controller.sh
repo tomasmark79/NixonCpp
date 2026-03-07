@@ -155,6 +155,11 @@ launch_application() {
 
 run_package() {
     "$PROJECT_ROOT/scripts/package.sh" "$BUILD_ARCH" "${BUILD_TYPE}"
+    # For aarch64 always bundle third-party runtime libs into the package.
+    if [ "$BUILD_ARCH" = "aarch64" ] || [ "$BUILD_ARCH" = "arm64" ]; then
+        nix develop "$PROJECT_ROOT/nix#aarch64" --command bash \
+            "$PROJECT_ROOT/scripts/bundle-aarch64-deps.sh" "${BUILD_TYPE}"
+    fi
 }
 
 source_dirs=("$PROJECT_ROOT/src" "$PROJECT_ROOT/include" "$PROJECT_ROOT/tests")
