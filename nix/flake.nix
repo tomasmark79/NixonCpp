@@ -87,6 +87,13 @@
           ];
 
           shellHook = ''
+            # Export lib dirs so bundle-deps.sh can locate runtime .so files.
+            export BUNDLE_LIB_DIRS=""
+            for pkg in ${pkgs.fmt}; do
+              [ -d "$pkg/lib" ] && BUNDLE_LIB_DIRS="$BUNDLE_LIB_DIRS:$pkg/lib"
+            done
+            export BUNDLE_LIB_DIRS="''${BUNDLE_LIB_DIRS#:}"
+
             echo "🚀 Project Development Environment"
             echo "   Meson version: $(meson --version)"
             echo "   GCC version: $(gcc --version | head -n1)"

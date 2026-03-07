@@ -118,6 +118,10 @@ clean_build() {
 }
 
 run_tests() {
+    if [[ "$BUILD_ARCH" == "wasm" || "$BUILD_ARCH" == "emscripten" ]]; then
+        echo -e "${YELLOW}⚠️  Skipping tests: WASM targets cannot run natively (no GTest for wasm32).${NC}"
+        return 0
+    fi
     if [[ ! -d "$BUILD_DIR" ]]; then
         echo "Build directory not found. Building first..."
         run_build
@@ -155,10 +159,19 @@ launch_application() {
 
 run_package() {
     "$PROJECT_ROOT/scripts/package.sh" "$BUILD_ARCH" "${BUILD_TYPE}"
-    # For aarch64 always bundle third-party runtime libs into the package.
-    if [ "$BUILD_ARCH" = "aarch64" ] || [ "$BUILD_ARCH" = "arm64" ]; then
+    # Bundle third-party runtime libs so the package is self-contained when
+    # transferred to a machine without Nix.
+    if [ "$BUILD_ARCH" = "native" ] || [ "$BUILD_ARCH" = "x86_64" ]; then
+        # Already inside the native Nix shell — BUNDLE_LIB_DIRS is set.
+        if [ -n "$BUNDLE_LIB_DIRS" ]; then
+            bash "$PROJECT_ROOT/scripts/bundle-deps.sh" "native" "${BUILD_TYPE}"
+        fi
+    elif [ "$BUILD_ARCH" = "aarch64" ] || [ "$BUILD_ARCH" = "arm64" ]; then
         nix develop "$PROJECT_ROOT/nix#aarch64" --command bash \
-            "$PROJECT_ROOT/scripts/bundle-aarch64-deps.sh" "${BUILD_TYPE}"
+            "$PROJECT_ROOT/scripts/bundle-deps.sh" "aarch64" "${BUILD_TYPE}"
+    elif [ "$BUILD_ARCH" = "windows" ] || [ "$BUILD_ARCH" = "win64" ]; then
+        nix develop "$PROJECT_ROOT/nix#windows" --command bash \
+            "$PROJECT_ROOT/scripts/bundle-deps.sh" "windows" "${BUILD_TYPE}"
     fi
 }
 

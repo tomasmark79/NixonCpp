@@ -106,10 +106,15 @@ echo "📋 Copying files..."
 # Platform-specific packaging
 case "$ARCH" in
     wasm|emscripten)
-        # WebAssembly - just copy .js and .wasm files
+        # WebAssembly - copy .js, .wasm and .html files
         cp "$BUILD_DIR/${APP_NAME}.js" "$PACKAGE_DIR/"
         cp "$BUILD_DIR/${APP_NAME}.wasm" "$PACKAGE_DIR/"
-        echo "   ✓ WebAssembly: ${APP_NAME}.js + .wasm"
+        if [[ -f "$BUILD_DIR/${APP_NAME}.html" ]]; then
+            cp "$BUILD_DIR/${APP_NAME}.html" "$PACKAGE_DIR/"
+            echo "   ✓ WebAssembly: ${APP_NAME}.js + .wasm + .html"
+        else
+            echo "   ✓ WebAssembly: ${APP_NAME}.js + .wasm"
+        fi
         ;;
         
     windows|win64)

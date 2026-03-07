@@ -38,6 +38,15 @@ pkgs.mkShell {
     app_name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PWD/meson.build" 2>/dev/null | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
     if [ -z "$app_name" ]; then app_name="Project"; fi
 
+    # Export lib dirs so bundle-deps.sh can locate runtime .dll files from MinGW.
+    export BUNDLE_LIB_DIRS=""
+    for pkg in ${mingwPkgs.fmt} ${mingwPkgs.nlohmann_json} ${mingwPkgs.cxxopts}; do
+      for d in "$pkg/bin" "$pkg/lib"; do
+        [ -d "$d" ] && BUNDLE_LIB_DIRS="$BUNDLE_LIB_DIRS:$d"
+      done
+    done
+    export BUNDLE_LIB_DIRS="''${BUNDLE_LIB_DIRS#:}"
+
     echo "🔨 $app_name Windows (MinGW) Cross-Compilation Environment"
     echo ""
     echo "   Target: x86_64-w64-mingw32"
