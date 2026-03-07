@@ -173,7 +173,7 @@ lib_static = static_library(lib_name,
   install: true,
 )
 
-if is_wasm or is_windows
+if is_wasm or is_windows or is_cross
   link_lib = lib_static
 else
   link_lib = lib_shared
