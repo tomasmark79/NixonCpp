@@ -209,7 +209,7 @@ if is_wasm
     dependencies: app_deps,
     name_suffix: 'html',
     link_args: [
-      '--shell-file', meson.project_source_root() / 'assets' / 'ems-mini.html',
+      '--shell-file', meson.project_source_root() / 'assets' / 'index.html',
       '--embed-file', meson.project_source_root() / ('assets@/share/' + project_name + '/assets'),
     ],
     install: true,

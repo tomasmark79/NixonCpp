@@ -77,7 +77,7 @@ FILES=(
   "Doxyfile"
   ".vscode/launch.json"
   ".vscode/launch-windows.json"
-  "assets/ems-mini.html"
+  "assets/index.html"
   "tests/meson.build"
 )
 
