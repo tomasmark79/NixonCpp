@@ -101,12 +101,15 @@ if fmt_header_only
   lib_cpp_args += ['-DFMT_HEADER_ONLY']
 endif
 
-# Emscripten debug: generate source maps so DevTools can show .cpp files
-# NOTE: We intentionally avoid -fdebug-prefix-map here. The source-map
-# generator (wasm-sourcemap.py) converts absolute DWARF paths to paths
-# relative to the .wasm file, which then resolve correctly against the
-# source-map-base URL.  Using -fdebug-prefix-map would mix relative
-# styles and break resolution for some files.
+# Emscripten debug: keep DWARF in compile objects and generate a source map
+# at link time so DevTools can show project .cpp files over HTTP.
+#
+# Important: do NOT pass -g3 to the link step here. Linking with both -g3 and
+# -gsource-map can leave both embedded DWARF and source-map metadata in the
+# final .wasm, and the DWARF extension may then prefer EmbeddedDWARF.
+#
+# We intentionally avoid -fdebug-prefix-map so wasm-sourcemap.py can derive
+# consistent relative paths from DWARF and resolve them against source-map-base.
 if is_wasm and is_debug_build
   wasm_debug_cpp_args = [
     '-g3',
