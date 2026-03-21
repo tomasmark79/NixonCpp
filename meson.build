@@ -112,9 +112,9 @@ if is_wasm and is_debug_build
     '-g3',
   ]
   lib_cpp_args += wasm_debug_cpp_args
+  add_project_arguments(wasm_debug_cpp_args, language: 'cpp')
 
   wasm_debug_link_args = [
-    '-g3',
     '-gsource-map',
     '--source-map-base', 'http://localhost:6931/build/builddir-wasm-' + build_type + '/',
   ]
