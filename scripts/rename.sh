@@ -137,8 +137,8 @@ rename_once() {
   pushd "$PROJECT_ROOT" >/dev/null
 
   for f in "${FILES_LOCAL[@]}"; do
-    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
     replace_in_file "$f" "$OLD_LIB" "$NEW_LIB"
+    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
     replace_in_file "$f" "$OLD_NS" "$NEW_NS"
   done
 
@@ -146,16 +146,16 @@ rename_once() {
   shopt -s nullglob
   for f in tests/*.cpp tests/*.hpp; do
     [[ -f "$f" ]] || continue
-    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
     replace_in_file "$f" "$OLD_LIB" "$NEW_LIB"
+    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
     replace_in_file "$f" "$OLD_NS" "$NEW_NS"
   done
   shopt -u nullglob
 
   # Update namespaces in source/include trees
   while IFS= read -r -d '' f; do
-    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
     replace_in_file "$f" "$OLD_LIB" "$NEW_LIB"
+    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
     replace_in_file "$f" "$OLD_NS" "$NEW_NS"
   done < <(find include src tests -type f \( -name "*.hpp" -o -name "*.h" -o -name "*.cpp" \) -print0)
 
