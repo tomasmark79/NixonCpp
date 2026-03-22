@@ -106,6 +106,43 @@ if new_text != text:
 PY
 }
 
+replace_all_in_file() {
+  local file="$1"
+  local old_lib="$2"
+  local new_lib="$3"
+  local old_name="$4"
+  local new_name="$5"
+  local old_ns="$6"
+  local new_ns="$7"
+
+  if [[ ! -f "$file" ]]; then
+    return 0
+  fi
+
+  python3 - <<'PY' "$file" "$old_lib" "$new_lib" "$old_name" "$new_name" "$old_ns" "$new_ns"
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+pairs = [
+    (sys.argv[2], sys.argv[3]),
+    (sys.argv[4], sys.argv[5]),
+    (sys.argv[6], sys.argv[7]),
+]
+
+mapping = {old: new for old, new in pairs if old and old != new}
+if not mapping:
+    raise SystemExit(0)
+
+pattern = re.compile("|".join(re.escape(key) for key in sorted(mapping, key=len, reverse=True)))
+text = path.read_text(encoding="utf-8")
+new_text = pattern.sub(lambda m: mapping[m.group(0)], text)
+if new_text != text:
+    path.write_text(new_text, encoding="utf-8")
+PY
+}
+
 move_if_exists() {
   local src="$1"
   local dst="$2"
@@ -137,26 +174,20 @@ rename_once() {
   pushd "$PROJECT_ROOT" >/dev/null
 
   for f in "${FILES_LOCAL[@]}"; do
-    replace_in_file "$f" "$OLD_LIB" "$NEW_LIB"
-    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
-    replace_in_file "$f" "$OLD_NS" "$NEW_NS"
+    replace_all_in_file "$f" "$OLD_LIB" "$NEW_LIB" "$OLD_NAME" "$NEW_NAME" "$OLD_NS" "$NEW_NS"
   done
 
   # Optional tests directory rename in content
   shopt -s nullglob
   for f in tests/*.cpp tests/*.hpp; do
     [[ -f "$f" ]] || continue
-    replace_in_file "$f" "$OLD_LIB" "$NEW_LIB"
-    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
-    replace_in_file "$f" "$OLD_NS" "$NEW_NS"
+    replace_all_in_file "$f" "$OLD_LIB" "$NEW_LIB" "$OLD_NAME" "$NEW_NAME" "$OLD_NS" "$NEW_NS"
   done
   shopt -u nullglob
 
   # Update namespaces in source/include trees
   while IFS= read -r -d '' f; do
-    replace_in_file "$f" "$OLD_LIB" "$NEW_LIB"
-    replace_in_file "$f" "$OLD_NAME" "$NEW_NAME"
-    replace_in_file "$f" "$OLD_NS" "$NEW_NS"
+    replace_all_in_file "$f" "$OLD_LIB" "$NEW_LIB" "$OLD_NAME" "$NEW_NAME" "$OLD_NS" "$NEW_NS"
   done < <(find include src tests -type f \( -name "*.hpp" -o -name "*.h" -o -name "*.cpp" \) -print0)
 
   # Rename assets file if present
