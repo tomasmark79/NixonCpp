@@ -167,8 +167,6 @@ rename_once() {
 
   local FILES_LOCAL=(
     "${FILES[@]}"
-    "include/${OLD_LIB}/${OLD_LIB}.hpp"
-    "src/lib/${OLD_LIB}.cpp"
   )
 
   pushd "$PROJECT_ROOT" >/dev/null
@@ -177,15 +175,7 @@ rename_once() {
     replace_all_in_file "$f" "$OLD_LIB" "$NEW_LIB" "$OLD_NAME" "$NEW_NAME" "$OLD_NS" "$NEW_NS"
   done
 
-  # Optional tests directory rename in content
-  shopt -s nullglob
-  for f in tests/*.cpp tests/*.hpp; do
-    [[ -f "$f" ]] || continue
-    replace_all_in_file "$f" "$OLD_LIB" "$NEW_LIB" "$OLD_NAME" "$NEW_NAME" "$OLD_NS" "$NEW_NS"
-  done
-  shopt -u nullglob
-
-  # Update namespaces in source/include trees
+  # Update namespaces in source/include/tests trees
   while IFS= read -r -d '' f; do
     replace_all_in_file "$f" "$OLD_LIB" "$NEW_LIB" "$OLD_NAME" "$NEW_NAME" "$OLD_NS" "$NEW_NS"
   done < <(find include src tests -type f \( -name "*.hpp" -o -name "*.h" -o -name "*.cpp" \) -print0)
