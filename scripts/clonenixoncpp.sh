@@ -23,6 +23,10 @@ clonenixoncpp() {
 	local REPO="git@github.com:tomasmark79/NixonCpp.git"
 
 	command -v git >/dev/null || { echo "git not found"; return 1; }
+	if [[ -e "$PN" ]]; then
+		echo "Error: target directory '$PN' already exists. Choose a different folder name." >&2
+		return 1
+	fi
 	git clone --depth=1 "$REPO" "$PN" || return 1
 	rm -rf "$PN/.git"
 	cd "$PN" || return 1
