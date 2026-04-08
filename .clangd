@@ -5,6 +5,7 @@ Diagnostics:
     Add: [performance-*, readability-*, modernize-*]
     Remove: [modernize-use-trailing-return-type]
     CheckOptions:
+      readability-braces-around-statements.ShortStatementLines: 2
       readability-identifier-length.MinimumVariableNameLength: 1
       readability-identifier-length.MinimumParameterNameLength: 1
       readability-identifier-length.MinimumLoopCounterNameLength: 1
