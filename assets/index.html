@@ -33,16 +33,26 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        overflow: hidden;
         background: var(--bg-color);
         color: var(--text-color);
       }
       body {
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        min-height: 100vh;
         display: flex;
-        align-items: stretch;
-        justify-content: stretch;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      #app-shell {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      #main-window {
+        position: relative;
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: hidden;
       }
       canvas {
         display: block;
@@ -50,6 +60,31 @@
         height: 100%;
         background: transparent;
         touch-action: none;
+      }
+      #teaser-overlay {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        max-width: min(560px, calc(100vw - 48px));
+        padding: 16px 18px;
+        background: color-mix(in srgb, var(--bg-color) 68%, transparent);
+        border: 1px solid var(--console-border);
+        border-radius: 16px;
+        box-shadow: 0 16px 40px color-mix(in srgb, var(--console-shadow) 85%, transparent);
+        backdrop-filter: blur(12px);
+        z-index: 10001;
+        pointer-events: none;
+      }
+      #teaser-overlay h1 {
+        margin: 0 0 8px;
+        font-size: clamp(1.2rem, 2vw, 1.75rem);
+        letter-spacing: 0.03em;
+      }
+      #teaser-overlay p {
+        margin: 0;
+        max-width: 72ch;
+        font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+        line-height: 1.55;
       }
       
       #console {
@@ -103,6 +138,16 @@
         transform: scale(1.1);
         box-shadow: 0 4px 15px var(--console-shadow);
       }
+
+      @media (max-width: 720px) {
+        #teaser-overlay {
+          top: 16px;
+          left: 16px;
+          right: 16px;
+          max-width: none;
+          padding: 14px 16px;
+        }
+      }
       
       .console-hidden {
         display: none !important;
@@ -110,25 +155,34 @@
     </style>
   </head>
   <body>
-    <div id="logo-container" style="position:absolute;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:10;opacity:0;">
-      <img id="logo-img" alt="NixonCpp Logo" style="max-width:30vw;max-height:30vh;transition:opacity 0.5s ease-in-out;" />
+    <div id="app-shell">
+      <div id="main-window">
+        <div id="logo-container" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:10;opacity:0;">
+          <img id="logo-img" alt="NixonCpp Logo" style="max-width:30vw;max-height:30vh;transition:opacity 0.5s ease-in-out;" />
+        </div>
+        <section id="teaser-overlay" aria-label="O projektu NixonCpp">
+          <h1>NixonCpp is a universal starting framework for modern C++ projects.</h1>
+          <p>It provides the essential setup for cross-platform C++ development with NixOS and Meson, combining native builds, WebAssembly support, and reusable project infrastructure into one practical foundation.</p>
+        </section>
+        <canvas id="canvas" tabindex="-1"></canvas>
+        <div id="console"></div>
+        <div id="toggle-console" onclick="toggleConsole()" title="Skrýt/zobrazit console">−</div>
+      </div>
     </div>
-    <canvas id="canvas" tabindex="-1"></canvas>
-    <div id="console"></div>
-    <div id="toggle-console" onclick="toggleConsole()" title="Skrýt/zobrazit console">−</div>
     <script type="text/javascript">
       var canvas = document.getElementById('canvas');
+      var mainWindow = document.getElementById('main-window');
       
 
       // --- Throttled resize logging ---
       let lastResizeLog = 0;
       const RESIZE_LOG_INTERVAL = 2000; // ms
       function resizeCanvas() {
-        // Get actual viewport dimensions (like the working version)
-        const width = window.innerWidth || document.documentElement.clientWidth;
-        const height = window.innerHeight || document.documentElement.clientHeight;
+        const bounds = mainWindow.getBoundingClientRect();
+        const width = Math.max(1, Math.round(bounds.width));
+        const height = Math.max(1, Math.round(bounds.height));
 
-        // Set both CSS size and canvas resolution (NO device pixel ratio scaling!)
+        // Keep the canvas matched to its container instead of the full viewport.
         canvas.style.width = width + 'px';
         canvas.style.height = height + 'px';
         canvas.width = width;
