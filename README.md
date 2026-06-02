@@ -88,6 +88,9 @@ make cross-windows
 make cross-wasm
 ```
 
+For browser debugging on a deployed web server, upload the whole `build/builddir-wasm-debug/` directory.
+The debug build stages project sources into `build/builddir-wasm-debug/debug-src/` and rewrites project entries in `NixonCpp.wasm.map`, so DevTools can open your `.cpp` and `.hpp` files without requiring the repository root to be hosted.
+
 Packaging
 ---------
 

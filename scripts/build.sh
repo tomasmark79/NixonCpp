@@ -116,6 +116,39 @@ echo "   Build type: $BUILD_TYPE"
 echo "   Build dir: $BUILD_DIR"
 echo ""
 
+stage_wasm_debug_sources() {
+    local map_file="$BUILD_DIR/$APP_NAME.wasm.map"
+    local debug_src_dir="$BUILD_DIR/debug-src"
+
+    if [[ "$ARCH" != "wasm" && "$ARCH" != "emscripten" ]]; then
+        return 0
+    fi
+
+    case "$BUILD_TYPE" in
+        debug|debugoptimized)
+            ;;
+        *)
+            return 0
+            ;;
+    esac
+
+    if [[ ! -f "$map_file" ]]; then
+        return 0
+    fi
+
+    mkdir -p "$debug_src_dir"
+    rm -rf "$debug_src_dir/src" "$debug_src_dir/include"
+    cp -R "$PROJECT_ROOT/src" "$PROJECT_ROOT/include" "$debug_src_dir/"
+
+    sed -i \
+        -e 's#"\.\./\.\./src/#"debug-src/src/#g' \
+        -e 's#"\.\./\.\./include/#"debug-src/include/#g' \
+        "$map_file"
+
+    echo ""
+    echo "🧭 Staged standalone debug sources in: ./$BUILD_DIR/debug-src"
+}
+
 if [[ "$ARCH" == "native" || "$ARCH" == "x86_64" ]]; then
     if ! command -v "$CC_CMD" >/dev/null 2>&1; then
         echo "❌ Compiler not found: $CC_CMD" >&2
@@ -206,6 +239,8 @@ if [[ -f "$BUILD_DIR/build.ninja" ]]; then
 fi
 
 meson compile -C "$BUILD_DIR"
+
+stage_wasm_debug_sources
 
 # Link compile_commands.json to project root for tooling
 if [ -f "$BUILD_DIR/compile_commands.json" ]; then

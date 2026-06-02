@@ -119,7 +119,7 @@ if is_wasm and is_debug_build
 
   wasm_debug_link_args = [
     '-gsource-map',
-    '--source-map-base', 'http://localhost:6931/build/builddir-wasm-' + build_type + '/',
+    '--source-map-base', './',
   ]
   add_project_link_arguments(wasm_debug_link_args, language: 'cpp')
 endif
