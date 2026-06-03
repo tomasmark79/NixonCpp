@@ -61,6 +61,13 @@
         packages.NixonCpp = nixonCpp;
         packages.default = nixonCpp;
 
+        # ── Runnable app ─────────────────────────────────────────────────────
+        apps.NixonCpp = {
+          type = "app";
+          program = "${nixonCpp}/bin/NixonCpp";
+        };
+        apps.default = self.apps.${system}.NixonCpp;
+
         # ── Dev shells ───────────────────────────────────────────────────────
         devShells.default = pkgs.mkShell {
           name = "project-dev";
