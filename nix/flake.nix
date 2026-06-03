@@ -19,44 +19,6 @@
       nixpkgs-wasm,
       flake-utils,
     }:
-    let
-      repoRoot = ../.;
-      templateSource = builtins.path {
-        path = repoRoot;
-        name = "NixonCpp-template";
-        filter =
-          path: type:
-          let
-            rel = builtins.replaceStrings [ "${toString repoRoot}/" ] [ "" ] (toString path);
-            excludedPaths = [
-              ".git"
-              ".direnv"
-              ".cache"
-              ".emscripten_cache"
-              "build"
-              "docs"
-              "result"
-              "compile_commands.json"
-              "docs/html"
-              "docs/latex"
-            ];
-            excludedPrefixes = [
-              ".git/"
-              ".direnv/"
-              ".cache/"
-              ".emscripten_cache/"
-              "build/"
-              "docs/"
-              "result/"
-              "docs/html/"
-              "docs/latex/"
-            ];
-            hasPrefix = prefix:
-              builtins.substring 0 (builtins.stringLength prefix) rel == prefix;
-          in
-          !(builtins.elem rel excludedPaths || builtins.any hasPrefix excludedPrefixes);
-      };
-    in
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (
       system:
       let
@@ -164,11 +126,5 @@
         devShells.windows = import ./cross-shell-windows.nix { inherit pkgs; };
         devShells.wasm = import ./cross-shell-wasm.nix { pkgs = pkgsWasm; };
       }
-    )
-    // {
-      templates.default = {
-        path = templateSource;
-        description = "NixonCpp multiplatform C++ project template";
-      };
-    };
+    );
 }
