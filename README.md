@@ -118,6 +118,24 @@ result/lib/libNixonCppLib.*
 result/include/NixonCppLib/
 ```
 
+Flake template
+--------------
+
+Use the repository itself as a starter template for a new project:
+
+```bash
+nix flake init -t github:tomasmark79/NixonCpp?dir=nix#default
+```
+
+For a local checkout during development of the template itself:
+
+```bash
+nix flake init -t ./nix#default
+```
+
+This copies the project skeleton without generated build outputs, Nix results,
+or generated Doxygen documentation.
+
 Nix shell GC pinning
 --------------------
 
