@@ -198,10 +198,11 @@ clang_tidy() {
     line_filter="$(build_line_filter)"
 
     find "${source_dirs[@]}" \
-        -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \) -print0 \
+        -type f \( -name "*.c" -o -name "*.cpp" \) -print0 \
         | xargs -0 -n1 clang-tidy -p "$BUILD_DIR" -system-headers=0 \
             -header-filter="^${PROJECT_ROOT}/(src|include|tests)/" \
             -line-filter="$line_filter"
+    echo -e "${GREEN}✓ clang-tidy checks passed${NC}"
 }
 
 clang_format() {
@@ -222,6 +223,24 @@ clang_format() {
             echo -e "${GREY}formatting: ${file}${NC}"
             "$fmt" -i -assume-filename=.cpp "$file"
         done
+}
+
+clang_format_check() {
+    local fmt
+    if command -v clang-format >/dev/null 2>&1; then
+        fmt="clang-format"
+    elif command -v clang-format-18 >/dev/null 2>&1; then
+        fmt="clang-format-18"
+    else
+        echo "clang-format not found." >&2
+        exit 1
+    fi
+
+    echo -e "${LIGHTBLUE}Checking clang-format...${NC}"
+    find "${source_dirs[@]}" \
+        -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \) -print0 \
+        | xargs -0 "$fmt" --dry-run --Werror -assume-filename=.cpp
+    echo -e "${GREEN}✓ Source formatting is correct${NC}"
 }
 
 run_doxygen() {
@@ -371,6 +390,9 @@ case "$TASK_NAME" in
     "Format Code")
         clang_format
         ;;
+    "Check Code Format")
+        clang_format_check
+        ;;
     "Generate Documentation")
         run_doxygen
         ;;
@@ -382,4 +404,3 @@ case "$TASK_NAME" in
         exit 1
         ;;
 esac
-

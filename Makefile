@@ -4,7 +4,7 @@
 ARCHS := native aarch64 windows wasm
 BUILD_TYPES := debug release debugoptimized minsize
 
-.PHONY: help build debug build-clang debug-clang all everything test test-verbose clean clean-packages dev format check doxygen \
+.PHONY: help build debug build-clang debug-clang all everything test test-verbose test-sanitizers clean clean-packages dev format format-check check doxygen \
 	cross-aarch64 cross-windows cross-wasm cross-all \
 	install nix-build pin-shells package-native package-aarch64 package-windows package-wasm package-all packages bundle-deps \
 	build-all-buildtypes build-all-arch-buildtypes package-all-buildtypes package-all-arch-buildtypes \
@@ -22,9 +22,11 @@ help:
 	@echo "  make all            - Build for ALL platforms (native + cross)"
 	@echo "  make everything     - Build all variants (native gcc/clang + cross)"
 	@echo "  make test           - Run all tests"
+	@echo "  make test-sanitizers - Run tests with AddressSanitizer and UBSan"
 	@echo "  make clean          - Clean build directories"
 	@echo "  make clean-packages - Clean generated packages"
 	@echo "  make format         - Format source code"
+	@echo "  make format-check   - Check source formatting without modifying files"
 	@echo "  make check          - Run clang-tidy checks"
 	@echo "  make doxygen        - Generate Doxygen documentation"
 	@echo ""
@@ -68,6 +70,12 @@ test: debug
 test-verbose:
 	@nix develop ./nix --command meson test -C build/builddir-debug -v
 
+test-sanitizers:
+	@meson setup build/builddir-sanitizers --wipe --buildtype=debug \
+		-Dbuild_tests=enabled -Dsanitize_address=true -Dsanitize_undefined=true
+	@meson compile -C build/builddir-sanitizers
+	@meson test -C build/builddir-sanitizers --print-errorlogs
+
 # Clean
 clean:
 	@rm -rf build/builddir* .cache
@@ -109,6 +117,9 @@ pin-shells:
 # Code formatting
 format:
 	@./scripts/solution-controller.sh both "Format Code" native debug
+
+format-check:
+	@./scripts/solution-controller.sh both "Check Code Format" native debug
 
 # Static analysis
 check:

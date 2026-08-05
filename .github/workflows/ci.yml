@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - ".github/workflows/ci.yml"
+      - ".clang-format"
+      - ".clang-tidy"
       - "src/**"
       - "include/**"
       - "tests/**"
@@ -19,6 +21,8 @@ on:
   pull_request:
     paths:
       - ".github/workflows/ci.yml"
+      - ".clang-format"
+      - ".clang-tidy"
       - "src/**"
       - "include/**"
       - "tests/**"
@@ -50,6 +54,12 @@ jobs:
       - name: Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v13
 
+      - name: Check Nix flake
+        run: nix flake check ./nix
+
+      - name: Check formatting
+        run: nix develop ./nix --command make format-check
+
       - name: Test project rename
         run: ./scripts/rename-test.sh
 
@@ -58,6 +68,12 @@ jobs:
 
       - name: Test
         run: nix develop ./nix --command make test
+
+      - name: Static analysis
+        run: nix develop ./nix --command make check
+
+      - name: Test with AddressSanitizer and UBSan
+        run: nix develop ./nix --command make test-sanitizers
 
   cross-builds:
     runs-on: ubuntu-latest
