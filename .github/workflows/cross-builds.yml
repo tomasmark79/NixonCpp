@@ -2,7 +2,29 @@ name: Cross builds
 
 on:
   push:
+    paths:
+      - ".github/workflows/cross-builds.yml"
+      - "Makefile"
+      - "assets/**"
+      - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
+      - "src/**"
+      - "vendor/**"
   pull_request:
+    paths:
+      - ".github/workflows/cross-builds.yml"
+      - "Makefile"
+      - "assets/**"
+      - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
+      - "src/**"
+      - "vendor/**"
 
 jobs:
   cross-builds:

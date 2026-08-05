@@ -2,7 +2,31 @@ name: Sanitizers
 
 on:
   push:
+    paths:
+      - ".github/workflows/sanitizers.yml"
+      - "Makefile"
+      - "assets/**"
+      - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "vendor/**"
   pull_request:
+    paths:
+      - ".github/workflows/sanitizers.yml"
+      - "Makefile"
+      - "assets/**"
+      - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "vendor/**"
 
 jobs:
   sanitizers:

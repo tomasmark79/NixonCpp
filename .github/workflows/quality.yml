@@ -2,7 +2,41 @@ name: Quality
 
 on:
   push:
+    paths:
+      - ".github/workflows/quality.yml"
+      - ".clang-format"
+      - ".devcontainer/**"
+      - ".vscode/**"
+      - "README.md"
+      - "Doxyfile"
+      - "Makefile"
+      - "assets/**"
+      - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "vendor/**"
   pull_request:
+    paths:
+      - ".github/workflows/quality.yml"
+      - ".clang-format"
+      - ".devcontainer/**"
+      - ".vscode/**"
+      - "README.md"
+      - "Doxyfile"
+      - "Makefile"
+      - "assets/**"
+      - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "vendor/**"
 
 jobs:
   quality-checks:

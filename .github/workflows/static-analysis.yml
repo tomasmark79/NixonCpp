@@ -2,7 +2,31 @@ name: Static analysis
 
 on:
   push:
+    paths:
+      - ".github/workflows/static-analysis.yml"
+      - ".clang-tidy"
+      - "Makefile"
+      - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "vendor/**"
   pull_request:
+    paths:
+      - ".github/workflows/static-analysis.yml"
+      - ".clang-tidy"
+      - "Makefile"
+      - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "vendor/**"
 
 jobs:
   static-analysis:

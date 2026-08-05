@@ -1,5 +1,4 @@
-NixonCpp
-========
+# NixonCpp
 
 [![Quality](https://github.com/tomasmark79/NixonCpp/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/quality.yml)
 [![Native](https://github.com/tomasmark79/NixonCpp/actions/workflows/native.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/native.yml)
@@ -9,216 +8,71 @@ NixonCpp
 [![Documentation](https://github.com/tomasmark79/NixonCpp/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/docs.yml)
 
 <p align="center">
-  <img src="assets/NixonCppLogo.svg"  alt="NixonCpp Logo" width="40%">
+  <img src="assets/NixonCppLogo.svg" alt="NixonCpp logo" width="40%">
 </p>
 
-Overview
---------
+NixonCpp is a C++20 project template for applications and libraries. It combines Meson with reproducible Nix environments, native tests, static analysis, sanitizers, packaging, and cross-compilation for Linux ARM64, Windows, and WebAssembly.
 
-Project template for a C++ application and library, set up with Meson/Nix tooling, tests, documentation, and packaging.
+## Features
 
-Highlights:
+- Application, shared library, and static library targets
+- Nix development environments and reproducible package builds
+- GoogleTest, clang-format, clang-tidy, AddressSanitizer, and UBSan
+- Cross-builds for aarch64-linux, Windows, and WebAssembly
+- Doxygen documentation published through GitHub Pages
+- Project renaming, packaging, VS Code, devcontainer, and Codespaces support
 
-- Modular layout (app + library)
-- CI-ready
-- Cross-build targets (aarch64, Windows, WASM)
-
-Repository layout
------------------
-
-- include/                Public library headers
-- src/app/                Application sources
-- src/lib/                Library implementation
-- tests/                  Unit tests
-- assets/                 Runtime assets
-- scripts/                Build and tooling scripts
-
-Requirements
-------------
-
-- Nix (recommended) or a C++20 toolchain + Meson + Ninja
-- Optional: doxygen + graphviz for docs
-
-Quick start (Nix)
------------------
-
-If you use `direnv`:
+## Quick start
 
 ```bash
-direnv allow
-```
-
-Build (native, release):
-
-```bash
-make build
-```
-
-Run tests (native, debug build first):
-
-```bash
+git clone https://github.com/tomasmark79/NixonCpp.git
+cd NixonCpp
+nix develop ./nix
 make test
 ```
 
-Clone helper
-------------
-
-See: [scripts/clonenixoncpp.sh](scripts/clonenixoncpp.sh)
-
-Template rename
----------------
+To create a project from the template:
 
 ```bash
-# Usage: scripts/rename.sh <NewName> [NewLibName] [NewNamespace]
 ./scripts/rename.sh MyApp MyAppLib myapp
 ```
 
-Build and test
---------------
+For repeated use, source [scripts/clonenixoncpp.sh](scripts/clonenixoncpp.sh) and run:
 
 ```bash
-make build        # Native release build
-make debug        # Native debug build
-make test         # Run tests
-make format       # clang-format on sources
-make check        # clang-tidy (native debug builddir)
+clonenixoncpp MyProject MyApp MyAppLib myapp
 ```
 
-Cross builds
-------------
+## Common commands
 
-```bash
-make cross-aarch64
-make cross-windows
-make cross-wasm
-```
+| Command | Purpose |
+| --- | --- |
+| `make build` | Native release build |
+| `make debug` | Native debug build |
+| `make test` | Build and run native tests |
+| `make format` | Format C and C++ sources |
+| `make format-check` | Verify formatting without modifying files |
+| `make check` | Run clang-tidy |
+| `make test-sanitizers` | Run tests with ASan and UBSan |
+| `make cross-all` | Build all cross-compilation targets |
+| `make package-all` | Create native and cross-platform packages |
+| `make nix-build` | Build the Nix package |
+| `make doxygen` | Generate documentation locally |
 
-For browser debugging on a deployed web server, upload the whole `build/builddir-wasm-debug/` directory.
-The debug build stages project sources into `build/builddir-wasm-debug/debug-src/` and rewrites project entries in `NixonCpp.wasm.map`, so DevTools can open your `.cpp` and `.hpp` files without requiring the repository root to be hosted.
+Run `make help` for the complete target list.
 
-Packaging
----------
+## Documentation
 
-```bash
-make package-native
-make package-aarch64
-make package-windows
-make package-wasm
-```
+API documentation is available at <https://tomasmark79.github.io/NixonCpp/html/index.html>. The [Documentation workflow](.github/workflows/docs.yml) regenerates and publishes it from `main`; generated HTML is not stored in the branch.
 
-Nix package
------------
+## Development environment
 
-Build the project as a proper Nix package (reproducible, isolated, Nix store output):
+- VS Code tasks: [.vscode/tasks.json](.vscode/tasks.json)
+- Devcontainer: [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
+- Meson options: [meson_options.txt](meson_options.txt)
 
-```bash
-make nix-build        # shortcut for: nix build ./nix#NixonCpp
-```
+Nix is recommended. Native builds may also use a local C++20 compiler, Meson, Ninja, and the required libraries; cross-builds require Nix.
 
-The result is available as a symlink `./result` pointing into the Nix store:
+## License
 
-```
-result/bin/NixonCpp
-result/lib/libNixonCppLib.*
-result/include/NixonCppLib/
-```
-
-Nix shell GC pinning
---------------------
-
-By default, `nix-collect-garbage` can remove cross-compilation toolchains
-(aarch64, Windows, WASM) from the Nix store, forcing a full re-download on
-the next build. Pin all dev shells as GC roots to prevent this:
-
-```bash
-make pin-shells       # run once after cloning, and after 'nix flake update'
-```
-
-This creates symlinks `build/.gcroot-shell-{default,aarch64,windows,wasm}`
-that act as GC roots – as long as they exist, the garbage collector will
-never remove the referenced store paths.
-
-> **Note:** The WASM shell uses a pinned nixpkgs commit (for Emscripten
-> compatibility) and may take longer to download on the very first run.
-
-Documentation
--------------
-
-- Online docs: <https://tomasmark79.github.io/NixonCpp/html/index.html>
-- Generate locally:
-
-```bash
-make doxygen
-```
-
-Output: `docs/html/index.html`
-
-The generated HTML is intentionally not committed. On pushes to `main`, the
-[`Documentation`](.github/workflows/docs.yml) workflow regenerates `docs/html`
-and deploys the `docs` directory to GitHub Pages, preserving the public
-`/NixonCpp/html/index.html` URL.
-
-VS Code tasks
--------------
-
-<p align="center">
- <a href="./assets/screen-desktop.png">
-  <img src="./assets/screen-desktop.png" alt="Desktop screenshot" width="65%">
- </a>
-</p>
-
-Workspace tasks are defined in [.vscode/tasks.json](.vscode/tasks.json).
-
-How to run:
-
-- Use `Terminal: Run Task` (or `Tasks: Run Task`) and pick one of the tasks below.
-
-Common tasks:
-
-- `Direct Build (native debug)` (default build task)
-- `Project Build Tasks` (interactive picker: Build/Configure/Test/Package + arch + buildtype)
-- `clang-format`
-- `clang-tidy`
-- `Launch Application (native)` / `Launch Application (native release)`
-- `Launch Emscripten Server` / `Launch Emscripten Server (release)`
-
-Optional keybindings:
-
-- A suggested keybinding setup is provided in [.vscode/keybindings.json](.vscode/keybindings.json).
-- Copy it into your user keybindings file (Linux default: `~/.config/Code/User/keybindings.json`).
-
-GitHub Codespaces
------------------
-
-<p align="center">
- <a href="./assets/screen-codespace.png">
-  <img src="./assets/screen-codespace.png" alt="Codespace screenshot" width="65%">
- </a>
-</p>
-
-This repo is Codespaces-ready via a devcontainer using Nix.
-
-- Ensure the devcontainer is used: [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
-- After the container is created, the post-create step prefetches the Nix dev shell.
-- Build + test as usual:
-  - `make debug`
-  - `make test`
-
-Notes:
-
-- WebAssembly dev server uses port `6931` (auto-forwarded by the devcontainer).
-- Native builds can work without Nix if you install Meson/Ninja + a C++20 toolchain, but cross builds require Nix.
-
-Configure Meson options
------------------------
-
-Example (debug builddir):
-
-```bash
-meson configure build/builddir-debug -Dbuild_tests=enabled
-```
-
-License
--------
-
-MIT
+[MIT](LICENSE)
