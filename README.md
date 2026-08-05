@@ -148,6 +148,11 @@ make doxygen
 
 Output: `docs/html/index.html`
 
+The generated HTML is intentionally not committed. On pushes to `main`, the
+[`Documentation`](.github/workflows/docs.yml) workflow regenerates `docs/html`
+and deploys the `docs` directory to GitHub Pages, preserving the public
+`/NixonCpp/html/index.html` URL.
+
 VS Code tasks
 -------------
 

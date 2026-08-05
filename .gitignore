@@ -51,3 +51,7 @@ result-*
 *.orig
 
 .emscripten_cache/
+
+# Generated documentation (published to GitHub Pages by CI)
+/docs/html/
+/docs/latex/
