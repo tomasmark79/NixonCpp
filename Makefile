@@ -180,23 +180,20 @@ install:
 	@./scripts/solution-controller.sh both "Install built components" native release
 
 define MAKE_PACKAGE_RULE
-package-$(1)-$(2): $(if $(filter wasm,$(1)),build-$(1)-$(2))
+package-$(1)-$(2): build-$(1)-$(2)
 	@./scripts/solution-controller.sh both "Create Package" $(1) $(2)
 endef
 
 $(foreach a,$(ARCHS),$(foreach b,$(BUILD_TYPES),$(eval $(call MAKE_PACKAGE_RULE,$(a),$(b)))))
 
-package-native:
-	@./scripts/solution-controller.sh both "Create Package" native release
+package-native: package-native-release
 
 bundle-deps:
 	@bash scripts/bundle-deps.sh $(or $(ARCH),native) release
 
-package-aarch64:
-	@./scripts/solution-controller.sh both "Create Package" aarch64 release
+package-aarch64: package-aarch64-release
 
-package-windows:
-	@./scripts/solution-controller.sh both "Create Package" windows release
+package-windows: package-windows-release
 
 package-wasm: package-wasm-release
 
