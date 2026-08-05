@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/cross-builds.yml"
       - "Makefile"
+      - "README.md"
       - "assets/**"
       - "include/**"
       - "meson.build"
@@ -17,6 +18,7 @@ on:
     paths:
       - ".github/workflows/cross-builds.yml"
       - "Makefile"
+      - "README.md"
       - "assets/**"
       - "include/**"
       - "meson.build"

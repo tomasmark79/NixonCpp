@@ -1,59 +1,52 @@
 <!doctype html>
-<html lang="en-us">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="NixonCpp — a reusable C++20 project template powered by Meson and Nix.">
     <title>NixonCpp</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' ry='16' fill='%23111'/%3E%3Ctext x='50' y='60' font-size='40' text-anchor='middle' fill='%23fff' font-family='Arial,Helvetica,sans-serif'%3EDot%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23111827'/%3E%3Ctext x='50' y='63' font-size='46' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3EC%2B%2B%3C/text%3E%3C/svg%3E">
     <style>
       :root {
-        --bg-color: #ffffff;
-        --text-color: #000000;
-        --console-bg: #46abca30;
-        --console-text: #ffffff;
-        --console-border: rgba(0, 0, 0, 0.2);
-        --console-shadow: rgba(0, 0, 0, 0.1);
-        --logo-bg: #e8f4f8;
-        --error-color: #cc4444;
+        color-scheme: light;
+        --page-bg: #ffffff;
+        --text: #111827;
+        --muted: #4b5563;
+        --border: rgba(17, 24, 39, 0.14);
+        --shadow: rgba(17, 24, 39, 0.12);
+        --accent: #167ca3;
+        --code-bg: #f3f4f6;
+        --console-bg: rgba(255, 255, 255, 0.97);
+        --console-text: #111827;
+        --error: #b42318;
       }
-      
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-color: #1a1a1a;
-          --text-color: #b5d6e3;
-          --console-bg: #232b3309;
-          --console-text: #b5d6e3;
-          --console-border: rgba(255, 255, 255, 0.15);
-          --console-shadow: rgba(0, 0, 0, 0.5);
-          --logo-bg: #2a4a5a;
-          --error-color: #ff6666;
-        }
+
+      * {
+        box-sizing: border-box;
       }
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background: var(--bg-color);
-        color: var(--text-color);
-      }
+
+      html,
       body {
         width: 100%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+        height: 100%;
+        margin: 0;
         overflow: hidden;
+        background: var(--page-bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
-      #app-shell {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+
+      #app-shell,
+      #main-window {
+        width: 100%;
+        height: 100%;
       }
+
       #main-window {
         position: relative;
-        flex: 1 1 auto;
-        min-height: 0;
         overflow: hidden;
       }
+
       canvas {
         display: block;
         width: 100%;
@@ -61,249 +54,547 @@
         background: transparent;
         touch-action: none;
       }
-      #teaser-overlay {
+
+      #logo-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 728px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 10;
+      }
+
+      #logo-img {
+        width: min(360px, 72%);
+        max-height: 52vh;
+      }
+
+      #project-panel {
         position: absolute;
         top: 24px;
         left: 24px;
-        max-width: min(560px, calc(100vw - 48px));
-        padding: 16px 18px;
-        background: color-mix(in srgb, var(--bg-color) 68%, transparent);
-        border: 1px solid var(--console-border);
-        border-radius: 16px;
-        box-shadow: 0 16px 40px color-mix(in srgb, var(--console-shadow) 85%, transparent);
-        backdrop-filter: blur(12px);
-        z-index: 10001;
-        pointer-events: none;
+        width: min(680px, calc(100vw - 48px));
+        max-height: calc(100vh - 48px);
+        overflow: auto;
+        padding: 22px 24px;
+        border: 1px solid rgba(255, 255, 255, 0.78);
+        border-radius: 18px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.30) 0%,
+          rgba(255, 255, 255, 0.25) 58%,
+          rgba(248, 250, 252, 0.20) 100%
+        );
+        box-shadow:
+          0 22px 60px rgba(17, 24, 39, 0.11),
+          inset 0 1px 0 rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(8px) saturate(1.08);
+        -webkit-backdrop-filter: blur(8px) saturate(1.08);
+        z-index: 20;
+        scrollbar-width: thin;
       }
-      #teaser-overlay h1 {
-        margin: 0 0 8px;
-        font-size: clamp(1.2rem, 2vw, 1.75rem);
-        letter-spacing: 0.03em;
+
+      .project-heading {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
       }
-      #teaser-overlay p {
+
+      .project-title h1 {
+        margin: 0 0 6px;
+        font-size: clamp(1.6rem, 3vw, 2.25rem);
+        letter-spacing: -0.035em;
+      }
+
+      .project-title .tagline {
         margin: 0;
-        max-width: 72ch;
-        font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-        line-height: 1.55;
+        color: var(--muted);
+        font-size: 0.96rem;
       }
-      
+
+      #panel-logo {
+        display: none;
+        width: 56px;
+        height: 56px;
+        flex: 0 0 auto;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+
+      #readme-content {
+        font-size: 0.93rem;
+        line-height: 1.58;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.48);
+      }
+
+      #readme-content h2,
+      #readme-content h3,
+      #readme-content h4 {
+        margin: 1.35em 0 0.55em;
+        line-height: 1.25;
+      }
+
+      #readme-content h2 {
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid var(--border);
+        font-size: 1.22rem;
+      }
+
+      #readme-content h3 {
+        font-size: 1.05rem;
+      }
+
+      #readme-content p,
+      #readme-content ul,
+      #readme-content pre,
+      #readme-content table {
+        margin: 0.65em 0;
+      }
+
+      #readme-content ul {
+        padding-left: 1.35rem;
+      }
+
+      #readme-content a {
+        color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.16em;
+      }
+
+      #readme-content code {
+        padding: 0.12em 0.34em;
+        border-radius: 5px;
+        background: var(--code-bg);
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 0.88em;
+      }
+
+      #readme-content pre {
+        overflow-x: auto;
+        padding: 13px 15px;
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        background: var(--code-bg);
+      }
+
+      #readme-content pre code {
+        padding: 0;
+        background: transparent;
+      }
+
+      #readme-content table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+
+      #readme-content th,
+      #readme-content td {
+        padding: 7px 9px;
+        border: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      #readme-content th {
+        background: var(--code-bg);
+      }
+
       #console {
         position: absolute;
+        right: 10px;
         bottom: 10px;
         left: 10px;
-        right: 10px;
         max-height: 300px;
-        background: var(--console-bg);
-        color: var(--console-text);
-        font-family: 'Courier New', monospace;
-        font-size: 10px;
-        padding: 10px;
-        border-radius: 5px;
         overflow-y: auto;
-        z-index: 9999;
-        pointer-events: auto;
-        border: 1px solid var(--console-border);
-        box-shadow: 0 0 10px var(--console-shadow);
+        padding: 12px 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--console-bg);
+        box-shadow: 0 8px 30px var(--shadow);
+        color: var(--console-text);
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 11px;
+        z-index: 40;
       }
+
       #console .log-line {
         margin: 2px 0;
         white-space: pre-wrap;
         word-break: break-word;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
       }
-      
+
       #toggle-console {
         position: absolute;
-        bottom: 320px;
+        bottom: 20px;
         right: 20px;
-        width: 40px;
-        height: 40px;
-        background: white;
-        border: 2px solid var(--console-border);
-        border-radius: 50%;
-        cursor: pointer;
         display: flex;
+        width: 42px;
+        height: 42px;
         align-items: center;
         justify-content: center;
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-        box-shadow: 0 2px 10px var(--console-shadow);
-        z-index: 10000;
-        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow: 0 5px 18px var(--shadow);
+        color: var(--text);
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 600;
         user-select: none;
+        z-index: 50;
+        transition: bottom 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       }
-      
+
       #toggle-console:hover {
-        transform: scale(1.1);
-        box-shadow: 0 4px 15px var(--console-shadow);
+        transform: scale(1.06);
+        box-shadow: 0 8px 24px var(--shadow);
+      }
+
+      .console-hidden {
+        display: none;
+      }
+
+      @media (max-width: 980px) {
+        #logo-container {
+          display: none;
+        }
+
+        #panel-logo {
+          display: block;
+        }
       }
 
       @media (max-width: 720px) {
-        #teaser-overlay {
-          top: 16px;
-          left: 16px;
-          right: 16px;
-          max-width: none;
-          padding: 14px 16px;
+        #project-panel {
+          top: 14px;
+          left: 14px;
+          width: calc(100vw - 28px);
+          max-height: calc(100vh - 28px);
+          padding: 18px;
+          border-radius: 14px;
         }
-      }
-      
-      .console-hidden {
-        display: none !important;
+
+        .project-heading {
+          align-items: flex-start;
+        }
+
+        #panel-logo {
+          width: 48px;
+          height: 48px;
+        }
+
+        #console {
+          max-height: 38vh;
+        }
+
       }
     </style>
   </head>
   <body>
     <div id="app-shell">
-      <div id="main-window">
-        <div id="logo-container" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:10;opacity:0;">
-          <img id="logo-img" alt="NixonCpp Logo" style="max-width:30vw;max-height:30vh;transition:opacity 0.5s ease-in-out;" />
+      <main id="main-window">
+        <div id="logo-container" aria-hidden="true">
+          <img id="logo-img" alt="">
         </div>
-        <section id="teaser-overlay" aria-label="O projektu NixonCpp">
-          <h1>NixonCpp is a universal starting framework for modern C++ projects.</h1>
-          <p>It provides the essential setup for cross-platform C++ development with NixOS and Meson, combining native builds, WebAssembly support, and reusable project infrastructure into one practical foundation.</p>
-        </section>
+
         <canvas id="canvas" tabindex="-1"></canvas>
-        <div id="console"></div>
-        <div id="toggle-console" onclick="toggleConsole()" title="Skrýt/zobrazit console">−</div>
-      </div>
+
+        <section id="project-panel" aria-label="About NixonCpp">
+          <header class="project-heading">
+            <img id="panel-logo" alt="NixonCpp logo">
+            <div class="project-title">
+              <h1>NixonCpp</h1>
+              <p class="tagline">A running WebAssembly build that documents the project it represents.</p>
+            </div>
+          </header>
+          <article id="readme-content" aria-live="polite">
+            <p>Loading project information…</p>
+          </article>
+        </section>
+
+        <div id="console" class="console-hidden" aria-live="polite"></div>
+        <button id="toggle-console" type="button" aria-controls="console" aria-expanded="false" title="Show console">+</button>
+      </main>
     </div>
-    <script type="text/javascript">
+
+    <script>
       var canvas = document.getElementById('canvas');
       var mainWindow = document.getElementById('main-window');
-      
+      var consoleDiv = document.getElementById('console');
+      var toggleButton = document.getElementById('toggle-console');
 
-      // --- Throttled resize logging ---
-      let lastResizeLog = 0;
-      const RESIZE_LOG_INTERVAL = 2000; // ms
       function resizeCanvas() {
-        const bounds = mainWindow.getBoundingClientRect();
-        const width = Math.max(1, Math.round(bounds.width));
-        const height = Math.max(1, Math.round(bounds.height));
-
-        // Keep the canvas matched to its container instead of the full viewport.
+        var bounds = mainWindow.getBoundingClientRect();
+        var width = Math.max(1, Math.round(bounds.width));
+        var height = Math.max(1, Math.round(bounds.height));
         canvas.style.width = width + 'px';
         canvas.style.height = height + 'px';
         canvas.width = width;
         canvas.height = height;
-
-        // Throttle logging
-        const now = Date.now();
-        if (now - lastResizeLog > RESIZE_LOG_INTERVAL) {
-          console.log('Canvas resized - Size:', width + 'x' + height);
-          lastResizeLog = now;
-        }
       }
 
       window.addEventListener('resize', resizeCanvas);
       window.addEventListener('orientationchange', function () {
-        setTimeout(resizeCanvas, 100);
+        window.setTimeout(resizeCanvas, 100);
       });
-
       resizeCanvas();
 
-      // --- Simplified WebGL Context Initialization (like working version) ---
-      var webglContext = (function() {
-        var contextNames = ["webgl2", "webgl", "experimental-webgl"];
-        var context = null;
-        
+      var webglContext = (function () {
+        var contextNames = ['webgl2', 'webgl', 'experimental-webgl'];
         for (var i = 0; i < contextNames.length; i++) {
           try {
-            context = canvas.getContext(contextNames[i], { 
-              alpha: false,
-              powerPreference: "high-performance" 
+            var context = canvas.getContext(contextNames[i], {
+              alpha: true,
+              powerPreference: 'high-performance'
             });
-          } catch(e) {}
-          if (context) {
-            console.log("Initialized WebGL context with '" + contextNames[i] + "'");
-            break;
-          }
-        }
-        if (!context) {
-          console.error("Failed to initialize WebGL context.");
-        }
-        return context;
-      })();
-      // ---
-
-      var Module = {
-        canvas: canvas,
-        preinitializedWebGLContext: webglContext, // Pass the context to Emscripten
-        print: function(text) {
-          // Capture stdout from C++ and display in console
-          addToConsole(text, 'stdout');
-        },
-        printErr: function(text) {
-          // Capture stderr from C++ and display in console
-          addToConsole(text, 'stderr');
-        },
-        onRuntimeInitialized: function() {
-          // Load SVG from Emscripten virtual filesystem
-          try {
-            const svgData = FS.readFile('share/NixonCpp/assets/NixonCppLogo.svg', { encoding: 'utf8' });
-            const dataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgData);
-            const logoImg = document.getElementById('logo-img');
-            const logoContainer = document.getElementById('logo-container');
-            if (logoImg && logoContainer) {
-              // Show logo with smooth transition
-              logoImg.src = dataUrl;
-              logoContainer.style.opacity = '1';
+            if (context) {
+              console.log("Initialized WebGL context with '" + contextNames[i] + "'");
+              return context;
             }
           } catch (error) {
-            console.warn('Could not load SVG from virtual filesystem:', error);
+            console.warn('WebGL context initialization failed:', error);
           }
         }
-      };
+        console.error('Failed to initialize WebGL context.');
+        return null;
+      })();
 
-      // Function to add text to the console div
+      function resolveReadmeLink(href, repositoryUrl) {
+        if (/^(?:[a-z]+:|#)/i.test(href)) {
+          return href;
+        }
+        return repositoryUrl ? repositoryUrl + '/blob/main/' + href.replace(/^\.\//, '') : href;
+      }
+
+      function appendInlineMarkdown(parent, text, repositoryUrl) {
+        var tokenPattern = /(`[^`]+`|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g;
+        var cursor = 0;
+        var match;
+
+        while ((match = tokenPattern.exec(text)) !== null) {
+          if (match.index > cursor) {
+            parent.appendChild(document.createTextNode(text.slice(cursor, match.index)));
+          }
+
+          var token = match[0];
+          if (token.charAt(0) === '`') {
+            var code = document.createElement('code');
+            code.textContent = token.slice(1, -1);
+            parent.appendChild(code);
+          } else if (token.slice(0, 2) === '**') {
+            var strong = document.createElement('strong');
+            strong.textContent = token.slice(2, -2);
+            parent.appendChild(strong);
+          } else {
+            var linkMatch = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+            var link = document.createElement('a');
+            link.textContent = linkMatch[1];
+            link.href = resolveReadmeLink(linkMatch[2], repositoryUrl);
+            link.target = '_blank';
+            link.rel = 'noreferrer';
+            parent.appendChild(link);
+          }
+          cursor = tokenPattern.lastIndex;
+        }
+
+        if (cursor < text.length) {
+          parent.appendChild(document.createTextNode(text.slice(cursor)));
+        }
+      }
+
+      function splitTableRow(line) {
+        return line.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|').map(function (cell) {
+          return cell.trim();
+        });
+      }
+
+      function isTableSeparator(line) {
+        return /^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(line);
+      }
+
+      function readmeBody(markdown) {
+        var logoEnd = markdown.indexOf('</p>');
+        if (logoEnd !== -1) {
+          return markdown.slice(logoEnd + 4).trim();
+        }
+        return markdown.replace(/^#\s+.*$/m, '').trim();
+      }
+
+      function renderMarkdown(markdown) {
+        var container = document.getElementById('readme-content');
+        var repositoryMatch = markdown.match(/https:\/\/github\.com\/[^/\s)]+\/[^/\s)]+/);
+        var repositoryUrl = repositoryMatch ? repositoryMatch[0].replace(/\/actions.*$/, '') : '';
+        var lines = readmeBody(markdown).split(/\r?\n/);
+        var fragment = document.createDocumentFragment();
+        var index = 0;
+
+        while (index < lines.length) {
+          var line = lines[index];
+          if (!line.trim()) {
+            index += 1;
+            continue;
+          }
+
+          if (/^```/.test(line)) {
+            var codeLines = [];
+            index += 1;
+            while (index < lines.length && !/^```/.test(lines[index])) {
+              codeLines.push(lines[index]);
+              index += 1;
+            }
+            index += 1;
+            var pre = document.createElement('pre');
+            var blockCode = document.createElement('code');
+            blockCode.textContent = codeLines.join('\n');
+            pre.appendChild(blockCode);
+            fragment.appendChild(pre);
+            continue;
+          }
+
+          var headingMatch = line.match(/^(#{2,4})\s+(.+)$/);
+          if (headingMatch) {
+            var heading = document.createElement('h' + headingMatch[1].length);
+            appendInlineMarkdown(heading, headingMatch[2], repositoryUrl);
+            fragment.appendChild(heading);
+            index += 1;
+            continue;
+          }
+
+          if (index + 1 < lines.length && line.indexOf('|') !== -1 && isTableSeparator(lines[index + 1])) {
+            var table = document.createElement('table');
+            var head = document.createElement('thead');
+            var headRow = document.createElement('tr');
+            splitTableRow(line).forEach(function (cellText) {
+              var cell = document.createElement('th');
+              appendInlineMarkdown(cell, cellText, repositoryUrl);
+              headRow.appendChild(cell);
+            });
+            head.appendChild(headRow);
+            table.appendChild(head);
+            index += 2;
+
+            var body = document.createElement('tbody');
+            while (index < lines.length && lines[index].indexOf('|') !== -1 && lines[index].trim()) {
+              var row = document.createElement('tr');
+              splitTableRow(lines[index]).forEach(function (cellText) {
+                var cell = document.createElement('td');
+                appendInlineMarkdown(cell, cellText, repositoryUrl);
+                row.appendChild(cell);
+              });
+              body.appendChild(row);
+              index += 1;
+            }
+            table.appendChild(body);
+            fragment.appendChild(table);
+            continue;
+          }
+
+          if (/^\s*-\s+/.test(line)) {
+            var list = document.createElement('ul');
+            while (index < lines.length && /^\s*-\s+/.test(lines[index])) {
+              var item = document.createElement('li');
+              appendInlineMarkdown(item, lines[index].replace(/^\s*-\s+/, ''), repositoryUrl);
+              list.appendChild(item);
+              index += 1;
+            }
+            fragment.appendChild(list);
+            continue;
+          }
+
+          var paragraphLines = [line.trim()];
+          index += 1;
+          while (index < lines.length && lines[index].trim() && !/^(?:```|#{2,4}\s|\s*-\s+)/.test(lines[index])) {
+            if (index + 1 < lines.length && isTableSeparator(lines[index + 1])) {
+              break;
+            }
+            paragraphLines.push(lines[index].trim());
+            index += 1;
+          }
+          var paragraph = document.createElement('p');
+          appendInlineMarkdown(paragraph, paragraphLines.join(' '), repositoryUrl);
+          fragment.appendChild(paragraph);
+        }
+
+        container.replaceChildren(fragment);
+      }
+
+      function loadEmbeddedProjectContent() {
+        try {
+          var svgData = FS.readFile('share/NixonCpp/assets/NixonCppLogo.svg', { encoding: 'utf8' });
+          var logoUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgData);
+          var logo = document.getElementById('logo-img');
+          var panelLogo = document.getElementById('panel-logo');
+          logo.src = logoUrl;
+          panelLogo.src = logoUrl;
+          panelLogo.style.opacity = '1';
+          document.getElementById('logo-container').style.opacity = '1';
+        } catch (error) {
+          console.warn('Could not load the embedded logo:', error);
+        }
+
+        try {
+          var markdown = FS.readFile('share/NixonCpp/README.md', { encoding: 'utf8' });
+          renderMarkdown(markdown);
+        } catch (error) {
+          console.warn('Could not load the embedded README:', error);
+          document.getElementById('readme-content').textContent = 'Project documentation is unavailable.';
+        }
+      }
+
       function addToConsole(text, type) {
-        // Also log to browser developer console
         if (type === 'stderr') {
           console.error(text);
         } else {
           console.log(text);
         }
-        
-        const consoleDiv = document.getElementById('console');
+
         if (consoleDiv && text.trim()) {
-          const line = document.createElement('div');
+          var line = document.createElement('div');
           line.className = 'log-line';
-          
-            // Use theme-aware colors from CSS variables
-            if (type === 'stderr') {
-            line.style.color = 'var(--error-color)';
-            } else {
-            line.style.color = 'var(--console-text)';
-            }
+          line.style.color = type === 'stderr' ? 'var(--error)' : 'var(--console-text)';
           line.textContent = text;
           consoleDiv.appendChild(line);
-          
-          // Auto-scroll to bottom
           consoleDiv.scrollTop = consoleDiv.scrollHeight;
-          
-          // Limit number of lines to prevent memory issues
-          if (consoleDiv.children.length > 100) {
+          if (consoleDiv.children.length > 200) {
             consoleDiv.removeChild(consoleDiv.firstChild);
           }
         }
       }
 
-      // Function to toggle console visibility
       function toggleConsole() {
-        const consoleDiv = document.getElementById('console');
-        const toggleButton = document.getElementById('toggle-console');
-        
-        if (consoleDiv.classList.contains('console-hidden')) {
-          consoleDiv.classList.remove('console-hidden');
-          toggleButton.innerHTML = '−';
-          toggleButton.title = 'Skrýt console';
-        } else {
-          consoleDiv.classList.add('console-hidden');
-          toggleButton.innerHTML = '+';
-          toggleButton.title = 'Zobrazit console';
-        }
+        var hidden = consoleDiv.classList.toggle('console-hidden');
+        toggleButton.textContent = hidden ? '+' : '−';
+        toggleButton.title = hidden ? 'Show console' : 'Hide console';
+        toggleButton.setAttribute('aria-expanded', String(!hidden));
       }
+
+      toggleButton.addEventListener('click', toggleConsole);
+      window.addEventListener('wheel', function (event) {
+        var target = event.target;
+        if (target && typeof target.closest === 'function' && target.closest('#project-panel, #toggle-console, #console')) {
+          event.stopImmediatePropagation();
+        }
+      }, { capture: true });
+
+      var Module = {
+        canvas: canvas,
+        preinitializedWebGLContext: webglContext,
+        print: function (text) {
+          addToConsole(text, 'stdout');
+        },
+        printErr: function (text) {
+          addToConsole(text, 'stderr');
+        },
+        onRuntimeInitialized: loadEmbeddedProjectContent
+      };
     </script>
     {{{ SCRIPT }}}
   </body>

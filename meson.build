@@ -206,8 +206,9 @@ if is_wasm
     link_args: [
       '--shell-file', meson.project_source_root() / 'assets' / 'index.html',
       '--embed-file', meson.project_source_root() / ('assets@/share/' + project_name + '/assets'),
+      '--embed-file', meson.project_source_root() / ('README.md@/share/' + project_name + '/README.md'),
     ],
-    link_depends: asset_sync,
+    link_depends: [asset_sync] + files('README.md'),
     install: true,
   )
 elif is_windows
