@@ -71,10 +71,10 @@ test-verbose:
 	@nix develop ./nix --command meson test -C build/builddir-debug -v
 
 test-sanitizers:
-	@meson setup build/builddir-sanitizers --wipe --buildtype=debug \
-		-Dbuild_tests=enabled -Dsanitize_address=true -Dsanitize_undefined=true
-	@meson compile -C build/builddir-sanitizers
-	@meson test -C build/builddir-sanitizers --print-errorlogs
+	@meson setup build/builddir-sanitize-address-undefined --wipe --buildtype=debugoptimized \
+		-Dbuild_tests=enabled -Db_sanitize=address,undefined
+	@meson compile -C build/builddir-sanitize-address-undefined
+	@meson test -C build/builddir-sanitize-address-undefined --print-errorlogs
 
 # Clean
 clean:
@@ -122,7 +122,7 @@ format-check:
 	@./scripts/solution-controller.sh both "Check Code Format" native debug
 
 # Static analysis
-check:
+check: debug
 	@./scripts/solution-controller.sh both "clang-tidy linting" native debug
 
 # Documentation

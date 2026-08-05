@@ -37,7 +37,7 @@ on:
       - "Doxyfile"
 
 jobs:
-  native-build:
+  quality-checks:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -63,14 +63,65 @@ jobs:
       - name: Test project rename
         run: ./scripts/rename-test.sh
 
+  native-build:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          flakehub: false
+
+      - name: Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
+
       - name: Build
         run: nix develop ./nix --command make build
 
       - name: Test
         run: nix develop ./nix --command make test
 
+  static-analysis:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          flakehub: false
+
+      - name: Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
+
       - name: Static analysis
         run: nix develop ./nix --command make check
+
+  sanitizers:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          flakehub: false
+
+      - name: Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
 
       - name: Test with AddressSanitizer and UBSan
         run: nix develop ./nix --command make test-sanitizers

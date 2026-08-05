@@ -21,9 +21,6 @@ is_cross = meson.is_cross_build()
 is_native = not is_cross and not is_wasm and not is_windows
 fmt_header_only = is_wasm or is_windows or is_cross
 tests_opt = get_option('build_tests')
-asan_opt = get_option('sanitize_address')
-ubsan_opt = get_option('sanitize_undefined')
-tsan_opt = get_option('sanitize_thread')
 build_type = get_option('buildtype')
 is_debug_build = build_type == 'debug' or build_type == 'debugoptimized'
 wasm_opt_level = get_option('wasm_opt_level')
@@ -125,22 +122,6 @@ if is_wasm and wasm_opt_level != 'auto'
   wasm_opt_flag = '-' + wasm_opt_level
   lib_cpp_args += [wasm_opt_flag]
   add_project_link_arguments(wasm_opt_flag, language: 'cpp')
-endif
-
-# Sanitizers (native only)
-if is_native
-  if ubsan_opt
-    lib_cpp_args += ['-fsanitize=undefined']
-    add_project_link_arguments('-fsanitize=undefined', language: 'cpp')
-  endif
-  if tsan_opt
-    lib_cpp_args += ['-fsanitize=thread']
-    add_project_link_arguments('-fsanitize=thread', language: 'cpp')
-  endif
-  if asan_opt
-    lib_cpp_args += ['-fsanitize=address']
-    add_project_link_arguments('-fsanitize=address', language: 'cpp')
-  endif
 endif
 
 common_inc = [inc_dirs, src_inc_dirs]

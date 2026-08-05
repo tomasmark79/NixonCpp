@@ -19,7 +19,6 @@ resolve_project_name() {
     echo "$name"
 }
 
-BUILD_PRODUCT="${1:-both}"
 TASK_NAME="${2:-}"
 BUILD_ARCH="${3:-native}"
 BUILD_TYPE_RAW="${4:-release}"
@@ -40,14 +39,12 @@ fi
 if [[ "$COLOR_ENABLED" == "1" ]]; then
     GREEN="\033[0;32m"
     YELLOW="\033[0;33m"
-    RED="\033[0;31m"
     LIGHTBLUE="\033[1;34m"
     GREY="\033[1;30m"
     NC="\033[0m"
 else
     GREEN=""
     YELLOW=""
-    RED=""
     LIGHTBLUE=""
     GREY=""
     NC=""
@@ -277,7 +274,9 @@ run_doxygen() {
 launch_emscripten_server() {
     local port="6931"
     local base_dir="$PROJECT_ROOT"
-    local app_name="$(resolve_project_name)"
+    local app_name
+    local -a pids=()
+    app_name="$(resolve_project_name)"
 
     # Kill any existing emrun processes first
     if command -v pkill >/dev/null 2>&1; then
@@ -285,9 +284,9 @@ launch_emscripten_server() {
         pkill -f 'python.*emscripten_server' >/dev/null 2>&1 || true
     fi
     if command -v lsof >/dev/null 2>&1; then
-        pids=$(lsof -ti tcp:"$port" || true)
-        if [[ -n "$pids" ]]; then
-            kill -9 $pids >/dev/null 2>&1 || true
+        mapfile -t pids < <(lsof -ti tcp:"$port" || true)
+        if ((${#pids[@]} > 0)); then
+            kill -9 "${pids[@]}" >/dev/null 2>&1 || true
         fi
     elif command -v fuser >/dev/null 2>&1; then
         fuser -k "$port"/tcp >/dev/null 2>&1 || true
