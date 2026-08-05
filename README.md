@@ -1,7 +1,12 @@
 NixonCpp
 ========
 
-[![CI](https://github.com/tomasmark79/NixonCpp/actions/workflows/ci.yml/badge.svg)](https://github.com/tomasmark79/NixonCpp/actions/workflows/ci.yml)
+[![Quality](https://github.com/tomasmark79/NixonCpp/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/quality.yml)
+[![Native](https://github.com/tomasmark79/NixonCpp/actions/workflows/native.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/native.yml)
+[![Static analysis](https://github.com/tomasmark79/NixonCpp/actions/workflows/static-analysis.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/static-analysis.yml)
+[![Sanitizers](https://github.com/tomasmark79/NixonCpp/actions/workflows/sanitizers.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/sanitizers.yml)
+[![Cross builds](https://github.com/tomasmark79/NixonCpp/actions/workflows/cross-builds.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/cross-builds.yml)
+[![Documentation](https://github.com/tomasmark79/NixonCpp/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/tomasmark79/NixonCpp/actions/workflows/docs.yml)
 
 <p align="center">
   <img src="assets/NixonCppLogo.svg"  alt="NixonCpp Logo" width="40%">
