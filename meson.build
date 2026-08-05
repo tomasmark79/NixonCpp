@@ -17,8 +17,6 @@ lib_name = project_name + 'Lib'
 # Build/target flags
 is_wasm = meson.get_external_property('system', host_machine.system()) == 'emscripten'
 is_windows = host_machine.system() == 'windows'
-is_linux = host_machine.system() == 'linux'
-is_darwin = host_machine.system() == 'darwin'
 is_cross = meson.is_cross_build()
 is_native = not is_cross and not is_wasm and not is_windows
 fmt_header_only = is_wasm or is_windows or is_cross
@@ -30,25 +28,35 @@ build_type = get_option('buildtype')
 is_debug_build = build_type == 'debug' or build_type == 'debugoptimized'
 wasm_opt_level = get_option('wasm_opt_level')
 
-# Required dependencies (optional for cross builds)
-fmt_dep = dependency('fmt', required: false)
-if not fmt_dep.found()
-  fmt_dep = declare_dependency()  # Empty dependency, assuming headers are available
-  warning('fmt not found, assuming headers are in system path')
-endif
+# Native builds require package metadata. Cross, Windows and WASM builds use
+# these libraries header-only, so validate the actual headers supplied by the
+# toolchain without pulling in irrelevant pkg-config link dependencies.
+cpp_compiler = meson.get_compiler('cpp')
 
-# nlohmann_json is header-only, should work
-json_dep = dependency('nlohmann_json', required: false)
-if not json_dep.found()
+if is_native
+  fmt_dep = dependency('fmt', required: true)
+  json_dep = dependency('nlohmann_json', required: true)
+  cxxopts_dep = dependency('cxxopts', required: true)
+  fmt_status = 'dependency'
+  json_status = 'dependency'
+  cxxopts_status = 'dependency'
+else
+  if not cpp_compiler.has_header('fmt/format.h')
+    error('fmt headers not found in the cross toolchain')
+  endif
+  if not cpp_compiler.has_header('nlohmann/json.hpp')
+    error('nlohmann_json headers not found in the cross toolchain')
+  endif
+  if not cpp_compiler.has_header('cxxopts.hpp')
+    error('cxxopts headers not found in the cross toolchain')
+  endif
+
+  fmt_dep = declare_dependency()
   json_dep = declare_dependency()
-  warning('nlohmann_json not found, assuming headers are in system path')
-endif
-
-# cxxopts is header-only, should work
-cxxopts_dep = dependency('cxxopts', required: false)
-if not cxxopts_dep.found()
   cxxopts_dep = declare_dependency()
-  warning('cxxopts not found, assuming headers are in system path')
+  fmt_status = 'headers'
+  json_status = 'headers'
+  cxxopts_status = 'headers'
 endif
 
 # Optional dependencies for tests
@@ -85,18 +93,7 @@ lib_sources = [
   'src/lib/Utils/String/StringFormatter.cpp',
 ]
 
-# Platform-specific compilation flags
-platform_args = []
-
-if is_windows
-  platform_args += ['-DWIN32', '-D_WIN32']
-elif is_linux
-  platform_args += ['-D__linux__']
-elif is_darwin
-  platform_args += ['-D__APPLE__']
-endif
-
-lib_cpp_args = platform_args
+lib_cpp_args = []
 if fmt_header_only
   lib_cpp_args += ['-DFMT_HEADER_ONLY']
 endif
@@ -281,9 +278,9 @@ summary({
 }, section: 'Directories')
 
 summary({
-  'fmt': fmt_dep.found(),
-  'nlohmann_json': json_dep.found(),
-  'cxxopts': cxxopts_dep.found(),
+  'fmt': fmt_status,
+  'nlohmann_json': json_status,
+  'cxxopts': cxxopts_status,
   'gtest': gtest_dep.found(),
 }, section: 'Dependencies')
 
