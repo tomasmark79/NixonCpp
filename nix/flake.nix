@@ -26,7 +26,7 @@
         pkgsWasm = import nixpkgs-wasm { inherit system; };
         pkgsAarch64 = pkgs.pkgsCross.aarch64-multiplatform;
 
-        nixonCpp = pkgs.stdenv.mkDerivation {
+        projectPackage = pkgs.stdenv.mkDerivation {
           pname = "NixonCpp";
           version = "0.0.1";
 
@@ -58,13 +58,13 @@
       in
       {
         # ── Nix package ──────────────────────────────────────────────────────
-        packages.NixonCpp = nixonCpp;
-        packages.default = nixonCpp;
+        packages.NixonCpp = projectPackage;
+        packages.default = projectPackage;
 
         # ── Runnable app ─────────────────────────────────────────────────────
         apps.NixonCpp = {
           type = "app";
-          program = "${nixonCpp}/bin/NixonCpp";
+          program = "${projectPackage}/bin/NixonCpp";
         };
         apps.default = self.apps.${system}.NixonCpp;
 

@@ -199,6 +199,23 @@ app_sources = [
   'src/app/Application.cpp',
 ]
 
+# Keep the development asset tree synchronized on every build. The helper only
+# updates its stamp when the contents actually change, so dependent targets are
+# not rebuilt unnecessarily. This also detects added and removed nested files.
+asset_sync_script = meson.project_source_root() / 'scripts' / 'sync-assets.sh'
+asset_sync = custom_target('sync-assets',
+  output: 'assets-sync.stamp',
+  command: [
+    find_program('bash'),
+    asset_sync_script,
+    meson.project_source_root() / 'assets',
+    meson.project_build_root() / 'assets',
+    '@OUTPUT@',
+  ],
+  build_by_default: true,
+  build_always_stale: true,
+)
+
 # WebAssembly needs special handling - embed assets into the binary
 app_deps = is_native or is_wasm ? [lib_dep, cxxopts_dep] : [lib_dep]
 
@@ -212,6 +229,7 @@ if is_wasm
       '--shell-file', meson.project_source_root() / 'assets' / 'index.html',
       '--embed-file', meson.project_source_root() / ('assets@/share/' + project_name + '/assets'),
     ],
+    link_depends: asset_sync,
     install: true,
   )
 elif is_windows
@@ -232,13 +250,6 @@ else
     dependencies: app_deps,
     install: true,
   )
-endif
-
-# Copy assets to build directory for development/testing.
-# Skip only on native Windows builds where cp may not be available.
-# This ensures assets are available when running the application from the build directory.
-if not is_wasm and (not is_windows or meson.is_cross_build())
-  run_command('cp', '-r', meson.project_source_root() / 'assets', meson.project_build_root(), check: false)
 endif
 
 # Install assets for production deployment

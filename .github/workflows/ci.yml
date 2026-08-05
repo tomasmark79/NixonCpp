@@ -48,6 +48,9 @@ jobs:
       - name: Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v13
 
+      - name: Test project rename
+        run: ./scripts/rename-test.sh
+
       - name: Build
         run: nix develop ./nix --command make build
 

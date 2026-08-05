@@ -3,26 +3,11 @@ set -euo pipefail
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-get_project_name() {
-  local name
-  name=$(grep -m1 -E "project\(['\"][^'\"]+['\"]" "$PROJECT_ROOT/meson.build" 2>/dev/null \
-    | sed -E "s/.*project\(['\"]([^'\"]+)['\"].*/\1/")
-  if [[ -z "$name" ]]; then
-    name="NixonCpp"
-  fi
-  echo "$name"
-}
-
-KEEP_FINAL=0
 LIST_ARG=""
 DRY_RUN=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --keep)
-      KEEP_FINAL=1
-      shift
-      ;;
     --list)
       LIST_ARG="$2"
       shift 2
@@ -32,7 +17,7 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     -h|--help)
-      echo "Usage: $(basename "$0") [--list Name1,Name2,...] [--keep] [--dry-run]"
+      echo "Usage: $(basename "$0") [--list Name1,Name2,...] [--dry-run]"
       echo "       $(basename "$0") [--dry-run] Name1 Name2 Name3 ..."
       exit 0
       ;;
@@ -42,19 +27,25 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-ORIGINAL_NAME="$(get_project_name)"
-
 if [[ -n "$LIST_ARG" ]]; then
   IFS=',' read -r -a NAMES <<< "$LIST_ARG"
 elif [[ $# -gt 0 ]]; then
   NAMES=("$@")
 else
-  NAMES=("AlphaApp" "BetaTool" "GammaSuite")
+  NAMES=("SampleApp")
 fi
 
-if [[ "$KEEP_FINAL" -eq 0 ]]; then
-  NAMES+=("$ORIGINAL_NAME")
-fi
+TEST_ROOT="$(mktemp -d "${TMPDIR:-/tmp}/nixoncpp-rename-test.XXXXXX")"
+trap 'rm -rf -- "$TEST_ROOT"' EXIT
+
+tar \
+  --exclude='./.git' \
+  --exclude='./build' \
+  --exclude='./docs' \
+  --exclude='./.direnv' \
+  --exclude='./.emscripten_cache' \
+  --exclude='./result' \
+  -C "$PROJECT_ROOT" -cf - . | tar -C "$TEST_ROOT" -xf -
 
 echo "🔁 Rename test sequence: ${NAMES[*]}"
 
@@ -63,9 +54,18 @@ for name in "${NAMES[@]}"; do
     continue
   fi
   if [[ "$DRY_RUN" -eq 1 ]]; then
-    echo "[dry-run] $PROJECT_ROOT/scripts/rename.sh $name"
+    echo "[dry-run] $TEST_ROOT/scripts/rename.sh $name"
   else
-    "$PROJECT_ROOT/scripts/rename.sh" "$name"
+    "$TEST_ROOT/scripts/rename.sh" "$name"
+
+    grep -q "project('$name'" "$TEST_ROOT/meson.build"
+    grep -q "packages.$name = projectPackage" "$TEST_ROOT/nix/flake.nix"
+    grep -q "apps.$name =" "$TEST_ROOT/nix/flake.nix"
+    grep -q "program = \"\${projectPackage}/bin/$name\"" "$TEST_ROOT/nix/flake.nix"
+
+    if command -v nix >/dev/null 2>&1; then
+      nix flake show "$TEST_ROOT/nix" >/dev/null
+    fi
   fi
   echo "---"
   sleep 0.1

@@ -75,6 +75,7 @@ FILES=(
   "Makefile"
   "README.md"
   "Doxyfile"
+  "nix/flake.nix"
   ".vscode/launch.json"
   ".vscode/launch-windows.json"
   "assets/index.html"
