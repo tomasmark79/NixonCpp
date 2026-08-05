@@ -375,7 +375,7 @@
       }
 
       function appendInlineMarkdown(parent, text, repositoryUrl) {
-        var tokenPattern = /(`[^`]+`|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g;
+        var tokenPattern = /(`[^`]+`|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|<https?:\/\/[^>]+>)/g;
         var cursor = 0;
         var match;
 
@@ -393,6 +393,14 @@
             var strong = document.createElement('strong');
             strong.textContent = token.slice(2, -2);
             parent.appendChild(strong);
+          } else if (token.charAt(0) === '<') {
+            var autoLinkUrl = token.slice(1, -1);
+            var autoLink = document.createElement('a');
+            autoLink.textContent = autoLinkUrl;
+            autoLink.href = autoLinkUrl;
+            autoLink.target = '_blank';
+            autoLink.rel = 'noreferrer';
+            parent.appendChild(autoLink);
           } else {
             var linkMatch = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
             var link = document.createElement('a');
