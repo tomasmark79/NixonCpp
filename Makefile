@@ -180,7 +180,7 @@ install:
 	@./scripts/solution-controller.sh both "Install built components" native release
 
 define MAKE_PACKAGE_RULE
-package-$(1)-$(2):
+package-$(1)-$(2): $(if $(filter wasm,$(1)),build-$(1)-$(2))
 	@./scripts/solution-controller.sh both "Create Package" $(1) $(2)
 endef
 
@@ -198,8 +198,7 @@ package-aarch64:
 package-windows:
 	@./scripts/solution-controller.sh both "Create Package" windows release
 
-package-wasm:
-	@./scripts/solution-controller.sh both "Create Package" wasm release
+package-wasm: package-wasm-release
 
 package-all: package-native package-aarch64 package-windows package-wasm
 	@echo ""

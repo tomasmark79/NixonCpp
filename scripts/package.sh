@@ -99,14 +99,18 @@ fi
 
 # Create package directory structure
 rm -rf "$PACKAGE_DIR"
-mkdir -p "$PACKAGE_DIR"/"bin" "$PACKAGE_DIR"/"lib" "$PACKAGE_DIR"/"share/${APP_NAME}" "$PACKAGE_DIR"/"include/${LIB_NAME}"
+if [[ "$ARCH" == "wasm" || "$ARCH" == "emscripten" ]]; then
+    mkdir -p "$PACKAGE_DIR"
+else
+    mkdir -p "$PACKAGE_DIR"/"bin" "$PACKAGE_DIR"/"lib" "$PACKAGE_DIR"/"share/${APP_NAME}" "$PACKAGE_DIR"/"include/${LIB_NAME}"
+fi
 
 echo "📋 Copying files..."
 
 # Platform-specific packaging
 case "$ARCH" in
     wasm|emscripten)
-        # WebAssembly - copy .js, .wasm and .html files
+        # WebAssembly runtime files
         cp "$BUILD_DIR/${APP_NAME}.js" "$PACKAGE_DIR/"
         cp "$BUILD_DIR/${APP_NAME}.wasm" "$PACKAGE_DIR/"
         if [[ -f "$BUILD_DIR/${APP_NAME}.html" ]]; then
@@ -115,6 +119,24 @@ case "$ARCH" in
         else
             echo "   ✓ WebAssembly: ${APP_NAME}.js + .wasm"
         fi
+
+        # Debug source maps refer to the staged debug-src tree. Keep both
+        # artifacts together so the extracted directory is directly deployable.
+        case "$BUILD_TYPE" in
+            debug|debugoptimized)
+                if [[ ! -f "$BUILD_DIR/${APP_NAME}.wasm.map" ]]; then
+                    echo "❌ WebAssembly source map not found: $BUILD_DIR/${APP_NAME}.wasm.map" >&2
+                    exit 1
+                fi
+                if [[ ! -d "$BUILD_DIR/debug-src" ]]; then
+                    echo "❌ Staged WebAssembly sources not found: $BUILD_DIR/debug-src" >&2
+                    exit 1
+                fi
+                cp "$BUILD_DIR/${APP_NAME}.wasm.map" "$PACKAGE_DIR/"
+                cp -R "$BUILD_DIR/debug-src" "$PACKAGE_DIR/"
+                echo "   ✓ Debug support: ${APP_NAME}.wasm.map + debug-src/"
+                ;;
+        esac
         ;;
         
     windows|win64)
@@ -153,8 +175,8 @@ case "$ARCH" in
             
             # Fix RPATH to use standard system paths
             if command -v patchelf &> /dev/null; then
-                patchelf --set-rpath '$ORIGIN/../lib:/usr/local/lib:/usr/lib:/lib' "$PACKAGE_DIR/bin/${APP_NAME}" 2>/dev/null || true
-                patchelf --set-rpath '$ORIGIN:/usr/local/lib:/usr/lib:/lib' "$PACKAGE_DIR/lib/lib${LIB_NAME}.so" 2>/dev/null || true
+                patchelf --set-rpath "\$ORIGIN/../lib:/usr/local/lib:/usr/lib:/lib" "$PACKAGE_DIR/bin/${APP_NAME}" 2>/dev/null || true
+                patchelf --set-rpath "\$ORIGIN:/usr/local/lib:/usr/lib:/lib" "$PACKAGE_DIR/lib/lib${LIB_NAME}.so" 2>/dev/null || true
             fi
             
             echo "   ✓ Library: lib${LIB_NAME}.so"
@@ -333,6 +355,14 @@ Notes:
 - Assets are embedded in the WebAssembly binary
 - Requires JavaScript runtime (Node.js or browser)
 EOF
+        case "$BUILD_TYPE" in
+            debug|debugoptimized)
+                cat >> "$PACKAGE_DIR/README.txt" << 'EOF'
+- Debug builds include the source map and staged C/C++ sources
+- Deploy the complete directory so DevTools can resolve debug-src URLs
+EOF
+                ;;
+        esac
         ;;
         
     windows|win64)
@@ -440,7 +470,7 @@ replace_tokens_in_file "$PACKAGE_DIR/README.txt" "$APP_NAME" "$LIB_NAME"
 # Create tarball
 echo ""
 echo "📦 Creating tarball..."
-tar -czf "build/$PACKAGE_NAME.tar.gz" -C build "$(basename $PACKAGE_DIR)"
+tar -czf "build/$PACKAGE_NAME.tar.gz" -C build "$(basename "$PACKAGE_DIR")"
 
 echo ""
 echo "✅ Package created successfully!"
@@ -450,18 +480,19 @@ echo "   Directory: $PACKAGE_DIR/"
 echo "   Tarball: build/$PACKAGE_NAME.tar.gz"
 echo ""
 
-PACKAGE_BASENAME="$(basename $PACKAGE_DIR)"
+PACKAGE_BASENAME="$(basename "$PACKAGE_DIR")"
 
 case "$ARCH" in
     wasm|emscripten)
         echo "To use WebAssembly package:"
         echo "   node $PACKAGE_DIR/${APP_NAME}.js"
+        echo "   or deploy the complete $PACKAGE_DIR directory to a web server"
         ;;
     windows|win64)
         echo "To deploy on Windows:"
         echo "   1. Extract: tar -xzf build/$PACKAGE_NAME.tar.gz"
         echo "   2. Copy $PACKAGE_BASENAME to Windows machine"
-        echo "   3. Run: $PACKAGE_BASENAME\\bin\\${APP_NAME}.exe"
+        printf '%s\n' "   3. Run: $PACKAGE_BASENAME\\bin\\${APP_NAME}.exe"
         ;;
     *)
         echo "To deploy on $ARCH_DISPLAY device:"
