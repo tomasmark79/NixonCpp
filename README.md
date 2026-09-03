@@ -73,6 +73,12 @@ API documentation is available at <https://tomasmark79.github.io/NixonCpp/html/i
 
 Nix is recommended. Native builds may also use a local C++20 compiler, Meson, Ninja, and the required libraries; cross-builds require Nix.
 
+## Support
+
+If NixonCpp helps with your projects, you can support its development:
+
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?logo=paypal)](https://paypal.me/TomasMark)
+
 ## License
 
 [MIT](LICENSE)
