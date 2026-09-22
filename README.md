@@ -11,7 +11,11 @@
   <img src="assets/NixonCppLogo.svg" alt="NixonCpp logo" width="40%">
 </p>
 
-NixonCpp is a C++20 project template for applications and libraries. It combines Meson with reproducible Nix environments, native tests, static analysis, sanitizers, packaging, and cross-compilation for Linux ARM64, Windows, and WebAssembly.
+## C++20 applications and libraries
+
+A project template built with **Meson** and reproducible **Nix** environments.
+
+Native tests, static analysis, sanitizers, and packaging — with cross-compilation for **Linux ARM64**, **Windows**, and **WebAssembly**.
 
 ## Application and documentation
 
