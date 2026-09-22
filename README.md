@@ -11,7 +11,7 @@
   <img src="assets/NixonCppLogo.svg" alt="NixonCpp logo" width="40%">
 </p>
 
-## C++ applications and libraries
+## Create your C++ applications and libraries
 
 A project template built with **Meson** and reproducible **Nix** environments.
 
@@ -21,8 +21,6 @@ Native tests, static analysis, sanitizers, and packaging — with cross-compilat
 
 - [Run NixonCpp in your browser](https://tomasmark79.github.io/NixonCpp/) — WebAssembly debug build; C++ sources are available in DevTools under `debug-src/src`.
 - [Browse the API documentation](https://tomasmark79.github.io/NixonCpp/html/index.html) — Doxygen reference for the C++ application and library.
-
-The [Documentation workflow](.github/workflows/docs.yml) publishes both from `main`, including the debug source map and project sources. GitHub Pages uses **GitHub Actions** as its deployment source; generated files are not stored in the branch.
 
 ## Features
 
@@ -42,36 +40,6 @@ cd NixonCpp
 nix develop ./nix
 make test
 ```
-
-To create a project from the template:
-
-```bash
-./scripts/rename.sh MyApp MyAppLib myapp
-```
-
-For repeated use, source [scripts/clonenixoncpp.sh](scripts/clonenixoncpp.sh) and run:
-
-```bash
-clonenixoncpp MyProject MyApp MyAppLib myapp
-```
-
-## Common commands
-
-| Command | Purpose |
-| --- | --- |
-| `make build` | Native release build |
-| `make debug` | Native debug build |
-| `make test` | Build and run native tests |
-| `make format` | Format C and C++ sources |
-| `make format-check` | Verify formatting without modifying files |
-| `make check` | Run clang-tidy |
-| `make test-sanitizers` | Run tests with ASan and UBSan |
-| `make cross-all` | Build all cross-compilation targets |
-| `make package-all` | Create native and cross-platform packages |
-| `make nix-build` | Build the Nix package |
-| `make doxygen` | Generate documentation locally |
-
-Run `make help` for the complete target list.
 
 ## Development environment
 
