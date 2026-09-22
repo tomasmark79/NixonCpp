@@ -22,6 +22,14 @@ Native tests, static analysis, sanitizers, and packaging — with cross-compilat
 - [Run NixonCpp in your browser](https://tomasmark79.github.io/NixonCpp/) — WebAssembly debug build; C++ sources are available in DevTools under `debug-src/src`.
 - [Browse the API documentation](https://tomasmark79.github.io/NixonCpp/html/index.html) — Doxygen reference for the C++ application and library.
 
+## Try it on NixOS
+
+On NixOS with flakes enabled, you can build and run the sample application directly from GitHub:
+
+```bash
+nix run 'github:tomasmark79/NixonCpp?dir=nix'
+```
+
 ## Quick start
 
 For a first native build on Linux, have **Git** and **Nix with flakes enabled** installed. The Nix shell supplies the compiler, build tools, and project dependencies. Its first launch may take a while as packages are downloaded.
