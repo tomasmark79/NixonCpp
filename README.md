@@ -11,7 +11,7 @@
   <img src="assets/NixonCppLogo.svg" alt="NixonCpp logo" width="40%">
 </p>
 
-## C++20 applications and libraries
+## C++ applications and libraries
 
 A project template built with **Meson** and reproducible **Nix** environments.
 
@@ -26,6 +26,7 @@ The [Documentation workflow](.github/workflows/docs.yml) publishes both from `ma
 
 ## Features
 
+- C++20 by default
 - Application, shared library, and static library targets
 - Nix development environments and reproducible package builds
 - GoogleTest, clang-format, clang-tidy, AddressSanitizer, and UBSan
