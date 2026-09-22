@@ -204,6 +204,8 @@ if is_wasm
     dependencies: app_deps,
     name_suffix: 'html',
     link_args: [
+      # assets/index.html creates the WebGL context before loading the runtime.
+      '-sGL_PREINITIALIZED_CONTEXT=1',
       '--shell-file', meson.project_source_root() / 'assets' / 'index.html',
       '--embed-file', meson.project_source_root() / ('assets@/share/' + project_name + '/assets'),
       '--embed-file', meson.project_source_root() / ('README.md@/share/' + project_name + '/README.md'),
