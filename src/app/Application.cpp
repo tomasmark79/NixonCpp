@@ -5,6 +5,7 @@
 
 #if defined(__EMSCRIPTEN__)
 #include <emscripten.h>
+#include <emscripten/version.h>
 #endif
 
 const std::string appName = "NixonCpp";
@@ -46,6 +47,10 @@ int main(int argc, char **argv) {
         << ctx.customStringsLoader->getLocalizedString("GitHub", "cs").value_or(NA) << ": "
         << ctx.customStringsLoader->getCustomKey("GitHub", "url").value_or(NA);
     ctx.logger->infoStream() << ctx.platformInfo->getPlatformName() << " platform detected.";
+#if defined(__EMSCRIPTEN__)
+    ctx.logger->infoStream() << "Compiled with Emscripten " << __EMSCRIPTEN_MAJOR__ << '.'
+                             << __EMSCRIPTEN_MINOR__ << '.' << __EMSCRIPTEN_TINY__;
+#endif
 
     // ---
     auto library = std::make_unique<nixoncpp::v1::NixonCppLib>(ctx);
