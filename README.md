@@ -13,7 +13,7 @@
 
 ## Create your C++ applications and libraries
 
-A project template built with **Meson** and reproducible **Nix** environments.
+A starting point for command-line applications and reusable C++ libraries, built with **Meson** and reproducible **Nix** environments.
 
 Native tests, static analysis, sanitizers, and packaging — with cross-compilation for **Linux ARM64**, **Windows**, and **WebAssembly**.
 
@@ -21,6 +21,45 @@ Native tests, static analysis, sanitizers, and packaging — with cross-compilat
 
 - [Run NixonCpp in your browser](https://tomasmark79.github.io/NixonCpp/) — WebAssembly debug build; C++ sources are available in DevTools under `debug-src/src`.
 - [Browse the API documentation](https://tomasmark79.github.io/NixonCpp/html/index.html) — Doxygen reference for the C++ application and library.
+
+## Quick start
+
+For a first native build on Linux, have **Git** and **Nix with flakes enabled** installed. The Nix shell supplies the compiler, build tools, and project dependencies. Its first launch may take a while as packages are downloaded.
+
+```bash
+git clone https://github.com/tomasmark79/NixonCpp.git
+cd NixonCpp
+nix develop ./nix
+
+# Build and run the native debug application
+make debug
+./build/builddir-debug/NixonCpp
+
+# Run the test suite
+make test
+```
+
+Run the build, application, and tests from the repository root inside the Nix shell. The sample application prints its detected platform, initializes the library, reports `Successfully loaded asset: NixonCppLogo.svg`, and exits. The test command should finish with no failures.
+
+## Where to start
+
+Start with [src/app/Application.cpp](src/app/Application.cpp), which contains `main()`, command-line options, and the sample application flow. Change its behavior, then repeat the build and run commands above.
+
+| Location | Purpose |
+| --- | --- |
+| [src/app/](src/app/) | Application entry point and behavior |
+| [src/lib/](src/lib/) | Library implementation and shared utilities |
+| [include/](include/) | Public library headers |
+| [assets/](assets/) | Runtime assets and the WebAssembly HTML shell |
+| [tests/](tests/) | Unit tests and their Meson configuration |
+| [meson.build](meson.build) | Build targets, source lists, dependencies, and compiler options |
+| [nix/](nix/) | Reproducible development environments and cross-compilation toolchains |
+
+For reusable functionality, edit [src/lib/NixonCppLib.cpp](src/lib/NixonCppLib.cpp) and its public interface in [include/NixonCppLib/NixonCppLib.hpp](include/NixonCppLib/NixonCppLib.hpp). Add tests under `tests/` and register new source files in the appropriate `meson.build` file.
+
+## Make it your own
+
+Follow [Creating your own project](docs/creating-your-own-project.md) to rename the template, update project metadata and attribution, and configure CI and publishing for your repository.
 
 ## Features
 
@@ -32,22 +71,11 @@ Native tests, static analysis, sanitizers, and packaging — with cross-compilat
 - Doxygen documentation published through GitHub Pages
 - Project renaming, packaging, VS Code, devcontainer, and Codespaces support
 
-## Quick start
+## Further guides
 
-```bash
-git clone https://github.com/tomasmark79/NixonCpp.git
-cd NixonCpp
-nix develop ./nix
-make test
-```
-
-## Development environment
-
-- VS Code tasks: [.vscode/tasks.json](.vscode/tasks.json)
-- Devcontainer: [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
-- Meson options: [meson_options.txt](meson_options.txt)
-
-Nix is recommended. Native builds may also use a local C++20 compiler, Meson, Ninja, and the required libraries; cross-builds require Nix.
+- [Build targets and packaging](docs/build-targets.md) — native Linux, Linux ARM64, Windows, and WebAssembly builds, build types, and deployable packages.
+- [Debugging](docs/debugging.md) — native debugging with GDB and browser debugging with C++ source maps.
+- [Development tools](docs/development-tools.md) — tests, formatting, static analysis, sanitizers, and editor integration.
 
 ## Support
 
