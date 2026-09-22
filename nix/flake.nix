@@ -5,11 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
-    # Pinned nixpkgs for the WASM shell – Emscripten 3.1.73 ships with an
-    # LLVM whose llvm-dwarfdump still supports the -t flag required by
-    # Emscripten's source-map generator.  Newer LLVM (≥21) removed -t,
-    # which breaks -gsource-map at link time.
-    nixpkgs-wasm.url = "github:NixOS/nixpkgs/1cb1c02a6b1b7cf67e3d7731cbbf327a53da9679";
+    # Current WASM toolchain; exact revision is recorded in flake.lock.
+    nixpkgs-wasm.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs =
