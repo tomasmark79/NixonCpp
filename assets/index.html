@@ -375,7 +375,7 @@
       }
 
       function appendInlineMarkdown(parent, text, repositoryUrl) {
-        var tokenPattern = /(`[^`]+`|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|<https?:\/\/[^>]+>)/g;
+        var tokenPattern = /(`[^`]+`|\*\*[^*]+\*\*|\[!\[[^\]]*\]\([^)]+\)\]\([^)]+\)|!\[[^\]]*\]\([^)]+\)|\[[^\]]+\]\([^)]+\)|<https?:\/\/[^>]+>)/g;
         var cursor = 0;
         var match;
 
@@ -401,6 +401,22 @@
             autoLink.target = '_blank';
             autoLink.rel = 'noreferrer';
             parent.appendChild(autoLink);
+          } else if (token.slice(0, 3) === '[![' || token.slice(0, 2) === '![') {
+            var imageMatch = token.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+            var image = document.createElement('img');
+            image.alt = imageMatch[1];
+            image.src = resolveReadmeLink(imageMatch[2], repositoryUrl);
+            image.style.maxWidth = '100%';
+            if (token.charAt(0) === '[') {
+              var imageLink = document.createElement('a');
+              imageLink.href = resolveReadmeLink(token.match(/\]\(([^)]+)\)$/)[1], repositoryUrl);
+              imageLink.target = '_blank';
+              imageLink.rel = 'noreferrer';
+              imageLink.appendChild(image);
+              parent.appendChild(imageLink);
+            } else {
+              parent.appendChild(image);
+            }
           } else {
             var linkMatch = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
             var link = document.createElement('a');
