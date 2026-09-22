@@ -6,9 +6,17 @@ on:
     paths:
       - ".github/workflows/docs.yml"
       - "Doxyfile"
+      - "Makefile"
+      - "README.md"
+      - "assets/**"
       - "include/**"
+      - "meson.build"
+      - "meson_options.txt"
+      - "nix/**"
+      - "scripts/**"
       - "src/**"
       - "tests/**"
+      - "vendor/**"
   workflow_dispatch:
 
 permissions:
@@ -35,13 +43,27 @@ jobs:
       - name: Generate Doxygen documentation
         run: nix develop ./nix --command make doxygen
 
+      - name: Build and package WebAssembly debug application
+        run: make package-wasm-debug
+
+      - name: Assemble website
+        shell: bash
+        run: |
+          mkdir -p build/pages
+          cp -R build/package-wasm-debug/. build/pages/
+          app_html=(build/pages/*.html)
+          test "${#app_html[@]}" -eq 1
+          mv "${app_html[0]}" build/pages/index.html
+          cp -R docs/html build/pages/html
+          touch build/pages/.nojekyll
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload documentation
+      - name: Upload debug application and documentation
         uses: actions/upload-pages-artifact@v4
         with:
-          path: docs
+          path: build/pages
 
   deploy:
     needs: build
@@ -50,6 +72,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy documentation
+      - name: Deploy debug application and documentation
         id: deployment
         uses: actions/deploy-pages@v4

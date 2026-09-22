@@ -13,6 +13,8 @@
 
 NixonCpp is a C++20 project template for applications and libraries. It combines Meson with reproducible Nix environments, native tests, static analysis, sanitizers, packaging, and cross-compilation for Linux ARM64, Windows, and WebAssembly.
 
+Run the [NixonCpp debug application](https://tomasmark79.github.io/NixonCpp/) directly in your browser. C++ sources are available in DevTools under `debug-src/src`.
+
 ## Features
 
 - Application, shared library, and static library targets
@@ -63,7 +65,7 @@ Run `make help` for the complete target list.
 
 ## Documentation
 
-API documentation is available at <https://tomasmark79.github.io/NixonCpp/html/index.html>. The [Documentation workflow](.github/workflows/docs.yml) regenerates and publishes it from `main`; generated HTML is not stored in the branch.
+API documentation is available at <https://tomasmark79.github.io/NixonCpp/html/index.html>. The [Documentation workflow](.github/workflows/docs.yml) publishes the WebAssembly debug application, its source map and project sources, and the API documentation from `main`; generated files are not stored in the branch. GitHub Pages must use **GitHub Actions** as its deployment source.
 
 ## Development environment
 
