@@ -86,6 +86,10 @@ If NixonCpp helps with your projects, you can support its development:
 
 [![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?logo=paypal)](https://paypal.me/TomasMark)
 
+## Authorship and AI assistance
+
+This template was designed and developed through human effort. AI was used as an assistant during later stages of development; it was not used to randomly assemble the project. The architecture, implementation decisions, and responsibility for the result remain with the author.
+
 ## License
 
 [MIT](LICENSE)
