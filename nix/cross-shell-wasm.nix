@@ -32,8 +32,9 @@ pkgs.mkShell {
 
     # Emscripten's cache lives inside the Nix store (read-only).
     # Redirect it to a writable location so the linker can create
-    # lock files and symbol caches.
-    export EM_CACHE="$PWD/.emscripten_cache"
+    # lock files and symbol caches. Isolate each Nix toolchain so upgrades
+    # cannot reuse incompatible sysroot headers or system libraries.
+    export EM_CACHE="$PWD/.emscripten_cache/${builtins.baseNameOf (toString pkgs.emscripten)}"
     mkdir -p "$EM_CACHE"
 
     echo "🔨 $app_name WebAssembly (Emscripten) Cross-Compilation Environment"
