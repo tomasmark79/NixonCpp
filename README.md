@@ -77,6 +77,12 @@ Follow [Creating your own project](docs/creating-your-own-project.md) to rename 
 - [Debugging](docs/debugging.md) — native debugging with GDB and browser debugging with C++ source maps.
 - [Development tools](docs/development-tools.md) — tests, formatting, static analysis, sanitizers, and editor integration.
 
+## Why I built this
+
+The older I get, the more I look for real simplicity in what I do. I built this template for myself out of a desire for one comprehensive, reusable development environment for software that can serve different purposes and run across platforms. A consistent foundation lets me spend less time putting the tools together and more time building the software itself. 🙂
+
+On my NixOS system, a single command — `make package-all` — now builds the application for native Linux, Linux ARM64, Windows, and WebAssembly, and packages the results into separate deployment archives.
+
 ## Support
 
 If NixonCpp helps with your projects, you can support its development:
