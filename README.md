@@ -32,6 +32,8 @@ nix run 'github:tomasmark79/NixonCpp?dir=nix'
 
 ## Quick start
 
+NixonCpp also works well in **GitHub Codespaces**, using the included devcontainer configuration for development in your browser.
+
 For a first native build on Linux, have **Git** and **Nix with flakes enabled** installed. The Nix shell supplies the compiler, build tools, and project dependencies. Its first launch may take a while as packages are downloaded.
 
 ```bash
