@@ -13,7 +13,7 @@
 
 ## Create your C++ applications and libraries
 
-A starting point for command-line applications and reusable C++ libraries, built with **Meson** and reproducible **Nix** environments.
+A starting point for command-line applications and reusable C++ libraries, built with **Meson** and mdreproducible **Nix** environments.
 
 Native tests, static analysis, sanitizers, and packaging — with cross-compilation for **Linux ARM64**, **Windows**, and **WebAssembly**.
 
@@ -66,6 +66,14 @@ Start with [src/app/Application.cpp](src/app/Application.cpp), which contains `m
 | [nix/](nix/) | Reproducible development environments and cross-compilation toolchains |
 
 For reusable functionality, edit [src/lib/NixonCppLib.cpp](src/lib/NixonCppLib.cpp) and its public interface in [include/NixonCppLib/NixonCppLib.hpp](include/NixonCppLib/NixonCppLib.hpp). Add tests under `tests/` and register new source files in the appropriate `meson.build` file.
+
+## Architecture
+
+The application creates its service context through `UtilsFactory` and passes it to `NixonCppLib`. Utility services handle logging, platform detection, files, assets, and JSON. Nix supplies the toolchains, and Meson builds the shared sources for native Linux, Linux ARM64, Windows, and WebAssembly.
+
+[![NixonCpp architecture: application, library, utility services, and build targets](docs/architecture.svg)](docs/architecture.svg)
+
+[HTML version with architecture notes](docs/architecture.html) — open locally in a browser.
 
 ## Make it your own
 

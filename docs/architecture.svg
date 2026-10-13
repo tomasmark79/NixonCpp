@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="architecture-title architecture-desc" id="architecture-root">
+        <title id="architecture-title">NixonCpp C++ template architecture</title>
+        <desc id="architecture-desc">The application uses NixonCppLib and creates a context of platform, logging, filesystem and JSON services; Nix and Meson build the shared sources for Linux, ARM64, Windows and WebAssembly.</desc>
+        <defs>
+      <style>#architecture-root { color-scheme:light;--paper:#f5f5f5;--ink:#2d3142;--muted:#4f5d75;--soft:#5a6580;--accent:#bf4520;--rule:rgba(45,49,66,.12) }
+      #architecture-root { color: var(--ink); font-family: 'Geist',system-ui,sans-serif; }
+      #architecture-root figure { margin:24px 0 }
+      #architecture-root .canvas { overflow-x:auto }
+      #architecture-root .node { fill:#fff;stroke:var(--ink);stroke-width:1;rx:6 }
+      #architecture-root .focal { fill:#f1e7e4;stroke:var(--accent);stroke-width:1.2;rx:6 }
+      #architecture-root .store { fill:#ebebec;stroke:var(--muted);stroke-width:1;rx:6 }
+      #architecture-root .external { fill:#efeff0;stroke:var(--muted);stroke-width:1;rx:6 }
+      #architecture-root .name { font:600 12px 'Geist',system-ui,sans-serif;fill:var(--ink) }
+      #architecture-root .sub { font:400 9px 'Geist Mono',ui-monospace,monospace;fill:var(--soft) }
+      #architecture-root .tag, #architecture-root .label { font:500 8px 'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;fill:var(--muted) }
+      #architecture-root .group { font:600 14px 'Geist',system-ui,sans-serif;fill:var(--ink) }
+      #architecture-root .edge { fill:none;stroke:var(--muted);stroke-width:1.2;marker-end:url(#architecture-arrow) }
+      #architecture-root .build { stroke-dasharray:5 4 }
+      #architecture-root .mask { fill:var(--paper) }
+      #architecture-root figcaption { display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:12px;line-height:1.6 }
+      #architecture-root .key { display:inline-block;width:28px;border-top:1px solid var(--muted);margin:0 8px 3px 0 }
+      #architecture-root .key.dashed { border-top-style:dashed }
+      #architecture-root .notes { display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:28px;border-top:1px solid var(--rule);padding-top:24px }
+      #architecture-root .notes h2 { font-size:14px;margin:0 0 10px }
+      #architecture-root .notes p { font-size:13px;line-height:1.8;margin:0;color:var(--muted) }
+      #architecture-root code { font: .9em 'Geist Mono',ui-monospace,monospace }
+      #architecture-root a { color:#2e5aa8;text-underline-offset:3px }
+      #architecture-root .notes { grid-template-columns:1fr;gap:24px }
+      #architecture-root .canvas { overflow:visible }
+      #architecture-root a { color:inherit }</style>
+          <marker id="architecture-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#4f5d75"/></marker>
+          <marker id="architecture-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#bf4520"/></marker>
+          <marker id="architecture-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2e5aa8"/></marker>
+        </defs>
+        <rect width="1280" height="720" fill="#f5f5f5"/>
+        <text x="64" y="48" class="group">01 / Runtime structure</text>
+        <text x="64" y="72" class="sub">Arrows indicate service use or context creation.</text>
+
+        <!-- Connectors precede nodes, with separate attachment points and orthogonal routes. -->
+        <path class="edge" d="M344 160 H480"/>
+        <path class="edge" d="M204 220 V312 Q204 320 212 320 H480"/>
+        <path class="edge" d="M620 220 V264"/>
+        <path class="edge" d="M760 320 H904"/>
+        <path class="edge" d="M1044 264 V220"/>
+        <rect x="376" y="140" width="72" height="12" rx="2" class="mask"/><text x="412" y="149" class="label" text-anchor="middle">CALLS API</text>
+        <rect x="292" y="300" width="100" height="12" rx="2" class="mask"/><text x="342" y="309" class="label" text-anchor="middle">CREATES</text>
+        <rect x="628" y="236" width="64" height="12" rx="2" class="mask"/><text x="660" y="245" class="label" text-anchor="middle">USES</text>
+        <rect x="792" y="300" width="80" height="12" rx="2" class="mask"/><text x="832" y="309" class="label" text-anchor="middle">PROVIDES</text>
+        <rect x="1052" y="236" width="56" height="12" rx="2" class="mask"/><text x="1080" y="245" class="label" text-anchor="middle">READS</text>
+
+        <rect x="64" y="100" width="280" height="120" class="node"/>
+        <text x="84" y="124" class="tag">ENTRY POINT</text>
+        <text x="84" y="148" class="name">Application</text>
+        <text x="84" y="168" class="sub">src/app/Application.cpp · main()</text>
+        <text x="84" y="188" class="sub">cxxopts · --help · --write2file</text>
+        <text x="84" y="204" class="sub">Creates context and runs the sample</text>
+
+        <rect x="480" y="100" width="280" height="120" class="focal"/>
+        <text x="500" y="124" class="tag">LIBRARY</text>
+        <text x="500" y="148" class="name">NixonCppLib</text>
+        <text x="500" y="168" class="sub">include/NixonCppLib/NixonCppLib.hpp</text>
+        <text x="500" y="188" class="sub">src/lib/NixonCppLib.cpp</text>
+        <text x="500" y="204" class="sub">Uses ILogger and IAssetManager</text>
+
+        <rect x="904" y="100" width="280" height="120" class="store"/>
+        <text x="924" y="124" class="tag">DATA</text>
+        <text x="924" y="148" class="name">Assets and files</text>
+        <text x="924" y="168" class="sub">assets/customstrings.json · README.md</text>
+        <text x="924" y="188" class="sub">Native: installed files</text>
+        <text x="924" y="204" class="sub">WASM: embedded in a virtual FS</text>
+
+        <rect x="480" y="264" width="280" height="112" class="focal"/>
+        <text x="500" y="288" class="tag">SERVICE COMPOSITION</text>
+        <text x="500" y="312" class="name">UtilsFactory / ApplicationContext</text>
+        <text x="500" y="332" class="sub">src/lib/Utils/UtilsFactory.{hpp,cpp}</text>
+        <text x="500" y="352" class="sub">createFullContext() · I* interfaces</text>
+
+        <rect x="904" y="264" width="280" height="112" class="node"/>
+        <text x="924" y="288" class="tag">PART OF THE LIBRARY</text>
+        <text x="924" y="312" class="name">Utility services</text>
+        <text x="924" y="332" class="sub">Logger · Platform · Filesystem</text>
+        <text x="924" y="352" class="sub">Assets · Json · String · Result</text>
+        <text x="924" y="368" class="sub">fmt · nlohmann_json</text>
+
+        <line x1="64" y1="420" x2="1184" y2="420" stroke="#bfc0c0"/>
+        <text x="64" y="464" class="group">02 / Build system and target artifacts</text>
+        <text x="64" y="488" class="sub">Shared application and library sources; the target platform determines the toolchain and linking strategy.</text>
+
+        <path class="edge build" d="M344 588 H480"/>
+        <path class="edge build" d="M760 588 H904"/>
+        <rect x="372" y="568" width="80" height="12" rx="2" class="mask"/><text x="412" y="577" class="label" text-anchor="middle">TOOLCHAIN</text>
+        <rect x="792" y="568" width="80" height="12" rx="2" class="mask"/><text x="832" y="577" class="label" text-anchor="middle">BUILDS</text>
+
+        <rect x="64" y="528" width="280" height="120" class="external"/>
+        <text x="84" y="552" class="tag">DEVELOPMENT ENVIRONMENT</text>
+        <text x="84" y="576" class="name">Nix / development shells</text>
+        <text x="84" y="596" class="sub">nix/flake.nix · flake.lock</text>
+        <text x="84" y="616" class="sub">nix/cross/*.ini · cross-shell-*.nix</text>
+        <text x="84" y="632" class="sub">Devcontainer / GitHub Codespaces</text>
+
+        <rect x="480" y="528" width="280" height="120" class="node"/>
+        <text x="500" y="552" class="tag">BUILD</text>
+        <text x="500" y="576" class="name">Meson + Ninja</text>
+        <text x="500" y="596" class="sub">Makefile → scripts/build*.sh</text>
+        <text x="500" y="616" class="sub">meson.build · meson_options.txt</text>
+        <text x="500" y="632" class="sub">Application + library + assets</text>
+
+        <rect x="904" y="528" width="280" height="120" class="node"/>
+        <text x="924" y="552" class="tag">OUTPUTS</text>
+        <text x="924" y="576" class="name">Linux · ARM64 · Windows · Web</text>
+        <text x="924" y="596" class="sub">Native / cross binaries and library</text>
+        <text x="924" y="616" class="sub">WASM: Emscripten · HTML + JS + WASM</text>
+        <text x="924" y="632" class="sub">assets/index.html · static library</text>
+        <text x="64" y="688" class="sub">Current source overview · utility classes grouped by purpose · individual CI workflows omitted</text>
+      </svg>
