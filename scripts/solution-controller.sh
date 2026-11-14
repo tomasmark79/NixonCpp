@@ -123,7 +123,11 @@ run_tests() {
         echo "Build directory not found. Building first..."
         run_build
     fi
-    meson test -C "$BUILD_DIR"
+    if [ -z "${PROJECT_NIX_SHELL:-}" ] && command -v nix >/dev/null 2>&1; then
+        nix develop "$PROJECT_ROOT/nix" --command meson test -C "$BUILD_DIR"
+    else
+        meson test -C "$BUILD_DIR"
+    fi
 }
 
 run_install() {
@@ -194,9 +198,18 @@ clang_tidy() {
     local line_filter
     line_filter="$(build_line_filter)"
 
-    find "${source_dirs[@]}" \
-        -type f \( -name "*.c" -o -name "*.cpp" \) -print0 \
-        | xargs -0 -n1 clang-tidy -p "$BUILD_DIR" -system-headers=0 \
+    python3 -c 'import json, os, sys
+db = json.load(open(sys.argv[1]))
+root = os.path.abspath(sys.argv[2])
+allowed = (os.path.join(root, "src") + os.sep, os.path.join(root, "include") + os.sep, os.path.join(root, "tests") + os.sep)
+seen = set()
+for entry in db:
+    f = os.path.abspath(os.path.join(entry["directory"], entry["file"]))
+    if f.startswith(allowed) and os.path.isfile(f) and f not in seen:
+        seen.add(f)
+        sys.stdout.write(f + "\0")
+' "$BUILD_DIR/compile_commands.json" "$PROJECT_ROOT" \
+        | xargs -0 -r -n1 clang-tidy -p "$BUILD_DIR" -system-headers=0 \
             -header-filter="^${PROJECT_ROOT}/(src|include|tests)/" \
             -line-filter="$line_filter"
     echo -e "${GREEN}✓ clang-tidy checks passed${NC}"

@@ -41,6 +41,8 @@ trap 'rm -rf -- "$TEST_ROOT"' EXIT
 tar \
   --exclude='./.git' \
   --exclude='./build' \
+  --exclude='./dist' \
+  --exclude='./third_party' \
   --exclude='./docs' \
   --exclude='./.direnv' \
   --exclude='./.emscripten_cache' \
