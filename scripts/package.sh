@@ -172,14 +172,16 @@ case "$ARCH" in
         cp "$BUILD_DIR/${APP_NAME}" "$PACKAGE_DIR/bin/"
         chmod +x "$PACKAGE_DIR/bin/${APP_NAME}"
         
-        # Fix dynamic linker path for non-Nix systems
-        if command -v patchelf &> /dev/null && [ "$ARCH" != "native" ]; then
-            echo "   🔧 Patching interpreter path..."
-            patchelf --set-interpreter /lib/ld-linux-aarch64.so.1 "$PACKAGE_DIR/bin/${APP_NAME}" 2>/dev/null || \
-            patchelf --set-interpreter /lib/aarch64-linux-gnu/ld-linux-aarch64.so.1 "$PACKAGE_DIR/bin/${APP_NAME}" 2>/dev/null || \
-            echo "   ⚠️  Could not patch interpreter (may need manual fix on target system)"
-        elif [ "$ARCH" != "native" ]; then
-            echo "   ⚠️  patchelf not found; interpreter may still point to /nix/store"
+        # Fix dynamic linker path for non-Nix ARM64 targets
+        if [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then
+            if command -v patchelf &> /dev/null; then
+                echo "   🔧 Patching interpreter path..."
+                patchelf --set-interpreter /lib/ld-linux-aarch64.so.1 "$PACKAGE_DIR/bin/${APP_NAME}" 2>/dev/null || \
+                patchelf --set-interpreter /lib/aarch64-linux-gnu/ld-linux-aarch64.so.1 "$PACKAGE_DIR/bin/${APP_NAME}" 2>/dev/null || \
+                echo "   ⚠️  Could not patch interpreter (may need manual fix on target system)"
+            else
+                echo "   ⚠️  patchelf not found; interpreter may still point to /nix/store"
+            fi
         fi
         
         echo "   ✓ Executable: ${APP_NAME}"
@@ -295,8 +297,21 @@ mkdir -p "$INSTALL_PREFIX"/{bin,lib,share/__APP_SHARE__,include}
 # Install files
 echo "📋 Installing files..."
 cp -v "bin/__APP_NAME__" "$INSTALL_PREFIX/bin/"
-if [ -d "lib" ] && [ -n "$(find lib -mindepth 1 -maxdepth 1 -print -quit)" ]; then
-    cp -av lib/* "$INSTALL_PREFIX/lib/"
+if [ -d "lib" ]; then
+    for lib_file in lib/lib__LIB_NAME__.so* lib/lib__LIB_NAME__.a; do
+        [ -e "$lib_file" ] || [ -L "$lib_file" ] || continue
+        cp -av "$lib_file" "$INSTALL_PREFIX/lib/"
+    done
+    for lib_file in lib/*; do
+        [ -e "$lib_file" ] || [ -L "$lib_file" ] || continue
+        base="$(basename "$lib_file")"
+        case "$base" in
+            lib__LIB_NAME__.so*|lib__LIB_NAME__.a) continue ;;
+        esac
+        if [ ! -e "$INSTALL_PREFIX/lib/$base" ] && [ ! -L "$INSTALL_PREFIX/lib/$base" ]; then
+            cp -av "$lib_file" "$INSTALL_PREFIX/lib/"
+        fi
+    done
 fi
 [ -d "include/__LIB_NAME__" ] && cp -rv "include/__LIB_NAME__" "$INSTALL_PREFIX/include/"
 [ -d "share/__APP_SHARE__" ] && cp -rv "share/__APP_SHARE__" "$INSTALL_PREFIX/share/"
@@ -498,10 +513,10 @@ package manager as described in the Dependencies section above.
 
 Running:
 --------
-After installation:
+After installation (recommended on non-Nix Linux, as install.sh patches the ELF loader):
     __APP_NAME__
 
-Or directly from this directory:
+Or directly from this directory (on systems with matching ELF loader):
     LD_LIBRARY_PATH=./lib ./bin/__APP_NAME__
 
 Uninstallation:

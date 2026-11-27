@@ -88,6 +88,7 @@ FILES=(
   "assets/index.html"
   "assets/customstrings.json"
   "docs/architecture.html"
+  "docs/architecture.svg"
   "docs/build-targets.md"
   "docs/debugging.md"
   "docs/development-tools.md"
@@ -144,9 +145,12 @@ pairs = [
     (sys.argv[6], sys.argv[7]),
 ]
 
-mapping = {old: new for old, new in pairs if old and old != new}
-if not mapping:
+if not any(old and old != new for old, new in pairs):
     raise SystemExit(0)
+
+# Keep unchanged keys (e.g. old_lib == new_lib) in the mapping so longer
+# tokens match themselves and are not partially rewritten by shorter keys.
+mapping = {old: new for old, new in pairs if old}
 
 pattern = re.compile("|".join(re.escape(key) for key in sorted(mapping, key=len, reverse=True)))
 text = path.read_text(encoding="utf-8")
