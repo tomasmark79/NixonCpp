@@ -149,8 +149,12 @@ if not any(old and old != new for old, new in pairs):
     raise SystemExit(0)
 
 # Keep unchanged keys (e.g. old_lib == new_lib) in the mapping so longer
-# tokens match themselves and are not partially rewritten by shorter keys.
-mapping = {old: new for old, new in pairs if old}
+# tokens match themselves and are not partially rewritten by shorter keys,
+# while never letting an unchanged pair overwrite an actual rename for the same key.
+mapping = {old: new for old, new in pairs if old and old != new}
+for old, new in pairs:
+    if old:
+        mapping.setdefault(old, new)
 
 pattern = re.compile("|".join(re.escape(key) for key in sorted(mapping, key=len, reverse=True)))
 text = path.read_text(encoding="utf-8")
