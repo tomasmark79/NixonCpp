@@ -268,7 +268,7 @@ asset_sync = custom_target('sync-assets',
 app_deps = is_native or is_wasm ? [lib_dep, cxxopts_dep] : [lib_dep]
 
 if is_wasm
-  executable(project_name,
+  app_exe = executable(project_name,
     app_sources,
     include_directories: [inc_dirs, src_inc_dirs],
     dependencies: app_deps,
@@ -286,7 +286,7 @@ if is_wasm
 elif is_windows
   # Windows with static linking
   # cxxopts is header-only, we don't need its pkg-config deps (which include ICU)
-  executable(project_name,
+  app_exe = executable(project_name,
     app_sources,
     include_directories: [inc_dirs, src_inc_dirs],
     dependencies: app_deps,
@@ -295,7 +295,7 @@ elif is_windows
   )
 else
   # Native and cross (non-Windows) build
-  executable(project_name,
+  app_exe = executable(project_name,
     app_sources,
     include_directories: [inc_dirs, src_inc_dirs],
     dependencies: app_deps,
