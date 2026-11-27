@@ -12,7 +12,7 @@ project('NixonCpp', 'cpp',
 )
 
 project_name = meson.project_name()
-lib_name = project_name + 'Lib'
+lib_name = 'NixonCppLib'
 
 # Build/target flags
 is_wasm = meson.get_external_property('system', host_machine.system()) == 'emscripten'
@@ -33,10 +33,13 @@ cpp_compiler = meson.get_compiler('cpp')
 if is_native
   fmt_dep = dependency('fmt', required: true)
   json_dep = dependency('nlohmann_json', required: true)
-  cxxopts_dep = dependency('cxxopts', required: true)
+  # cxxopts is header-only; use includes only so pkg-config does not pull in ICU.
+  cxxopts_dep = dependency('cxxopts', required: true).partial_dependency(
+    includes: true,
+  )
   fmt_status = 'dependency'
   json_status = 'dependency'
-  cxxopts_status = 'dependency'
+  cxxopts_status = 'headers'
 else
   if not cpp_compiler.has_header('fmt/format.h')
     error('fmt headers not found in the cross toolchain')
@@ -171,11 +174,15 @@ else
   endif
 
   pkg = import('pkgconfig')
+  pkg_requires = is_native ? [fmt_dep, json_dep] : []
+  pkg_extra_cflags = fmt_header_only ? ['-DFMT_HEADER_ONLY'] : []
   pkg.generate(lib_shared,
     name: lib_name,
     description: project_name + ' C++ library',
     version: project_version,
     subdirs: ['.', lib_name],
+    requires: pkg_requires,
+    extra_cflags: pkg_extra_cflags,
   )
 endif
 
@@ -193,44 +200,44 @@ lib_dep = declare_dependency(
   compile_args: lib_compile_args,
 )
 
-# Install public headers
+# Install public headers under include/<lib_name>/ to avoid prefix collisions
 install_subdir('include/' + lib_name,
   install_dir: get_option('includedir')
 )
 install_headers(
   'src/lib/Utils/UtilsFactory.hpp',
   'src/lib/Utils/UtilsError.hpp',
-  subdir: 'Utils',
+  subdir: lib_name / 'Utils',
 )
 install_headers(
   'src/lib/Utils/Assets/IAssetManager.hpp',
-  subdir: 'Utils/Assets',
+  subdir: lib_name / 'Utils/Assets',
 )
 install_headers(
   'src/lib/Utils/Filesystem/IDirectoryManager.hpp',
   'src/lib/Utils/Filesystem/IFileReader.hpp',
   'src/lib/Utils/Filesystem/IFileWriter.hpp',
   'src/lib/Utils/Filesystem/IPathResolver.hpp',
-  subdir: 'Utils/Filesystem',
+  subdir: lib_name / 'Utils/Filesystem',
 )
 install_headers(
   'src/lib/Utils/Json/ICustomStringsLoader.hpp',
   'src/lib/Utils/Json/IJsonSerializer.hpp',
-  subdir: 'Utils/Json',
+  subdir: lib_name / 'Utils/Json',
 )
 install_headers(
   'src/lib/Utils/Logger/ILogger.hpp',
   'src/lib/Utils/Logger/LoggerFactory.hpp',
   'src/lib/Utils/Logger/NullLogger.hpp',
-  subdir: 'Utils/Logger',
+  subdir: lib_name / 'Utils/Logger',
 )
 install_headers(
   'src/lib/Utils/Platform/IPlatformInfo.hpp',
-  subdir: 'Utils/Platform',
+  subdir: lib_name / 'Utils/Platform',
 )
 install_headers(
   'src/lib/Utils/String/IStringFormatter.hpp',
-  subdir: 'Utils/String',
+  subdir: lib_name / 'Utils/String',
 )
 
 # Build application

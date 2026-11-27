@@ -24,6 +24,13 @@ get_project_name() {
 }
 
 get_lib_name() {
+    local name
+    name=$(grep -m1 -E "^lib_name[[:space:]]*=[[:space:]]*['\"][^'\"]+['\"]" "$PROJECT_ROOT/meson.build" 2>/dev/null \
+        | sed -E "s/^lib_name[[:space:]]*=[[:space:]]*['\"]([^'\"]+)['\"].*/\1/")
+    if [[ -n "${name}" ]]; then
+        echo "$name"
+        return
+    fi
     local project_name
     project_name="$(get_project_name)"
     echo "${project_name}Lib"
@@ -235,11 +242,11 @@ if [ "$ARCH" != "wasm" ] && [ "$ARCH" != "emscripten" ]; then
     for rel_hdr in "${PUBLIC_UTILS_HEADERS[@]}"; do
         src_hdr="$PROJECT_ROOT/src/lib/$rel_hdr"
         if [ -f "$src_hdr" ]; then
-            mkdir -p "$PACKAGE_DIR/include/$(dirname "$rel_hdr")"
-            cp "$src_hdr" "$PACKAGE_DIR/include/$rel_hdr"
+            mkdir -p "$PACKAGE_DIR/include/${LIB_NAME}/$(dirname "$rel_hdr")"
+            cp "$src_hdr" "$PACKAGE_DIR/include/${LIB_NAME}/$rel_hdr"
         fi
     done
-    echo "   ✓ Public Utils headers: include/Utils/"
+    echo "   ✓ Public Utils headers: include/${LIB_NAME}/Utils/"
 fi
 
 # Copy assets (except for WebAssembly which has them embedded)
@@ -292,7 +299,6 @@ if [ -d "lib" ] && [ -n "$(find lib -mindepth 1 -maxdepth 1 -print -quit)" ]; th
     cp -av lib/* "$INSTALL_PREFIX/lib/"
 fi
 [ -d "include/__LIB_NAME__" ] && cp -rv "include/__LIB_NAME__" "$INSTALL_PREFIX/include/"
-[ -d "include/Utils" ] && cp -rv "include/Utils" "$INSTALL_PREFIX/include/"
 [ -d "share/__APP_SHARE__" ] && cp -rv "share/__APP_SHARE__" "$INSTALL_PREFIX/share/"
 
 # Fix interpreter/RPATH if needed (e.g., when built in Nix)
@@ -363,7 +369,6 @@ rm -vf "$INSTALL_PREFIX/bin/__APP_NAME__"
 rm -vf "$INSTALL_PREFIX/lib/lib__LIB_NAME__.so"*
 rm -vf "$INSTALL_PREFIX/lib/lib__LIB_NAME__.a"
 rm -rvf "$INSTALL_PREFIX/include/__LIB_NAME__"
-rm -rvf "$INSTALL_PREFIX/include/Utils"
 rm -rvf "$INSTALL_PREFIX/share/__APP_SHARE__"
 
 # Update library cache
@@ -450,17 +455,17 @@ Installation Instructions:
 
 3. Manual installation:
     - Copy bin/__APP_NAME__ to /usr/local/bin/
-    - Copy lib/lib__LIB_NAME__.so to /usr/local/lib/
+    - Copy lib/lib__LIB_NAME__.so* and bundled lib/*.so* (preserving symlinks, e.g. cp -a) to /usr/local/lib/
     - Copy share/__APP_SHARE__ to /usr/local/share/
-   - Run: sudo ldconfig
+    - Run: sudo ldconfig
 
 File Structure:
 ---------------
-bin/__APP_NAME__          - Main executable
-lib/lib__LIB_NAME__.so            - Application shared library
+bin/__APP_NAME__                  - Main executable
+lib/lib__LIB_NAME__.so*           - Application shared library and SONAME symlinks
 lib/lib__LIB_NAME__.a             - Static library (optional)
-include/__LIB_NAME__/             - Header files (optional)
-share/__APP_SHARE__/assets/- Application assets
+include/__LIB_NAME__/             - Public library and Utils headers (optional)
+share/__APP_SHARE__/assets/       - Application assets
 
 Dependencies:
 -------------

@@ -25,6 +25,12 @@ get_current_project_name() {
 
 get_current_lib_name() {
   local name
+  name=$(grep -m1 -E "^lib_name[[:space:]]*=[[:space:]]*['\"][^'\"]+['\"]" "$PROJECT_ROOT/meson.build" 2>/dev/null \
+    | sed -E "s/^lib_name[[:space:]]*=[[:space:]]*['\"]([^'\"]+)['\"].*/\1/")
+  if [[ -n "$name" ]]; then
+    echo "$name"
+    return
+  fi
   name="$(get_current_project_name)Lib"
   echo "$name"
 }
@@ -82,7 +88,6 @@ FILES=(
   "assets/index.html"
   "assets/customstrings.json"
   "docs/build-targets.md"
-  "docs/creating-your-own-project.md"
   "docs/debugging.md"
   "docs/development-tools.md"
   "tests/meson.build"
