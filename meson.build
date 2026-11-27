@@ -35,11 +35,11 @@ if is_native
   json_dep = dependency('nlohmann_json', required: true)
   # cxxopts is header-only; read includedir directly so pkg-config neither
   # defines -DCXXOPTS_USE_UNICODE nor pulls in ICU link dependencies.
-  cxxopts_pkg = dependency('cxxopts', required: false)
-  if cxxopts_pkg.found() and cxxopts_pkg.type_name() == 'pkgconfig'
+  cxxopts_pkg = dependency('cxxopts', method: 'pkg-config', required: false)
+  if cxxopts_pkg.found()
     cxxopts_incdir = cxxopts_pkg.get_variable(pkgconfig: 'includedir', default_value: '')
     cxxopts_dep = cxxopts_incdir != '' ? declare_dependency(
-      compile_args: ['-isystem', cxxopts_incdir],
+      compile_args: ['-I' + cxxopts_incdir],
     ) : declare_dependency()
   elif cpp_compiler.has_header('cxxopts.hpp')
     cxxopts_dep = declare_dependency()

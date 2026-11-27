@@ -76,9 +76,9 @@
             pkg-config
 
             gcc
-            clang
             gdb
             clang-tools
+            clang
 
             doxygen
             graphviz
