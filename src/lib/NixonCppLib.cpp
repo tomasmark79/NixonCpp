@@ -1,6 +1,14 @@
 #include <NixonCppLib/NixonCppLib.hpp>
 
+#ifndef PROJECT_VERSION
+#define PROJECT_VERSION "0.0.1"
+#endif
+
 namespace nixoncpp::v1 {
+
+  namespace {
+    constexpr const char *kLibName = "NixonCppLib v" PROJECT_VERSION;
+  } // namespace
 
   /**
    * @brief Constructs a NixonCppLib instance from the given application context.
@@ -26,15 +34,15 @@ namespace nixoncpp::v1 {
       logger_->errorStream() << "Invalid or missing asset manager";
       return;
     }
-    logger_->infoStream() << libName_ << " initialized ...";
+    logger_->infoStream() << kLibName << " initialized ...";
     isInitialized_ = true;
   }
 
   NixonCppLib::~NixonCppLib() {
     if (isInitialized_) {
-      logger_->infoStream() << libName_ << " ... destructed";
+      logger_->infoStream() << kLibName << " ... destructed";
     } else {
-      logger_->infoStream() << libName_ << " ... (not initialized) destructed";
+      logger_->infoStream() << kLibName << " ... (not initialized) destructed";
     }
   }
 
@@ -48,10 +56,10 @@ namespace nixoncpp::v1 {
   // Example method to demonstrate library functionality
   void NixonCppLib::performLibraryTask() {
     if (!isInitialized_) {
-      logger_->errorStream() << "Cannot perform task: " << libName_ << " is not initialized";
+      logger_->errorStream() << "Cannot perform task: " << kLibName << " is not initialized";
       return;
     }
-    logger_->infoStream() << "Performing a task in " << libName_ << " using the asset manager";
+    logger_->infoStream() << "Performing a task in " << kLibName << " using the asset manager";
 
     // Example usage of the asset manager
     const char *assetName = "NixonCppLogo.svg";

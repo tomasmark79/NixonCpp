@@ -87,6 +87,7 @@ FILES=(
   ".vscode/launch-windows.json"
   "assets/index.html"
   "assets/customstrings.json"
+  "docs/architecture.html"
   "docs/build-targets.md"
   "docs/debugging.md"
   "docs/development-tools.md"
@@ -159,6 +160,10 @@ move_if_exists() {
   local src="$1"
   local dst="$2"
 
+  if [[ "$src" == "$dst" ]]; then
+    return 0
+  fi
+
   if [[ -e "$src" && ! -e "$dst" ]]; then
     mkdir -p "$(dirname "$dst")"
     mv "$src" "$dst"
@@ -193,12 +198,12 @@ rename_once() {
   done < <(find include src tests -type f \( -name "*.hpp" -o -name "*.h" -o -name "*.cpp" \) -print0)
 
   # Rename assets file if present
-  if [[ -f "assets/${OLD_NAME}Logo.svg" ]]; then
+  if [[ "$OLD_NAME" != "$NEW_NAME" && -f "assets/${OLD_NAME}Logo.svg" ]]; then
     mv "assets/${OLD_NAME}Logo.svg" "assets/${NEW_NAME}Logo.svg"
   fi
 
   # Rename include directory if present
-  if [[ -d "include/${OLD_LIB}" ]]; then
+  if [[ "$OLD_LIB" != "$NEW_LIB" && -d "include/${OLD_LIB}" ]]; then
     mv "include/${OLD_LIB}" "include/${NEW_LIB}"
   fi
 

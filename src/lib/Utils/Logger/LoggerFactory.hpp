@@ -1,5 +1,5 @@
 #pragma once
-#include "Utils/Logger/ILogger.hpp"
+#include "ILogger.hpp"
 #include <memory>
 #include <string>
 

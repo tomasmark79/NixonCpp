@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Utils/UtilsError.hpp>
+#include "../UtilsError.hpp"
 #include <cstdint>
 #include <filesystem>
 #include <string>

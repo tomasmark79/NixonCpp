@@ -1,12 +1,8 @@
 #pragma once
 
-#include <Utils/UtilsFactory.hpp>
+#include "Utils/UtilsFactory.hpp"
 
 #include <memory>
-
-#ifndef PROJECT_VERSION
-#define PROJECT_VERSION "0.0.1"
-#endif
 
 namespace nixoncpp::v1 {
   class NixonCppLib {
@@ -26,7 +22,6 @@ namespace nixoncpp::v1 {
 
   private:
     bool isInitialized_{false};
-    static constexpr const char *libName_ = "NixonCppLib v" PROJECT_VERSION;
 
     std::shared_ptr<nixoncpp::logging::ILogger> logger_;
     std::shared_ptr<nixoncpp::assets::IAssetManager> assetManager_;

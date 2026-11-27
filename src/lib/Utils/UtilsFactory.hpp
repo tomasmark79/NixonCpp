@@ -1,17 +1,17 @@
 #pragma once
 
-#include <Utils/Assets/IAssetManager.hpp>
-#include <Utils/Filesystem/IDirectoryManager.hpp>
-#include <Utils/Filesystem/IFileReader.hpp>
-#include <Utils/Filesystem/IFileWriter.hpp>
-#include <Utils/Filesystem/IPathResolver.hpp>
-#include <Utils/Json/ICustomStringsLoader.hpp>
-#include <Utils/Json/IJsonSerializer.hpp>
-#include <Utils/Logger/ILogger.hpp>
-#include <Utils/Logger/LoggerFactory.hpp>
-#include <Utils/Logger/NullLogger.hpp>
-#include <Utils/Platform/IPlatformInfo.hpp>
-#include <Utils/String/IStringFormatter.hpp>
+#include "Assets/IAssetManager.hpp"
+#include "Filesystem/IDirectoryManager.hpp"
+#include "Filesystem/IFileReader.hpp"
+#include "Filesystem/IFileWriter.hpp"
+#include "Filesystem/IPathResolver.hpp"
+#include "Logger/ILogger.hpp"
+#include "Logger/LoggerFactory.hpp"
+#include "Logger/NullLogger.hpp"
+#include "Platform/IPlatformInfo.hpp"
+#include "String/IStringFormatter.hpp"
+#include "Json/ICustomStringsLoader.hpp"
+#include "Json/IJsonSerializer.hpp"
 #include <filesystem>
 #include <memory>
 

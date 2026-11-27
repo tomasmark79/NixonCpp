@@ -458,6 +458,8 @@ Installation Instructions:
     - Copy lib/lib__LIB_NAME__.so* and bundled lib/*.so* (preserving symlinks, e.g. cp -a) to /usr/local/lib/
     - Copy share/__APP_SHARE__ to /usr/local/share/
     - Run: sudo ldconfig
+    - Note: On non-Nix Linux systems, prefer ./install.sh (or run patchelf --set-interpreter
+      on bin/__APP_NAME__) so the ELF dynamic linker points to the system loader instead of /nix/store.
 
 File Structure:
 ---------------

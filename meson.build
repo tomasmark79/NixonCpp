@@ -33,10 +33,19 @@ cpp_compiler = meson.get_compiler('cpp')
 if is_native
   fmt_dep = dependency('fmt', required: true)
   json_dep = dependency('nlohmann_json', required: true)
-  # cxxopts is header-only; use includes only so pkg-config does not pull in ICU.
-  cxxopts_dep = dependency('cxxopts', required: true).partial_dependency(
-    includes: true,
-  )
+  # cxxopts is header-only; read includedir directly so pkg-config neither
+  # defines -DCXXOPTS_USE_UNICODE nor pulls in ICU link dependencies.
+  cxxopts_pkg = dependency('cxxopts', required: false)
+  if cxxopts_pkg.found() and cxxopts_pkg.type_name() == 'pkgconfig'
+    cxxopts_incdir = cxxopts_pkg.get_variable(pkgconfig: 'includedir', default_value: '')
+    cxxopts_dep = cxxopts_incdir != '' ? declare_dependency(
+      compile_args: ['-isystem', cxxopts_incdir],
+    ) : declare_dependency()
+  elif cpp_compiler.has_header('cxxopts.hpp')
+    cxxopts_dep = declare_dependency()
+  else
+    error('cxxopts headers not found')
+  endif
   fmt_status = 'dependency'
   json_status = 'dependency'
   cxxopts_status = 'headers'
@@ -180,24 +189,17 @@ else
     name: lib_name,
     description: project_name + ' C++ library',
     version: project_version,
-    subdirs: ['.', lib_name],
+    subdirs: ['.'],
     requires: pkg_requires,
     extra_cflags: pkg_extra_cflags,
   )
-endif
-
-lib_compile_args = [
-  '-DPROJECT_VERSION="@0@"'.format(project_version),
-]
-if fmt_header_only
-  lib_compile_args += ['-DFMT_HEADER_ONLY']
 endif
 
 lib_dep = declare_dependency(
   link_with: link_lib,
   include_directories: common_inc,
   dependencies: lib_deps,
-  compile_args: lib_compile_args,
+  compile_args: fmt_header_only ? ['-DFMT_HEADER_ONLY'] : [],
 )
 
 # Install public headers under include/<lib_name>/ to avoid prefix collisions
