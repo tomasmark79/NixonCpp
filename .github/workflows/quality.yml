@@ -18,7 +18,6 @@ on:
       - "scripts/**"
       - "src/**"
       - "tests/**"
-      - "vendor/**"
   pull_request:
     paths:
       - ".github/workflows/quality.yml"
@@ -36,7 +35,6 @@ on:
       - "scripts/**"
       - "src/**"
       - "tests/**"
-      - "vendor/**"
 
 jobs:
   quality-checks:

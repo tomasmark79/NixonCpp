@@ -16,7 +16,6 @@ on:
       - "scripts/**"
       - "src/**"
       - "tests/**"
-      - "vendor/**"
   workflow_dispatch:
 
 permissions:

@@ -13,7 +13,6 @@ on:
       - "scripts/**"
       - "src/**"
       - "tests/**"
-      - "vendor/**"
   pull_request:
     paths:
       - ".github/workflows/native.yml"
@@ -26,7 +25,6 @@ on:
       - "scripts/**"
       - "src/**"
       - "tests/**"
-      - "vendor/**"
 
 jobs:
   native-build:

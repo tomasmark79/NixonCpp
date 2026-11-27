@@ -90,7 +90,9 @@ lib_sources = [
   'src/lib/Utils/String/StringFormatter.cpp',
 ]
 
-lib_cpp_args = []
+lib_cpp_args = [
+  '-DPROJECT_VERSION="@0@"'.format(meson.project_version()),
+]
 if fmt_header_only
   lib_cpp_args += ['-DFMT_HEADER_ONLY']
 endif
@@ -135,36 +137,60 @@ else
 endif
 
 # Build the library
-# WebAssembly doesn't support shared libraries, use static only
-if not is_wasm
-  lib_shared = shared_library(lib_name,
+# WebAssembly doesn't support shared libraries, use static only.
+# On other targets, both_libraries compiles objects once and links both .so and .a.
+project_version = meson.project_version()
+project_soversion = project_version.split('.')[0]
+
+if is_wasm
+  lib_static = static_library(lib_name,
     lib_sources,
     include_directories: common_inc,
     dependencies: lib_deps,
     cpp_args: lib_cpp_args,
     install: true,
   )
-endif
-
-lib_static = static_library(lib_name,
-  lib_sources,
-  include_directories: common_inc,
-  dependencies: lib_deps,
-  cpp_args: lib_cpp_args,
-  install: true,
-)
-
-if is_wasm or is_windows or is_cross
   link_lib = lib_static
 else
-  link_lib = lib_shared
+  lib_both = both_libraries(lib_name,
+    lib_sources,
+    include_directories: common_inc,
+    dependencies: lib_deps,
+    cpp_args: lib_cpp_args,
+    version: project_version,
+    soversion: project_soversion,
+    install: true,
+  )
+  lib_shared = lib_both.get_shared_lib()
+  lib_static = lib_both.get_static_lib()
+
+  if is_windows or is_cross
+    link_lib = lib_static
+  else
+    link_lib = lib_shared
+  endif
+
+  pkg = import('pkgconfig')
+  pkg.generate(lib_shared,
+    name: lib_name,
+    description: project_name + ' C++ library',
+    version: project_version,
+    subdirs: ['.', lib_name],
+  )
+endif
+
+lib_compile_args = [
+  '-DPROJECT_VERSION="@0@"'.format(project_version),
+]
+if fmt_header_only
+  lib_compile_args += ['-DFMT_HEADER_ONLY']
 endif
 
 lib_dep = declare_dependency(
   link_with: link_lib,
   include_directories: common_inc,
   dependencies: lib_deps,
-  compile_args: fmt_header_only ? ['-DFMT_HEADER_ONLY'] : [],
+  compile_args: lib_compile_args,
 )
 
 # Install public headers

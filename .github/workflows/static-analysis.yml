@@ -13,7 +13,6 @@ on:
       - "scripts/**"
       - "src/**"
       - "tests/**"
-      - "vendor/**"
   pull_request:
     paths:
       - ".github/workflows/static-analysis.yml"
@@ -26,7 +25,6 @@ on:
       - "scripts/**"
       - "src/**"
       - "tests/**"
-      - "vendor/**"
 
 jobs:
   static-analysis:

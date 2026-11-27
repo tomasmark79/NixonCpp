@@ -76,9 +76,15 @@ FILES=(
   "README.md"
   "Doxyfile"
   "nix/flake.nix"
+  ".devcontainer/devcontainer.json"
   ".vscode/launch.json"
   ".vscode/launch-windows.json"
   "assets/index.html"
+  "assets/customstrings.json"
+  "docs/build-targets.md"
+  "docs/creating-your-own-project.md"
+  "docs/debugging.md"
+  "docs/development-tools.md"
   "tests/meson.build"
 )
 

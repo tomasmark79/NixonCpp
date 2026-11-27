@@ -25,6 +25,7 @@ pkgs.mkShell {
   nativeBuildInputs = with pkgs.pkgsBuildHost; [
     meson
     ninja
+    qemu
     # The cross compiler wrapper also puts aarch64-unknown-linux-gnu-pkg-config
     # on PATH, which is what linux-to-aarch64.ini references.
     pkgsCross.stdenv.cc
@@ -80,7 +81,7 @@ pkgs.mkShell {
     echo "  make cross-aarch64"
     echo ""
     echo "Run on host via QEMU:"
-    echo "  nix develop ./nix#aarch64 --command bash -c 'qemu-aarch64 -L \"\$QEMU_LD_PREFIX\" ./build/builddir-aarch64-minsize/$app_name'"
+    echo "  nix develop ./nix#aarch64 --command bash -c 'qemu-aarch64 -L \"\$QEMU_LD_PREFIX\" ./build/builddir-aarch64-release/$app_name'"
     echo ""
   '';
 }

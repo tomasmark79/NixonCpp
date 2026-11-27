@@ -13,7 +13,7 @@
 
 ## Create your C++ applications and libraries
 
-A starting point for command-line applications and reusable C++ libraries, built with **Meson** and mdreproducible **Nix** environments.
+A starting point for command-line applications and reusable C++ libraries, built with **Meson** and reproducible **Nix** environments.
 
 Native tests, static analysis, sanitizers, and packaging — with cross-compilation for **Linux ARM64**, **Windows**, and **WebAssembly**.
 

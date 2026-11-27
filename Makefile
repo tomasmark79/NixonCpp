@@ -100,10 +100,10 @@ nix-build:
 pin-shells:
 	@echo "Pinning Nix dev shells as GC roots..."
 	@mkdir -p build
-	@for shell in default aarch64 windows wasm; do \
-	    echo "  pinning: $$shell ..."; \
-	    drv=$$(nix eval --raw ./nix#devShells.x86_64-linux.$$shell.drvPath 2>/dev/null \
-	          || nix eval --raw ./nix#devShells.aarch64-linux.$$shell.drvPath 2>/dev/null); \
+	@sys=$$(nix eval --impure --raw --expr builtins.currentSystem 2>/dev/null || echo x86_64-linux); \
+	for shell in default aarch64 windows wasm; do \
+	    echo "  pinning: $$shell ($$sys) ..."; \
+	    drv=$$(nix eval --raw ./nix#devShells.$$sys.$$shell.drvPath 2>/dev/null); \
 	    if [ -n "$$drv" ]; then \
 	        nix-store --realise "$$drv" --add-root "$(CURDIR)/build/.gcroot-shell-$$shell" --indirect >/dev/null; \
 	        echo "    ✓ $$shell pinned"; \

@@ -76,6 +76,7 @@
             pkg-config
 
             gcc
+            clang
             gdb
             clang-tools
 

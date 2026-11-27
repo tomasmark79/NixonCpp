@@ -177,17 +177,19 @@ case "$ARCH" in
         
         echo "   ✓ Executable: ${APP_NAME}"
         
-        # Copy shared library
+        # Copy shared library (including versioned SONAME symlinks, excluding Meson .p dirs)
         if [ -f "$BUILD_DIR/lib${LIB_NAME}.so" ]; then
-            cp "$BUILD_DIR/lib${LIB_NAME}.so" "$PACKAGE_DIR/lib/"
+            find "$BUILD_DIR" -maxdepth 1 \( -type f -o -type l \) -name "lib${LIB_NAME}.so*" \
+                -exec cp -a {} "$PACKAGE_DIR/lib/" \;
             
             # Fix RPATH to use standard system paths
             if command -v patchelf &> /dev/null; then
                 patchelf --set-rpath "\$ORIGIN/../lib:/usr/local/lib:/usr/lib:/lib" "$PACKAGE_DIR/bin/${APP_NAME}" 2>/dev/null || true
-                patchelf --set-rpath "\$ORIGIN:/usr/local/lib:/usr/lib:/lib" "$PACKAGE_DIR/lib/lib${LIB_NAME}.so" 2>/dev/null || true
+                real_so="$(readlink -f "$PACKAGE_DIR/lib/lib${LIB_NAME}.so")"
+                patchelf --set-rpath "\$ORIGIN:/usr/local/lib:/usr/lib:/lib" "$real_so" 2>/dev/null || true
             fi
             
-            echo "   ✓ Library: lib${LIB_NAME}.so"
+            echo "   ✓ Library: lib${LIB_NAME}.so*"
         fi
         
         # Copy static library (optional)
@@ -358,7 +360,7 @@ fi
 # Remove files
 echo "📋 Removing files..."
 rm -vf "$INSTALL_PREFIX/bin/__APP_NAME__"
-rm -vf "$INSTALL_PREFIX/lib/lib__LIB_NAME__.so"
+rm -vf "$INSTALL_PREFIX/lib/lib__LIB_NAME__.so"*
 rm -vf "$INSTALL_PREFIX/lib/lib__LIB_NAME__.a"
 rm -rvf "$INSTALL_PREFIX/include/__LIB_NAME__"
 rm -rvf "$INSTALL_PREFIX/include/Utils"
@@ -462,20 +464,9 @@ share/__APP_SHARE__/assets/- Application assets
 
 Dependencies:
 -------------
-Install required system libraries on the target device:
-
-Debian/Ubuntu/Raspberry Pi OS:
-  sudo apt update
-  sudo apt install libicu76
-
-Fedora/RHEL/Rocky:
-  sudo dnf install icu
-
-Arch Linux:
-    sudo pacman -S icu
-
-Note: libstdc++, libgcc_s, and glibc are pre-installed on all Linux systems.
-Note: libfmt is compiled as header-only and included in the binary (no external dependency).
+Third-party runtime libraries (such as libfmt on native builds) are bundled in lib/.
+Cross-compiled builds link libfmt header-only and require no external third-party libraries.
+Standard system libraries (libstdc++, libgcc_s, glibc) are pre-installed on Linux systems.
 
 EOF
 
