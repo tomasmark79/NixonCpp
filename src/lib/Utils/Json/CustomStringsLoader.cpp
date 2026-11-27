@@ -1,5 +1,4 @@
 #include "CustomStringsLoader.hpp"
-#include <fmt/core.h>
 
 namespace nixoncpp::utils {
 

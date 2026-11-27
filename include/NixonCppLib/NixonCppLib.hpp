@@ -5,11 +5,10 @@
 #include <memory>
 
 namespace nixoncpp::v1 {
-  using namespace nixoncpp::utils;
   class NixonCppLib {
 
   public:
-    NixonCppLib(const UtilsFactory::ApplicationContext &context);
+    explicit NixonCppLib(const nixoncpp::utils::UtilsFactory::ApplicationContext &context);
     ~NixonCppLib();
     NixonCppLib(const NixonCppLib &other) = delete;
     NixonCppLib &operator=(const NixonCppLib &other) = delete;

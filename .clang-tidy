@@ -1,0 +1,26 @@
+# clang-tidy configuration aligned with .clangd
+Checks: >
+  -*,
+  bugprone-*,
+  performance-*,
+  readability-*,
+  modernize-*,
+  -modernize-use-trailing-return-type,
+  -bugprone-easily-swappable-parameters,
+  -readability-magic-numbers,
+  -readability-convert-member-functions-to-static
+WarningsAsErrors: ''
+HeaderFilterRegex: '(src|include|tests)/.*'
+CheckOptions:
+  - key: readability-braces-around-statements.ShortStatementLines
+    value: '2'
+  - key: readability-identifier-length.MinimumVariableNameLength
+    value: '1'
+  - key: readability-identifier-length.MinimumParameterNameLength
+    value: '1'
+  - key: readability-identifier-length.MinimumLoopCounterNameLength
+    value: '1'
+  - key: readability-identifier-length.IgnoredVariableNames
+    value: '^[a-z]$'
+  - key: readability-identifier-length.IgnoredParameterNames
+    value: '^[a-z]$'

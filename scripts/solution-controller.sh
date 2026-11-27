@@ -163,9 +163,11 @@ run_package() {
     # Bundle third-party runtime libs so the package is self-contained when
     # transferred to a machine without Nix.
     if [ "$BUILD_ARCH" = "native" ] || [ "$BUILD_ARCH" = "x86_64" ]; then
-        # Already inside the native Nix shell — BUNDLE_LIB_DIRS is set.
-        if [ -n "$BUNDLE_LIB_DIRS" ]; then
+        if [ -n "${BUNDLE_LIB_DIRS:-}" ]; then
             bash "$PROJECT_ROOT/scripts/bundle-deps.sh" "native" "${BUILD_TYPE}"
+        elif command -v nix >/dev/null 2>&1; then
+            nix develop "$PROJECT_ROOT/nix" --command bash \
+                "$PROJECT_ROOT/scripts/bundle-deps.sh" "native" "${BUILD_TYPE}"
         fi
     elif [ "$BUILD_ARCH" = "aarch64" ] || [ "$BUILD_ARCH" = "arm64" ]; then
         nix develop "$PROJECT_ROOT/nix#aarch64" --command bash \

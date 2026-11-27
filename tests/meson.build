@@ -3,7 +3,11 @@
 test_sources = [
   'AssetManagerTest.cpp',
   'ConsoleLoggerTest.cpp',
+  'CustomStringsLoaderTest.cpp',
   'FileReaderTest.cpp',
+  'FileWriterTest.cpp',
+  'JsonSerializerTest.cpp',
+  'LibraryTest.cpp',
 ]
 
 foreach test_source : test_sources

@@ -12,14 +12,10 @@ namespace nixoncpp::assets {
     return std::make_unique<AssetManager>(std::move(path));
   }
 
-  const std::filesystem::path &AssetManager::getAssetsPath() const {
-    std::lock_guard<std::mutex> lock(mutex_);
-    return assetsPath_;
-  }
+  const std::filesystem::path &AssetManager::getAssetsPath() const { return assetsPath_; }
 
   std::filesystem::path
       AssetManager::resolveAsset(const std::filesystem::path &relativePath) const {
-    std::lock_guard<std::mutex> lock(mutex_);
     return assetsPath_ / relativePath;
   }
 
@@ -29,7 +25,6 @@ namespace nixoncpp::assets {
   }
 
   bool AssetManager::validate() const {
-    std::lock_guard<std::mutex> lock(mutex_);
     return !assetsPath_.empty() && std::filesystem::exists(assetsPath_) &&
            std::filesystem::is_directory(assetsPath_);
   }

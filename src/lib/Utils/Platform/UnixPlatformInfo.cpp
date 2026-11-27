@@ -1,5 +1,4 @@
 #include "UnixPlatformInfo.hpp"
-#include <fmt/core.h>
 
 #if defined(__APPLE__)
 #include <limits.h>

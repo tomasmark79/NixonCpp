@@ -1,5 +1,7 @@
-#include "../src/lib/Utils/Logger/ConsoleLogger.hpp"
+#include <Utils/Logger/ConsoleLogger.hpp>
+#include <Utils/Logger/LoggerFactory.hpp>
 #include <chrono>
+#include <filesystem>
 #include <fstream>
 #include <gtest/gtest.h>
 #include <memory>
@@ -10,8 +12,15 @@ using namespace nixoncpp::logging;
 class ConsoleLoggerTest : public ::testing::Test {
 protected:
   std::shared_ptr<ConsoleLogger> logger;
+  std::filesystem::path logFilePath_;
 
   void SetUp() override {
+    const auto *testInfo = ::testing::UnitTest::GetInstance()->current_test_info();
+    const auto stamp = std::chrono::steady_clock::now().time_since_epoch().count();
+    logFilePath_ = std::filesystem::temp_directory_path() /
+                   (std::string("console_logger_test_") +
+                    (testInfo != nullptr ? testInfo->name() : "unknown") + "_" +
+                    std::to_string(stamp) + ".log");
     logger = std::make_shared<ConsoleLogger>();
     logger->setLevel(Level::LOG_INFO);
     logger->setHeaderName("TestLogger");
@@ -20,8 +29,9 @@ protected:
   }
 
   void TearDown() override {
-    // Clean up any test files
-    std::remove("test_log.txt");
+    logger->disableFileLogging();
+    std::error_code ec;
+    std::filesystem::remove(logFilePath_, ec);
   }
 };
 
@@ -48,11 +58,39 @@ TEST_F(ConsoleLoggerTest, LogLevelFiltering) {
   logger->setLevel(Level::LOG_WARNING);
   EXPECT_EQ(logger->getLevel(), Level::LOG_WARNING);
 
+  ASSERT_TRUE(logger->enableFileLogging(logFilePath_.string()));
+  logger->debug("Filtered debug message");
+  logger->info("Filtered info message");
+  logger->warning("Visible warning message");
+  logger->error("Visible error message");
+  logger->disableFileLogging();
+
+  std::ifstream file(logFilePath_);
+  ASSERT_TRUE(file.is_open());
+  std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+  EXPECT_EQ(content.find("Filtered debug message"), std::string::npos);
+  EXPECT_EQ(content.find("Filtered info message"), std::string::npos);
+  EXPECT_NE(content.find("Visible warning message"), std::string::npos);
+  EXPECT_NE(content.find("Visible error message"), std::string::npos);
+
   logger->setLevel(Level::LOG_DEBUG);
   EXPECT_EQ(logger->getLevel(), Level::LOG_DEBUG);
 
   logger->setLevel(Level::LOG_INFO);
   EXPECT_EQ(logger->getLevel(), Level::LOG_INFO);
+}
+
+TEST_F(ConsoleLoggerTest, FactoryRespectsColorOutputOption) {
+  LoggerConfig config{.level = Level::LOG_INFO,
+                      .enableFileLogging = false,
+                      .logFilePath = "",
+                      .colorOutput = false,
+                      .appPrefix = "App"};
+  auto created = LoggerFactory::createConsole(config);
+  auto consoleLogger = std::dynamic_pointer_cast<ConsoleLogger>(created);
+  ASSERT_NE(consoleLogger, nullptr);
+  EXPECT_FALSE(consoleLogger->isColorEnabled());
+  EXPECT_EQ(consoleLogger->getAppPrefix(), "App");
 }
 
 TEST_F(ConsoleLoggerTest, StreamLogging) {
@@ -125,7 +163,7 @@ TEST_F(ConsoleLoggerTest, VisibleHeaders) {
 
 TEST_F(ConsoleLoggerTest, FileLogging) {
   // Test file logging enable/disable
-  EXPECT_TRUE(logger->enableFileLogging("test_log.txt"));
+  EXPECT_TRUE(logger->enableFileLogging(logFilePath_.string()));
 
   EXPECT_NO_THROW(logger->info("Test message to file", "FileLogging"));
   EXPECT_NO_THROW(logger->warning("Test warning to file", "FileLogging"));
@@ -134,7 +172,7 @@ TEST_F(ConsoleLoggerTest, FileLogging) {
   EXPECT_NO_THROW(logger->disableFileLogging());
 
   // Verify file exists and has content
-  std::ifstream file("test_log.txt");
+  std::ifstream file(logFilePath_);
   EXPECT_TRUE(file.is_open());
   if (file.is_open()) {
     std::string line;

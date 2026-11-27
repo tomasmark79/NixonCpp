@@ -1,8 +1,8 @@
 #include "WindowsPlatformInfo.hpp"
-#include <fmt/core.h>
 
 #ifdef _WIN32
 #include <Utils/Platform/WindowsHeaders.hpp>
+#include <vector>
 #endif
 
 namespace nixoncpp::utils {
@@ -13,18 +13,31 @@ namespace nixoncpp::utils {
 
   Result<std::filesystem::path, FileError> WindowsPlatformInfo::getExecutablePath() const {
 #ifdef _WIN32
-    char buffer[MAX_PATH];
-    DWORD result = GetModuleFileNameA(NULL, buffer, MAX_PATH);
+    constexpr DWORD kInitialBufferSize = MAX_PATH;
+    constexpr DWORD kMaxBufferSize = 32768;
+    std::vector<wchar_t> buffer(kInitialBufferSize);
 
-    if (result == 0 || result == MAX_PATH) {
-      return FileError{
-          .code = FileErrorCode::ReadError,
-          .message = "Failed to get executable path on Windows",
-          .path = "",
-      };
+    while (true) {
+      DWORD len = GetModuleFileNameW(nullptr, buffer.data(), static_cast<DWORD>(buffer.size()));
+      if (len == 0) {
+        return FileError{
+            .code = FileErrorCode::ReadError,
+            .message = "Failed to get executable path on Windows",
+            .path = "",
+        };
+      }
+      if (len < buffer.size()) {
+        return std::filesystem::path(std::wstring(buffer.data(), len));
+      }
+      if (buffer.size() >= kMaxBufferSize) {
+        return FileError{
+            .code = FileErrorCode::ReadError,
+            .message = "Executable path exceeds maximum supported length on Windows",
+            .path = "",
+        };
+      }
+      buffer.resize(buffer.size() * 2);
     }
-
-    return std::filesystem::path(buffer);
 #else
     return FileError{
         .code = FileErrorCode::Unknown,

@@ -1,6 +1,7 @@
-#include "../src/lib/Utils/Assets/AssetManager.hpp"
-#include "../src/lib/Utils/Assets/AssetManagerFactory.hpp"
 #include "MockAssetManager.hpp"
+#include <Utils/Assets/AssetManager.hpp>
+#include <Utils/Assets/AssetManagerFactory.hpp>
+#include <chrono>
 #include <filesystem>
 #include <fstream>
 #include <gtest/gtest.h>
@@ -10,8 +11,13 @@ using namespace nixoncpp::assets;
 class AssetManagerTest : public ::testing::Test {
 protected:
   void SetUp() override {
-    // Create temporary test directory
-    testAssetsPath_ = std::filesystem::temp_directory_path() / "test_assets_nixoncpplib";
+    // Create unique temporary test directory
+    const auto *testInfo = ::testing::UnitTest::GetInstance()->current_test_info();
+    const auto stamp = std::chrono::steady_clock::now().time_since_epoch().count();
+    const std::string dirName = std::string("test_assets_nixoncpplib_") +
+                                (testInfo != nullptr ? testInfo->name() : "unknown") + "_" +
+                                std::to_string(stamp);
+    testAssetsPath_ = std::filesystem::temp_directory_path() / dirName;
     std::filesystem::create_directories(testAssetsPath_);
   }
 

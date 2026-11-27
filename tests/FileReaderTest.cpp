@@ -1,4 +1,5 @@
 #include <Utils/Filesystem/FileReader.hpp>
+#include <chrono>
 #include <filesystem>
 #include <fstream>
 #include <gtest/gtest.h>
@@ -10,8 +11,13 @@ namespace fs = std::filesystem;
 class FileReaderTest : public ::testing::Test {
 protected:
   void SetUp() override {
-    // Create temporary directory for tests
-    testDir_ = fs::temp_directory_path() / "FileReaderTest";
+    // Create unique temporary directory for tests
+    const auto *testInfo = ::testing::UnitTest::GetInstance()->current_test_info();
+    const auto stamp = std::chrono::steady_clock::now().time_since_epoch().count();
+    const std::string dirName = std::string("FileReaderTest_") +
+                                (testInfo != nullptr ? testInfo->name() : "unknown") + "_" +
+                                std::to_string(stamp);
+    testDir_ = fs::temp_directory_path() / dirName;
     fs::create_directories(testDir_);
 
     // Create test files

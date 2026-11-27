@@ -26,6 +26,7 @@ namespace nixoncpp::utils {
     ParseError,
     InvalidStructure,
     FileNotFound,
+    WriteError,
     InvalidType,
     MissingKey,
     Unknown
@@ -68,6 +69,7 @@ namespace nixoncpp::utils {
       case JsonErrorCode::ParseError: codeStr = "ParseError"; break;
       case JsonErrorCode::InvalidStructure: codeStr = "InvalidStructure"; break;
       case JsonErrorCode::FileNotFound: codeStr = "FileNotFound"; break;
+      case JsonErrorCode::WriteError: codeStr = "WriteError"; break;
       case JsonErrorCode::InvalidType: codeStr = "InvalidType"; break;
       case JsonErrorCode::MissingKey: codeStr = "MissingKey"; break;
       case JsonErrorCode::Unknown: codeStr = "Unknown"; break;

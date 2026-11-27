@@ -36,19 +36,27 @@ replace_tokens_in_file() {
     local file="$1"
     local app_name="$2"
     local lib_name="$3"
+    local interp_primary="${4:-}"
+    local interp_fallback="${5:-}"
 
-    python3 - <<'PY' "$file" "$app_name" "$lib_name"
+    python3 - <<'PY' "$file" "$app_name" "$lib_name" "$interp_primary" "$interp_fallback"
 import sys
 from pathlib import Path
 
 path = Path(sys.argv[1])
 app = sys.argv[2]
 lib = sys.argv[3]
+interp_primary = sys.argv[4]
+interp_fallback = sys.argv[5]
 
 text = path.read_text(encoding="utf-8")
 text = text.replace("__APP_NAME__", app)
 text = text.replace("__LIB_NAME__", lib)
 text = text.replace("__APP_SHARE__", app)
+if interp_primary:
+    text = text.replace("__INTERP_PRIMARY__", interp_primary)
+if interp_fallback:
+    text = text.replace("__INTERP_FALLBACK__", interp_fallback)
 path.write_text(text, encoding="utf-8")
 PY
 }
@@ -195,7 +203,7 @@ esac
 if [ "$ARCH" != "wasm" ] && [ "$ARCH" != "emscripten" ]; then
     if [ -d "$PROJECT_ROOT/include/${LIB_NAME}" ]; then
         mkdir -p "$PACKAGE_DIR/include/${LIB_NAME}"
-        if compgen -G "$PROJECT_ROOT/include/${LIB_NAME}/*" > /dev/null; then
+        if [ -n "$(find "$PROJECT_ROOT/include/${LIB_NAME}" -mindepth 1 -maxdepth 1 -print -quit)" ]; then
             cp -r "$PROJECT_ROOT/include/${LIB_NAME}/"* "$PACKAGE_DIR/include/${LIB_NAME}/"
             echo "   ✓ Headers: ${LIB_NAME}/*.hpp"
         else
@@ -204,6 +212,32 @@ if [ "$ARCH" != "wasm" ] && [ "$ARCH" != "emscripten" ]; then
     else
         echo "   ⚠️  Headers directory not found: $PROJECT_ROOT/include/${LIB_NAME}"
     fi
+
+    # Copy public Utils headers required by public library headers
+    PUBLIC_UTILS_HEADERS=(
+        "Utils/UtilsFactory.hpp"
+        "Utils/UtilsError.hpp"
+        "Utils/Assets/IAssetManager.hpp"
+        "Utils/Filesystem/IDirectoryManager.hpp"
+        "Utils/Filesystem/IFileReader.hpp"
+        "Utils/Filesystem/IFileWriter.hpp"
+        "Utils/Filesystem/IPathResolver.hpp"
+        "Utils/Json/ICustomStringsLoader.hpp"
+        "Utils/Json/IJsonSerializer.hpp"
+        "Utils/Logger/ILogger.hpp"
+        "Utils/Logger/LoggerFactory.hpp"
+        "Utils/Logger/NullLogger.hpp"
+        "Utils/Platform/IPlatformInfo.hpp"
+        "Utils/String/IStringFormatter.hpp"
+    )
+    for rel_hdr in "${PUBLIC_UTILS_HEADERS[@]}"; do
+        src_hdr="$PROJECT_ROOT/src/lib/$rel_hdr"
+        if [ -f "$src_hdr" ]; then
+            mkdir -p "$PACKAGE_DIR/include/$(dirname "$rel_hdr")"
+            cp "$src_hdr" "$PACKAGE_DIR/include/$rel_hdr"
+        fi
+    done
+    echo "   ✓ Public Utils headers: include/Utils/"
 fi
 
 # Copy assets (except for WebAssembly which has them embedded)
@@ -216,8 +250,16 @@ if [ "$ARCH" != "wasm" ] && [ "$ARCH" != "emscripten" ]; then
     fi
 fi
 
-# Create installation script for Unix-like systems
-if [ "$ARCH" != "wasm" ] && [ "$ARCH" != "emscripten" ]; then
+# Create installation script for Unix-like systems only (not Windows or WASM)
+if [ "$ARCH" != "wasm" ] && [ "$ARCH" != "emscripten" ] && [ "$ARCH" != "windows" ] && [ "$ARCH" != "win64" ]; then
+    if [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then
+        INTERP_PRIMARY="/lib/ld-linux-aarch64.so.1"
+        INTERP_FALLBACK="/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1"
+    else
+        INTERP_PRIMARY="/lib64/ld-linux-x86-64.so.2"
+        INTERP_FALLBACK="/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
+    fi
+
     cat > "$PACKAGE_DIR/install.sh" << 'EOF'
 #!/usr/bin/env bash
 # Installation Script
@@ -244,16 +286,21 @@ mkdir -p "$INSTALL_PREFIX"/{bin,lib,share/__APP_SHARE__,include}
 # Install files
 echo "📋 Installing files..."
 cp -v "bin/__APP_NAME__" "$INSTALL_PREFIX/bin/"
-[ -f "lib/lib__LIB_NAME__.so" ] && cp -v "lib/lib__LIB_NAME__.so" "$INSTALL_PREFIX/lib/"
-[ -f "lib/lib__LIB_NAME__.a" ] && cp -v "lib/lib__LIB_NAME__.a" "$INSTALL_PREFIX/lib/"
+if [ -d "lib" ] && [ -n "$(find lib -mindepth 1 -maxdepth 1 -print -quit)" ]; then
+    cp -av lib/* "$INSTALL_PREFIX/lib/"
+fi
 [ -d "include/__LIB_NAME__" ] && cp -rv "include/__LIB_NAME__" "$INSTALL_PREFIX/include/"
+[ -d "include/Utils" ] && cp -rv "include/Utils" "$INSTALL_PREFIX/include/"
 [ -d "share/__APP_SHARE__" ] && cp -rv "share/__APP_SHARE__" "$INSTALL_PREFIX/share/"
 
 # Fix interpreter/RPATH if needed (e.g., when built in Nix)
 if command -v patchelf &> /dev/null; then
     if [ -f "$INSTALL_PREFIX/bin/__APP_NAME__" ]; then
-        patchelf --set-interpreter /lib/ld-linux-aarch64.so.1 "$INSTALL_PREFIX/bin/__APP_NAME__" 2>/dev/null || \
-        patchelf --set-interpreter /lib/aarch64-linux-gnu/ld-linux-aarch64.so.1 "$INSTALL_PREFIX/bin/__APP_NAME__" 2>/dev/null || true
+        if [ -e "__INTERP_PRIMARY__" ]; then
+            patchelf --set-interpreter "__INTERP_PRIMARY__" "$INSTALL_PREFIX/bin/__APP_NAME__" 2>/dev/null || true
+        elif [ -e "__INTERP_FALLBACK__" ]; then
+            patchelf --set-interpreter "__INTERP_FALLBACK__" "$INSTALL_PREFIX/bin/__APP_NAME__" 2>/dev/null || true
+        fi
         patchelf --set-rpath '$ORIGIN/../lib:/usr/local/lib:/usr/lib:/lib' "$INSTALL_PREFIX/bin/__APP_NAME__" 2>/dev/null || true
     fi
     if [ -f "$INSTALL_PREFIX/lib/lib__LIB_NAME__.so" ]; then
@@ -285,7 +332,7 @@ echo "   $INSTALL_PREFIX/bin/__APP_NAME__"
 EOF
 
     chmod +x "$PACKAGE_DIR/install.sh"
-    replace_tokens_in_file "$PACKAGE_DIR/install.sh" "$APP_NAME" "$LIB_NAME"
+    replace_tokens_in_file "$PACKAGE_DIR/install.sh" "$APP_NAME" "$LIB_NAME" "$INTERP_PRIMARY" "$INTERP_FALLBACK"
 
     # Create uninstall script
     cat > "$PACKAGE_DIR/uninstall.sh" << 'EOF'
@@ -314,6 +361,7 @@ rm -vf "$INSTALL_PREFIX/bin/__APP_NAME__"
 rm -vf "$INSTALL_PREFIX/lib/lib__LIB_NAME__.so"
 rm -vf "$INSTALL_PREFIX/lib/lib__LIB_NAME__.a"
 rm -rvf "$INSTALL_PREFIX/include/__LIB_NAME__"
+rm -rvf "$INSTALL_PREFIX/include/Utils"
 rm -rvf "$INSTALL_PREFIX/share/__APP_SHARE__"
 
 # Update library cache

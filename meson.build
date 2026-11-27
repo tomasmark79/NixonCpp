@@ -162,14 +162,49 @@ endif
 
 lib_dep = declare_dependency(
   link_with: link_lib,
-  include_directories: inc_dirs,
+  include_directories: common_inc,
   dependencies: lib_deps,
   compile_args: fmt_header_only ? ['-DFMT_HEADER_ONLY'] : [],
 )
 
-# Install headers
+# Install public headers
 install_subdir('include/' + lib_name,
   install_dir: get_option('includedir')
+)
+install_headers(
+  'src/lib/Utils/UtilsFactory.hpp',
+  'src/lib/Utils/UtilsError.hpp',
+  subdir: 'Utils',
+)
+install_headers(
+  'src/lib/Utils/Assets/IAssetManager.hpp',
+  subdir: 'Utils/Assets',
+)
+install_headers(
+  'src/lib/Utils/Filesystem/IDirectoryManager.hpp',
+  'src/lib/Utils/Filesystem/IFileReader.hpp',
+  'src/lib/Utils/Filesystem/IFileWriter.hpp',
+  'src/lib/Utils/Filesystem/IPathResolver.hpp',
+  subdir: 'Utils/Filesystem',
+)
+install_headers(
+  'src/lib/Utils/Json/ICustomStringsLoader.hpp',
+  'src/lib/Utils/Json/IJsonSerializer.hpp',
+  subdir: 'Utils/Json',
+)
+install_headers(
+  'src/lib/Utils/Logger/ILogger.hpp',
+  'src/lib/Utils/Logger/LoggerFactory.hpp',
+  'src/lib/Utils/Logger/NullLogger.hpp',
+  subdir: 'Utils/Logger',
+)
+install_headers(
+  'src/lib/Utils/Platform/IPlatformInfo.hpp',
+  subdir: 'Utils/Platform',
+)
+install_headers(
+  'src/lib/Utils/String/IStringFormatter.hpp',
+  subdir: 'Utils/String',
 )
 
 # Build application

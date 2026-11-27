@@ -17,6 +17,10 @@ namespace nixoncpp::logging {
     auto logger = std::make_shared<ConsoleLogger>();
     logger->setLevel(config.level);
 
+    if (!config.colorOutput) {
+      logger->setColorEnabled(false);
+    }
+
     if (!config.appPrefix.empty()) {
       logger->setAppPrefix(config.appPrefix);
     }

@@ -17,7 +17,7 @@ namespace nixoncpp::v1 {
    *       and the library remains uninitialized (isInitialized_ will be false).
    */
 
-  NixonCppLib::NixonCppLib(const UtilsFactory::ApplicationContext &context)
+  NixonCppLib::NixonCppLib(const nixoncpp::utils::UtilsFactory::ApplicationContext &context)
       : logger_(context.logger ? context.logger
                                : std::make_shared<nixoncpp::logging::NullLogger>()),
         assetManager_(context.assetManager) {

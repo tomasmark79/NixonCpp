@@ -96,16 +96,20 @@ namespace nixoncpp::utils {
     }
 
     auto logger = createLogger(LoggerType::Console, loggerConfig);
+    auto fileReader = createFileReader();
+    auto fileWriter = createFileWriter();
+    auto jsonSerializer = std::make_shared<JsonSerializer>(fileReader, fileWriter);
     auto assetManager = createAssetManager(execPathResult.value(), appName);
-    auto customStringsLoader = createCustomStringsLoader(execPathResult.value(), appName);
+    auto customStringsLoader =
+        std::make_shared<CustomStringsLoader>(assetManager, jsonSerializer, "customstrings.json");
 
     return ApplicationContext{.logger = std::move(logger),
                               .platformInfo = std::move(platformInfo),
-                              .fileReader = createFileReader(),
-                              .fileWriter = createFileWriter(),
+                              .fileReader = std::move(fileReader),
+                              .fileWriter = std::move(fileWriter),
                               .pathResolver = createPathResolver(),
                               .directoryManager = createDirectoryManager(),
-                              .jsonSerializer = createJsonSerializer(),
+                              .jsonSerializer = std::move(jsonSerializer),
                               .stringFormatter = createStringFormatter(),
                               .assetManager = std::move(assetManager),
                               .customStringsLoader = std::move(customStringsLoader)};
@@ -114,13 +118,16 @@ namespace nixoncpp::utils {
   // Create minimal context without app-specific components
   UtilsFactory::ApplicationContext
       UtilsFactory::createCoreContext(const LoggerConfig &loggerConfig) {
+    auto fileReader = createFileReader();
+    auto fileWriter = createFileWriter();
+    auto jsonSerializer = std::make_shared<JsonSerializer>(fileReader, fileWriter);
     return ApplicationContext{.logger = createLogger(LoggerType::Console, loggerConfig),
                               .platformInfo = createPlatformInfo(),
-                              .fileReader = createFileReader(),
-                              .fileWriter = createFileWriter(),
+                              .fileReader = std::move(fileReader),
+                              .fileWriter = std::move(fileWriter),
                               .pathResolver = createPathResolver(),
                               .directoryManager = createDirectoryManager(),
-                              .jsonSerializer = createJsonSerializer(),
+                              .jsonSerializer = std::move(jsonSerializer),
                               .stringFormatter = createStringFormatter(),
                               .assetManager = nullptr,
                               .customStringsLoader = nullptr};
@@ -128,13 +135,16 @@ namespace nixoncpp::utils {
 
   // Create basic utilities context with default logger
   UtilsFactory::ApplicationContext UtilsFactory::createBasicContext() {
+    auto fileReader = createFileReader();
+    auto fileWriter = createFileWriter();
+    auto jsonSerializer = std::make_shared<JsonSerializer>(fileReader, fileWriter);
     return ApplicationContext{.logger = createDefaultLogger(),
                               .platformInfo = createPlatformInfo(),
-                              .fileReader = createFileReader(),
-                              .fileWriter = createFileWriter(),
+                              .fileReader = std::move(fileReader),
+                              .fileWriter = std::move(fileWriter),
                               .pathResolver = createPathResolver(),
                               .directoryManager = createDirectoryManager(),
-                              .jsonSerializer = createJsonSerializer(),
+                              .jsonSerializer = std::move(jsonSerializer),
                               .stringFormatter = createStringFormatter(),
                               .assetManager = nullptr,
                               .customStringsLoader = nullptr};

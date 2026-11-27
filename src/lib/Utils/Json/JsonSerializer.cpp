@@ -40,7 +40,7 @@ namespace nixoncpp::utils {
     auto writeResult = fileWriter_->write(filePath, stringResult.value());
     if (!writeResult) {
       return JsonError{
-          .code = JsonErrorCode::FileNotFound,
+          .code = JsonErrorCode::WriteError,
           .message = "Failed to write JSON file: " + writeResult.error().message,
           .details = filePath.string(),
       };

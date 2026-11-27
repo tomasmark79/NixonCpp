@@ -2,7 +2,6 @@
 
 #include <Utils/Assets/IAssetManager.hpp>
 #include <memory>
-#include <mutex>
 
 namespace nixoncpp::assets {
   class AssetManager : public IAssetManager {
@@ -38,7 +37,6 @@ namespace nixoncpp::assets {
 
   private:
     std::filesystem::path assetsPath_;
-    mutable std::mutex mutex_;
     static std::filesystem::path findAssetsPath(const std::filesystem::path &executablePath,
                                                 const std::string &appName);
   };
