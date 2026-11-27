@@ -17,7 +17,7 @@ nix develop ./nix
 | `make check` | Build the native debug configuration and run clang-tidy |
 | `make test-sanitizers` | Build and run native tests with AddressSanitizer and UBSan |
 
-Tests live in [tests/](../tests/), with their source list in [tests/meson.build](../tests/meson.build). Formatting settings are in [.clang-format](../.clang-format); the clang-tidy invocation is defined in [scripts/solution-controller.sh](../scripts/solution-controller.sh). Review the diff after applying formatting.
+Tests live in [tests/](../tests/), with their source list in [tests/meson.build](../tests/meson.build). Formatting settings are in [.clang-format](../.clang-format), static analysis rules are in [.clang-tidy](../.clang-tidy), and the clang-tidy invocation is defined in [scripts/solution-controller.sh](../scripts/solution-controller.sh). Review the diff after applying formatting.
 
 The sanitizer target uses a separate build directory, `build/builddir-sanitize-address-undefined`, so it does not replace the regular debug build.
 

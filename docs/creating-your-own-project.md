@@ -25,9 +25,9 @@ git diff
 git status --short
 ```
 
-The arguments are the application name, library name, and C++ namespace. Use names suitable for C++ identifiers; the example uses the standard `<ApplicationName>Lib` naming convention.
+The arguments are the application name, library name, and C++ namespace. Use names suitable for C++ identifiers; the example uses the standard `<ApplicationName>Lib` naming convention, though custom library names are also supported.
 
-The script updates project names in build configuration, C++ sources, public headers, tests, the HTML shell, and selected editor configuration. It also renames library files and the logo file. It does not change the Git remote or replace the original author's metadata everywhere.
+The script updates project names in build configuration, C++ sources, public headers, tests, the HTML shell, `assets/customstrings.json`, `.devcontainer/devcontainer.json`, selected editor configuration, and project guides/diagrams under `docs/` (except this onboarding guide). It also renames library files and the logo file. It does not change the Git remote or replace the original author's metadata everywhere.
 
 ## Update identity and attribution
 

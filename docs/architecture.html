@@ -136,10 +136,10 @@
     </div>
     <div>
       <h2>Tests and build boundaries</h2>
-      <p><a href="../tests/meson.build"><code>tests/meson.build</code></a> registers GoogleTest tests for <code>AssetManager</code>, <code>ConsoleLogger</code> and <code>FileReader</code>. Meson includes them only in native builds when <code>build_tests</code> allows tests and the dependencies are available. The public library header currently also includes the internal <code>UtilsFactory.hpp</code>.</p>
+      <p><a href="../tests/meson.build"><code>tests/meson.build</code></a> registers GoogleTest suites for <code>AssetManager</code>, <code>ConsoleLogger</code>, <code>CustomStringsLoader</code>, <code>FileReader</code>, <code>FileWriter</code>, <code>JsonSerializer</code>, and <code>NixonCppLib</code>. Meson includes them only in native builds when <code>build_tests</code> allows tests and the dependencies are available. Public <code>Utils</code> interfaces are installed under <code>include/NixonCppLib/Utils/</code> and included relatively from <code>NixonCppLib.hpp</code>, and non-WASM builds generate a <code>pkg-config</code> file (<code>NixonCppLib.pc</code>).</p>
     </div>
   </section>
-  <footer>Source references: <a href="../meson.build">meson.build</a>, <a href="../src/lib/Utils/UtilsFactory.cpp">UtilsFactory.cpp</a>, <a href="../nix/flake.nix">nix/flake.nix</a> and <a href="build-targets.md">build-targets.md</a>. Checked against local sources on 13 October 2026. Diagram Design · Architecture · doc-wide (1280 × 720).</footer>
+  <footer>Source references: <a href="../meson.build">meson.build</a>, <a href="../src/lib/Utils/UtilsFactory.cpp">UtilsFactory.cpp</a>, <a href="../nix/flake.nix">nix/flake.nix</a> and <a href="build-targets.md">build-targets.md</a>. Checked against local sources on 27 November 2026. Diagram Design · Architecture · doc-wide (1280 × 720).</footer>
 </main>
 </body>
 </html>

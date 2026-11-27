@@ -39,7 +39,9 @@ make build-wasm-debug
 make build-windows-release
 ```
 
-Cross-build directories follow `build/builddir-<arch>-<type>`. Native builds with the default GCC compiler use `build/builddir-<type>`.
+Cross-build directories follow `build/builddir-<arch>-<type>`. Native builds with the default GCC compiler use `build/builddir-<type>`; Clang builds (`make build-clang`, `make debug-clang`) are also available in the native Nix shell and output to `build/builddir-<type>-clang`.
+
+For Linux ARM64, the `aarch64` Nix shell includes `qemu-aarch64` for running cross-compiled binaries on an x86_64 host. Non-WASM builds also generate a `pkg-config` file (`NixonCppLib.pc`) and install public headers under `include/NixonCppLib/`.
 
 ## Package for another machine or a web server
 

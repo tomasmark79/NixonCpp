@@ -82,8 +82,8 @@ Follow [Creating your own project](docs/creating-your-own-project.md) to rename 
 ## Features
 
 - C++20 by default
-- Application, shared library, and static library targets
-- Nix development environments and reproducible package builds
+- Application, shared library, and static library targets with `pkg-config` support
+- Nix development environments (GCC and Clang) and reproducible package builds
 - GoogleTest, clang-format, clang-tidy, AddressSanitizer, and UBSan
 - Cross-builds for aarch64-linux, Windows, and WebAssembly
 - Doxygen documentation published through GitHub Pages
